@@ -38,42 +38,8 @@
     \maketitle
     \tableofcontents
     \newpage
-    \section*{Overview}
-    \begin{itemize}
-        \item \textbf{Anomalies}
-            \begin{itemize}[label=$\circ$]
-                \item Insert anomaly
-                \item Update anomaly
-                \item Deletion Anomaly
-            \end{itemize}
-        \item \textbf{Constraints}
-            \begin{itemize}[label=$\circ$]
-        \item referential integrity constraints
-        \item Entity Integrity Constraint
-            \end{itemize}
-        \item \textbf{Functional Dependency}
-            \begin{itemize}[label=$\circ$]
-                \item Armstrongs axioms
-            \end{itemize}
-        \item \textbf{Keys}
-            \begin{itemize}[label=$\circ$]
-                \item Primary key
-                \item candidate key
-                \item Super key
-                \item foreign key
-            \end{itemize}
-        \item \textbf{Key attributes}
-        \item \textbf{non-key attributes} 
-        \item \textbf{Domain}
-            \textbf{Order Independence}
-        \item \textbf{Decomposition}
-        \item \textbf{Normalization}
-            \begin{itemize}[label=$\circ$]
-                \item   $_1NF$
-                \item $_2NF$
-                \item $_3NF$
-            \end{itemize}
-    \end{itemize}
+    \chapter{Normalization}
+    \newpage
     \section{Anomolies}
     If our database is a single relation with schema \textit{\textbf{SP}} (\underline{SuppName}, SuppAddr, \underline{Item}, Price).
     \bigbreak \noindent
@@ -521,7 +487,331 @@ Supv $\rightarrow$ Dept
 A quick glance confirms all values are atomic, so $_1NF$ is confirmed.
 \bigbreak \noindent
 There is a $_2NF$ violation caused by (EmpID $\rightarrow$ Supv, Dept) because the primary key is (EmpID, Project), but only EmpID is on the LHS.
-
+\bigbreak \noindent
 Observing the instance Data, you should easily see that the attributes of the RHS cause update anomalies in this table. We also can't insert a new employee with no project (insertion anomaly). These are symptoms of the $_2NF$ violation.
+\subsubsection*{Decomposition Pattern}
+There is a pattern to follow for the decomposition.
+\bigbreak \noindent
+Start with the original relation, and the FD that causes the violation. \vspace{2mm} \\
+\textit{\textbf{EmpProj}}(\underline{EmpID}, \underline{Project}, Supv, Dept, Case) \ \ \ (Original relation) \vspace{1.5mm}\\
+\textit{\textbf{EmpID $\rightarrow$ Supv, Dept}}  \ \ \ (violates $_2NF$)
+\bigbreak \noindent
+The attributes on the right-hand side of the functional dependency that violates $_2NF$ are removed from the original relation and placed into a newly created relation that has the FD's left-hand side as the primary key. A \textit{foreign key} links the attributes from the left-hand side in the original table (the left-hand side is not removed) to the corresponding tuple in the new table, where it is the \textit{primary key}.
+\bigbreak \noindent
+\begin{itemize}
+    
+\item\textit{\textbf{EmpProj}}(\underline{EmpID}, \underline{Project}, Case)
+\item\textit{\textbf{Employee}}(\underline{EmpID}, Supv, Dept)
+\end{itemize}
+\bigbreak \noindent
+\textit{\textbf{EmpProj}}(\underline{EmpID}, \underline{Project}, Case)
+    \begin{figure}[H]
+    \centering
+     \setlength{\tabcolsep}{25}
+    \begin{tabular}{l l l}
+        \hline
+        EmpID & Project & Case \\
+        \hline
+        e1 &p1&c1 \\
+        e2& p2&c2 \\
+        e1& p3& c3 \\
+        e3&p3&c3 \\
+        \hline
+    \end{tabular}
+    \end{figure}
+\noindent    \textit{\textbf{Employee}}(\underline{EmpID}, Supv, Dept)
+    \begin{figure}[H]
+    \centering
+     \setlength{\tabcolsep}{25}
+    \begin{tabular}{l l l}
+    \hline 
+    EmpID& Supv& Dept \\
+    \hline
+    e1&s1&d1 \\
+    e2&s2&d2 \\
+    e3&s1&d1 \\
+    \hline
+    \end{tabular}
+    \end{figure}
+While the single relation we began with violated $_2NF$, this version with the two relations does not. There are still some anomailes remaining if you look closely, so we will look into $_3NF$.
+\subsection{Third Normal Form $_3NF$}
+To be in \textit{Third Normal Form}, ($_3NF$), a relation must
+\begin{itemize}
+    \item Already qualify to be in $_2NF$
+    \item None of the non-prime attributes may be \textit{transitvely dependent} upon the primary key.
+\end{itemize}
+By definition, all non-prime attributes are \textit{functionally} dependent upon the primary key. What makes a \textit{transitive dependency} is that there is also some non-prime attributes (which also depends on the key) that also functionally determines the attribute.
+\bigbreak \noindent
+To quickly identify the \textit{transitive dependencies} from the list of FDs, look on the left-hand side for attributes that are non-prime in the context of the current relation.
+\bigbreak \noindent
+\textit{\textbf{EmpProj}}(\underline{EmpID}, \underline{Project}, Case) \vspace{1.5mm}\\
+\textit{\textbf{Employee}}(\underline{EmpID}, Supv, Dept)
+\begin{itemize}
+    \item Functional Dependencies
+        \begin{itemize}[label=$\circ$]
+            \item EmpID , Project$\rightarrow$ Supv, Dept, Case
+            \item EmpID $\rightarrow$ Supv, Dept
+            \item \textbf{Supv $\rightarrow$ Dept} (Transitive dependency)
+        \end{itemize}
+\end{itemize}
+In this case, the FD that causes our relations to violate $_3NF$ is (Supv $\rightarrow$ Dept), and the violation happens in the \textit{\textbf{Employee}} relation. If you refer back to the instance data of that in the $_2NF$ solution, you can see that the violation can cause anomalies, so we want to fix it.
+\bigbreak \noindent
+Just like in $_2NF$, we fix $_3NF$ by \textbf{decomposing} using the FD that causes the violation to occur.
+\nt{
+    At no point do we change the FDs.
+}
+Following the same pattern we used for decomposing to get into $_2NF$, we start with the relation that has the violation, and the FD that causes the violation to occur.
+\begin{itemize}
+    \item \textit{\textbf{Employee}}(\underline{EmpID}, Supv, Dept)
+    \item Supv $\rightarrow$ Dept
+\end{itemize}
+The attributes on the right-hand side of the FD are removed from the violating relation and placed into a newly created relation that has the FD's left-hand side as its primary key. A \textit{foreign key} links the attribute from the left-hand side in the original table (the left-hand side is not removed) to the corresponding tuple in the new table, where it is the \textit{primary key}.
+\begin{itemize}
+    \item \textit{\textbf{Employee}}(\underline{EmpID}, Supv)
+    \item \textit{\textbf{SupvDept}}(\underline{Supv, Dept}) \ \ \ (new relation)
+\end{itemize}
+The right-hand side (Dept) that was a violation when it was in \textit{\textbf{Employee}} because the left-hand side (Supv) was non-prime is no longer there to cause the problem. It is in the new relation where the left-hand side (Supv) is the primary key, and therefore we don't have a \textit{transitive dependency}. These two relations no longer have the $_3NF$ violation.
+\subsubsection*{Final results:}
+\begin{itemize}
+    \item \textit{\textbf{EmpProj}}(\underline{EmpID}, \underline{Project}, Case)
+    \item \textit{\textbf{Employee}}(\underline{EmpID}, Supv)
+    \item \textit{\textbf{SupvDept}}(\underline{Supv}, Dept)
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.3\textwidth}
+        \centering
+        \begin{tabular}{lll}
+            \toprule
+            EmpID & Project & Case \\
+            \midrule
+            e1 & p1 & c1 \\
+            e2 & p2 & c2 \\
+            e1 & p3 & c3 \\
+            e3 & p3 & c3 \\
+            \bottomrule
+        \end{tabular}
+        \caption*{EmployeeProj }
+        \label{fig:emp_projects}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}{0.3\textwidth}
+        \centering
+         \setlength{\tabcolsep}{20}
+        \begin{tabular}{ll}
+            \toprule
+            EmpID & Supv \\
+            \midrule
+            e1 & s1 \\
+            e2 & s2 \\
+            e3 & s1 \\
+            \bottomrule
+        \end{tabular}
+        \caption*{Employee}
+        \label{fig:emp_supv}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}{0.3\textwidth}
+        \centering
+         \setlength{\tabcolsep}{20}
+        \begin{tabular}{ll}
+            \toprule
+            Supv & Dept \\
+            \midrule
+            s1 & d1 \\
+            s2 & d2 \\
+            s1 & d1 \\
+            \bottomrule
+        \end{tabular}
+        \caption*{SupvDept}
+        \label{fig:yourlabel}
+    \end{minipage}
+\end{figure}
+            \chapter{Converting ERD to Relational DB}
+            \newpage
+\noindent            The Conceptual Model is great for planning and documentation, but it needs to be converted to a logical model in order to actually be used.
+            We will look at how we can use the relational data model to represent the schema that is represented by an ER diagram.
+\bigbreak \noindent
+Our ER diagram is made up of \textit{entities, relationships} and \textit{attributes}. 
+\bigbreak \noindent
+The relational data model has \textit{relations}, filled with \textit{tuples}, which are made up of \textit{attributes}
+\bigbreak \noindent
+We will need to use these tools together to design a relational database in $_3NF$ that can hold the data from our design.
+\section{The steps}
+The process of converting an ER diagram to a relational database can be boiled  down to a two step process.
+\begin{enumerate}
+    \item Handle all of the \textbf{entities} 
+    \item Handle all of the \textbf{relationships}
+\end{enumerate}
+\subsection{Step 1: Handle Entities}
+We will start with the \textbf{entities}, because they can stand on their own, unlike \textit{relationships} or \textit{attributes}.
+\bigbreak \noindent
+In general, each \textit{entity} will get its own \textit{relation}. The \textit{attributes} of the \textit{entity} will become \textit{attributes} in the schema of the relation created. There are some special cases to take into account, which will be handled from most independent to least, so:
+\begin{itemize}
+    \item a. Strong (non-weak) entities that are \textit{not} subtypes
+    \item b. Strong (non-weak) entities that \textit{are} subtypes
+    \item c. Weak entities
+\end{itemize}
+Note that there is no reason to make a relation for a ``date'' entity or similar. The single value for the data is enough to determine it, and any other data associated with it is generally happening through a relationship anyway. Think about what data would go into such a table and how little use there would be for storing it separately.
+\bigbreak \noindent
+\subsubsection{Strong Entity, Not Subtype}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{ ./figures/18.png }
+\begin{itemize}
+    \item Make a new relation, whose name will be the same as the name of the entity
+    \item The \textit{primary key} of the relation will be all of the identifier attributes, taken together
+    \item All attributes of the entity become attributes of the relation.
+\end{itemize}
+\end{figure}
+Schema of new relation from entity pictured above: \textit{\textbf{Entity}}(\underline{idr}, \underline{id2}, other)
+\subsubsection{Strong Entity, Subtype}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{ ./figures/21.png }
+\end{figure}
 
-    \end{document}
+\textit{\textbf{Employee}} is a supertype (not subtype) so it gets handled in the previous step.
+\begin{itemize}
+    \item \textit{\textbf{Employee}}(\underline{EmpID}, Name)
+\end{itemize}
+\textbf{Hourly} and \textbf{Salaried} are each strong, but they are subtypes (each is a type of \textbf{Employee}), so they are handled here.
+\begin{itemize}
+    \item This type of inheritance means that the subtypes \textit{are} types of the supertype, so they are identified by \textbf{Employee's} EmpID.
+    \item There are \textit{two} methods for handling these subtypes.
+\end{itemize}
+\subsubsection*{Method 1 - Big Table}
+The first method involves putting the attributes of the subtypes into the relation made for the supertype. So, the original relation:
+\begin{itemize}
+    \item \textit{\textbf{Employee}}(\underline{EmpID},Name)
+\end{itemize}
+Would become something like:
+\begin{itemize}
+    \item \textit{\textbf{Employee}}(\underline{EmpID}, Name, Wage, Salary)
+\end{itemize}
+But it would beed to be modified to indicate which subtypes a given employee belongs to. This is handled differently depending on the IS-A's configuration
+\begin{itemize}
+    \item For \textit{disjoint subtypes}, where an instance of the supertype can only be one of the subtypes at a time, we can add an attribute, EmpType that has a value indicating which type this employee is:
+        \begin{itemize}
+            \item \textit{\textbf{Employee}}(\underline{EmpID}, Name, EmpType, Wage, Salary)
+        \end{itemize}
+\end{itemize}
+\nt{
+    For \textit{generalization}, EmpType would not allow \texttt{NULL}. For \textit{specialization}, it would be allowed.
+}
+\begin{itemize}
+    \item For \textit{overlapping subtypes}, it is possible to be more than one at a time, so we need an individual true/false answer for each type:
+        \begin{itemize}
+            \item \textit{\textbf{Employee}}(\underline{EmpID}, Name, IsHourly, Wage, IsSalaried, Salary)
+        \end{itemize}
+\end{itemize}
+In this case, nothing about the schema would indicate \textit{generalization} vs. \textit{specialization.}
+\newpage
+\noindent Below is an example of what some instance data for the design above could look like:
+    \begin{figure}[H]
+    \centering
+     \setlength{\tabcolsep}{20}
+    \begin{tabular}{llllll}
+    \toprule 
+    EmpID&Name&IsHourly&Wage&IsSalaried&Salary \\
+    \midrule
+    1& Jim& false& NULL & true & \$56,000\\
+    2&Bob&true&\$20.00&false&NULL \\
+    3&Sally&false&NULL&true&\$75,000 \\
+    4&Jane&false&NULL&true&\$65,800\\
+    5&Arvind&true&\$5.00&true&\$60,000\\
+    \bottomrule
+    \end{tabular}
+    \end{figure}
+\noindent Note that, while it is probaly not common for someone to be both hourly and salaried, this design would support that.
+\subsubsection*{Method 2}
+Method 2 involves creating a new relation for the subtype entity.
+\begin{itemize}
+    \item The name of new relation would be the same as the name of the entity.
+    \item The \textit{primary key} of the new relation would be the same as the \textit{primary key} for the supertype's relation.
+    \item The \textit{primary key} is also a \textit{foreign key} to the existing table.
+    \item An instance of the supertype entity will only have a tuple in the subtype relation if it is a member of that subtype, so we will not need any extra attribute like we did in method 1.
+    \item The \textit{foreign key} can be used to look up any of the attributes that are being inherited from the supertype.
+\end{itemize}
+\bigbreak \noindent
+The supertype table remains unchanged with method 2:
+\begin{itemize}
+    \textit{\textbf{Employee}}(\underline{EmpId}, Name)
+\end{itemize}
+The subtypes each get their own table.
+\begin{itemize}
+    \item \textit{\textbf{Hourly}}(\underline{EmpID\dag}, Wage)
+    \item \textit{\textbf{Salaried}}(\underline{EmpID\dag}, Salary)
+\end{itemize}
+The (\dag) will be used in these slides to indicate that the attribute is part of a \textit{foreign key} (and, in this example, the whole thing).
+\bigbreak \noindent
+In method 2, the supertype table is not changed, so the same data we used in the previous method would look like this:
+\bigbreak \noindent
+\textit{\textbf{Employee}} (supertype entity)
+    \begin{figure}[H]
+    \centering
+     \setlength{\tabcolsep}{30}
+    \begin{tabular}{ll}
+    \toprule 
+    EmpID&Name \\
+    \midrule
+    1& Jim \\
+    2& Bob\\
+    3& Sally \\
+    4& Jane \\
+    5& Arvind \\
+    \bottomrule
+    \end{tabular}
+    \end{figure}
+    \newpage
+    
+\noindent    \textit{\textbf{Hourly}} (subtype entity)
+    \begin{figure}[H]
+    \centering
+     \setlength{\tabcolsep}{30}
+    \begin{tabular}{ll}
+        \toprule
+    EmpID & Wage  \\
+    \midrule
+    2&\$20.00 \\
+    5& \$5.00 \\
+    \bottomrule
+    \end{tabular}
+    \end{figure}
+    \bigbreak \noindent
+    \textit{\textbf{Salaried}} (subtype entity)
+        \begin{figure}[H]
+        \centering
+         \setlength{\tabcolsep}{30}
+        \begin{tabular}{ll}
+        \toprule 
+        EmpID&Salary \\
+        \midrule
+        1&\$56,000 \\
+        3&\$75,000 \\
+        4&\$65,800 \\
+        5&\$60,000 \\
+        \bottomrule
+        \end{tabular}
+        \end{figure}
+        \subsubsection{Weak Entity}
+        \begin{figure}[ht]
+        \centering
+        \includegraphics[width=0.8\textwidth]{ ./figures/04.png }
+        \end{figure}
+\noindent            The strong entity would already have a relation from section 1.1.1
+\begin{itemize}
+    \item \textit{\textbf{Strong}}(\underline{id}, x)
+\end{itemize}
+The weak entity gets its own relation. The \textit{primary key} will be the concatenation of the weak entity's \textit{discrimator} with the strong entity's \texit{identifier}. The other attributes of the entity are brought in as non-prime attributes.
+\begin{itemize}
+    \item \textit{\textbf{Weak}}(\underline{id\dag}, \underline{disc},y)
+\end{itemize}
+The \textit{identifier} portion is a \texit{foreign key} to the \textbf{Strong} relation.
+\nt{
+    A \textit{discriminator} looks like an \textit{identifier} (underlined attribute), but it is attached to a \textit{weak entity}.
+}
+\subsubsection{Entities: Functional Dependencies}
+The only \textit{functional dependencies} introduced by the entites of an ER diagram are the ones introduced when the \textit{identifiers} become \textit{primary keys}. Remember that a primary key has to functioanlly determine all of the other attributes in a relation.
+\subsection{Step 2: Handle Relationships}
+\end{document}

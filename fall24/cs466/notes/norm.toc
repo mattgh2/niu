@@ -1,15 +1,25 @@
-\contentsline {section}{\numberline {1}Anomolies}{3}{section.0.1}%
-\contentsline {section}{\numberline {2}Decomposition}{5}{section.0.2}%
-\contentsline {section}{\numberline {3}Keys}{5}{section.0.3}%
-\contentsline {section}{\numberline {4}Domain}{6}{section.0.4}%
-\contentsline {section}{\numberline {5}Order Independence}{6}{section.0.5}%
-\contentsline {section}{\numberline {6}Constraints}{6}{section.0.6}%
-\contentsline {subsection}{\numberline {6.1}Entity contegrity constraint}{6}{subsection.0.6.1}%
-\contentsline {subsection}{\numberline {6.2}Referential Integrity Constraint}{7}{subsection.0.6.2}%
-\contentsline {section}{\numberline {7}Functional Dependencies}{7}{section.0.7}%
-\contentsline {subsection}{\numberline {7.1}Armstrong's Axioms}{8}{subsection.0.7.1}%
-\contentsline {subsection}{\numberline {7.2}Revisiting Keys}{9}{subsection.0.7.2}%
-\contentsline {subsection}{\numberline {7.3}How to determine the functional dependencies}{9}{subsection.0.7.3}%
-\contentsline {section}{\numberline {8}Normalization}{10}{section.0.8}%
-\contentsline {subsection}{\numberline {8.1}First Normal Form $_1NF$}{10}{subsection.0.8.1}%
-\contentsline {subsection}{\numberline {8.2}Second Normal Form $_2NF$}{11}{subsection.0.8.2}%
+\contentsline {chapter}{\numberline {1}Normalization}{3}{chapter.1}%
+\contentsline {section}{\numberline {1}Anomolies}{4}{section.1.1}%
+\contentsline {section}{\numberline {2}Decomposition}{5}{section.1.2}%
+\contentsline {section}{\numberline {3}Keys}{5}{section.1.3}%
+\contentsline {section}{\numberline {4}Domain}{6}{section.1.4}%
+\contentsline {section}{\numberline {5}Order Independence}{6}{section.1.5}%
+\contentsline {section}{\numberline {6}Constraints}{7}{section.1.6}%
+\contentsline {subsection}{\numberline {6.1}Entity contegrity constraint}{7}{subsection.1.6.1}%
+\contentsline {subsection}{\numberline {6.2}Referential Integrity Constraint}{7}{subsection.1.6.2}%
+\contentsline {section}{\numberline {7}Functional Dependencies}{7}{section.1.7}%
+\contentsline {subsection}{\numberline {7.1}Armstrong's Axioms}{8}{subsection.1.7.1}%
+\contentsline {subsection}{\numberline {7.2}Revisiting Keys}{9}{subsection.1.7.2}%
+\contentsline {subsection}{\numberline {7.3}How to determine the functional dependencies}{9}{subsection.1.7.3}%
+\contentsline {section}{\numberline {8}Normalization}{10}{section.1.8}%
+\contentsline {subsection}{\numberline {8.1}First Normal Form $_1NF$}{10}{subsection.1.8.1}%
+\contentsline {subsection}{\numberline {8.2}Second Normal Form $_2NF$}{11}{subsection.1.8.2}%
+\contentsline {subsection}{\numberline {8.3}Third Normal Form $_3NF$}{13}{subsection.1.8.3}%
+\contentsline {chapter}{\numberline {2}Converting ERD to Relational DB}{15}{chapter.2}%
+\contentsline {section}{\numberline {1}The steps}{16}{section.2.1}%
+\contentsline {subsection}{\numberline {1.1}Step 1: Handle Entities}{16}{subsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}Strong Entity, Not Subtype}{16}{subsubsection.2.1.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.2}Strong Entity, Subtype}{17}{subsubsection.2.1.1.2}%
+\contentsline {subsubsection}{\numberline {1.1.3}Weak Entity}{19}{subsubsection.2.1.1.3}%
+\contentsline {subsubsection}{\numberline {1.1.4}Entities: Functional Dependencies}{19}{subsubsection.2.1.1.4}%
+\contentsline {subsection}{\numberline {1.2}Step 2: Handle Relationships}{19}{subsection.2.1.2}%

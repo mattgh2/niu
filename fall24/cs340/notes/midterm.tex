@@ -1,0 +1,150 @@
+\documentclass{report}
+
+\input{~/latex/template/preamble.tex}
+\input{~/latex/template/macros.tex}
+
+\title{\Huge{Midterm Topics}}
+\author{\huge{Matt Warner}}
+\date{\huge{}}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{}
+\lhead{\leftmark}
+\cfoot{\thepage}
+% \usepackage[default]{sourcecodepro} \usepackage[T1]{fontenc}
+
+\pgfpagesdeclarelayout{boxed}
+{
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=1,%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {
+    border code=\pgfsetlinewidth{1.5pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.95\pgfphysicalwidth,%
+    resized height=.95\pgfphysicalheight,%
+    center=\pgfpoint{.5\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+}
+
+\pgfpagesuselayout{boxed}
+
+\begin{document}
+    \maketitle
+    \begin{itemize}
+        \item Complexity analysis
+        \item Type declarations
+        \item Containers
+            \begin{itemize}[label=$\circ$]
+                \item vector
+                \item deque
+                \item list
+                \item forward list
+                \item set
+                \item map
+            \end{itemize}
+        \item iterators
+        \item functors
+    \end{itemize}
+    \section{Containers}
+    \subsection{vector}
+    \subsubsection{Container type}
+    Sequence container.
+    \bigbreak \noindent
+    Implemented as a dynamic array.
+    \subsubsection{Iterator type}
+    Random access iterator
+    \subsubsection{Advantages/disadvantages}
+    Adding/removing elements at the end is fast. having the ability to  grow/shrink the container and have random access to elements is beneficial in some cases.
+    \bigbreak \noindent
+    Inserting/removing in the middle/beginning is slow.
+    \subsubsection{Time complexities}
+    \begin{itemize}
+        \item Linear time
+            \begin{itemize}[label=$\circ$]
+            \item clear
+            \item insert
+            \item erase
+            \item assign
+            \item resize
+            \item dtor
+            \item operator=
+            \item copy ctor
+            \item ctor with iterator range.
+            \end{itemize}
+            \item Constant time
+                \begin{itemize}[label=$\circ$]
+                    \item push\_back
+                    \item emplace\_back
+                    \item pop\_back
+                    \item swap
+                    \item operator$[]$ and at()
+                \end{itemize}
+    \end{itemize}
+    \section{deque}
+    \subsection{container type} 
+    sequence container. Implemented as multiple dynamic arrays.
+    \bigbreak \noindent
+    Almost the same interface as vector, but does not provide capacity, reserve.
+    \bigbreak \noindent
+    Provides a couple extra modifiers that are not in vector:
+    \begin{itemize}
+        \item push\_front
+        \item emplace\_front
+        \item pop\_front
+    \end{itemize}
+    Internal memory is not contiguous. Element access and iterator movement involves more calculation comparing to vector. Iterators may need to jump between difference memory blocks
+    \subsection{iterator type}
+    Random access iterator
+    \subsection{advantages/disadvantages}
+    Fast for adding/removing at both ends. Slow in adding/removing in the middle
+    \bigbreak \noindent
+    Possibly larger max size
+    \bigbreak \noindent
+    Massive reallocations are avoided
+    \subsection{Time complexities}
+    
+    \section{list}
+    \subsection{container type} 
+    sequence container. Implemented as a doubly linked list
+    \subsection{iterator type}
+    bidirectional iterator
+    \subsection{advantages/disadvantages}
+    Adding/removing anywhere is fast so long as you have a reference to the location. Otherwise you need to traverse the list.
+    \bigbreak \noindent
+    No reallocation needed.
+    \subsection{Time complexities}
+
+    \section{forward list}
+    \subsection{container type} 
+    Sequence container. Internally implemented as a singly linked list.
+    \subsection{iterator type}
+    Forward iterator
+    \subsection{advantages/disadvantages}
+    One linking field compared to list with two linking fields. More memory efficient.
+    \bigbreak \noindent
+    Adding/removing at begin of a list is fast. Adding/removing at the next  position of a given element is fast.
+    \subsection{Time complexities}
+    \section{set}
+    \subsection{container type} 
+    Associative container. Implemented as a self-balancing binary search tree. (red-black tree ).
+
+    \subsection{iterator type}
+    birectional iterator
+    \subsection{advantages/disadvantages}
+    The advantage is not for sorting, but for searching.
+    The order of insertion does not matter.
+    \subsection{Time complexities}
+
+    \section{map}
+    \subsection{container type} 
+    \subsection{iterator type}
+    \subsection{advantages/disadvantages}
+    \subsection{Time complexities}
+
+\end{document}

@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023 Gentoo Linux) (preloaded format=pdflatex 2024.8.2)  1 OCT 2024 20:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023 Gentoo Linux) (preloaded format=pdflatex 2024.8.2)  3 OCT 2024 00:01
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**norm.tex
-(./norm.tex
+**midterm.tex
+(./midterm.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
 (/usr/share/texmf-dist/tex/latex/base/report.cls
@@ -120,10 +120,10 @@ Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )) (/usr/share/texmf-dist/tex/generic/iftex/ifluatex.sty
 Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
 )
-runsystem(uname -s > "norm.w18")...executed.
+runsystem(uname -s > "midterm.w18")...executed.
 
- (./norm.w18)
-runsystem(rm -- "norm.w18")...executed.
+ (./midterm.w18)
+runsystem(rm -- "midterm.w18")...executed.
 
 ) (/usr/share/texmf-dist/tex/generic/xstring/xstring.sty (/usr/share/texmf-dist/tex/generic/xstring/xstring.tex
 \xs_counta=\count290
@@ -153,7 +153,7 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@every@listing=\toks21
 \c@listing=\count295
 )
-runsystem(mkdir -p _minted-norm)...executed.
+runsystem(mkdir -p _minted-midterm)...executed.
 
  (/usr/share/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
 Package: tcolorbox 2024/01/10 version 6.2.0 text color boxes
@@ -1400,15 +1400,15 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 \c@question=\count530
 ) (/home/matt/latex/template/macros.tex)
 \pgfpages@box@1=\box166
-runsystem(command -v pygmentize && touch norm.aex)...executed.
+runsystem(command -v pygmentize && touch midterm.aex)...executed.
 
-runsystem(rm norm.aex)...executed.
+runsystem(rm midterm.aex)...executed.
 
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 37.
  (/usr/share/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) (./norm.aux)
-\openout1 = `norm.aux'.
+) (./midterm.aux)
+\openout1 = `midterm.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
 LaTeX Font Info:    ... okay on input line 37.
@@ -1531,418 +1531,42 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 39.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (./norm.toc
-Overfull \hbox (2.65302pt too wide) detected at line 1
-\OT1/lmr/bx/n/10 Chapter 1: 
- []
-
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 1.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 1.
-
-Overfull \hbox (2.65302pt too wide) detected at line 18
-\OT1/lmr/bx/n/10 Chapter 2: 
- []
-
-
-Overfull \hbox (8.33327pt too wide) detected at line 21
-\OT1/lmr/m/n/10 1.1.1. 
- []
-
-
-Overfull \hbox (8.33327pt too wide) detected at line 22
-\OT1/lmr/m/n/10 1.1.2. 
- []
-
-
-Overfull \hbox (8.33327pt too wide) detected at line 23
-\OT1/lmr/m/n/10 1.1.3. 
- []
-
-
-Overfull \hbox (8.33327pt too wide) detected at line 24
-\OT1/lmr/m/n/10 1.1.4. 
- []
-
 )
-\tf@toc=\write7
-\openout7 = `norm.toc'.
-
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 40.
+ (/usr/share/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 44.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 44.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}]
-Chapter 1.
-[2
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}] [2
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.42     \newpage
-                 {/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}]
-./norm.tex:49: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   !
-l.49     \setlength{\tabcolsep}{30}
-                                   
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 54.
-(/usr/share/texmf-dist/tex/latex/lm/ts1lmr.fd
-File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-./norm.tex:72: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   !
-l.72     \setlength{\tabcolsep}{39}
-                                   
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-./norm.tex:84: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   !
-l.84 \setlength{\tabcolsep}{39}
-                               
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-./norm.tex:99: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   !
-l.99 \setlength{\tabcolsep}{39}
-                               
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-[3
-
-]
-./norm.tex:121: Undefined control sequence.
-l.121 ...ich would cause a violation of the \texit
-                                                  {entity integrity constrai...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./norm.tex:138: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   !
-l.138            \setlength{\tabcolsep}{30}
-                                           
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-./norm.tex:155: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   !
-l.155      \setlength{\tabcolsep}{40}
-                                     
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-[4{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
-LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 187.
- (/usr/share/texmf-dist/tex/latex/lm/ot1lmtt.fd
-File: ot1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [5{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 259.
-Package mdframed Info: Not enough space on this page on input line 266.
- [6{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.enc}]
-Package mdframed Info: Not enough space on this page on input line 266.
-
-./norm.tex:298: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   !
-l.298     \setlength{\tabcolsep}{30}
-                                    
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-[7] [8]
-LaTeX Font Info:    Trying to load font information for OMS+lmr on input line 363.
- (/usr/share/texmf-dist/tex/latex/lm/omslmr.fd
-File: omslmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 363.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 393.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 393.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 393.
-
-./norm.tex:399: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   !
-l.399      \setlength{\tabcolsep}{45}
-                                     
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-[9]
-./norm.tex:427: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   !
-l.427      \setlength{\tabcolsep}{45}
-                                     
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 449.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 449.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 449.
-
-./norm.tex:470: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   !
-l.470     \setlength{\tabcolsep}{30}
-                                    
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-[10]
-./norm.tex:510: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   !
-l.510      \setlength{\tabcolsep}{25}
-                                     
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-./norm.tex:525: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   !
-l.525      \setlength{\tabcolsep}{25}
-                                     
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 537.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 537.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 537.
-
-[11]
-./norm.tex:600: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   !
-l.600          \setlength{\tabcolsep}{20}
-                                         
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-./norm.tex:616: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   !
-l.616          \setlength{\tabcolsep}{20}
-                                         
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-[12] [13]
-Chapter 2.
-[14]
-<./figures/18.png, id=196, 256.96pt x 163.45178pt>
-File: ./figures/18.png Graphic file (type png)
-<use ./figures/18.png>
-Package pdftex.def Info: ./figures/18.png  used on input line 660.
-(pdftex.def)             Requested size: 245.71756pt x 156.30336pt.
- [15
-
-]
-<./figures/21.png, id=202, 473.10083pt x 280.29953pt>
-File: ./figures/21.png Graphic file (type png)
-<use ./figures/21.png>
-Package pdftex.def Info: ./figures/21.png  used on input line 671.
-(pdftex.def)             Requested size: 245.71756pt x 145.58122pt.
- [16 <./figures/18.png>]
-./norm.tex:713: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   !
-l.713      \setlength{\tabcolsep}{20}
-                                     
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-
-./norm.tex:740: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.740 \end{itemize}
-                   
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-./norm.tex:753: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   !
-l.753      \setlength{\tabcolsep}{30}
-                                     
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-[17 <./figures/21.png>]
-./norm.tex:771: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   !
-l.771      \setlength{\tabcolsep}{30}
-                                     
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-./norm.tex:785: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   !
-l.785          \setlength{\tabcolsep}{30}
-                                         
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-<./figures/04.png, id=222, 554.73917pt x 114.14607pt>
-File: ./figures/04.png Graphic file (type png)
-<use ./figures/04.png>
-Package pdftex.def Info: ./figures/04.png  used on input line 800.
-(pdftex.def)             Requested size: 393.1496pt x 80.89796pt.
-./norm.tex:806: Undefined control sequence.
-l.806 ...crimator} with the strong entity's \texit
-                                                  {identifier}. The other at...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./norm.tex:810: Undefined control sequence.
-l.810 The \textit{identifier} portion is a \texit
-                                                 {foreign key} to the \textb...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[18] [19 <./figures/04.png>] (./norm.aux)
+l.130     \bigbreak
+                    \noindent{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}] [3] [4] (./midterm.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 52189 strings out of 476182
- 1202901 string characters out of 5796233
- 1952975 words of memory out of 5000000
- 73206 multiletter control sequences out of 15000+600000
- 619935 words of font info for 77 fonts, out of 8000000 for 9000
+ 51774 strings out of 476182
+ 1194631 string characters out of 5796233
+ 1941975 words of memory out of 5000000
+ 72855 multiletter control sequences out of 15000+600000
+ 599413 words of font info for 70 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 106i,12n,110p,763b,1740s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on norm.pdf (19 pages, 335796 bytes).
+ 106i,11n,110p,766b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
+Output written on midterm.pdf (4 pages, 125036 bytes).
 PDF statistics:
- 403 PDF objects out of 1000 (max. 8388607)
- 315 compressed objects within 4 object streams
- 83 named destinations out of 1000 (max. 500000)
- 408 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 226 PDF objects out of 1000 (max. 8388607)
+ 183 compressed objects within 2 object streams
+ 35 named destinations out of 1000 (max. 500000)
+ 405 words of extra memory for PDF output out of 10000 (max. 10000000)
 
