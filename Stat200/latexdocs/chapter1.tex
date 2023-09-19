@@ -1,0 +1,90 @@
+\documentclass{report}
+
+\input{~/latex/template/preamble.tex}
+\input{~/latex/template/macros.tex}
+
+\title{\Huge{Chapter 1 Example questions}}
+\author{\huge{Matt Warner}}
+\date{\huge{}}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{STAT 200 Lecture Notes}
+\lhead{\leftmark}
+\cfoot{\thepage}
+% \usepackage[default]{sourcecodepro}
+% \usepackage[T1]{fontenc}
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\pgfpagesdeclarelayout{boxed}
+{
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=1,%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {
+    border code=\pgfsetlinewidth{1.5pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.95\pgfphysicalwidth,%
+    resized height=.95\pgfphysicalheight,%
+    center=\pgfpoint{.5\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+}
+
+\pgfpagesuselayout{boxed}
+
+\begin{document}
+  \maketitle
+
+
+
+
+
+ \noindent  
+\begin{large}
+  \textbf{\underline{Example (Exercise 1.6. p. 17)}} 
+  \vspace{3mm}
+
+\noindent Determine whether each of the following is adescriptive statistic problem or an inferential statistic problem.
+\end{large}
+\bigbreak \noindent
+a) This statistical problem is a descriptive statistic, due to the fact that they are only making an observation on the trucks that were conducted in the study.
+\vspace{3mm}
+
+\noindent b) This problem is an inferential obersation due to the fact that they are making an assumption on the total population of owls based on the small sample that was involved in the study.This problem is an inferential obersation due to the fact that they are making an assumption on the total population of owls based on the small sample that was involved in the study.
+\vspace{3mm}
+
+\noindent c) This problem is an inferential obersation due to the fact that they are taking a small sample, and using it to make an estimation on a larger population.
+\vspace{3mm}
+
+\noindent d) This statistic is descriptive based on the fact that they are making a correlation strictly based on the information that was obtained from the sample. 
+
+\bigbreak \noindent \bigbreak \noindent
+\begin{large}
+  \textbf{Chapter 2 - Tables and Graphs for Summarizing Data.} 
+  \bigbreak \noindent
+  \underline{Example (Example 2.3. p.31)}
+   - A researcher obtained the following oberservation. Classify each resulting data set as categorical or numerical. If the data set is numerical, determine wheter it is discrete or continuous.
+  \bigbreak \noindent
+  a) This data set is numerical, its oberserving the amount of books read by middle-school students therefore the data is quantitative and is discrete, becuase the number of books that can be counted in the study in finite.
+  \bigbreak \noindent
+  b) They types of candy received from different houses on Halloween.
+  \vspace{2mm}
+
+
+    \noindent This data set is categorical since it is oberserving types of candy and organizing them into categories. 
+  \bigbreak \noindent
+  c) This data set is numerical since it is measurinig the length of time, which is numerical. Additionally, the data set is continuous
+\bigbreak \noindent
+d) This set of data is numerical becuase it is quantitative. 
+\end{large}
+
+
+
+\end{document}
