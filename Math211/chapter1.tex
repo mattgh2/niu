@@ -1,0 +1,55 @@
+\documentclass{report}
+
+\input{~/latex/template/preamble.tex}
+\input{~/latex/template/macros.tex}
+
+\title{\Huge{Chapter 1 - Differentiation}}
+\author{\huge{Matt Warner}}
+\date{\huge{}}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{}
+\lhead{\leftmark}
+\cfoot{\thepage}
+% \usepackage[default]{sourcecodepro}
+% \usepackage[T1]{fontenc}
+
+
+\pgfpagesdeclarelayout{boxed}
+{
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=1,%
+  }
+  \pgfpageslogicalpageoptions{1}
+  { 
+    border code=\pgfsetlinewidth{1.5pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.95\pgfphysicalwidth,%
+    resized height=.95\pgfphysicalheight,%
+    center=\pgfpoint{.5\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+}
+
+\pgfpagesuselayout{boxed}
+
+\begin{document}
+  \maketitle
+\section*{Limits: A numerical and Graphical Approach}
+\bigbreak \noindent
+\begin{minipage}{0.5\textwidth}
+Consider the pattern formed by the following sequence of numbers	
+$$ 0.9, 0.99, 0.999, 0.9999, \text{ and so on}$$
+\bigbreak \noindent \bigbreak \noindent
+The numbers appear to be getting closer to the number 1, yet never equal 1 exactly. Assuming that the sequence continues in the same manner, we could say that the \textit{limit} of this sequence of numbers is 1. Note that this sequence of numbers approaches 1 ``from the left,'' meaning that all numbers in the sequence are less than the limit, 1. We write $x \rightarrow a $, read ``x approaches a from the left'', to represent a sequence of numbers that approaches $a$ from the left.
+\vspace{2mm}
+
+Thus, the sequence 0.9, 0.99,0.999, and so on, is written $x \rightarrow 1$
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+
+\end{minipage}
+\end{document}

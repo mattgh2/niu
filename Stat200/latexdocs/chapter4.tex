@@ -259,13 +259,16 @@ Roll & 1 & 2 & 3 & 4 & 5 & 6 \\
 \pagebreak
 
 \sol{}
-\begin{figure}
-    \centering
+
+\begin{minipage}{0.45\textwidth}
+  \vspace{3mm}
+
     \incfig[1]{venn}
-    %\caption{venn}
-    %\label{fig:venn}
-\end{figure}
-\bigbreak \noindent
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+	
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
 b)A $P(S \cup m ) = p(S) = P(m) - p(S \cap m) = .70 +.35 -.25 = .80$
 \bigbreak \noindent
 c) $ .20$
@@ -273,6 +276,7 @@ c) $ .20$
 d) $ (S \cap m') = .45$ 
 \bigbreak \noindent
 e) $= P(s \cap m') \cup P(m \cap s') = .45 + 10 = .55$
+\end{minipage}
 \bigbreak \noindent \bigbreak \noindent
 \hrule
 \bigbreak
@@ -283,17 +287,66 @@ $$P(A) = \text{ original or unconditional probability of A happening}$$
 $$ P(A|B) = \text{ Conditional probability of A happening given that B has occurred}$$
 \bigbreak \noindent \bigbreak \noindent
 \ex{}{
-  A class contains
+  A class contains 26 students of which 15 are freshmen, 14 are business majors, and 10 are both freshman and business majors. (Note: Let $F$ = event of picking a freshmen; let B = event of picking a business major)
 }
+\begin{minipage}{0.45\textwidth}
+    \incfig[1]{rrr}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{enumerate}
+  %jump1
+  \item Suppose that a person is picked at random from the class. What is the probability that they are freshman. 
+  \item After learning that a student is a business major, what is the chance that the student is a freshman.
+\end{enumerate}	
+\end{minipage}
+\pagebreak
+\thmcon{
+  \textbf{\underline{Defintion}}
+  \vspace{3mm}
+
+  Provided $P(B) > 0$, the \textbf{Conditional probability} of event A given that event B has occurred is
+  $$ P(A | B) = \frac{P(A \cap B)}{P(B)}$$
+}
+\bigbreak \noindent
+\ex{}{
+  The owner of a food truck notices that 40\% of her customers buy tacos, 25\% buy tacos and a soda, and 20\% buy tacos and a burrito. Suppose a customer is selected at random.
+  \bigbreak \noindent
+  \begin{enumerate}
+    \item A) Given that the customer buys tacos, what is the probability that they buy a soda?
+    \item What is the probability that they buy a burrito given that they buy tacos?
+    \item If the customers buys tacos, what is the probability that they don't buy a soda?
+\end{enumerate}
+}
+\sol
+\bigbreak \noindent
+%jump2
 
 
-\begin{figure}[ht]
-    \centering
-    \incfig[1]{vennn}
-    %\caption{vennn}
-    %\label{fig:vennn}
-\end{figure}
 
 
-
+\ex{}{
+  A large statistic course has 80 students enrolled. Each student is cross-classified according to their gender and their grade level. The results are presented in the table below
+  \bigbreak \noindent
+  \begin{center}
+  \begin{tabular}{|c|c|c|c|c|c|}
+\hline \multirow{4}{*}{$\begin{array}{l}\text { Male } \\
+\text { Female }\end{array}$} & Freshman & Sophomore & Junior & Senior & \\
+\hline & 2 & 10 & 16 & 15 & 43 \\
+\hline & 1 & 8 & 14 & 14 & 37 \\
+\hline & 3 & 18 & 30 & 29 & 80 \\
+\hline
+\end{tabular}
+\end{center}
+}
+\bigbreak \noindent
+Suppose that one student from the course is selected at random. Find the probability of each of the following events.
+%jump3
+\begin{enumerate}
+  \item The student is a male 
+  \item The student is a sophmore
+  \item The student is a female junior
+  \item The student is a female or a junior
+  \item If the student is a male, what is the chance they are a freshman?
+  \item If the student is not a senior, what is the chance they are a female
+\end{enumerate}
 \end{document}
