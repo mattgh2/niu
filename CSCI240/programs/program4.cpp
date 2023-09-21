@@ -24,7 +24,7 @@ int main(){
   double randDoubleNum;
   srand(SEED_VALUE); // sets seed value
  
-  // first loop  
+  // first set (for loop)
   cout << "Set 1 has exactly " << SET_ONE_MAX << " Values";
   for (int i = 0; i < SET_ONE_MAX; i++)
   {
@@ -39,7 +39,7 @@ int main(){
  
   }
 
-  // second loop 
+  // second set (while loop)
   int numOfIterations = rand() % SET_TWO_MAX + 1; // stores number of iterations for the while loop, set to a random number between 1 and 80
   int _count = 0;
 
@@ -56,7 +56,7 @@ int main(){
     _count++;
   }
   
-  //third loop
+  //third set (do-while loop)
   _count = 0;
   numOfIterations = rand() % SET_THREE_MAX + 1;
 
