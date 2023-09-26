@@ -349,4 +349,143 @@ Suppose that one student from the course is selected at random. Find the probabi
   \item If the student is a male, what is the chance they are a freshman?
   \item If the student is not a senior, what is the chance they are a female
 \end{enumerate}
+\bigbreak \noindent \bigbreak \noindent
+\pagebreak
+\section*{4.5 - Independence}
+\thmcon{
+  \textbf{\underline{Defintion}}
+  \vspace{3mm}
+
+  Events in A and B are \textbf{independent} if any only if $P(A|B) = P(A)$. If A and B are not independent, they are said to be \textbf{dependent} events.
+\bigbreak \noindent
+What does this mean? - it means that the probability of event A is the same whether or not event B has occured.
+\bigbreak \noindent
+That is,
+$$P(A) = \text{ Probability of event A \underline{before} we learn about event B occuring}$$
+\bigbreak \noindent
+This is the same as,
+$$P(A | B) = \text{ probability of event A \underline{after} we learn about event B occuring}$$
+\bigbreak \noindent
+This means that the occurrence of event B did not affect the chance of event A, i.e. that they're independent.
+
+}
+\bigbreak \noindent
+\ex{}{
+  Suppose that we roll a balanced or fair die having the probability distribution below. Suppose that we define the events 
+  $$A = \{1,3,5\} \hspace{7mm} B = \{4,5,6\} \hspace{7mm} C = \{3,4,5,6\}$$
+  \begin{center}
+ \bigbreak\noindent \bigbreak \noindent
+\begin{tabular}{r|cccccc} 
+Roll & 1 & 2 & 3 & 4 & 5 & 6 \\
+\hline Probability & $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{6}$
+\end{tabular}
+  \end{center}
+}
+\bigbreak \noindent
+\begin{enumerate}
+  \item Are events A and B independent?
+    \subitem Does $P(A|B) = P(A)$?
+    \subitem We first need to find $P(A)$ That is,
+    $$P(A) = \frac{3}{6} = \frac{1}{2}$$
+    Now we find $P(A|B)$
+    $$P(A|B) = \frac{P(A\cap B)}{P(B)} = \frac{\frac{1}{6}}{\frac{1}{6} + \frac{1}{6}+ \frac{1}{6}} = \frac{1}{3}$$
+    \vspace{3mm}
+
+    Not the same so no, they are not independent
+  \item Are events A and C independent?
+    \subitem We need to see if $P(A|C) = P(A)$
+    $$P(A) = \frac{1}{2}$$
+    $$P(A|C) =  \frac{P(A \cap C)}{P(C)}$$
+    $$ = \frac{\frac{1}{6}+\frac{1}{6}}{\frac{1}{6}+\frac{1}{6}+\frac{1}{6}+\frac{1}{6}} = \frac{1}{2}$$
+    \vspace{2mm}
+
+    They are the same, so yes they are independent.
+\end{enumerate}
+\pagebreak
+\subsection*{Important notes}
+\bigbreak \noindent
+\begin{mdframed}
+ \begin{enumerate}
+   \vspace{5mm}
+
+   \item If events A and B are independent, \textbf{then so are the pairs}
+     $$ \text{(i )} A \text{ and } B'\hspace{10mm} \text{ (ii) } A' \text{ and } B \hspace{10mm} \text{ (iii) } A' \text{ and } B'$$
+     \vspace{1mm}
+
+   \item Instead of \underline{checking} if events are \underline{independent}, we sometimes are told (or can assume) that they are, In this case, to \underline{use the independence} we'll often use the following result
+    \bigbreak \noindent \bigbreak \noindent
+     $$\textbf{Multiplcation Rule for Independent Events}$$
+     $$\text{ if events A and B are independent, then }P(A \cap B) = P(A) \cdot P(B)$$
+     \vspace{3mm}
+
+ \end{enumerate} 
+\end{mdframed}
+\bigbreak \noindent \bigbreak \noindent
+\ex{}{
+  Suppose that events A, B, and C are \textbf{independent} with $P(A) = 0.2, P(B) = 0.4$, and P(C) = 0.7. Find the following probabilites.
+
+}
+\bigbreak \noindent
+(a) $P(A \cap B)$
+\vspace{4mm}
+
+$$ = P(A) \cdot P(B)$$
+$$ = 0.2 \cdot 0.4 = 0.08$$
+\bigbreak \noindent
+(b) $P(B \cap C')$
+\vspace{4mm}
+
+$$P(B') \cdot P(C')$$
+$$0.4 \cdot 0.3 = 0.12$$
+\bigbreak \noindent
+(c) $P(A \cap B' \cap C)$
+\vspace{3mm}
+
+$$P(A) \cdot P(B') \cdot P(C) = 0.2 \cdot 0.6 \cdot 0.7 = 0.084$$
+\bigbreak \bigbreak \noindent
+\ex{}{
+  According to the latest U.S Food and Drug Administration pesticide residue report, 62\% of all domestic vegetables examined by researchers contained pesticide residues. Although most of these residues were compliant with federal standards, many researchers belive that the standards are outdated and too weak. Assume that the report used a representative sample, and suppose that two domestic vegetables are selected at random
+
+}
+\bigbreak \noindent
+\pagebreak
+\begin{enumerate}
+  \item What is the probability that both vegetables contain pesticide residues? 
+    \subitem P(R) = has pesticide residue
+    \subitem $P(R \cap R)$
+    \nt{
+      Picking two things at random essentially means that they are independent of each other
+    }
+  So,
+  $$P(R) \cdot P(R) = .62 \cdot .62 = .3844$$
+  \item What is the probability that both vegetables do not contain pesticide residues?
+    \subitem $P(R' \cap R')$
+    $$ = P(R') \cdot P(R')$$
+    $$ R' = 1 - .62 = .38$$
+    $$ .38 \cdot .38 = .1444$$
+  \item What is the probability that exactly one vegetable contains pesticide residues?
+    \subitem = $P(R' \cap R)$
+    $$ = P(R') \cdot P(R)$$
+    $$ - (1-.62)(.62) = .2356$$
+    $$ .2356 + P(R \cap R') \text{ need to use all variations}$$
+    $$4 .2356 + .62(1-.62) = .2356 + .2356 = .4712$$
+\end{enumerate}
+\pagebreak
+\ex{}{
+  The following describes the proportions of M\&MS in a bowl. Suppose that three M\&Ms are selected independently from one another
+  \bigbreak \noindent
+  \begin{center}
+    \begin{tabular}{r|cccccc} 
+Color & Red & Yellow & Orange & Green & Blue & Brown \\
+\hline Proportion & 0.20 & 0.20 & 0.10 & 0.10 & 0.10 & 0.30
+\end{tabular}
+  \end{center}
+}
+\bigbreak \noindent
+\begin{enumerate}
+  \item What is the probability that all three are brown? 
+  \item What is the probability that none are yellow?
+  \item What is the probability that exactly one is orange?
+  \item What is the probability that at least one is green?
+\end{enumerate}
 \end{document}

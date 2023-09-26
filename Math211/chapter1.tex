@@ -192,7 +192,7 @@ c) Since the left-hand limit and the right-hand limit exist and are both equal t
 }
 \sol
 \bigbreak \noindent
-For this question, note that we cannot directly find the limit by setting $x = 1$, since that would give us a zero in the denominator, which is no good.
+For this question, note that we cannot directly find the limit by setting $x = 1$ (direct substitution), since that would give us a zero in the denominator, which is no good.
 \bigbreak
 \noindent Thus, we use a numerical approach for this question.
 \bigbreak \noindent \bigbreak \noindent
@@ -272,4 +272,68 @@ $$\displaystyle\lim_{x\to 1}H(x) \text{ Does not exist (DNE)}$$
 \bigbreak \noindent \bigbreak \noindent
 \subsection{The wall Method}
 \bigbreak \noindent
+An alternative approach for Example 1.4 is to draw a ``wall'' at x = 1, as shown in blue on the graph to the left below. We then trace the graph from left to right with a pencil until we hit the wall and mark the location with an x, assuming it can be determined. Then we trace the graph from right to left until we hit the wall and mark that location with an x. If the locations are not the same, as shown in the graph on the left, a limit does not exist. Thus, for Example 4,
+$$\displaystyle\lim_{x\to 1}H(x) \text{ does not exist} $$
+\pagebreak
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.6\textwidth]{ /home/mattw/niu/Math211/figures/ksnip_20230921-191506.png }
+\caption*{wall method}
+\end{figure}
+\bigbreak \noindent
+However, for any other value a, $\displaystyle\lim_{x\to a }H(x)$ does exist. For example, as x approaches -3, we see in the graph to the right that the wall method gives -4 whether -3 is approached from the left or from the right. Thus,
+$$\displaystyle\lim_{x\to -3 }H(x) = -4$$
+\bigbreak \noindent
+\ex{}{
+  Consider the piecewise function defined as follows:
+ $$
+G(x)= \begin{cases}5, & \text { for } x=1 \\ x+1, & \text { for } x \neq 1\end{cases}
+$$ 
+\bigbreak \noindent
+Graph the function, and find each of the following:
+\bigbreak \noindent
+$$\text{a) } G(1)\hspace{10mm} \text{b) } \displaystyle\lim_{x\to 1}G(x)$$
+}
+\sol{}
+\bigbreak \noindent
+The graph of G follows.
+\begin{figure}[ht]
+    \centering
+    \incfig[1]{fg}
+    %\caption{fg}
+    %\label{fig:fg}
+\end{figure}
+\bigbreak \noindent
+From the definition of G, we see that
+$$G(1) = 5$$
+\pagebreak
+
+\noindent b) As inputs x approach 1 from the left, outputs $G(x)$ approach 2, so the limit from the left is 2. As inputs x approach 1 from the right, outputs G(x) also approach 2, so the limit from the right is 2. Both limits are the same, so
+$$\displaystyle\lim_{x\to 1}G(x) = 2$$
+\bigbreak \noindent
+\nt{
+  Note that the limit, 2, is not the same as the function value of 1.
+}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.65\textwidth]{ /home/mattw/niu/Math211/figures/IV.png }
+\end{figure}
+\bigbreak \noindent \bigbreak \noindent
+\subsection{Limits Involving Infinity}
+\bigbreak \noindent
+Limits also help us understand the role of infinity with respect to some functions.
+\bigbreak \noindent
+\ex{}{
+  \Let $f(x) = \frac{1}{x-2}$
+  \bigbreak \noindent
+  \begin{enumerate}
+    \item Find $\displaystyle\lim_{x\to 2^-}f(x)$
+    \item Find $\displaystyle\lim_{x\to 2^+}f(x)$
+    \item Does $\displaystyle\lim_{x\to 2}f(x)$ exist? Why or why not?
+  \end{enumerate}
+}
+\sol
+\bigbreak \noindent
+a) \centerline{$}
 \end{document}
+

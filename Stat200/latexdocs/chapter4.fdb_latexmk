@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1695171990 "chapter4.tex" "chapter4.pdf" "chapter4" 1695171992 0
+["pdflatex"] 1695393892 "chapter4.tex" "chapter4.pdf" "chapter4" 1695393894 0
   "/home/mattw/latex/template/macros.tex" 1678847294 3389 93000260d2aea292d29c76d4ace77a29 ""
   "/home/mattw/latex/template/preamble.tex" 1694998459 21645 604297b07927a37379a19d5a1ceb7a0a ""
   "/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1689853683 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
@@ -309,8 +309,8 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1689853683 40684 9b9ec0b4288972636ff6a3b9c4238efc ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1693182717 4609286 2d8299e49804530e6f7abe7bb9d71f41 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1693324786 6969277 cbf78eb30f49e0a8f46ab1cff234c501 ""
-  "chapter4.aux" 1695171991 1257 bb36c7c3076b5afb97ef8d6577f1a10a "pdflatex"
-  "chapter4.tex" 1695171989 12158 96abf8f1a016d3fe6b07ca6f94af52f8 ""
+  "chapter4.aux" 1695393894 1258 830a62916118a85c0893b496a53cc624 "pdflatex"
+  "chapter4.tex" 1695393890 17549 a4a6a1e8b118bbfe4947c740753506a5 ""
   "figures//rrr.pdf" 1695167248 1286 662a7b74bc091d52725c27137558571f ""
   "figures//venn.pdf" 1695047718 1296 8533cfafc3efa63fc37603cd634c71b2 ""
   "figures/rrr.pdf_tex" 1695167248 2980 71f34cd19a9d23705aa78c4b28247a4e ""

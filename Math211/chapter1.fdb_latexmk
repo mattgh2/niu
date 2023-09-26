@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1695338360 "chapter1.tex" "chapter1.pdf" "chapter1" 1695338361 2
+["pdflatex"] 1695396576 "chapter1.tex" "chapter1.pdf" "chapter1" 1695396577 2
   "/home/mattw/latex/template/macros.tex" 1678847294 3389 93000260d2aea292d29c76d4ace77a29 ""
   "/home/mattw/latex/template/preamble.tex" 1694998459 21645 604297b07927a37379a19d5a1ceb7a0a ""
   "/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1689853683 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
@@ -317,14 +317,18 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1689853683 40684 9b9ec0b4288972636ff6a3b9c4238efc ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1693182717 4609286 2d8299e49804530e6f7abe7bb9d71f41 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1693324786 6969277 cbf78eb30f49e0a8f46ab1cff234c501 ""
-  "chapter1.aux" 1695338361 2853 a4eee8db26cafc84bfd9aafa36e16cf6 "pdflatex"
-  "chapter1.tex" 1695338358 10443 cfdb15b45cddc96b65b08e26809eef32 ""
-  "chapter1.toc" 1695338361 381 fc5f2585c6fd63e337cb15e213b2f939 "pdflatex"
+  "chapter1.aux" 1695396577 3389 ef6ef3733ecaf9fa9926ff125ce863b4 "pdflatex"
+  "chapter1.tex" 1695396575 13064 d7c5d6a3eb6bf784a7dc30fb232d95b0 ""
+  "chapter1.toc" 1695396577 474 e0ba74acd54de2eb48256b3f6549ab9a "pdflatex"
+  "figures//fg.pdf" 1695343714 7381 a1ae8ec6d2514fea89ad214e597dcbcb ""
   "figures//figfig.pdf" 1695244019 6840 4925a28247fe5daca0e4f95fe7d2d4f6 ""
   "figures//lim.pdf" 1695336230 5632 45915b5db6f300249ccba828e2d6d962 ""
   "figures//limlim.pdf" 1695337092 6114 41a99756627c015c08d877bb1a93386c ""
+  "figures/IV.png" 1695344058 98296 be0b305441a3f3b8d039251d7407d430 ""
+  "figures/fg.pdf_tex" 1695343714 5695 e90e53cc67093dae87be232e7d0a7fdd ""
   "figures/figfig.pdf_tex" 1695244019 3223 54fa80500a0e2c40f91a0b823a32c9a0 ""
   "figures/ksnip_20230921-181045.png" 1695337853 103972 3736450a3e00e491b181c749811a0fe9 ""
+  "figures/ksnip_20230921-191506.png" 1695341712 133846 e3f3ce9c7de58d0f3dbdc54cf1ecf941 ""
   "figures/lim.pdf_tex" 1695336230 5986 b3018b0c308e94e9043ce3833af66bea ""
   "figures/limlim.pdf_tex" 1695337092 4809 2bd9a5ec63d4e2fb03ed92314d8127b0 ""
   (generated)

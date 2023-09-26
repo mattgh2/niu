@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.8.29)  19 SEP 2023 20:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.8.29)  22 SEP 2023 09:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1407,20 +1407,24 @@ File: ./figures//rrr.pdf Graphic file (type pdf)
 <use ./figures//rrr.pdf, page 1>
 Package pdftex.def Info: ./figures//rrr.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 216.81pt x 180.68282pt.
-) [5] [6 <./figures//venn.pdf> <./figures//rrr.pdf>] [7] (./chapter4.aux) ) 
+) [5] [6 <./figures//venn.pdf> <./figures//rrr.pdf>] [7]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 408.
+ [8] [9] [10] [11] (./chapter4.aux) ) 
 Here is how much of TeX's memory you used:
- 48020 strings out of 476872
- 1114060 string characters out of 5820378
+ 48053 strings out of 476872
+ 1114496 string characters out of 5820378
  1877388 words of memory out of 5000000
- 67486 multiletter control sequences out of 15000+600000
+ 67498 multiletter control sequences out of 15000+600000
  563732 words of font info for 69 fonts, out of 8000000 for 9000
  725 hyphenation exceptions out of 8191
- 94i,18n,99p,767b,1716s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 94i,18n,99p,767b,1849s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy7.pfb>
-Output written on chapter4.pdf (7 pages, 201681 bytes).
+Output written on chapter4.pdf (11 pages, 216522 bytes).
 PDF statistics:
- 224 PDF objects out of 1000 (max. 8388607)
- 162 compressed objects within 2 object streams
- 64 named destinations out of 1000 (max. 500000)
- 187 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 266 PDF objects out of 1000 (max. 8388607)
+ 198 compressed objects within 2 object streams
+ 85 named destinations out of 1000 (max. 500000)
+ 199 words of extra memory for PDF output out of 10000 (max. 10000000)
 
