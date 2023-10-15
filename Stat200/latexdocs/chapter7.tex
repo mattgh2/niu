@@ -1,0 +1,66 @@
+\documentclass{report}
+
+\input{~/latex/template/preamble.tex}
+\input{~/latex/template/macros.tex}
+
+\title{\Huge{Chapter 7 Notes}}
+\author{\huge{Matt Warner}}
+\date{\huge{}}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{}
+\lhead{\leftmark}
+\cfoot{\thepage}
+% \usepackage[default]{sourcecodepro}
+% \usepackage[T1]{fontenc}
+
+
+\pgfpagesdeclarelayout{boxed}
+{
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=1,%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {
+    border code=\pgfsetlinewidth{1.5pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.95\pgfphysicalwidth,%
+    resized height=.95\pgfphysicalheight,%
+    center=\pgfpoint{.5\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+}
+
+\pgfpagesuselayout{boxed}
+
+\begin{document}
+  \maketitle
+
+\ex{}{
+  In each of the following statements, indentify the underlined numbeer as the value of the population parameter or a sample statistic. \bigbreak \nonindent
+  a) IN a recent survey of young adults, 66\% of millennials said they ``always belived the world is round''
+  \bigbreak \noindent
+  66\% is a statistic, a survey is a sample. 
+  \bigbreak \noindent
+  b) A spokeperson for Google reported that the proportions of all people working for the company who were woman is 0.31
+  \bigbreak
+  Parameter - p = \% of population
+  \bigbreak \noindent 
+  c) The U.S. Dep 
+  \bigbreak
+  This is a summary of all bridges in the U.S, this is a parameter. $\mu$ = mean of population
+  \bigbreak
+  d) The manager of a large hotel
+  \bigbreak
+  statistic - $\bar{x} $= mean of sample
+  \bigbreak 
+  e)
+  \bigbreak
+  statistic - $\hat{p}$ = \% of sample 
+}
+
+
+\end{document}
