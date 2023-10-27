@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="3in"
+   height="2.5in"
+   viewBox="0 0 76.2 63.499998"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   sodipodi:docname="self.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs2">
+    <marker
+       style="overflow:visible"
+       id="marker3"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path3" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="ConcaveTriangle"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path7" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="3.9774956"
+     inkscape:cx="96.543162"
+     inkscape:cy="126.46149"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     showborder="true"
+     width="200mm"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:window-width="946"
+     inkscape:window-height="1039"
+     inkscape:window-x="8"
+     inkscape:window-y="29"
+     inkscape:window-maximized="1"
+     inkscape:showpageshadow="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid815"
+       units="mm"
+       spacingx="10"
+       spacingy="10"
+       empspacing="4"
+       dotted="false"
+       originx="0"
+       originy="0"
+       visible="false" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-177)">
+    <path
+       style="fill:#000000;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.127;stroke-miterlimit:4.1;stroke-dasharray:none;paint-order:stroke fill markers;marker-end:url(#ConcaveTriangle);marker-start:url(#marker3)"
+       d="m 15.934704,184.72505 v 40.21623 h 39.626041"
+       id="path2" />
+    <ellipse
+       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0613101;stroke-miterlimit:4.1;stroke-dasharray:none;paint-order:stroke fill markers"
+       id="path4"
+       cx="15.934704"
+       cy="215.13222"
+       rx="0.39876238"
+       ry="0.3929441" />
+    <ellipse
+       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.0613101;stroke-miterlimit:4.1;stroke-dasharray:none;paint-order:stroke fill markers"
+       id="path4-3"
+       cx="53.542088"
+       cy="199.33994"
+       rx="0.39876238"
+       ry="0.3929441" />
+    <path
+       style="fill:#000000;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.127;stroke-miterlimit:4.1;stroke-dasharray:none;paint-order:stroke fill markers;marker-start:"
+       d="m 16.333466,215.13222 c 4.13939,0 9.006612,-1.31998 13.832981,-3.19544 11.839863,-4.6008 23.433879,-12.54446 23.433879,-12.54446"
+       id="path5"
+       sodipodi:nodetypes="csc" />
+    <text
+       style="font-size:2.64583px;font-family:monospace;-inkscape-font-specification:'monospace, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"
+       id="text1"
+       y="184.8519"
+       x="10.457069"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         x="10.457069"
+         y="184.8519"
+         style="stroke-width:0.264583">$P$</tspan></text>
+    <text
+       style="font-size:2.64583px;font-family:monospace;-inkscape-font-specification:'monospace, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"
+       id="text1-6"
+       y="225.84546"
+       x="57.219135"><tspan
+         sodipodi:role="line"
+         id="tspan1-7"
+         x="57.219135"
+         y="225.84546"
+         style="stroke-width:0.264583">$t$</tspan></text>
+    <text
+       style="font-size:2.64583px;font-family:monospace;-inkscape-font-specification:'monospace, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"
+       id="text1-5"
+       y="228.05472"
+       x="30.10383"><tspan
+         sodipodi:role="line"
+         id="tspan1-3"
+         x="30.10383"
+         y="228.05472"
+         style="stroke-width:0.264583">\tiny{$10$}</tspan></text>
+    <text
+       style="font-size:2.64583px;font-family:monospace;-inkscape-font-specification:'monospace, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"
+       id="text1-56"
+       y="228.05472"
+       x="47.63723"><tspan
+         sodipodi:role="line"
+         id="tspan1-2"
+         x="47.63723"
+         y="228.05472"
+         style="stroke-width:0.264583">\tiny{$20$}</tspan></text>
+    <text
+       style="font-size:2.64583px;font-family:monospace;-inkscape-font-specification:'monospace, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"
+       id="text1-9"
+       y="194.17654"
+       x="45.200069"><tspan
+         sodipodi:role="line"
+         id="tspan1-1"
+         x="45.200069"
+         y="194.17654"
+         style="stroke-width:0.264583">\tiny{future value}</tspan></text>
+    <path
+       style="fill:#000000;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.0925144;stroke-miterlimit:4.1;stroke-dasharray:none;paint-order:stroke fill markers"
+       d="M 51.793211,197.73506 49.513054,195.522"
+       id="path6" />
+    <text
+       style="font-size:2.64583px;font-family:monospace;-inkscape-font-specification:'monospace, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"
+       id="text1-2"
+       y="199.60234"
+       x="54.986153"><tspan
+         sodipodi:role="line"
+         id="tspan1-70"
+         x="54.986153"
+         y="199.60234"
+         style="stroke-width:0.264583">\tiny{$10,000$}</tspan></text>
+    <text
+       style="font-size:2.64583px;font-family:monospace;-inkscape-font-specification:'monospace, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"
+       id="text1-0"
+       y="210.92102"
+       x="-0.36323333"><tspan
+         sodipodi:role="line"
+         id="tspan1-62"
+         x="-0.36323333"
+         y="210.92102"
+         style="stroke-width:0.264583">\tiny{Present value}</tspan></text>
+    <text
+       style="font-size:2.64583px;font-family:monospace;-inkscape-font-specification:'monospace, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"
+       id="text1-61"
+       y="215.88368"
+       x="5.6429863"><tspan
+         sodipodi:role="line"
+         id="tspan1-8"
+         x="5.6429863"
+         y="215.88368"
+         style="stroke-width:0.264583">\tiny{$\$4493.29$}</tspan></text>
+    <path
+       style="fill:#000000;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.127;stroke-miterlimit:4.1;stroke-dasharray:none;paint-order:stroke fill markers"
+       d="M 14.004511,213.81722 11.099582,212.6386"
+       id="path8" />
+    <text
+       style="font-size:2.64583px;font-family:monospace;-inkscape-font-specification:'monospace, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"
+       id="text1-7"
+       y="228.05472"
+       x="15.056794"><tspan
+         sodipodi:role="line"
+         id="tspan1-9"
+         x="15.056794"
+         y="228.05472"
+         style="stroke-width:0.264583">\tiny{$0$}</tspan></text>
+  </g>
+</svg>
