@@ -3,7 +3,7 @@
 \input{~/latex/template/preamble.tex}
 \input{~/latex/template/macros.tex}
 
-\title{\Huge{chapter 8}}
+\title{\Huge{Chapter 8}}
 \author{\huge{Matt Warner}}
 \date{\huge{}}
 \pagestyle{fancy}
@@ -180,7 +180,7 @@ In the previous example
       \item bound for the margin of error (B)
     \end{itemize}
   \item we ask: What size sample is needed?
-    $$ n = \left(\dfrac{\sigma \cdot Z_{\frac{a}{z}}}{B}\right)^Z$$
+    $$ n = \left(\dfrac{\sigma \cdot Z_{\frac{a}{2}}}{B}\right)^2$$
 \end{itemize}
 \nt{
   \textbf{ALways} round $n$ up to a whole number
@@ -245,9 +245,9 @@ $$ 980.2 \pm 18.5$$
 \textit{\textbf{We are 95\% confident that $\mu$ is between 961.7, and 998.7}}
 \bigbreak \noindent
 \q
-The earth is structured...
+The earth is structured in layers: crust, mantle, and core. A recent study was conducted to estimate the mean depth of the upper mantle in a specific farming region of California. Twenty-six sample sites were selected at random, and the depth of the upper mantle was measured using changes in seismic velocity and density. The sample data resulted in a mean of \textbf{127.5 km} and a standard deviation of \textbf{21.3 km}. Suppose the depth of the upper mantle is normally distributed. Find a \textbf{90\%} confidence interval for the true mean depth of the upper mantle in this farming region.
 \bigbreak \noindent
-\textit{\textbf{using,}}
+\textit{\textbf{Using,}}
 
 $$  \overline{x} \pm \left(T \frac{s}{\sqrt{n}}\right)$$
 
@@ -260,5 +260,188 @@ $$  127.5 \pm \left(1.7081 \frac{21.3}{\sqrt{26}}\right)$$
 $$ 127.5 \pm{1.7081}$$
 \bigbreak  \noindent
 \textit{\textbf{We are 90\% confident that $\mu$ is between 120.4, and 134.6}}
+\bigbreak \noindent
+\hrule
+\bigbreak \noindent
+\begin{flushright}
+  \textbf{\large{Section - 8.4}}
+\end{flushright}
+\vspace{-5mm}\subsection*{A large-Sample Confidence Interval for a Population Proportion}
+\bigbreak \noindent
+\begin{large}
+\large{Previously}
+\end{large}
+\begin{itemize}[label=$\circ$]
+  \item Measurements or data values were \textbf{quantitative}
+  \item Population parameter was $\mu$ = population mean
+\end{itemize}
+\bigbreak \noindent
+\begin{large}
+ Now 
+\end{large}
+\begin{itemize}[label=$\circ$]
+  \item Measurements or data values will be \textbf{qualitative} 
+    \begin{itemize}[label=$\bullet$]
+      \item Status of each child's vision (impaired, not)
+      \item Quality of each manufactured part (defective, not)
+      \item Voting preference (for, against)
+    \end{itemize}
+  \item Population parameter
+    \begin{center}
+      \hspace{-15mm}$p$ = proportion of individuals in the \textbf{population} with a specified characteristic 
+    \end{center}
+  \item Sample statistic
+    \begin{center}
+      \hspace{-20mm}$\hat{p}$ = proportion of individuals in the \textbf{sample} with the specified characteristic
+    \end{center}
+\end{itemize}
+\bigbreak \noindent
+\subsection*{Confidence interval to estimate a population proportion $p$}
+\begin{itemize}
+  \item Provided 
+    \begin{itemize}
+      \item $n$ is large enough that both $n\hat{p} \geq 5$ and $n(1-\hat{p}) \geq 5$ are true
+        \vspace{1mm}
 
+        (Comparing each against the values 10 or 15 are common alternatives conditions)
+    \end{itemize}
+  \item A $100(1-a)\%$ confidence interval to estimate $p$ is
+    $$ \hat{p} \pm \left(Z_{\frac{a}{z}} \cdot \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}\right)$$
+  \item $\pm{Z_{\frac{a}{2}}}$ = critical values from a standard normal distribution that captures the middle $100(1-a)$\%
+  \item Simplified form
+    \begin{itemize}
+      \item estimate $\pm$ margin of error
+      \item margin of error = (critical value $\cdot$ standard error of $\hat{p}$)
+    \end{itemize}
+\end{itemize}
+
+\pagebreak
+\noindent \q 
+A random sample of 1012 American adults was selected and 385 said that they believe in ghosts. Calculate a 95\% confidence interval to estimate $p$, the true percent of all American adults who feel similarly.
+\bigbreak \noindent
+\textit{\textbf{We have,}}
+
+$$ n = 1012$$
+
+$$ \hat{p} = \dfrac{385}{1012} = .38$$
+\textit{\textbf{Our z-score for a 95\% confidence interval is}}
+$$ Z = 1.96$$
+\textit{\textbf{So, using the formula}}
+$$ \hat{p} \pm \left(Z_{\frac{a}{z}} \cdot \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}\right)$$
+\textit{\textbf{We have}}
+
+$$ .38\pm \left(1.96 \cdot \sqrt{\frac{.38(1-.38)}{1012}}\right)$$
+
+$$ = .38\pm .02991$$
+
+$$ = (0.35,0.41)$$
+\bigbreak \noindent
+\hrule
+\bigbreak \noindent
+\subsection*{Sample size calculation}
+$\bullet$ Before the sample is picked we specify the desired
+\bigbreak 
+$\circ$ confidence level
+\vspace{1mm}
+
+$\circ$ {bound for the margin of error (B)}
+\bigbreak \noindent
+$\bullet$ we ask: What size sample is needed?
+$$ n = \hat{p}(1-\hat{p}) \left(\frac{Z_{\frac{a}{2}}}{B}\right)^2$$
+\bigbreak\noindent
+$\bullet$ Problem
+\vspace{1mm}
+
+$\circ$ We need $\hat{p}$ to get $n$
+\vspace{1mm}
+
+$\circ$ We will not have $\hat{p}$ before picking our sample
+\bigbreak \noindent
+\nt{
+  Always round $n$ up to a whole number
+}
+\q
+A candidate wants to estimate his popularity. He wants to be 90\% confident that the sample estimate $\hat{p}$ is within $\pm{3\%}$ of the true $\hat{p}$ favoring him. What size sample is needed is
+\bigbreak \noindent
+\textbf{a)} last month's poll estimated $p$ to be 60\%?
+\bigbreak \noindent
+\textit{\textbf{We have}}
+$$ \hat{p} = .60$$
+$$ B = .03$$
+$$ Z = 1.6449$$
+\textit{\textbf{So, using the formula}}
+$$ n = \hat{p}(1-\hat{p}) \left(\frac{Z_{\frac{a}{2}}}{B}\right)^2$$
+\textit{\textbf{We have,}}
+$$ .60(.40) \left(\frac{1.6449}{.03}\right)^2$$
+
+$$ = 721.518$$
+\bigbreak \noindent
+\textbf{b)} No prior information about $p$ is available?
+\bigbreak \noindent
+\textbf{Same method as above but use 0.50 for $\hat{p}$}
+
+\pagebreak
+\section*{Partial Review of Chapter 8}
+\subsection*{Parameter}
+\begin{itemize}
+    \item Number or value that summarizes some aspect of an entire population.
+    \item Examples:
+    \begin{itemize}
+        \item $\mu = $ mean of an entire population (Quantitative data).
+        \item $\sigma = $ standard deviation of an entire population (Quantitative data).
+        \item $p = $ \% of an entire population that has some specified trait (Qualitative data).
+    \end{itemize}
+\end{itemize}
+
+\subsection*{Statistic}
+\begin{itemize}
+    \item Number calculated from the data in a random sample.
+    \item Sample statistics are often used to estimate population parameters.
+    \item Examples:
+    \begin{itemize}
+        \item $\bar{x} = $ mean of a sample (Quantitative data).
+        \item $s = $ standard deviation of a sample (a.k.a. sample std. dev.) (Quantitative data).
+        \item $\hat{p} = $ \% of a sample that has some specified trait (Qualitative data).
+    \end{itemize}
+\end{itemize}
+
+\subsection*{Confidence Intervals (for estimating the unknown value of a parameter)}
+\subsubsection*{To estimate $\mu$}
+\begin{itemize}
+    \item Z-interval
+    \begin{itemize}
+        \item Underlying population has a normal distribution .. or.. $n \geq 30$.
+        \item $\sigma = $ population standard deviation has a known value.
+        \item $\bar{x} \pm \left(Z_{\alpha/2} \cdot \frac{\sigma}{\sqrt{n}}\right)$.
+    \end{itemize}
+    \item t-interval
+    \begin{itemize}
+        \item Underlying population has a normal distribution.
+        \item $\sigma = $ population standard deviation has an unknown value.
+        \item $s = $ sample standard deviation has a known value.
+        \item $\bar{x} \pm \left(t_{\alpha/2, df} \cdot \frac{s}{\sqrt{n}}\right)$, where $df = n - 1$.
+    \end{itemize}
+\end{itemize}
+
+\subsubsection*{To estimate $p$}
+\begin{itemize}
+    \item Z-interval
+    \begin{itemize}
+        \item $n$ is large enough that both $n\hat{p} \geq 5$ and $n(1 - \hat{p}) \geq 5$ are true. (Comparing each against the values 10 or 15 are common alternative conditions)
+        \item $\hat{p} \pm \left(Z_{\alpha/2} \cdot \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}\right)$.
+    \end{itemize}
+\end{itemize}
+
+\subsection*{Critical Values}
+\begin{itemize}
+    \item Confidence intervals are "two-sided."
+    \item For a confidence level of $C\%$, go to the table and look for $\left(\frac{100 - C}{2}\right)\%$.
+    \item Examples:
+    \begin{itemize}
+        \item 90\% $\rightarrow$ look up 0.05.
+        \item 95\% $\rightarrow$ look up 0.025.
+        \item 99\% $\rightarrow$ look up 0.005.
+    \end{itemize}
+\end{itemize}
 \end{document}
+

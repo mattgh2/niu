@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.8.29)  31 OCT 2023 18:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.8.29)  7 NOV 2023 16:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1240,30 +1240,30 @@ Package: titletoc 2021/07/05 v2.14 TOC entries
 \c@question=\count485
 ) (/home/mattw/latex/template/macros.tex)
 \pgfpages@box@1=\box154
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 37.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 38.
  (/usr/share/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (./chapter3.aux)
 \openout1 = `chapter3.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1318,7 +1318,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring OFF on input line 37.
+Package hyperref Info: Link coloring OFF on input line 38.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: longtable package is loaded.
@@ -1343,66 +1343,146 @@ Package: inputenc 2021/02/14 v1.3d Input encoding file
 \inpenc@prehook=\toks59
 \inpenc@posthook=\toks60
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 39.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 40.
  (/usr/share/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 39.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 40.
  (/usr/share/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 39.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 40.
  (/usr/share/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <16> on input line 39.
+(Font)              <16> on input line 40.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 39.
+(Font)              <10> on input line 40.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 39.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 39.
+(Font)              <12> on input line 40.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 40.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 39.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 40.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 45.
+(Font)              <7> on input line 46.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 45.
+(Font)              <5> on input line 46.
 </home/mattw/niu/Math211/latexdocs/figures/paste.png, id=43, 399.74344pt x 186.6975pt>
 File: /home/mattw/niu/Math211/latexdocs/figures/paste.png Graphic file (type png)
 <use /home/mattw/niu/Math211/latexdocs/figures/paste.png>
-Package pdftex.def Info: /home/mattw/niu/Math211/latexdocs/figures/paste.png  used on input line 50.
+Package pdftex.def Info: /home/mattw/niu/Math211/latexdocs/figures/paste.png  used on input line 51.
 (pdftex.def)             Requested size: 319.42982pt x 149.19582pt.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 55.
- [1
+(mdframed)              on input line 56.
+</home/mattw/niu/Math211/latexdocs/figures/second.png, id=45, 299.61937pt x 130.23656pt>
+File: /home/mattw/niu/Math211/latexdocs/figures/second.png Graphic file (type png)
+<use /home/mattw/niu/Math211/latexdocs/figures/second.png>
+Package pdftex.def Info: /home/mattw/niu/Math211/latexdocs/figures/second.png  used on input line 69.
+(pdftex.def)             Requested size: 319.42982pt x 138.8589pt.
+LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 81.
+ (/usr/share/texmf-dist/tex/latex/lm/ot1lmss.fd
+File: ot1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}] [2
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}] (./figures/trialsiz.pdf_tex
+<./figures//trialsiz.pdf, id=52, page=1, 216.81pt x 180.675pt>
+File: ./figures//trialsiz.pdf Graphic file (type pdf)
+<use ./figures//trialsiz.pdf, page 1>
+Package pdftex.def Info: ./figures//trialsiz.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 216.81pt x 180.68282pt.
+<./figures//trialsiz.pdf, id=53, page=2, 216.81pt x 180.675pt>
+File: ./figures//trialsiz.pdf Graphic file (type pdf)
+<use ./figures//trialsiz.pdf, page 2>
+Package pdftex.def Info: ./figures//trialsiz.pdf , page2 used on input line 67.
+(pdftex.def)             Requested size: 216.81pt x 180.68282pt.
+<./figures//trialsiz.pdf, id=54, page=3, 216.81pt x 180.675pt>
+File: ./figures//trialsiz.pdf Graphic file (type pdf)
+<use ./figures//trialsiz.pdf, page 3>
+Package pdftex.def Info: ./figures//trialsiz.pdf , page3 used on input line 69.
+(pdftex.def)             Requested size: 216.81pt x 180.68282pt.
+<./figures//trialsiz.pdf, id=55, page=4, 216.81pt x 180.675pt>
+File: ./figures//trialsiz.pdf Graphic file (type pdf)
+<use ./figures//trialsiz.pdf, page 4>
+Package pdftex.def Info: ./figures//trialsiz.pdf , page4 used on input line 71.
+(pdftex.def)             Requested size: 216.81pt x 180.68282pt.
+)
+</home/mattw/niu/Math211/latexdocs/figures/critical.png, id=56, 271.76532pt x 167.12437pt>
+File: /home/mattw/niu/Math211/latexdocs/figures/critical.png Graphic file (type png)
+<use /home/mattw/niu/Math211/latexdocs/figures/critical.png>
+Package pdftex.def Info: /home/mattw/niu/Math211/latexdocs/figures/critical.png  used on input line 98.
+(pdftex.def)             Requested size: 245.71756pt x 151.1118pt.
+ [2
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.64 \end{document}
-                   {/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc} </home/mattw/niu/Math211/latexdocs/figures/paste.png>] (./chapter3.aux) ) 
+l.107 \begin
+            {mdframed}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc} </home/mattw/niu/Math211/latexdocs/figures/paste.png> </home/mattw/niu/Math211/latexdocs/figures/second.png>]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 108.
+Package mdframed Info: Not enough space on this page on input line 113.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 116.
+ (/usr/share/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+</home/mattw/niu/Math211/latexdocs/figures/peaks.png, id=75, 316.18124pt x 161.85469pt>
+File: /home/mattw/niu/Math211/latexdocs/figures/peaks.png Graphic file (type png)
+<use /home/mattw/niu/Math211/latexdocs/figures/peaks.png>
+Package pdftex.def Info: /home/mattw/niu/Math211/latexdocs/figures/peaks.png  used on input line 130.
+(pdftex.def)             Requested size: 245.71756pt x 125.78677pt.
+ [3 <./figures//trialsiz.pdf> <./figures//trialsiz.pdf> <./figures//trialsiz.pdf> <./figures//trialsiz.pdf> </home/mattw/niu/Math211/latexdocs/figures/critical.png>]
+</home/mattw/niu/Math211/latexdocs/figures/test.png, id=100, 302.63063pt x 161.10187pt>
+File: /home/mattw/niu/Math211/latexdocs/figures/test.png Graphic file (type png)
+<use /home/mattw/niu/Math211/latexdocs/figures/test.png>
+Package pdftex.def Info: /home/mattw/niu/Math211/latexdocs/figures/test.png  used on input line 182.
+(pdftex.def)             Requested size: 285.03326pt x 151.73567pt.
+ [4{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc} </home/mattw/niu/Math211/latexdocs/figures/peaks.png>]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 187.
+Package mdframed Info: Not enough space on this page on input line 193.
+</home/mattw/niu/Math211/latexdocs/figures/table.png, id=109, 420.82219pt x 368.1253pt>
+File: /home/mattw/niu/Math211/latexdocs/figures/table.png Graphic file (type png)
+<use /home/mattw/niu/Math211/latexdocs/figures/table.png>
+Package pdftex.def Info: /home/mattw/niu/Math211/latexdocs/figures/table.png  used on input line 197.
+(pdftex.def)             Requested size: 442.28862pt x 386.9081pt.
+ [5 </home/mattw/niu/Math211/latexdocs/figures/test.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 239--241
+
+ []
+
+[6 </home/mattw/niu/Math211/latexdocs/figures/table.png>] [7] [8]
+./chapter3.tex:351: Undefined control sequence.
+l.351 \bigreak
+               \noindent
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[9{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}] [10] (./chapter3.aux) ) 
 Here is how much of TeX's memory you used:
- 47651 strings out of 476872
- 1106973 string characters out of 5820378
- 1858388 words of memory out of 5000000
- 67194 multiletter control sequences out of 15000+600000
- 553266 words of font info for 65 fonts, out of 8000000 for 9000
+ 48573 strings out of 476872
+ 1131406 string characters out of 5820378
+ 1883388 words of memory out of 5000000
+ 68060 multiletter control sequences out of 15000+600000
+ 564790 words of font info for 69 fonts, out of 8000000 for 9000
  725 hyphenation exceptions out of 8191
- 94i,11n,99p,767b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr17.pfb>
-Output written on chapter3.pdf (2 pages, 176685 bytes).
+ 94i,17n,99p,767b,2306s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy7.pfb>
+Output written on chapter3.pdf (10 pages, 546451 bytes).
 PDF statistics:
- 88 PDF objects out of 1000 (max. 8388607)
- 47 compressed objects within 1 object stream
- 5 named destinations out of 1000 (max. 500000)
- 162 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 240 PDF objects out of 1000 (max. 8388607)
+ 149 compressed objects within 2 object streams
+ 37 named destinations out of 1000 (max. 500000)
+ 243 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -186,7 +186,7 @@ $$ a^{y} = x$$
 We now introduce the logarithm, base e, called the \textbf{natural logarithm} and denoted $\mathbf{\ln}$
 \bigbreak \noindent
 \subsection*{Definition}
-For any positive number x, the \textbf{natural logaritm} or \textbf{logarithm, base e,} of x, is given by
+For any positive number x, the \textbf{natural logaritm} or \textbf{logarithm, base e,} of x, is given b
 
 $$ \ln x = \log_{e}x$$
 The equation $ y=\ln x$ is equivalent to 
@@ -279,7 +279,7 @@ $$y = f(x) = \ln{x}$$
 One is to graph the equivalent equation 
 $$x = e^y$$ 
 by selecting values for y and calculating the corresponding values of $e^y$. We then plot points, remembering that x is still the first coordinate.
-\bigbreak \noindent
+\bigbreak noindent
 \begin{minipage}{0.5\textwidth}
     \incfig[1]{workdammit}
 \end{minipage}
@@ -669,7 +669,7 @@ $$ f(x) = 2e^{3x}$$
 Differentiating, we get
 $$ f'(x) = 2e^{3x} \cdot 3$$
 $$ = f(x) \cdot 3$$
-\bigbreka \noindent
+\bigbreak \noindent
 Graphically, this says that the derivative, or slope of the tangent line, is 3 times the function value.
 \bigbreak \noindent
 Functions of the form 
@@ -1075,7 +1075,7 @@ $$ a = 58$$
 
 $$120 = 58e^{-k(4.3)} + 72$$
 $$48 = 58e^{-k(4.3)}$$
-$$ \dfrac{48}{58} = e^{-k(4.3)}$
+$$ \dfrac{48}{58} = e^{-k(4.3)}$$
 \textit{\textbf{Take the natural log of both sides}}
 $$ \ln{\dfrac{48}{58}}  = -4.3k$$
 $$ k \approx 0.044$$
@@ -1094,6 +1094,165 @@ $$ \dfrac{\ln{\dfrac{33}{58}}}{-0.044} = t$$
 $$ t \approx 12.8$$
 \bigbreak \noindent
 So, to reach a temperature of 105, the coffee should cool for about 13 min.
+\bigbreak \noindent
+\hrule
+\section*{Section 2.6 - The Derivatives of $a^x$ and $\log_ax$ }
+\bigbreak \noindent
+\subsection*{Using Bases Other than 10 or e}
+\begin{mdframed}
+In many applications involving exponential growth or decay, bases other than 10 or $e$ can be used.
+\bigbreak \noindent
+For example, in situations where a doubling time or tripling time is known, an exponential function in base 2 or base 3 can be used.
+\bigbreak \noindent
+Suppose a sample of bacteria in a petri dish doubles in population every 7 hr. That means that in 7 hr an initial population of $P_0$ grows to $2P_0$, and in 14 hr the original population, $P_0$, has  quadrupled and is now $4P_0$, or $2^2 \cdot P_0$. At 21 hr the population after 14 hr has doubled, meaning that the population is now $8P_0$, or $2^3\cdot P_0$. Generalizing, if a population or quantity doubles in T units of time, then after $t$ units of time, the original population has doubled $\dfrac{t}{T}$ times. Using an exponential function with base 2 to model this growth, the population, P(t), after $t$ hours is given by
+$$ P(t) = P_0 \cdot 2^{kt}, \ \ \ \ \text{where} \ \ \ k = \dfrac{1}{T}$$
+\end{mdframed}
+This suggests the following
+\subsection*{Base-n Exponential Growth}
+If a quantity increases $n$-fold over a fixed period of time $T$, then the quantity $P(t)$ at time $t$ is given by
+$$ P(t) = P_0 \cdot {n}^{\frac{t}{T}}$$
+Here, increasing a quantity ``2-fold'' is the same as doubling the quantity, increasing a quantity ``3-fold'' is the same as tripling the quantity.
+\nt{
+  Base-$n$ exponential growth can be expressed in an equivalent form in base $e$, where
+  $$ n = e^{\ln{n}}$$
+  Both forms have their advantages, as the following two examples illustrate.
+}
+\q
+The number of user accounts for a new photo-sharing app doubles every 3 months. Assume that there were 1000 user accounts when the app became available to the general public (t = 0)
+\bigbreak \noindent
+\textbf{Problem 1.} Find an exponential function with base 2 that gives the number P(t) of user accounts after t months
+\bigbreak \noindent
+\textit{\textbf{We have}}
 
+$$ P(t) = 1000 \cdot 2^{\frac{t}{3}}$$
+\textit{\textbf{We can write this in terms of base e by using}}
 
+$$ n = e^{\ln{n}}$$
+\textit{\textbf{So, we get}}
+
+$$ 1000(e^{\ln{2}})^{\frac{t}{3}}$$
+$$ 1000(e^{0.69315})^{\frac{t}{3}}$$
+$$ 1000e^{0.23105t}$$
+\bigbreak \noindent
+\textbf{Problem 3.} What is the number of user accounts after 12 months? Which form of the exponential function is easier to use to find this information?
+\bigbreak \noindent
+\textit{\textbf{That is}}
+$$ P(12) = 1000 \cdot 2^{\frac {13}{3}} = 1000 \cdot 2^4 = 16,000$$
+\textit{\textbf{Using base e}}
+$$ P(12) = 1000e^{0.23105(12)} = 16,000.2 \approx 16,000$$
+The exponential function with base 2 is easier to use, since in 12 months the number of user accounts has doubled 4 times. In this case, a calculator is not necessary to calculate
+$$ 1000 \cdot 2 \cdot 2 \cdot 2 \cdot 2 = 16,000$$
+\q
+Irma invested \$15,000 in a high-yield hedge fund, and after 14 yr, her original investment has tripled. Find exponential functions using base 3 and base $e$ that give the value $A$ of her account after $t$ years. What is the yearly percentage growth rate of her fund? Which exponential function is easier to use to find this information?
+\bigbreak \noindent
+\textit{\textbf{Using base 3 (n = 3) and tripling time T = 14, we have}}
+$$ A(t) = 15,000\cdot 3^{t/14}$$
+\textit{\textbf{In base e, this is equivalent to }}
+$$ A(t) = 15000(e^{\ln{3}})^{t/14}$$
+$$ = 15000(e^{1.0986})^{t/14}$$
+$$ = 15000e^{0.0785t}$$
+Irma's hedge fund has a yearly percentage growth rate of 7.85\%. Using the function with base $e$, we can read this value directly from the exponent
+
+\pagebreak
+\subsection*{The Derivative of $a^x$}
+To find the derivative of $a^x$, for $a > 0$, $a \neq 1$, we first express $a^x$ as a power of $e$, using the property
+
+$$ a = e^{\ln{a}}$$
+Thus,
+
+$$ a^x = e^{\ln{a^x}}$$
+Now, we differentiate both sides:
+$$ \frac{d}{dx}a^x = \frac{d}{dx}e^{\ln{a^x}}$$
+
+$$ = \frac{d}{dx}e^{\ln{a^x}}$$
+$$ = e^{(\ln{a})x} \cdot \ln a$$
+$$ = a^x \cdot \ln a$$
+Thus we have the following theorem.
+\thm{}{
+  $$ \frac{d}{dx}a^x = (\ln a)a^x$$
+}
+\noindent As a special case, note that
+
+$$ \frac{d}{dx}e^x = e^x \cdot \ln{e} = e^x \cdot 1 = e^x$$
+We see that finding derivatives is simpler when using base $e$, since $\ln{e} = 1$
+\bigbreak \noindent
+\q
+Find the derivative of the following functions
+\begin{enumerate}
+  \item $y = 2^x$ 
+  \item $y = (1.4)^x$
+  \item $f(x) = 3^{2x+1}$
+\end{enumerate}
+\bigbreak \noindent \bigbreak \noindent
+\textbf{Problem 1.}
+
+$$ \frac{d}{dx}2^x = (\ln{2})2^x$$
+\bigbreak \noindent
+\textbf{Problem 2.}
+
+$$ \frac{d}{dx}(1.4)^x = (\ln{1.4})(1.4)^x$$
+\bigbreak \noindent
+\textbf{Problem 3.}
+\bigbreak \noindent
+\textit{\textbf{Since this function is in the form}}
+$$ f(x) = 3^{g(x)}$$
+\textit{\textbf{The chain rule applies}}
+
+$$ \frac{d}{dx}3^{2x+1} = (\ln{3})3^{2x+1} \cdot \frac{d}{dx}(2x+1)$$
+$$ = \ln 3 \cdot 3^{2x+1} \cdot 2 = 2 \ln{3} \cdot 3^{2x+1}$$
+
+\pagebreak
+\subsection*{The Derivative of $log_a{x}$}
+Just as the derivative of $a^x$ is expressed in terms of $ln{a}$, so too is the derivative of $log_a{x}$
+\bigbreak \noindent
+To find this derivative, we first express $log_a{x}$ in terms of $ln{a}$ using the change of base formula
+$$ \frac{d}{dx}log_a{x} = \frac{d}{dx} \left(\frac{\log_e{x}}{\log_e{a}}\right)$$
+$$ \frac{d}{dx} \left(\frac{\ln{x}}{\ln{a}}\right)$$
+$$ = \frac{1}{\ln{a}} \cdot \frac{d}{dx}(\ln{x})$$
+$$ = \frac{1}{\ln{a}} \cdot \frac{1}{x}$$
+\thm{}{
+  $$ \frac{d}{dx}\log_a{x} = \frac{1}{\ln a} \cdot \frac{1}{x} = \frac{1}{x\ln{a}}$$
+  
+}
+As a special case, note that
+$$ \frac{d}{dx}(\log_e x) = \frac{1}{\ln e}\cdot \frac{1}{x} = \frac{1}{x}$$
+Again, finding derivatives is simpler when using base $e$, since
+$$ \frac{1}{\ln e} = \frac{1}{1} = 1$$
+\q
+Differentiate the following functions
+\bigbreak \noindent
+\begin{enumerate}
+  \item $ y=\log_8{x}$
+  \item $ y=\log_x$
+  \item $f(x) = \log_3(x^2+1)$
+  \item $f(x) = x^3\log_5{x}$
+\end{enumerate}
+\bigbreak \noindent \bigbreak \noindent
+\textbf{Problem 1.}
+
+$$ \frac{d}{dx}\log_8 x$$
+
+$$ = \dfrac{1}{\ln8} \cdot \dfrac{1}{x}$$
+$$ = \dfrac{1}{x(\ln{x})}$$
+\bigbreak \noindent
+\textbf{Problem 2.}
+
+$$ \frac{d}{dx}\log{x}$$
+
+$$ = \frac{1}{\ln{10}} \cdot \dfrac{1}{x}$$
+$$ = \dfrac{1}{x(\ln{10})}$$
+
+\pagebreak
+\noindent\textbf{Problem 3.}
+
+$$ \frac{d}{dx}\log_3(x^2+1)$$
+$$ = \dfrac{1}{\ln{3}} \cdot \dfrac{1}{x^2+1} \cdot 2x$$
+$$ = \dfrac{2x}{\ln{3}(x^2+1)}$$
+\bigbreak \noindent
+\textbf{Problem 4.}
+
+$$ \frac{d}{dx} x^3\log_5{x}$$
+$$ = (x^3)(\dfrac{1}{\ln{5}})(\dfrac{1}{x}) + (\log_5{x})(3x^2)$$
+$$ = \dfrac{x^3}{x(\ln{5})}+3x^2\log_5{x}$$
+$$ = dfrac{x^2}{\ln{5}}+3x^2\log_5{x}$$
 \end{document}

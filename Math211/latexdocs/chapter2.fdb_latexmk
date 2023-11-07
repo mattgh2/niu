@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1698420441 "chapter2.tex" "chapter2.pdf" "chapter2" 1698420442 2
+["pdflatex"] 1699153960 "chapter2.tex" "chapter2.pdf" "chapter2" 1699153962 2
   "/home/mattw/latex/template/macros.tex" 1678847294 3389 93000260d2aea292d29c76d4ace77a29 ""
   "/home/mattw/latex/template/preamble.tex" 1696966804 21790 584f9d18388c50cce30344bc20cb9adf ""
   "/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1689853683 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
@@ -46,6 +46,7 @@
   "/usr/share/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb" 1689853683 112766 bdd4fa8b13a0d7dd137624085bd31d40 ""
   "/usr/share/texmf-dist/fonts/type1/public/lm/lmex10.pfb" 1689853683 23055 2e5b42921de910eaa97b85df04ca4891 ""
   "/usr/share/texmf-dist/fonts/type1/public/lm/lmmi10.pfb" 1689853683 30388 702fae6a5f0e6e9c48a1d872b442ffcf ""
+  "/usr/share/texmf-dist/fonts/type1/public/lm/lmmi12.pfb" 1689853683 30696 2654571912f9cd384da9f7cb8a60c568 ""
   "/usr/share/texmf-dist/fonts/type1/public/lm/lmmi5.pfb" 1689853683 31443 ba2241b179aa231f73e052863720cb42 ""
   "/usr/share/texmf-dist/fonts/type1/public/lm/lmmi7.pfb" 1689853683 30789 be3ebdf20b6442cc4aaf81a81e17daf4 ""
   "/usr/share/texmf-dist/fonts/type1/public/lm/lmr10.pfb" 1689853683 119235 f35b44530a1d90eb90fe15d9cba67ea0 ""
@@ -326,8 +327,8 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1689853683 40684 9b9ec0b4288972636ff6a3b9c4238efc ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1693182717 4609286 2d8299e49804530e6f7abe7bb9d71f41 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1693324786 6969277 cbf78eb30f49e0a8f46ab1cff234c501 ""
-  "chapter2.aux" 1698420442 712 826741265a5a19b4f89135ef29ec4eb6 "pdflatex"
-  "chapter2.tex" 1698414796 41179 fa90be1121a5ad390cc22f593e7a2652 ""
+  "chapter2.aux" 1699153962 712 3e8fb004ace68937a4279a0864b0a242 "pdflatex"
+  "chapter2.tex" 1699153952 47928 cd9e799f4440a7b0bacce069175f783e ""
   "figures//decayy.pdf" 1698253263 4430 fe090bc9625fc61382b45da1526eb60d ""
   "figures//ex.pdf" 1697566518 5870 828b4288efc8f59a81a498e873572a35 ""
   "figures//haldlife.pdf" 1698260519 2659 84b3e9653d1fe6cd6a888dc3707efbd9 ""
