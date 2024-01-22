@@ -1,0 +1,76 @@
+\documentclass{report}
+
+\input{~/latex/template/preamble.tex}
+\input{~/latex/template/macros.tex}
+
+\title{\Huge{Application of the Quotient Rule}}
+\author{\huge{Matt Warner}}
+\date{\huge{}}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{}
+\lhead{\leftmark}
+\cfoot{\thepage}
+% \usepackage[default]{sourcecodepro}
+% \usepackage[T1]{fontenc}
+
+
+\pgfpagesdeclarelayout{boxed}
+{
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=1,%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {
+    border code=\pgfsetlinewidth{1.5pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.95\pgfphysicalwidth,%
+    resized height=.95\pgfphysicalheight,%
+    center=\pgfpoint{.5\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+}
+
+\pgfpagesuselayout{boxed}
+
+\begin{document}
+  \maketitle
+  \section*{Application of the Quotient Rule}  
+  The total cost, total revenue, and total profit functions, discussed in Section R.4, pertain to the accumulated cost, revenue, and profit when x items are produced. Because of economies of scale and other factors, it is common for the cost, revenue (price), and profit for, say, the 10th item to differ from those for the 1000th item. For this reason, businesses often focus on average cost, revenue, and profit
+  \bigbreak \noindent \bigbreak \noindent
+  \thmcon{
+    \textbf{\underline{Defintion}}
+    \vspace{3mm}
+  
+    If C(x) is the cost of producing x items, then the average cost of producing x items is
+    $$ \frac{C(x)}{x}$$
+    \bigbreak \noindent
+    If R(x) is the revenue from the sale of x items, then the average revenue from selling x items is 
+    $$\frac{R(x)}{x}$$
+    \bigbreak \noindent
+    If P(x) is the profit from the sale of x items, then the average profit from selling x items is
+    $$ \frac{P(x)}{x}$$
+  }
+  \bigbreak \bigbreak
+\ex{}{
+ Paulsen's Greenhouse finds that the cost, in dollars, of growing x hundred geraniums is modeled by 
+ $$ C(x) = 200 + 100\sqrt[4]{x}$$
+ \bigbreak \noindent
+If revenue from the sale of x hundred geraniums is modeled by
+$$ R(x) = 120 +90\sqrt{x}$$
+\bigbreak \noindent
+Find each of the following
+\bigbreak \noindent
+a) The average cost, average revenue, and average profit when 300 geraniums are grown and sold
+\bigbreak \noindent
+b) The rate at which the average profit is changing when 300 geraniums are grown and sold
+\bigbreak \noindent
+\sol{}
+\bigbreak \noindent
+a) We let $\bar{C}, \bar{R}$, and $\bar{P}$ represent average cost, average revenue, and average profit, respectively, Thus, 
+$$
+}
+\end{document}

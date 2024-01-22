@@ -1,0 +1,491 @@
+\documentclass{report}
+
+\input{~/latex/template/preamble.tex}
+\input{~/latex/template/macros.tex}
+
+\title{\Huge{Chapter 4 - Probability}}
+\author{\huge{Matt Warner}}
+\date{\huge{}}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{}
+\lhead{\leftmark}
+\cfoot{\thepage}
+% \usepackage[default]{sourcecodepro}
+% \usepackage[T1]{fontenc}
+% Custom command for event names
+% Custom enumerate environment for (a), (b), (c), etc.
+\newlist{myenumerate}{enumerate}{1}
+\setlist[myenumerate,1]{label=(\roman*)}
+
+
+% Custom enumerate environment for (a), (b), (c), etc.
+
+\pgfpagesdeclarelayout{boxed}
+{
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=1,%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {
+    border code=\pgfsetlinewidth{1.5pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.95\pgfphysicalwidth,%
+    resized height=.95\pgfphysicalheight,%
+    center=\pgfpoint{.5\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+}
+
+\pgfpagesuselayout{boxed}
+
+\begin{document}
+  \maketitle
+
+  \section*{4.1} 
+  \begin{mdframed}
+\section*{Experiment}
+An experiment is any activity in which there are at least two possible outcomes, and the result of the activity cannot be predicted with absolute certainty.
+
+\section*{Sample Space}
+The sample space, denoted as $S$, is the set of all possible outcomes from an experiment.
+  \end{mdframed}
+  \bigbreak \noindent
+\section*{Example}
+Give the sample space for each of the following experiments:
+
+\begin{enumerate}
+    \item[(a)] Roll a regular six-sided die once and record the number of spots on the top face.
+    
+    \begin{solution}
+    The sample space for rolling a regular six-sided die once is:
+    \[ S_a = \{1, 2, 3, 4, 5, 6\} \]
+    \end{solution}
+    
+    \item[(b)] Flip a coin three times and record the sequence of tosses.
+    
+    \begin{solution}
+    The sample space for flipping a coin three times and recording the sequence of tosses is:
+    \[ S_b = \{HHH, HHT, HTH, HTT, THH, THT, TTH, TTT\} \]
+    \end{solution}
+    
+    \item[(c)] Pick a student at random and record their gender and grade level.
+    
+    \begin{solution}
+    The sample space for picking a student at random and recording their gender and grade level can be represented as:
+    \end{solution}
+    
+    \item[(d)] Select parts from an assembly line until you find a bad part. Record the sequence of G's and B's (for good parts and bad parts, respectively).
+    
+    \begin{solution}
+    The sample space for selecting parts from an assembly line until a bad part is found and recording the sequence of G's (good parts) and B's (bad parts) can be represented as:
+    \end{solution}
+    
+\end{enumerate}
+\pagebreak
+\section*{Events and Operations}
+\bigbreak \noindent
+\begin{mdframed}
+\subsection*{Event}
+Any collection or subset of outcomes from a sample space
+\bigbreak \noindent
+\end{mdframed}
+\bigbreak \noindent
+\subsubsection*{(a) For each of the following give the event described.}
+
+\begin{myenumerate}
+    \item Let $\mathbf{A}$ be the event of an even die roll.
+      % Pset 2
+      \subitem 
+    \item Let $\mathbf{B}$ be the event of at least two heads.
+    \item Let $\mathbf{C}$ be the event that the first and last flips are the same.
+    \item Let $\mathbf{D}$ be the event that a sophomore or junior is selected.
+\end{myenumerate}
+
+\subsubsection*{(b) For Part (c) --- Describe the following events in words.}
+
+\begin{myenumerate}
+    \item $\mathbf{A} = \{(\text{Male, Fresh.}), (\text{Male, Soph.}), (\text{Male, Junior}), (\text{Male, Senior})\}$
+    \item $\mathbf{B} = \{(\text{Male, Fresh.}), (\text{Female, Fresh.})\}$
+    \item $\mathbf{C} = \{(\text{Male, Junior}), (\text{Male, Senior}), (\text{Female, Junior}), (\text{Female, Senior})\}$
+\end{myenumerate}
+\bigbreak \noindent \bigbreak \noindent
+\hrule
+\bigbreak
+\subsection*{Operations for Creating New Events}
+
+\begin{itemize}
+    \item \textbf{Union} $\mathbf{A \cup B}$ --- $\mathbf{A}$ or $\mathbf{B}$ (all outcomes from $\mathbf{A}$ or from $\mathbf{B}$ or from both)
+    \item \textbf{Intersection} $\mathbf{A \cap B}$ --- $\mathbf{A}$ and $\mathbf{B}$ (all outcomes shared by both $\mathbf{A}$ and $\mathbf{B}$)
+    \item \textbf{Complement} $\mathbf{A'}$ --- not $\mathbf{A}$ (all outcomes from $\mathbf{S}$ that are not in $\mathbf{A}$)
+\end{itemize}
+\nt{
+ Two events whose intersection is empty (i.e., $\mathbf{A \cap B} = \{\}$ or $\mathbf{A \cap B} = \emptyset$) are said to be disjoint or mutually exclusive.
+}
+\bigbreak \noindent
+\subsection*{Example}
+\textbf{Suppose that a sample space $\mathbf{S = \{a,b,c,d,e,f,g,h\}}$. Use the events 
+$$A = \{a,b,c\}\hspace{5mm} B = \{b,c,e,g\},\hspace{5mm} C = \{f,g,h\},\hspace{5mm} D = \{c,f,h\}$$ To find each of the following.}
+\bigbreak
+\begin{center}
+  \hspace{24mm}\begin{minipage}{0.4\textwidth}
+ \begin{enumerate}
+   \item $A \cup B$
+   \item $A \cap B$
+   \item $A \cap C$
+    \item $A'$
+ \end{enumerate} 
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+  \begin{enumerate}
+    \vspace{-5mm}
+
+    \item $(A \cap B)'$
+    \item $A \cup B \cup C$
+    \item $A \cap B \cap D$
+  \end{enumerate}
+\end{minipage}
+\end{center}
+\pagebreak
+\subsection*{Solutions}
+\bigbreak \noindent
+\textbf{a} $\{a,b,c,e,g\}$
+\bigbreak\noindent
+\textbf{b}$\{b,c\}$
+\bigbreak\noindent
+\textbf{c}$\emptyset$
+\bigbreak\noindent
+\textbf{d}$\{d,e,g,f,h\}$
+\bigbreak\noindent
+\textbf{e}$\{a,d,e,f,g,h\}$
+\bigbreak\noindent
+\textbf{f}$\{a,b,c,e,g,f,h\}$
+\bigbreak\noindent
+\textbf{g}$\{c\}$
+%% onee
+\section*{4.2 - An Introduction to Probability}
+\bigbreak \noindent
+\subsection*{Question}
+\vspace{3mm}
+
+\begin{mdframed}
+  \vspace{2mm}
+
+We often say ``The probability of flipping a coin and getting a head is $\frac{1}{2}$ or 50\%''
+\vspace{3mm}
+
+\noindent What precisely is meant by this? Use the table below to help give an interpretation of the probability.
+\bigbreak \noindent
+\begin{center}
+ \begin{tabular}{lll} 
+\#Tosses & \#Heads & \%Heads \\
+\hline 10 & 4 & $40 \%$ \\
+100 & 44 & $44 \%$ \\
+500 & 265 & $53 \%$ \\
+1000 & 485 & $48.5 \%$ \\
+5000 & 2533 & $50.66 \%$ \\
+10000 & 5025 & $50.25 \%$
+\end{tabular} 
+\end{center}
+\vspace{2mm}
+\end{mdframed}
+Since tossing a coin is repeatable. In the long run, we flip the coin many times, independently and under similar conditions. approximately half the flips will be heads.
+\bigbreak \noindent
+\subsection*{Example}
+An experiment consists of rolling a 6-sided die once. Suppose that the die has been rigged or tampered with so that the faces are not equally likely (i.e. it's unfair die). Suppose that the sample space and corresponding probabilities are given in the following table.
+\bigbreak \noindent
+
+\begin{center}
+\begin{tabular}{r|cccccc} 
+Roll & 1 & 2 & 3 & 4 & 5 & 6 \\
+\hline Probability & 0.30 & 0.25 & 0.10 & 0.15 & 0.05 & 0.15
+\end{tabular}
+\end{center}
+\bigbreak \noindent 
+\textbf{a)} \textbf{what two conditions must be true (or checked) \textit{for} this to be a \textit{legitimate distribution?}}
+%twoo
+\begin{itemize}
+  \item $\sum$ (probability) = 1.0
+  \item 0 $\le$ each probability $\le$ 1
+  
+\end{itemize}
+\bigbreak \bigbreak \noindent
+\textbf{b) Find the probabilites of the following events.}
+\begin{enumerate}
+  \item $A$ = the event that the roll is an even number
+    \subitem event = $\{2,4,6\}$ \hspace{5mm} $P(A) = .25 + .15 + .15 = .55$
+  \item $B$ = the event that the roll is at most 3
+    \subitem event = $\{1,2,3\}$ \hspace{5mm} $P(B) = .30+.25+.10 = .65$
+  \item $C$ = the event that the roll is at least 5
+    \subitem event = $\{5,6\}$\hspace{5mm} $.05 +  .15 = .20$
+\end{enumerate}
+\bigbreak \bigbreak \noindent
+\hrule
+\subsection*{Important Rules}
+  \begin{itemize}
+    \item \textbf{Complement Rule:} $P(A') = 1 - P(A)$
+    \item \textbf{Addition Rule:} $P(A \cup B) = P(A) + P(B) - P(A \cup B)$
+  \end{itemize}
+  \bigbreak \noindent \bigbreak \noindent
+\ex{}{
+  let a and b be events with $P(A) = .30, p(B) =.40$, $P(A \cap B) =.10$. Find the probability that
+  \bigbreak \noindent
+  \begin{enumerate}
+    \item a) A or B occurs 
+      \subitem $.30 + .40 -.10 = .60$
+    \item A and B  occurs
+      \subitem $P(A \cap B) =.10$
+    \item c) neither A nor B occur
+      \subitem  1 - $P(A \cup B )= 1 - .60 = .40$
+    \item d) just A (and not B) occurs
+      \subitem $P(A \cup B')=.20$
+  \end{enumerate}
+}
+\bigbreak \noindent
+\ex{}{
+  At a particular coffee shop, suppose that 70\% of customers put sugar in their coffee, 35\% add milk, and 25\% use both. Suppose that a customer of this ocffee shop is selcted at random.
+  \bigbreak \noindent
+  \begin{enumerate}
+    \item Draw a venn diagram to illustrate the events in this problem 
+    \item What is the probability that the customer uses at least one of these two items? 
+    \item What is the probability that the customer uses just sugar?
+    \item What is the probability that the customer uses just one of these two items?
+  \end{enumerate}
+}
+\bigbreak \noindent
+\pagebreak
+
+\sol{}
+
+\begin{minipage}{0.45\textwidth}
+  \vspace{3mm}
+
+    \incfig[1]{venn}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+	
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+b)A $P(S \cup m ) = p(S) = P(m) - p(S \cap m) = .70 +.35 -.25 = .80$
+\bigbreak \noindent
+c) $ .20$
+\bigbreak \noindent
+d) $ (S \cap m') = .45$ 
+\bigbreak \noindent
+e) $= P(s \cap m') \cup P(m \cap s') = .45 + 10 = .55$
+\end{minipage}
+\bigbreak \noindent \bigbreak \noindent
+\hrule
+\bigbreak
+\section {4.4 - Conditional Probability}
+\bigbreak \noindent
+TThe probability of an event A may be affected by, or depend on the occurrence of another event B.
+$$P(A) = \text{ original or unconditional probability of A happening}$$
+$$ P(A|B) = \text{ Conditional probability of A happening given that B has occurred}$$
+\bigbreak \noindent \bigbreak \noindent
+\ex{}{
+  A class contains 26 students of which 15 are freshmen, 14 are business majors, and 10 are both freshman and business majors. (Note: Let $F$ = event of picking a freshmen; let B = event of picking a business major)
+}
+\begin{minipage}{0.45\textwidth}
+    \incfig[1]{rrr}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{enumerate}
+  %jump1
+  \item Suppose that a person is picked at random from the class. What is the probability that they are freshman. 
+  \item After learning that a student is a business major, what is the chance that the student is a freshman.
+\end{enumerate}	
+\end{minipage}
+\pagebreak
+\thmcon{
+  \textbf{\underline{Defintion}}
+  \vspace{3mm}
+
+  Provided $P(B) > 0$, the \textbf{Conditional probability} of event A given that event B has occurred is
+  $$ P(A | B) = \frac{P(A \cap B)}{P(B)}$$
+}
+\bigbreak \noindent
+\ex{}{
+  The owner of a food truck notices that 40\% of her customers buy tacos, 25\% buy tacos and a soda, and 20\% buy tacos and a burrito. Suppose a customer is selected at random.
+  \bigbreak \noindent
+  \begin{enumerate}
+    \item A) Given that the customer buys tacos, what is the probability that they buy a soda?
+    \item What is the probability that they buy a burrito given that they buy tacos?
+    \item If the customers buys tacos, what is the probability that they don't buy a soda?
+\end{enumerate}
+}
+\sol
+\bigbreak \noindent
+%jump2
+
+
+
+
+\ex{}{
+  A large statistic course has 80 students enrolled. Each student is cross-classified according to their gender and their grade level. The results are presented in the table below
+  \bigbreak \noindent
+  \begin{center}
+  \begin{tabular}{|c|c|c|c|c|c|}
+\hline \multirow{4}{*}{$\begin{array}{l}\text { Male } \\
+\text { Female }\end{array}$} & Freshman & Sophomore & Junior & Senior & \\
+\hline & 2 & 10 & 16 & 15 & 43 \\
+\hline & 1 & 8 & 14 & 14 & 37 \\
+\hline & 3 & 18 & 30 & 29 & 80 \\
+\hline
+\end{tabular}
+\end{center}
+}
+\bigbreak \noindent
+Suppose that one student from the course is selected at random. Find the probability of each of the following events.
+%jump3
+\begin{enumerate}
+  \item The student is a male 
+  \item The student is a sophmore
+  \item The student is a female junior
+  \item The student is a female or a junior
+  \item If the student is a male, what is the chance they are a freshman?
+  \item If the student is not a senior, what is the chance they are a female
+\end{enumerate}
+\bigbreak \noindent \bigbreak \noindent
+\pagebreak
+\section*{4.5 - Independence}
+\thmcon{
+  \textbf{\underline{Defintion}}
+  \vspace{3mm}
+
+  Events in A and B are \textbf{independent} if any only if $P(A|B) = P(A)$. If A and B are not independent, they are said to be \textbf{dependent} events.
+\bigbreak \noindent
+What does this mean? - it means that the probability of event A is the same whether or not event B has occured.
+\bigbreak \noindent
+That is,
+$$P(A) = \text{ Probability of event A \underline{before} we learn about event B occuring}$$
+\bigbreak \noindent
+This is the same as,
+$$P(A | B) = \text{ probability of event A \underline{after} we learn about event B occuring}$$
+\bigbreak \noindent
+This means that the occurrence of event B did not affect the chance of event A, i.e. that they're independent.
+
+}
+\bigbreak \noindent
+\ex{}{
+  Suppose that we roll a balanced or fair die having the probability distribution below. Suppose that we define the events 
+  $$A = \{1,3,5\} \hspace{7mm} B = \{4,5,6\} \hspace{7mm} C = \{3,4,5,6\}$$
+  \begin{center}
+ \bigbreak\noindent \bigbreak \noindent
+\begin{tabular}{r|cccccc} 
+Roll & 1 & 2 & 3 & 4 & 5 & 6 \\
+\hline Probability & $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{6}$
+\end{tabular}
+  \end{center}
+}
+\bigbreak \noindent
+\begin{enumerate}
+  \item Are events A and B independent?
+    \subitem Does $P(A|B) = P(A)$?
+    \subitem We first need to find $P(A)$ That is,
+    $$P(A) = \frac{3}{6} = \frac{1}{2}$$
+    Now we find $P(A|B)$
+    $$P(A|B) = \frac{P(A\cap B)}{P(B)} = \frac{\frac{1}{6}}{\frac{1}{6} + \frac{1}{6}+ \frac{1}{6}} = \frac{1}{3}$$
+    \vspace{3mm}
+
+    Not the same so no, they are not independent
+  \item Are events A and C independent?
+    \subitem We need to see if $P(A|C) = P(A)$
+    $$P(A) = \frac{1}{2}$$
+    $$P(A|C) =  \frac{P(A \cap C)}{P(C)}$$
+    $$ = \frac{\frac{1}{6}+\frac{1}{6}}{\frac{1}{6}+\frac{1}{6}+\frac{1}{6}+\frac{1}{6}} = \frac{1}{2}$$
+    \vspace{2mm}
+
+    They are the same, so yes they are independent.
+\end{enumerate}
+\pagebreak
+\subsection*{Important notes}
+\bigbreak \noindent
+\begin{mdframed}
+ \begin{enumerate}
+   \vspace{5mm}
+
+   \item If events A and B are independent, \textbf{then so are the pairs}
+     $$ \text{(i )} A \text{ and } B'\hspace{10mm} \text{ (ii) } A' \text{ and } B \hspace{10mm} \text{ (iii) } A' \text{ and } B'$$
+     \vspace{1mm}
+
+   \item Instead of \underline{checking} if events are \underline{independent}, we sometimes are told (or can assume) that they are, In this case, to \underline{use the independence} we'll often use the following result
+    \bigbreak \noindent \bigbreak \noindent
+     $$\textbf{Multiplcation Rule for Independent Events}$$
+     $$\text{ if events A and B are independent, then }P(A \cap B) = P(A) \cdot P(B)$$
+     \vspace{3mm}
+
+ \end{enumerate} 
+\end{mdframed}
+\bigbreak \noindent \bigbreak \noindent
+\ex{}{
+  Suppose that events A, B, and C are \textbf{independent} with $P(A) = 0.2, P(B) = 0.4$, and P(C) = 0.7. Find the following probabilites.
+
+}
+\bigbreak \noindent
+(a) $P(A \cap B)$
+\vspace{4mm}
+
+$$ = P(A) \cdot P(B)$$
+$$ = 0.2 \cdot 0.4 = 0.08$$
+\bigbreak \noindent
+(b) $P(B \cap C')$
+\vspace{4mm}
+
+$$P(B') \cdot P(C')$$
+$$0.4 \cdot 0.3 = 0.12$$
+\bigbreak \noindent
+(c) $P(A \cap B' \cap C)$
+\vspace{3mm}
+
+$$P(A) \cdot P(B') \cdot P(C) = 0.2 \cdot 0.6 \cdot 0.7 = 0.084$$
+\bigbreak \bigbreak \noindent
+\ex{}{
+  According to the latest U.S Food and Drug Administration pesticide residue report, 62\% of all domestic vegetables examined by researchers contained pesticide residues. Although most of these residues were compliant with federal standards, many researchers belive that the standards are outdated and too weak. Assume that the report used a representative sample, and suppose that two domestic vegetables are selected at random
+
+}
+\bigbreak \noindent
+\pagebreak
+\begin{enumerate}
+  \item What is the probability that both vegetables contain pesticide residues? 
+    \subitem P(R) = has pesticide residue
+    \subitem $P(R \cap R)$
+    \nt{
+      Picking two things at random essentially means that they are independent of each other
+    }
+  So,
+  $$P(R) \cdot P(R) = .62 \cdot .62 = .3844$$
+  \item What is the probability that both vegetables do not contain pesticide residues?
+    \subitem $P(R' \cap R')$
+    $$ = P(R') \cdot P(R')$$
+    $$ R' = 1 - .62 = .38$$
+    $$ .38 \cdot .38 = .1444$$
+  \item What is the probability that exactly one vegetable contains pesticide residues?
+    \subitem = $P(R' \cap R)$
+    $$ = P(R') \cdot P(R)$$
+    $$ - (1-.62)(.62) = .2356$$
+    $$ .2356 + P(R \cap R') \text{ need to use all variations}$$
+    $$4 .2356 + .62(1-.62) = .2356 + .2356 = .4712$$
+\end{enumerate}
+\pagebreak
+\ex{}{
+  The following describes the proportions of M\&MS in a bowl. Suppose that three M\&Ms are selected independently from one another
+  \bigbreak \noindent
+  \begin{center}
+    \begin{tabular}{r|cccccc} 
+Color & Red & Yellow & Orange & Green & Blue & Brown \\
+\hline Proportion & 0.20 & 0.20 & 0.10 & 0.10 & 0.10 & 0.30
+\end{tabular}
+  \end{center}
+}
+\bigbreak \noindent
+\begin{enumerate}
+  \item What is the probability that all three are brown? 
+  \item What is the probability that none are yellow?
+  \item What is the probability that exactly one is orange?
+  \item What is the probability that at least one is green?
+\end{enumerate}
+\end{document}

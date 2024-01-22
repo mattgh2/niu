@@ -1,0 +1,774 @@
+\documentclass{report}
+\input{~/latex/template/preamble.tex}
+\input{~/latex/template/macros.tex}
+
+\title{\Huge{Chapter 4 Notes}}
+\author{\huge{Matt Warner}}
+\date{\huge{}}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{}
+\lhead{\leftmark}
+\cfoot{\thepage}
+% \usepackage[default]{sourcecodepro} \usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\pgfpagesdeclarelayout{boxed}
+{
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=1,%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {
+    border code=\pgfsetlinewidth{1.5pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.95\pgfphysicalwidth,%
+    resized height=.95\pgfphysicalheight,%
+    center=\pgfpoint{.5\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+}
+
+\pgfpagesuselayout{boxed}
+\begin{document}
+\maketitle
+\chapter*{Integration}
+\addcontentsline{toc}{chapter}{Chapter 4: Integral Calculus}
+
+\section{Antidifferentiation}
+\addcontentsline{toc}{section}{4.1 Antidifferentiation}
+
+\section{Antiderivatives as Areas}
+\addcontentsline{toc}{section}{4.2 Antiderivatives as Areas}
+
+\section{Area and Definite Integrals}
+\addcontentsline{toc}{section}{4.3 Area and Definite Integrals}
+
+\section{Properties of Definite Integrals}
+\addcontentsline{toc}{section}{4.4 Properties of Definite Integrals}
+\subsection{Additive Property}
+\subsection{Average Value}
+\subsection{Moving Average}
+
+\section{Integration Techniques: Substitution}
+\addcontentsline{toc}{section}{4.5 Integration Techniques: Substitution}
+
+\section{Integration Techniques: Integration by Parts}
+\addcontentsline{toc}{section}{4.6 Integration Techniques: Integration by Parts}
+\newpage
+\section*{1 - Antidifferentiation}
+\begin{mdframed}
+  
+In this chapter, we explore \textit{integration}, which is one of the two principal branches of calculus (\textit{differential calculus}, which we have studied in Chapters 1-3, being the other).
+\bigbreak \noindent
+With \textit{integral calculus}, we are able to determine accumulation of quantity based on a given rate function, for example:
+\begin{itemize}[label=$\circ$]
+  \item Given a function $ y = v(t)$, the velocity of an object at time $t$, we can determine an object's \textit{distance traveled} over an interval of time.
+  \item Given a function $y=P'(x)$, the marginal profit of a business after $x$ units have been sold, we can determine the business's \textit{total profit} after $x$ units have been sold
+  \item Given a function $y=f(t)$, the rate of change of a population after $t$ years, we can determine the \textit{total population growth} after $t$ years
+\end{itemize}
+\end{mdframed}
+\bigbreak \noindent
+\section*{Finding Antiderivatives}
+One aspect of integral calculus is \textbf{Antidifferentiation}, which is the process of differentiation performed in reverse. Given a function $f$, we find another function $F$ such that
+$$ \frac{d}{dx}F(x) = f(x)$$
+The function $F$ is an \textbf{antiderivative} of $f$. For example, if $f(x) = 2x$, then $F(x) = x^2$ is an antiderivative of $f$ since
+$$ \frac{d}{dx}(x^2) = 2x$$
+Note that functions like $F(x) = x^2 +5$ and $F(x) = x^2 - 17$ are also antiderivatives of $f(x) = 2x$ since
+$$ \frac{d}{dx}(x^2+5)=2x+0 =2x; \ \ \text{and} \ \frac{d}{dx}(x^2-17) = 2x+0=2x$$
+Thus, an antiderivative of $f(x) =2x$ is any function that can be written in the form $F(x)=x^2+C$, where $C$ is any constant. This leads us to the following theorem.
+\bigbreak \noindent
+\thm{}{
+  The antiderivatives of $f(x)$ is the set of functions $F(x) + C$ such that
+  $$ \frac{d}{dx}\left[F(x)+C = f(x)\right]$$
+  The constant $C$ is called the constant of intergration
+}
+\bigbreak \noindent \bigbreak \noindent
+If $F$ is an antiderivative of $f$, we write
+$$ \int f(x)dx =F(x)+C$$
+This equation is read as ``the antiderivative of $f(x)$, with respect to $x$, is $F(x) +C$ " \\
+or as `` the integral of $f(x)$, with respect to $x$ if $F(x) +C$''. The expression on the left side is called an\textbf{indefinite integral}. They symbol $\int$ is the \textit{integral sign}, and $f(x)$ is the \textit{integrand}. The symbol $dx$ can be regarded as indicating that $x$ is the variable of integration, similar to $ \frac{d}{dx}$ indicating that the expression that follows it is to be differentiated with respect to $x$.
+\newpage
+\q
+Determine these indefinite integrals. That is, find the antiderivative of each integrand.
+$$ a) \int{8}\ dx; \ \ \ \ b) \int{3x^2}\ dx; \ \ \ \int{e^x}\ dx'; \ \ \ \int{\dfrac{1}{x}}\ dx, x \neq 0$$
+\bigbreak \noindent
+\textbf{Problem 1.} 
+$$\int{8}\ dx$$
+$$ = 8x +C$$
+\bigbreak \noindent
+\textbf{Problem 2.}
+$$ \int{3x^2}\ dx$$
+$$ = x^3+C$$
+\bigbreak \noindent
+\textbf{Problem 3.}
+$$ \int{e^x}\ dx$$
+$$ = e^x +C$$
+\bigbreak \noindent
+\textbf{Problem 4.}
+$$\int{\dfrac{1}{x}}\ dx$$
+$$ = \ln{\lvert x\rvert} + C$$
+\bigbreak \noindent
+\nt{
+  Every antiderivative can be checked by differentiation
+}
+\bigbreak \noindent \bigbreak \noindent
+The results of Question 1 suggest some rules for antiderivatives, which are summarized in Theorem 2.
+\bigbreak \noindent
+\thm{Rules for Antiderivatives}{
+  A1. Constant Rule:
+$$
+\int k d x=k x+C
+$$
+
+A2. Power Rule (where $n \neq-1$ ):
+$$
+\int x^n d x=\frac{1}{n+1} x^{n+1}+C .
+$$
+
+A3. Natural Logarithm Rule:
+$$
+\int \frac{1}{x} d x=\ln |x|+C \text {, and for } x>0, \int \frac{1}{x} d x=\ln x+C .
+$$
+
+A4. Exponential Rule (base $e$):
+$$
+\int e^{a x} d x=\frac{1}{a} e^{a x}+C, \quad a \neq 0 .
+$$
+}
+\newpage
+\noindent The Power Rule for Antiderivaties can be viewed as a two step process:
+\bigbreak
+\begin{minipage}{0.5\textwidth}
+  \hspace{10mm}\incfig[1]{integ}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+  \hspace{-10mm}\vspace{-20mm}\begin{enumerate}
+  \item Increase the exponent by 1. 
+  \item Divide the term by the new power
+\end{enumerate}	
+\end{minipage}
+\vspace{-20mm}\begin{mdframed}
+  \q
+Find the following indefinite integrals:
+$$ a) \int{x^7}\ dx; \ \ \ \ b) \int{\sqrt{x}}\ dx; \ \ \ \ c) \int{\dfrac{1}{x^3}}\ dx;$$
+\end{mdframed}
+\bigbreak \noindent
+\textbf{Problem 1.}
+$$ \int{x^7}\ dx$$
+$$ = \dfrac{x^{7+1}}{7+1} + C$$
+$$ = \dfrac{1}{8}x^8 + C$$
+\bigbreak \noindent
+\hrule
+\bigbreak \noindent
+\textbf{Problem 2.}
+$$ \int{\sqrt{x}}\ dx$$
+$$ = \int{x^{\frac{1}{2}}}\ dx = \dfrac{x^{(1/2)+1}}{\frac{1}{2}+1}+C = \dfrac{x^{3/2}}{\frac{3}{2}}+C$$ 
+$$ = \dfrac{2}{3}x^{\frac{3}{2}}+C, \ \ \ \text{or } \ \ \dfrac{2}{3}x\sqrt{x}+C$$
+\bigbreak \noindent
+\hrule
+\bigbreak \noindent
+\textbf{Problem 3.}
+$$ \int{\dfrac{1}{x^3}}\ dx$$
+$$ = \int{x^{-3}} = \dfrac{x^{-3+1}}{-3+1}+C = -\dfrac{1}{2}x^{-2}+C$$
+$$ = -\dfrac{1}{2x^2} +C$$
+\bigbreak \noindent
+\hrule
+\bigbreak \noindent
+The Power Rule for Antiderivatives is valid for all real numbers $n$, except for $ n = -1$. for $n=-1$, we have $x^{-1} = \dfrac{1}{x}$, which is the derivative of the natural logarithm function, $ y = \ln{\lvert x\rvert}$. Therefore, 
+$$ \int{\dfrac{1}{x}}\ dx = \ln{\lvert x\rvert} +C, \text{ and for } x > 0, \int{\dfrac{1}{x}}\ dx = \ln{x}+C$$
+In Question 3, we explore the case of $f(x) = e^{ax}$
+\newpage
+\begin{mdframed}
+\q
+Find $$\int{e^{4x}}\ dx$$
+\end{mdframed}
+\sol
+$$\int{e^{4x}}\ dx = \dfrac{1}{4}e^{4x}+C$$
+Two useful properties of antiderivatives are presented in Theorem 6.3.
+\bigbreak \noindent
+\thm{}{
+P1. A constant multiplier can be factored to the front of the indefinite integral:
+$$
+\int[c \cdot f(x)] d x=c \cdot \int f(x) d x .
+$$
+
+P2. The antiderivative of a sum or difference is the sum or difference of the antiderivatives:
+$$
+\int[f(x) \pm g(x)] d x=\int f(x) d x \pm \int g(x) d x
+$$
+}
+\q
+Find each antiderivative. Assume $x>0$
+$$ a) \int{(3x^5+7x^2+8)}\ dx \ \ \ \ \ \ b) \int{\dfrac{4+3x+2x^4}{x}}\ dx$$
+\textbf{Problem 1.}
+$$ \int{3x^5}\ dx + \int{7x^2}\ dx + \int{8}\ dx$$
+$$ {3(\frac{1}{6}x^6)} + 7(\frac{1}{3}x^3)+8x+C$$
+$$ \dfrac{1}{2}x^6 + \dfrac{7}{3}x^3 + 8x+C$$
+\bigbreak \noindent
+\hrule
+\bigbreak \noindent
+\textbf{Problem 2.}
+$$ \int{\dfrac{4+3x+2x^4}{x}}\ dx$$
+$$ = \dfrac{4}{x} + \dfrac{3x}{x} + \dfrac{2x^4}{x} = \dfrac{4}{x} + 3 + 2x^3$$
+\textit{\textbf{Therefore,}}
+$$\int{\dfrac{4+3x+2x^4}{x}}\ dx = \int{\left(\dfrac{4}{x}+3+2x^3}\right)\ dx$$
+$$ = 4\ln{x} + 3x+\dfrac{1}{2}x^4 + C$$
+\newpage
+\section*{Initial Conditions}
+When a point that is a solution of an antiderivative is given, it is possible to solve for $C$. The given point is called an inital condition
+\begin{mdframed}
+  \vspace{2mm}
+
+ Find 
+
+ $$ \int{(2x+3)}\ dx$$
+ Given that $F(1) = -2$
+\end{mdframed}
+\sol
+\textit{\textbf{If we specify that $F'(x)  =2x+3$, then we have}}
+$$ F(x) = \int{(2x+3)}\ dx = x^2 +3x+C$$
+Since $F(1) =-2$, we can substiute and solve for $C$.
+$$ -2 = (1)^2+3(1) +C$$
+Simplifiying, we have $-2 = 4+C$, or $C = -6$
+\bigbreak \noindent
+Therefore, the specific antiderivative that satisfies the inital conditions is
+$$ F(x) = x^2+3x-6$$
+\bigbreak \noindent
+\hrule
+\bigbreak \noindent
+\vspace{-5mm}
+\section*{Applications}
+\bigbreak \noindent
+\vspace{-1em}
+\begin{mdframed}
+\q
+A rock is thrown upward with the inital velocity 50 ft/sec from 10 ft above the ground has a velocity modeled by $v(t) = -32t+50$, where $t$ is the number of seconds after the rock is released and $v(t)$ is in feet per second
+\bigbreak \noindent
+a) Determine a distance function $h$ as a function of $t$ (in this case, ``distance'' is the height of the rock)
+\bigbreak \noindent
+b) Find the height and the velocity of the rock after 3 sec.
+\end{mdframed}
+\bigbreak \noindent
+\sol 
+\bigbreak \noindent
+\textbf{\texit{For part a) Since distance (height) is the antiderivative of velocity, we have}}
+$$ h(t) = \int{(-32t +50)}\ dt = -16t^2 +50t +C$$
+The inital height, 10 ft, gives us the ordered pair (0,10) as an initial condition. We substitute $0$ for $t$ and 10 for $h(t)$, and solve for $C$
+
+$$ 10 = -16(0)^2 + 50(0) +C$$
+$$ 10=C$$
+Therefore, the distance function is given by
+$$ h(t) = -16t^2 +50t +10$$
+\bigbreak \noindent
+\textit{\textbf{For part b) to find the height of the rock after 3 sec, we substitute 3 for $t$ in the distance function}}
+$$ h(3) = -16(3)^2 +50(3) + 10 = 16 \text{ft.}$$
+\textit{\textbf{The velocity is}}
+$$v(3) = -32(3)+50 = -46\text{ ft/sec.}$$
+\newpage
+\section*{2 Antiderivaties as Areas}
+Integral calculus studies the \textit{accumulation} of units as the input variables increases. For example, suppose a jogger maintains a constant velocity of 5 mi/hr. As she runs, she ``accumulates'' distance. After 1 hr, she has run 5 mi. Between the first hour and the second hour, she has run 5 mi, so that for the first 2 hr, she has accumulated a distance of 10 mi.
+\bigbreak \noindent
+We can view accumulations graphically, as shown in the following example.
+\begin{mdframed}
+\q
+Emma drives her motor scooter at 15 mi/hr for an extended period of time
+\begin{enumerate}
+  \item How far has she traveled after 1 hr. 
+  \item How far has she traveled between the first hour and the second hour?
+  \item How far has she traveled cumulatively over the first 2 hr?
+  \item What function $f(t)$ gives Emma's total distance traveled after $t$ hours?
+    \vspace{1em}
+\end{enumerate}
+\end{mdframed}
+\sol
+Emma's velocity after $t$ hours is given by $v(t)$ = 15, where $v(t)$ is in miles per hour. We graph $v$, noting that its graph is a horizontal line.
+\bigbreak \noindent
+\begin{minipage}{0.5\textwidth}
+	
+a) On the graph, we shade a rectangular area between $t=0$ and $t=1$.  \\ This area represents (1hr)$\left(15\dfrac{\text{mi}}{\text{hr}}\right) = 15 \text{ mi}$. \\ Thus, Emma has traveled 15 mi after 1 hr.
+\end{minipage}
+\hspace{10mm}\begin{minipage}{0.5\textwidth}	
+    \incfig[1]{area7}
+\end{minipage}
+\begin{figure}[ht]
+    \centering
+    %\caption{area7}
+    %\label{fig:area7}
+\end{figure}
+\begin{minipage}{0.5\textwidth}
+b) On the graph, we shade a rectangular area between $ t =1$ and $t=2$. \\ This rectangular angle has width 1 and height 15. \\ Thus, in this 1-hr period, Emma has traveled another 15 mi	
+\end{minipage}
+\hspace{10mm}\begin{minipage}{0.5\textwidth}
+    \incfig[1]{area9}
+\end{minipage}
+\begin{figure}[ht]
+    \centering
+    %\caption{area9}
+    %\label{fig:area9}
+\end{figure}
+\begin{minipage}{0.5\textwidth}
+c) Emma has accumulated a total of 15 + 15 = 30 mi traveled over the first 2 hr	\\ Graphically, her total distance traveled after 2 hr is the area of the rectangle between $t=0$ and $t=2$, with width 2 and height 15
+\end{minipage}
+\hspace{13mm}\begin{minipage}{0.5\textwidth}
+	
+    \incfig[1]{area12}
+\end{minipage}
+
+\pagebreak
+\noindent d) We set up an input-output table for $v$, including a third column showing distance traveled in each hour and a fourth column showing total \textit{accumulated} (or \textit{cumulative}) distance traveled
+\bigbreak \noindent
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline \begin{tabular}{c} 
+Time $t$ \\
+(in hours)
+\end{tabular} & \begin{tabular}{c} 
+Velocity, $v(t)$ \\
+(in miles per hour)
+\end{tabular} & \begin{tabular}{c} 
+Distance Traveled \\
+in Each Hour
+\end{tabular} & \begin{tabular}{c} 
+Accumulated \\
+Distance Traveled
+\end{tabular} \\
+\hline 1 & 15 & 15 & 15 \\
+2 & 15 & 15 & 30 \\
+3 & 15 & 15 & 45 \\
+4 & 15 & 15 & 60 \\
+\hline
+\end{tabular}
+\end{center}
+\bigbreak \noindent
+The accumulated distances traveled suggest that $f(t)= 15t$ gives Emma's total distance traveled, in miles, after $t$ hours. Note that $f(t) = 15t$ is an antiderivative of $v(t) = 15$
+\section*{Geometry and Areas}
+Example 1 suggests that the antiderivative plays a role in determining area under a graph. For linear functions, we can use geometry to find the area under the graph of a function. Two formulas, where $b$ = base and $h$ = height, are useful:
+\bigbreak \noindent
+\hspace{15mm}\begin{minipage}{0.5\textwidth}
+	
+    \incfig[1]{square3}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+    \incfig[1]{triangle}
+\end{minipage}
+\begin{figure}[ht]
+    \centering
+    %\caption{square3}
+    %\label{fig:square3}
+\end{figure}
+\begin{figure}[ht]
+    \centering
+    %\caption{triangle}
+    %\label{fig:triangle}
+\end{figure}
+\vspace{-7mm}
+\hrule
+\bigbreak \noindent
+\begin{mdframed}
+\q
+A toy drone flies in a straight line, and its velocity $t$ seconds after takeoff is given by $v(t) = 2t$, where $v(t)$ is in meters per second.
+\begin{enumerate}
+  \item Find the distance the drone has flown after 1 sec.
+  \item Find the distance the drone has flown between $t=1$ sec and $t=2$ sec.
+  \item Find the cumulative distance the drone has flown over the first 2 sec.
+  
+\end{enumerate}
+\end{mdframed}
+\sol
+We graph $v(t) = 2t$, noting that it is a linear function. Thus, we can use geometry to find the areas under its graph
+\bigbreak \noindent 
+\begin{minipage}{0.5\textwidth}
+  \textbf{Problem 1.} To find the distance flown after 1 sec, we form a triangular area under $v$ from $t= 0$ to $t=1$ \\ The area is given by $A =\dfrac{1}{2}bh$. Here, $b=1$ and $h=2$, so after 1 sec, the drone has flown
+  $$ A = \dfrac{1}{2}\left(1 \text{ sec}\right)\left(2\dfrac{\text{m}}{\text{sec}}\right) = 1 \text{ m}$$
+\end{minipage}
+\hspace{10mm}\begin{minipage}{0.5\textwidth}
+	
+    \incfig[1]{trainfig}
+\end{minipage}
+\begin{figure}[ht]
+    \centering
+    %\caption{trainfig}
+    %\label{fig:trainfig}
+\end{figure}
+
+\pagebreak
+\noindent
+\begin{minipage}{0.5\textwidth}
+  \noindent\textbf{Problem 2.} To find the distance traveled between $t=1$ sec and $t=2$ sec, we form a trapezoidal area under v over $[1,2]$ \\ This can be regarded as a rectangle and a triangle, as shown in the figure to the right. \\ The rectangle has area (1)(2) = 2, and the triangle has area $\dfrac{1}{2}(1)(2) = 1$.\\
+  Thus, the drone has flown a distance of $ 2 + 1  = 3 \text{ m}$ between $t=1$ sec and $ t=2$ sec.
+\end{minipage}
+\hspace{10mm}\begin{minipage}{0.5\textwidth}
+    \incfig[1]{trap}
+\end{minipage}
+\begin{figure}[ht]
+    \centering
+    %\caption{trap}
+    %\label{fig:trap}
+\end{figure}
+\bigbreak \noindent
+\begin{minipage}{0.5\textwidth}
+  \textbf{Problem 3.}	The cummulative distance flown after 2 sec is 1 m [from part problem 1] plus 3 m [from problem 2], or a total of 4 m. \\ We can also veiw the cummulative distance as the area of the entire triangle over [0,2], or
+  $$ \dfrac{1}{2}(2)(4) = 4 \text{ m}$$
+\end{minipage}
+\hspace{10mm}\begin{minipage}{0.5\textwidth}
+    \incfig[1]{fulltri}
+\end{minipage}
+\begin{figure}[ht]
+    \centering
+    %\caption{fulltri}
+    %\label{fig:fulltri}
+\end{figure}
+\bigbreak \noindent
+\hrule
+\bigbreak \noindent
+\textbf{Examples 1 and 2 in this section suggest a pattern}
+\bigbreak \noindent \bigbreak \noindent
+\begin{minipage}{0.5\textwidth}
+The graph of $f(x) = k$, where $k$ is a constant, is a horizontal line of height $k$. The region under this graph over the interval [0,$x$] is a rectangle, and its area is
+    $$ A = kx \text{ (height times base)}$$
+\end{minipage}
+\hspace{10mm}\begin{minipage}{0.5\textwidth}
+    \incfig[1]{bigsqare}
+\end{minipage}
+\begin{figure}[ht]
+    \centering
+    %\caption{bigsqare}
+    %\label{fig:bigsqare}
+\end{figure}
+\begin{minipage}{0.5\textwidth}
+  The graph of $f(x) = mx$ is a line with slope $m$, passing through the origin. \\ The region under this graph over the interval [0,x] is a triangle, and its area is
+  $$ A = \dfrac{1}{2}(x)(mx) = \dfrac{1}{2}mx^2.$$
+\end{minipage}
+\hspace{1mm}\begin{minipage}{0.5\textwidth}
+    \incfig[1]{anotherfig4}
+\end{minipage}
+\begin{figure}[ht]
+    \centering
+    %\caption{anotherfig4}
+    %\label{fig:anotherfig4}
+\end{figure}
+\vspace{-5em}\begin{mdframed}
+\q
+Green Leaf Skateboards has the following marginal-cost function for producing skateboards: For up to 50 skateboards, the cost is $\$40$ per skateboard. For quantities from 51 through 125 skateboards, the cost drops to $\$30$ per skateboard. After 125 skateboard, it drops to $\$25$ per skateboard. If $x$ represents the number of skateboards produced, we have
+ $$C^{\prime}(x)=\left\{\begin{array}{lc}40, & \text { for } 0 \leq x \leq 50, \\ 30, & \text { for } 50<x \leq 125, \\ 25, & \text { for } 125<x\end{array}\right.$$
+ \vspace{1mm}
+
+\noindent Where $C'(x)$ is the cost per skateboard, in dollars. Find the total cost of producing 150 skateboards.
+\end{mdframed}
+\bigbreak \noindent
+\sol We calculate the areas of the rectangles formed under the graph of $C'$ over the intervals 
+$$[0,50],[50,125], \text{ and } [125,150]$$
+\bigbreak \noindent
+\begin{figure}[ht]
+  \hspace{17em}    \incfig[1]{biggbox}
+    %\caption{biggbox}
+    %\label{fig:biggbox}
+\end{figure}
+\section*{Riemann Summation}
+In \textbf{Riemann summation}, rectangles can be used to approximate the area under the graph of a continuous function.
+\bigbreak \noindent
+In the following figure, [a,b] is divided into four subintervales, each having width
+$$ \Delta{x} = \dfrac{(b-a)}{4}$$
+\hspace{17em}\incfig[1]{summation}
+\begin{figure}[ht]
+    \centering
+    %\caption{summation}
+    %\label{fig:summation}
+\end{figure}
+
+\pagebreak \noindent
+The heights of the rectangles shown are $f(x_1), f(x_2), f(x_3)$, and $ f(x_4)$ and the area of the region under the curve is approximately the sum of the areas of the four rectangles
+$$ f(x_1) \Delta{x} + f(x_2) \Delta{x} + f(x_3) \Delta{x} + f(x_4) \Delta{x} \hspace{10mm} \text{(This is the riemann sum)}$$
+We can denote this sum with \textbf{summation}, or \textbf{sigma, notation}, which uses the Greek capital letter sigma, $\sum$:
+$$\sum\limits_{i=1}^{4}f(x_i)\Delta{x}$$
+\begin{mdframed}
+\q
+Express $\sum\limits_{i=1}^5h(x_i)\Delta{x}$ without using summation notation
+\vspace{1mm}
+\end{mdframed}
+\sol We have
+$$ \sum_{i=1}^5 h\left(x_i\right) \Delta x=h\left(x_1\right) \Delta x+h\left(x_2\right) \Delta x+h\left(x_3\right) \Delta x+h\left(x_4\right) \Delta x+h\left(x_5\right) \Delta x $$
+\begin{mdframed}
+\q
+Consider the graph of $f(x) = \sqrt{4-x^2}$ over the interval [0,2]. This is a quarter-circle radius 2. USe a Riemann sum to approximate the area under the graph using 4 equally sized subintervals and then 8 equally sized subintervals. Then use geometry to find the area under $f$ over [0,2], and compare this value to your approximations
+\vspace{1mm}
+\end{mdframed}
+\sol 
+\bigbreak \noindent
+\textit{\textbf{Dividing [0,2] into 4 subintervals of equal width, we have}}
+$$\Delta{x} = \dfrac{2-0}{4} = \dfrac{1}{2}$$
+\textit{\textbf{So, we have}}
+$$ \sum\limit_{i=1}^4f(x_i)\Delta{x}$$
+$$ = f(0)\cdot{\frac{1}{2}} + f\left(\frac{1}{2}\right) \cdot \frac{1}{2} + f(1) f\left(1\right) \cdot \frac{1}{2} + f\left(\frac{3}{2}\right)\cdot \frac{1}{2}$$
+$$ = 3.49571$$
+Thus, the area under $f$ over [0,2] is approximately 3.49571 square units. Note that this is approximation is greater than the actual area of the quarter-circle
+\bigbreak \noindent
+\textit{\textbf{Divding [0,2]}} into 8 subintervals of equal width, we have
+$$\Delta{x} = \dfrac{2-0}{8} = \dfrac{1}{4}$$
+\textit{\textbf{So, we have}}
+$$\sum\limit_{i=1}^8f(x_i)\Delta{x}$$
+$$ = 3.33982$$
+Using 8 subintervals, we have refined the estimate of the area under $f$ over [0,2] to 3.33982 square units.
+
+\pagebreak \noindent
+\section*{Definite Integrals}
+\thmcon{
+  \textbf{\underline{Defintion}}
+  \vspace{3mm}
+
+  Let y = $f(x)$ be continuous and nonnegative over an interval [a,b]. A \textbf{definite integral} is the limit as $n\to\infty$ (equivalently $\Delta{x}\to 0$) of the Riemann sum of the areas of rectangles under the graph of $ y=f(x)$ over [a,b]
+  $$ \text{Exact area} = \displaystyle\lim_{\Delta{x}\to 0} \ \sum\limit_{i=1}^nf(x_i)\Delta{x}$$
+$$ = \int_a^bf(x)\ dx$$
+}
+\begin{mdframed}
+\q
+Find the value of
+$$\int_0^2(3x+2)\ dx$$
+\end{mdframed}
+\sol
+\bigbreak \noindent
+\textit{\textbf{We sketch the graph over the interval [0,2] and note that the region is a trapezoid. Thus, we can use geometry to determine this area.}}
+\begin{figure}[ht]
+    \centering
+    \incfig[1]{definite}
+    %\caption{definite}
+    %\label{fig:definite}
+\end{figure}
+\textit{\textbf{So,}}
+$$ \int_0^2(3x+2)\ dx = 2\cdot 2 + \dfrac{1}{2}\cdot2\cdot 6$$
+$$ = 10$$
+\bigbreak \noindent
+\hrule
+\section*{Area and Definite integrals}
+\q
+Find the area under the graph of
+$$f(x) = \dfrac{1}{5}x^2 + 3 \text{ over } [2,5]$$
+\sol
+\bigbreak \noindent
+\textit{\textbf{Although making a drawing is not required, doing so helps visualize the problem. The interval is [2,5], so we have $a=2$ and $b=5$}}
+$$\int\left(\dfrac{1}{5}x^2+3\right) = F(x)$$
+$$F(x) = \dfrac{1}{15}x^3+3x+C$$ 
+
+\pagebreak \noindent
+\textit{\textbf{For simplicity, we set C = 0, so that $F(x) = \dfrac{1}{15}x^3 +3x$}}
+\bigbreak \noindent
+Area over $[2,5] = F(5) - F(2)$
+$$ = \dfrac{1}{15}(5)^3 + 3(5) -  \left[\dfrac{1}{15}(2)^3+3(2)\right]$$
+$$ = \left(\dfrac{125}{15}+15\right) - \left(\dfrac{8}{15} + 6\right)$$
+$$ = 16\dfrac{4}{5}$$
+\bigbreak \noindent
+\q
+Find the area under the graph of
+$$ y=x^2+1 \text{ over } [-1,2]$$
+\sol
+\bigbreak \noindent
+\textit{\textbf{Find the antiderivative of $f$}}
+$$ F(x) = \dfrac{x^3}{3}+x $$
+\nt{
+  For simplicity, we set C = 0
+}
+\noindent
+\textit{\textbf{Now we substitute the endpoints, 2 and -1, and find the difference F(2) - F(-1)}}
+$$ F(2) - F(-1) = \left[\dfrac{2^3}{3} + 2\right] - \left[\dfrac{(-1)^3}{3} + (-1)\right]$$
+$$ = \dfrac{8}{3} + 2 - \left[\dfrac{-1^3}{3}+(-1)\right]$$
+$$ = \dfrac{8}{3}+2+\dfrac{1}{3}+1$$
+$$ = 6$$
+\bigbreak \noindent
+\thmcon{
+  \textbf{\underline{Defintion}}
+  \vspace{3mm}
+
+  Let $f$ be any continuous function over [a,b] and $F$ be any antiderivative of $f$.
+  \bigbreak \noindent
+  Then the \textbf{definite integral} of $f$ from $a$ to $b$ is
+  $$ \int_a^bf(x)\ dx = F(b) - F(a)$$
+  \bigbreak \noindent
+  Where $F(x)$ is an antiderivative of $f(x)$
+}
+
+\pagebreak \noindent
+\begin{mdframed}
+\q
+Evalulate each of the following
+$$ \text{a)} \int_{-1}^4(x^2-x)\ dx; \ \ \ \text{b)} \int_0^2e^x\ dx; \ \ \ \text{c)} \int_2^5\dfrac{1}{x}\ dx;$$
+\vspace{1mm}
+\end{mdframed}
+\bigbreka \noindent
+\textbf{Problem 1.}
+$$ \int_{-1}^4(x^2-x)\ dx$$
+$$ =\left[\dfrac{x^3}{3} -\dfrac{x^2}{2}\right]_{-1}^4$$
+\textit{\textbf{Remember that we dont care about C (C = 0)}}
+$$ \left(\dfrac{(4)^3}{3} - \dfrac{(4)^2}{2}\right) - \left(\dfrac{(-1)^3}{3} - \dfrac{(-1)^3}{2}\right)$$
+$$ = \left(\dfrac{64}{3} - \dfrac{16}{2}\right) - \left(\dfrac{-1}{3} - \dfrac{1}{2}\right)$$
+$$ = \dfrac{64}{3} - 8 + \dfrac{1}{3} + \dfrac{1}{2} = 14\dfrac{1}{6}$$
+\bigbreak \noindent
+\textbf{Problem 2.}
+$$ \int_0^2e^x\ dx$$
+$$ = \left[e^x\right]_0^2$$
+$$ e^2 - e^0$$
+$$ \approx 6.389$$
+\bigbreak \noindent
+\textbf{Problem 3.}
+$$ \int_2^5\dfrac{1}{x}\ dx$$
+$$ = \left[\ln{\lvert{x}\rvert}\right]_2^5$$
+$$ = \ln{\lvert{5}\rvert} - \ln{\lvert{2}\rvert}$$
+$$ \approx 0.916$$
+
+\pagebreak
+\noindent
+\section*{More on Area}
+When we evalulate the definite integral of a nonnegative function $f$ over [a,b], we get the area under the graph $f$ over that interval
+\begin{mdframed}
+\q
+Find the area under the graph of
+$$ y = \dfrac{1}{x^2} \text{ over } [1,10]$$
+\vspace{1mm}
+\end{mdframed}
+\begin{minipage}{0.5\textwidth}
+	\hspace{10mm}$\begin{aligned} \int_1^{10} \frac{d x}{x^2} & =\int_1^{10} x^{-2} d x \\ & =\left[\frac{x^{-2+1}}{-2+1}\right]_1^{10} \\ & =\left[\frac{x^{-1}}{-1}\right]_1^{10}=\left[-\frac{1}{x}\right]_1^{10} \\ & =\left(-\frac{1}{10}\right)-\left(-\frac{1}{1}\right) \\ & =1-\frac{1}{10}=0.9\end{aligned}$
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+    \incfig[1]{gillles}
+\end{minipage}
+\begin{figure}[ht]
+    \centering
+    %\caption{gillles}
+    %\label{fig:gillles}
+\end{figure}
+\bigbreak \noindent
+\hrule
+\bigbreak \noindent
+\section*{4.5 - Integration Techniques: Substitution}
+The following formulas provide a basis for an integration technique called \textbf{substitution}, a process that is, as we will see, the reverse of differentiation using the Chain Rule.
+\bigbreak \noindent
+\begin{mdframed}
+A. $\int u^r d u=\frac{u^{r+1}}{r+1}+C$, assuming $r \neq-1$
+\bigbreak \noindent
+B. $\int e^u d u=e^u+C$
+\bigbreak \noindent
+C. $\int \frac{1}{u} d u=\ln |u|+C ; \quad$ and $\quad \int \frac{1}{u} d u=\ln u+C, \quad u>0$
+\end{mdframed}
+\bigbreak \noindent
+In the above formulas, the variable $u$ represents some function of $x$ and $du$ is the derivative of $u$ with respect to $x$. Recall that we solve $\int_x^7\ dx$ using the Power Rule for Antiderivaties:
+$$ \int{x^7}\ dx = \dfrac{x^7+1}{7+1} +C = \dfrac{x^8}{8}+C. \ \ \text{or } \ \dfrac{1}{8}x^8 +C$$
+But, what about an integral like $\int(3x-4)^7\ dx$? Suppose we thought the antiderivative was
+$$ \dfrac{(3x-4)^8}{8}+C$$
+If we check by differentiating, we get
+$$ 8\cdot\dfrac{1}{8}\cdot(3x-4)^7\cdot3\cdot dx$$
+This simplifies to
+$$ 3(3x-4)^7, \ \ \text{not } (3x-4)^7$$
+
+\pagebreak
+\noindent
+To correct our antiderivative, let's make this substitution:
+$$ u = 3x-4$$
+Then $ \dfrac{du}{dx} = 3$, and recalling our work with differentials, we have
+$$ du = 3 \cdot dx, \text{ and } \ \dfrac{du}{3} = dx$$
+With \textit{substitution}, our original integral, $\int(3x-4)^7\ dx$, takes the form
+$$ \int(3x-4)^7\ dx = \int{u^7} \cdot \dfrac{du}{3}$$
+$$ = \dfrac{1}{3} \cdot \int{u^7}\ du$$
+$$ = \dfrac{1}{3} \cdot\dfrac{u^8}{8} + C$$
+$$ = \dfrac{1}{3\cdot 8}\cdot (3x-4)^8 +C = \dfrac{1}{24}(3x-4)^8+C$$
+\begin{mdframed}
+\q
+Find $dy$ for each function
+\bigbreak \noindent
+a) $y=f(x)=x^3$
+\vspace{2mm}\noindent
+
+\noindent
+b) $y=f(x)=x^{2 / 3}$;
+\vspace{2mm}\noindent
+
+\noindent
+c) $y=g(x)=\ln x$;
+\vspace{2mm}\noindent
+
+\noindent 
+d) $y=f(x)=e^{x^2}$
+\vspace{1mm}
+\end{mdframed}
+\bigbreak \noindent
+\textbf{Problem 1.}
+$$ y=f(x) = x^3$$
+$$ = \dfrac{dy}{dx}x^3$$
+$$ = 3x^2$$
+\bigbreak \noindent
+\textbf{Problem 2.}
+$$ y = f(x) = x^{\frac{2}{3}}$$
+$$ dy = f'(x)\ dx = \dfrac{2}{3}x^{\frac{-1}{3}}\ dx$$
+\bigbreak \noindent
+\textbf{Problem 3.}
+\bigbreak \noindent
+\textit{\textbf{We have}}
+$$ \dfrac{dy}{dx} = g'(x) = \dfrac{1}{x}$$
+\textit{\textbf{So,}}
+$$ dy = g'(x)\ dx = \dfrac{1}{x}\ dx, \ \ \text{ or } \dfrac{dx}{x}$$
+
+\pagebreak
+\noindent
+\begin{mdframed}
+\q
+Evalulate
+$$ \int 3x^2(x^3 +1)^{10}\ dx$$
+\end{mdframed}
+\bigbreak \noindent
+\sol
+\bigbreak \noindent
+\textit{\textbf{We let}}
+$$ u = x^3+1$$
+\textit{\textbf{So, we have}}
+$$ u = x^3 +1$$
+$$ du = 3x^2\ dx$$
+\textit{\textbf{We now solve for dx}}
+$$ dx = \dfrac{du}{3x^2}$$
+\textit{\textbf{Now we have}}
+$$ \int 3x^2(u)^{10}\cdot \dfrac{du}{3x^2}$$
+\textit{\textbf{$3x^2$ cancels so we are left with}}
+$$\int{u^{10}}\ du$$
+\textit{\textbf{Now integrate}}
+$$ \int{u^{10}} = \dfrac{u^{11}}{11} + C$$
+\textit{\textbf{Reversing the substitution we get}}
+$$ \dfrac{1}{11} \left(x^3+1\right)^{11} + C$$
+\nt{
+  to find du, we take the derivative of u
+}
+\bigbreak \noindent
+\newpage
+\section*{Integration Techniques: Integration by Parts}
+Let $y=u(x)$ and $y=v(x)$ be two functions. Applying the Product Rule, we have
+$$ \frac{d}{dx}(u(x)) \cdot v(x)) = u(x) \cdot \frac{d}{dx}v(x) +v(x) \cdot \frac{d}{dx}u(x)$$
+Integrating both sides with respect to x, we have
+$$
+\int\left[\frac{d}{d x}(u(x) \cdot v(x))\right] d x=\int\left[u(x) \cdot \frac{d}{d x} v(x)\right] d x+\int\left[v(x) \cdot \frac{d}{d x} u(x)\right] d x,
+$$
+Note that 
+$$\int\left[ \frac{d}{dx}(u(x)\cdot v(x))\right]\ dx = u(x) \cdot v(x)$$
+We simplify by writing $u$ for $u(x)$
+$v$ for $v(x), du$ for $ \frac{d}{dx}u(x)$ and $dv$ for $ \frac{d}{dx}v(x)\ dx$:
+$$ uv = \int{u\ dv} + \int{v\ du}$$
+Solving for $\int{u\ dv}$, we obtain the following theorem
+\thm{}{
+  $$\int{u\ dv} = uv - \int{v\ du}$$
+}
+\bigbreak \noindent
+\q
+Evaluate:
+$$ \int{xe^x}\ dx$$
+\sol
+\textit{\textbf{We let}}
+$$ u = x \ \ \ \text{and } \ dv = e^x\ dx$$
+\textit{\textbf{In this case, differentiating $u$ gives}}
+$$ du = dx$$
+\textit{\textbf{and integrating dv gives}}
+$$ v = e^x$$
+\textit{\textbf{The integrating-by-Parts Formula gives us}}
+$$ \int (x)(e^x\ dx) = (x)(e^x) - \int (e^x)(dx)$$
+$$ = xe^x - e^x +C$$
+
+\end{document}
+
+

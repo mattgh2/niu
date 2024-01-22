@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="2.5518255in"
+   height="1.2266389in"
+   viewBox="0 0 64.816368 31.156627"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25, custom)"
+   sodipodi:docname="triangle.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4062571"
+     inkscape:cx="217.59891"
+     inkscape:cy="126.57714"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     showborder="true"
+     width="200mm"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:window-width="946"
+     inkscape:window-height="1039"
+     inkscape:window-x="962"
+     inkscape:window-y="29"
+     inkscape:window-maximized="1"
+     inkscape:showpageshadow="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid815"
+       units="mm"
+       spacingx="10"
+       spacingy="10"
+       empspacing="4"
+       dotted="false"
+       originx="-13.291955"
+       originy="-15.498282"
+       visible="false" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-13.291955,-192.49828)">
+    <path
+       style="fill:#b2b2b2;fill-rule:evenodd;stroke:#000000;stroke-width:0.268999;stroke-miterlimit:4.1;paint-order:stroke fill markers"
+       d="M 26.111052,219.64296 H 51.62645 L 38.034958,198.03992 Z"
+       id="path1" />
+    <path
+       style="fill:#b2b2b2;fill-rule:evenodd;stroke:#000000;stroke-width:0.268999;stroke-miterlimit:4.1;paint-order:stroke fill markers"
+       d="m 38.034958,198.03992 v 21.60304"
+       id="path2" />
+    <text
+       style="font-size:2.64583px;font-family:monospace;-inkscape-font-specification:'monospace, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"
+       id="text1"
+       y="211.02036"
+       x="32.695671"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         x="32.695671"
+         y="211.02036"
+         style="stroke-width:0.264583">$h$</tspan></text>
+    <text
+       style="font-size:2.64583px;font-family:monospace;-inkscape-font-specification:'monospace, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"
+       id="text1-3"
+       y="223.50117"
+       x="37.241138"><tspan
+         sodipodi:role="line"
+         id="tspan1-5"
+         x="37.241138"
+         y="223.50117"
+         style="stroke-width:0.264583">$b$</tspan></text>
+    <text
+       style="font-size:2.64583px;font-family:monospace;-inkscape-font-specification:'monospace, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"
+       id="text1-6"
+       y="194.52271"
+       x="13.249322"><tspan
+         sodipodi:role="line"
+         id="tspan1-2"
+         x="13.249322"
+         y="194.52271"
+         style="stroke-width:0.264583">Area of a Triangle: $ A = \dfrac{1}{2}bh$</tspan></text>
+  </g>
+</svg>

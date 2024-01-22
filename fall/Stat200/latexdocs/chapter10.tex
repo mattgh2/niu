@@ -1,0 +1,202 @@
+\documentclass{report}
+
+\input{~/latex/template/preamble.tex}
+\input{~/latex/template/macros.tex}
+
+\title{\Huge{Chapter 10 Notes}}
+\author{\huge{Matt Warner}}
+\date{\huge{}}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{}
+\lhead{\leftmark}
+\cfoot{\thepage}
+% \usepackage[default]{sourcecodepro} \usepackage[T1]{fontenc}
+\usepackage{upgreek}
+\pgfpagesdeclarelayout{boxed}
+{
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=1,%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {
+    border code=\pgfsetlinewidth{1.5pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.95\pgfphysicalwidth,%
+    resized height=.95\pgfphysicalheight,%
+    center=\pgfpoint{.5\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+}
+
+\pgfpagesuselayout{boxed}
+
+\begin{document}
+  \maketitle
+  \chapter*{10}
+\q
+Most casts formed...
+\bigbreak \noindent 
+\textbf{Problem 1.} State the null and alternative hypothesis
+$$ H_0 : \mu_{1} = \mu_{2}$$
+$$ H_A : \mu_{1} <\mu_{2}$$
+\textbf{Problem 2.} Calculate the test statistic
+$$ Z = \dfrac{\bar{x_1}-\bar{x_2} - \Updelta_0}{\sqrt{\dfrac{\sigma_{1}^2}{n_{1}}} +\sqrt{\dfrac{\sigma_{2}^2}{n_{2}}} }$$
+$$ \dfrac{210.6 -225.1 - 0}{\sqrt{\dfrac{416.16}{16} - \dfrac{96.04}{25}}}$$
+$$ = \dfrac{-14.6}{5.46} = -2.67$$
+\textbf{\Problem 3.} Find the rejection region
+\bigbreak \noindent
+$\alpha = .05$, so
+\bigbreak \noindent
+Reject $ H_0$ if $ z\leq -1.6449$
+\bigbreak \noindent
+\textbf{{Problem 4.}} Give the decision
+Reject $ H_0$. the samples do have enough evidence, at the $\alpha =5\% $level, to conclude that mean is lower for plaster 
+\bigbreak \noindent
+\textbf{Problem 5. } p-value = $.0038 $
+
+\pagebreak
+\q
+A new advertising program..
+\bigbreak \noindent
+\textbf{Problem 1.} State the null and alternative hypothesis
+$$ H_0 : \mu_{1} = \mu_{2}$$
+$$ H_A : \mu_{1} \neq \mu{2}$$
+\textbf{Problem 2.} Calculate the test statistic
+\bigbreak \noindent
+\textit{\textbf{Using}}
+$$ Z = \dfrac{\bar{x_1}-\bar{x_2} - \Updelta_0}{\sqrt{\dfrac{\sigma_{1}^2}{n_{1}}} +\sqrt{\dfrac{\sigma_{2}^2}{n_{2}}} }$$
+\textit{\textbf{We have}}
+$$\dfrac{20.3 - 14.8 - 0}{\sqrt{\dfrac{6.2^2}{27}} + \sqrt{\dfrac{4.9^2}{27}}}$$
+\bigbreak \noindent
+\hrule
+\bigbreak \noindent
+\q
+\textbf{Problem 1} state the null and alt
+\bigbreak \noindent
+\textbf{Problem 2.} Calculate the test statistic
+\textit{\textbf{Using the formula}}
+$$ Z = \dfrac{\bar{x_1}-\bar{x_2} - \Updelta_0}{\sqrt{\dfrac{\sigma_{1}^2}{n_{1}}} +\sqrt{\dfrac{\sigma_{2}^2}{n_{2}}} }$$
+\textit{\textbf{We have}}
+$$ \dfrac{20.3 - 14.8 - 0}{\sqrt{\dfrac{6.2^2}{27} +\sqrt{\dfrac{4.9^2}{27}} }}$$
+$$ = 3.62$$
+\textbf{Problem 3.} Find the rejection region
+$$\dfrac{\alpha}{2} = .005$$
+$$ RR = \pm2.5758$$
+\textit{\textbf{So, we reject if}}
+$$ Z \leq -2.5758$$
+$$ Z \geq 2.5758$$
+\textbf{Problem 4} Give the conclusion 
+\bigbreak \noindent
+Reject $ H_0$ the samples do have enough eidence at the $\alpha = 1\%$ level to conclude mean ride times differ
+\bigbreak \noindent
+\textbf{Problem 5.} Find the p-value
+$$ \text{p-value} < .0002 + .0002$$
+$$ \text{p-value} < .0004$$
+\bigbreak \noindent
+p-value is smaller than alpha, so we reject (always reject if p-value is smaller)
+\newpage
+\q
+A consumer organization conducted...
+\bigbreak \noindent
+\textbf{Problem 1.} calculate a 99\% confidence interval to estimate the difference between the mean power output ratings for the two brands.
+\bigbreak \noindent
+\textit{\textbf{We can use the formula from chapter 8 if we wanted}}
+$$ \bar{x}\pm Z \cdot \dfrac{\sigma_1}{\sqrt{n_1}}$$
+\textit{\textbf{instead, we'll use}}
+$$ \left(\bar{x_1} - \bar{x_2}\right)\pm \left(Z \sqrt{\dfrac{\sigma_{1}^2}{n_1} + \dfrac{\sigma_{2}^2}{n_2}}\right)$$
+\textit{\textbf{so, we have}}
+$$ \left(101.36 - 98.79\right) \pm \left(1.96 \cdot \sqrt{\dfrac{3.90}{21} + \dfrac{1.56}{16}}\right)$$
+$$ 2.57 \pm 1.04$$
+We are 95\% confidence that
+$$ 1.53 < \mu_1 - \mu_2 < 3.61$$
+\nt{
+  When you have 2 positives on both sides, you know that $\mu_1$ is bigger,
+}
+\textit{\textbf{We can say that,}}
+\bigbreak \noindent
+$\mu_1$ exceeds $\mu_2$ by.... \\
+... as little as 1.53 \\
+... as much as 3.61
+\bigbreak \noindent
+\textbf{Problem 2.} Is there evidence to suggest that the mean power-output ratings for the two brands differ?
+\bigbreak \noindent
+Reject $ H_0$ because 0 is not in the confidence interval
+\nt{
+Using C.I. to perform a test tonly works for 2-sided $H_A$
+\bigbreak \noindent
+The level of confidence used for the interval has to match with the $\alpha$ used to test the level of significance
+}
+\bigbreak \noindent
+\hrule
+\bigbreak \noindent
+
+\pagebreak
+\noindent
+\q
+chicks and feed problem
+\bigbreak \noindent
+\textbf{Problem 1.} 
+$$ H_0 : \mu_! = \mu_2$$
+$$ H_A : \mu_1 > \mu_2$$
+\textbf{Problem 2.}
+$$ S_p^2 = \dfrac{(20-1)(42.73) + (20-1)(50.80)}{(20+20-2)}$$
+$$ = 2203.246$$
+$$ T = \dfrac{402.95 - 366.30 - 0}{\sqrt{2203.246(\frac{1}{20} + \frac{1}{20})}}$$ 
+$$ = 2.47$$
+\textbf{Problem 3.}
+$$ df = 20+20-2 = 38$$
+\textit{\textbf{So, we have}}
+$$ t_{38, 0.05} = 1.6973$$
+\textbf{Problem 4.}
+$$ 0.005 < \text{p-value} < 0.01$$
+\textit{\textbf{p-value is smaller than our $\alpha$ so we reject the null hypothesis}}
+\bigbreak \noindent
+\textbf{Problem 5.}
+\bigbreak \noindent
+\textit{\textbf{Using the formula}}
+$$ \left(\bar{x_1} - \bar{x_2}\right)\pm \left(t_{df, \alpha}\cdot \sqrt{\frac{1}{n_1}+ {\frac{1}{n_2}}}\right)$$
+$$ (36.65)\pm \left(2.0423\cdot 14.84\right)$$ 
+$$ = 36.65 \pm 30.3$$
+\textit{\textbf{So, we are 95\% confident that}}
+$$ 6.35 < \mu_1 -\mu_2 < 66.95$$
+\textit{\textbf{So,}}
+$\mu_1$ exceeds $ \mu_2$ by \\ as little as 6.35 \\ as much as 66.95
+
+\nt{
+  Remember that working with C.I always means it is two sided
+}
+\nt{
+  Final exam is in Cole Hall Room 100
+}
+
+\pagebreak
+\q
+At a particular university, a random sample ...
+\bigbreak \noindent
+Population 1 : All males at the university
+\bigbreak \noindent 
+Population 2 : All females at the university
+\bigbreak \noindent
+$p_1$ = \% of males liking beer
+\bigbreak \noindent
+$p_2$ = \% of females liking beer
+\bigbreak \noindent
+\textbf{Problem 1.}
+$$ H_0 : p_1 = p_2$$
+$$ H_A : p_1 \neq p_2$$
+\nt {
+  there is an equivelent way to write this:
+  $$ p_1 - p_2 = 0$$
+  $$ p_1 - p_2 \neq 0$$
+}
+\bigbreak \noindent
+\textbf{Problem 2.}
+$$ Z = \dfrac{\hat{p_1} - \hat{p_2}}{\sqrt{\hat{p_c(1-\hat{p_c})(\frac{1}{n_1} + \frac{1}{n_2})}}}$$
+$$ \hat{p_1} = \dfrac{60}{150} = .40$$
+
+$$ \hat{p_2} = \dfrac{63}{180} = .35$$
+\end{document}

@@ -1,0 +1,538 @@
+\documentclass{report}
+
+\input{~/latex/template/preamble.tex}
+\input{~/latex/template/macros.tex}
+
+\title{\Huge{Chapter 9 Notes}}
+\author{\huge{Matt Warner}}
+\date{\huge{}}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{}
+\lhead{\leftmark}
+\cfoot{\thepage}
+% \usepackage[default]{sourcecodepro} \usepackage[T1]{fontenc}
+
+\pgfpagesdeclarelayout{boxed}
+{
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=1,%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {
+    border code=\pgfsetlinewidth{1.5pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.95\pgfphysicalwidth,%
+    resized height=.95\pgfphysicalheight,%
+    center=\pgfpoint{.5\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+}
+
+\pgfpagesuselayout{boxed}
+
+\begin{document}
+  \maketitle
+\chapter*{Chapter 9 – Hypothesis Tests Based on a Single Sample}
+\section*{Section 9.1 – The Parts of a Hypothesis Test and Choosing the Alternative Hypothesis}
+\textbf{Statistical inference} – using a sample statistic (e.g. $\bar{x}$ = sample mean or $\hat{p}$ = sample proportion) to make some statement or some conclusion about a population parameter (e.g. $\mu$ = population mean or $p$ = population proportion). There are 2 types.
+\begin{itemize}
+  \item \textbf{Confidence interval}
+    \begin{itemize}[label=$\circ$]
+    \item Uses a sample statistic to estimate the unknown value of a population parameter.
+    \item We write the estimate in the form of an interval that we believe captures the actual or true parameter value.
+  \end{itemize}
+  \item \textbf{Hypothesis test (or significance test)}
+  \begin{itemize}
+    \item There are 2 hypotheses.
+    \begin{itemize}
+      \item Null hypothesis – labeled $H_0$
+      \item Alternative hypothesis (or research hypothesis) – labeled $H_A$ or $H_1$
+    \end{itemize}
+    \item Each hypothesis states one or more possible values for a parameter.
+    \item The purpose of the hypothesis test is to decide whether or not the sample data gives evidence against $H_0$ and in favor of $H_A$.
+  \end{itemize}
+\end{itemize}
+\section*{Example (Examples 9.1 – 9.3, pp. 392 – 393)}
+For each of the following, state the null and alternative hypotheses.
+
+\begin{enumerate}[label=(\alph*)]
+  \item Trust, in general, has been declining for many years; most concerning, trust has been decreasing in public health and safety institutions and workers. According to a recent survey, only 58\% of Americans trust doctors. Suppose a national advertising campaign is conducted to address confidence in doctors and medical leaders, and an experiment is conducted to determine whether it has been effective.
+  $$ H_o : p = .58$$
+  $$ H_A : p > .58$$
+  \item Even though the roads are crowded, it was reported that the mean number of kilometers
+driven per year by each Australian driver is 13,716. Over the past year, more public
+transportation has been made available in most large cities to encourage people to drive
+less and to use buses and trains instead. An observational study is conducted to
+determine whether the mean number of kilometers driven each year has decreased
+  $$ H_o : \mu = 13716$$
+  $$ H_A : \mu < 13716$$
+\item The variance in thickness for 20-lb printer paper at a manufacturing plant is known to be
+0.0007. A new process is developed that uses more recycled fiber, and an experiment is
+conducted to detect any difference in the variance in paper thickness.
+  $$ H_o : \sigma^2 = .0007$$
+  $$ H_A : \sigma^2 \neq .0007$$
+\end{enumerate}
+  \bigbreak \noindent
+  \nt{
+    We always believe the null hypothosies untill we can show the alternative is true
+  }
+  \bigbreak \noindent
+  \section{General Approach or Overview}
+When conducting hypothesis testing, it is essential to follow a structured approach to ensure clarity and rigor in the analysis. The general approach consists of the following steps:
+
+\begin{enumerate}
+  \item \textbf{State the Null and Alternative Hypotheses:} Begin by clearly stating the null hypothesis ($H_0$) and the alternative hypothesis ($H_A$). Additionally, decide on the level of significance, denoted as $\alpha$.
+
+  \item \textbf{Calculate the Test Statistic:} Calculate the test statistic. This statistic provides a measure of how close or consistent the sample data is to the hypothesized value of the parameter.
+
+  \item \textbf{Give the Rejection Region:} Define the rejection region, which is the range of values of the test statistic that would lead to the rejection of $H_0$.
+
+  \item \textbf{Give a Decision and Write a Conclusion:}
+    \begin{itemize}
+      \item If the test statistic falls within the rejection region:
+        \begin{itemize}
+          \item Reject $H_0$ and conclude in favor of $H_A$.
+          \item The data or results are considered statistically significant.
+          \item For the conclusion, write: "The sample does have enough evidence, at level $\alpha$, to support $H_A$."
+        \end{itemize}
+      \item If the test statistic does not fall within the rejection region:
+        \begin{itemize}
+          \item Do not reject $H_0$.
+          \item The data or results are not considered statistically significant.
+          \item For the conclusion, write: "The sample does not have enough evidence, at level $\alpha$, to support $H_A$."
+        \end{itemize}
+    \end{itemize}
+\end{enumerate}
+
+\textbf{IMPORTANT NOTES:}
+\begin{itemize}
+  \item The primary goal is to provide support for $H_A$.
+  \item Initially, we assume that $H_0$ is true until the sample data provides sufficient evidence to support $H_A$. This concept is analogous to the legal system's presumption of innocence until guilt is proven.
+  \item If the sample data fails to support $H_A$, it does not imply that $H_0$ is proven true. This is akin to the legal system, where failure to prove guilt does not equate to proving innocence.
+  \item Avoid using phrases like "Accept $H_0$" or "There is evidence to support $H_0$."
+\end{itemize}
+\pagebreak
+\section*{Section 9.2 - Hypothesis Test Errors}
+Our hypothesis testing procedure could lead to an incorrect decision
+\bigbreak \noindent
+
+\begin{table}[ht]
+  \centering
+  \renewcommand{\arraystretch}{1.5}
+  \begin{tabular}{l|c|c}
+    \toprule
+    \textbf{ } & \textbf{Reject $H_0$} & \textbf{Do not reject $H_0$} \\
+    \hline
+    \midrule
+    $H_0$ is true &  \parbox{5.5cm}{\vspace{0.5cm}  Type I Error - Rejecting $H_0$ even though $H_0$ is true.} &  \parbox{5.5cm}{\vspace{0.5cm} \centerline{Correct}} \\
+    \hline
+    $H_A$ is true &  \parbox{4cm}{\vspace{0.5cm}  \centerline{Correct}} &  \parbox{5.5cm}{\vspace{0.5cm} Type II Error - Not Rejecting the null when $H_A$ is true.} \\
+    \hline
+    \bottomrule
+  \end{tabular}
+\end{table}
+\section{Type I and Type II Errors in Hypothesis Testing}
+
+\vspace{10pt}
+In the context of statistical hypothesis testing, it's essential to understand the concepts of Type I and Type II errors, which play a crucial role in decision-making and drawing conclusions. These errors are often associated with the acceptance or rejection of null hypotheses.
+\vspace{10pt}
+
+\subsection{Type I Error (False Positive)}
+
+\vspace{10pt}
+\textbf{Definition:} Type I error, also known as a false positive, occurs when a statistical test incorrectly rejects a null hypothesis that is actually true. In other words, it represents a false alarm or an erroneous positive result.
+\bigbreak \noindent
+\textbf{Symbol:} Type I error is typically denoted as $\alpha$ (alpha).
+\bigbreak \noindent
+\textbf{Example:} An example of Type I error is when a study concludes that a new drug is effective in treating a medical condition when, in reality, the drug has no therapeutic effect.
+\vspace{3mm}
+
+\subsection{Type II Error (False Negative)}
+
+\vspace{10pt}
+\textbf{Definition:} Type II error, also known as a false negative, occurs when a statistical test fails to reject a null hypothesis that is actually false. In this case, the test overlooks a genuine effect or difference.
+\bigbreak \noindent
+\textbf{Symbol:} Type II error is often denoted as $\beta$ (beta).
+\bigbreak \noindent
+\textbf{Example:} An example of Type II error is when a security system fails to detect unauthorized access to a computer network, missing a legitimate security breach.
+  \bigbreak \noindent
+
+  \pagebreak
+\section*{Example (Exercise 9.47, p.401) – Hypothesis Testing for Highway 405}
+
+Highway 405, running from northern to southern California, is famously known as the busiest interstate road in the United States, with approximately 374,000 vehicles using it daily, often referred to as "Carmageddon." Transportation officials are considering raising tolls in California to fund planned repairs. To make this decision, they will conduct a hypothesis test to determine whether there is evidence suggesting that the mean number of vehicles per day on Highway 405 has increased.
+\bigbreak \noindent \bigbreak \noindent
+\noindent \begin{large}{\textbf{State the Null and Alternative hypothesis}}\end{large}
+\bigbreak \noindent
+  $$ H_o : \mu = 374,000$$
+  $$ H_A : \mu > 374,000$$
+  \bigbreak \noindent
+  \begin{large}{\textbf{Describe the type I and type II errors.}}\end{large}
+  \bigbreak \noindent
+  \begin{center}
+  Type I - deciding traffic increased when it really didnt
+\bigbreak \noindent
+  Type II - Deciding traffic didnt increase when it in fact has
+\end{center}
+\bigbreak \noindent \bigbreak \noindent
+\begin{large}
+  \textbf{If a type I error is committed, who is more angry?}
+  \end{large}
+  \bigbreak \noindent
+  \begin{center}
+  Deciding higher traffic brings higher tolls even though traffic really didn't increase
+  \bigbreak \noindent
+  Therefore, The drivers are more angry
+\end{center}
+\bigbreak \noindent
+\begin{large}
+  \textbf{If a type II error is committed, who is more angry?}
+  \end{large}
+  \bigbreak \noindent
+  \begin{center}
+  Deciding traffic didn't increase means state misses out on toll money. 
+\bigbreak \noindent
+  So, the transportation officials are more angry
+  \end{center}
+
+\pagebreak
+\subsection*{The Logic of Hypothesis Testing}
+\bigbreak \noindent
+Suppose that we want to test the following hypotheses.
+$$ H_0 : \text{ coin is fair}$$
+$$ H_A : \text { coin is unfair}$$
+\bigbreak \noindent
+\noindent Sample Data - Suppose that 20 tosses of the coin result in 11 heads and 9 tails
+\bigbreak \noindent
+\textit{\textbf{What would be the decision?}}
+\bigbreak \noindent
+Reject $H_0$ \\ 
+Do not reject $H_0$ $\rightarrow$ This one
+\bigbreak \noindent
+\textit{\textbf{Why?}}
+\begin{itemize}
+  \item When $H_0$ is true we would expect to get around 10 heads and 10 tails 
+  \item The observed 11 heads and 9 tails is
+    \begin{itemize}[label=$\circ$]
+      \item Close to what we expect 
+      \item likely to happen
+    \end{itemize}
+\end{itemize}
+\bigbreak \noindent
+Sample Data - Suppose the 20 tosses of the coin results in 19 heads and 1 tail
+\bigbreak \noindent
+\textit{\textbf{What would be the decision?}}
+\bigbreak \noindent
+Reject $H_0$ $\rightarrow$ This one \\
+Dont reject $H_0$
+\bigbreak \noindent
+\textit{\textbf{Why?}}
+\begin{itemize}
+  \item When $H_0$ is true we would expect to get around 10 heads and 10 tails 
+  \item The observed 19 heads and 1 tail is
+    \begin{itemize}[label=$\circ$]
+      \item Not close to what we expect 
+      \item Unlikely to happen
+    \end{itemize}
+\end{itemize}
+\bigbreak \noindent
+\nt{
+  The observed data being close to/far from what we expect will be determined by the rejection region of the test
+  \bigbreak \noindent
+  The observed data being likely/unlikely to happen will be determined by the $p$ value of the test.
+}
+
+\pagebreak
+\section*{Section 9.3 - Hypothesis Tests Concerning a Population Mean When $\sigma$ is Known}
+\bigbreak \noindent
+Provided
+\begin{itemize}
+  \item Underlying population has a normal distribution or $n$ is large ($ n \geq 30)$
+  \item $\sigma$ (population standard deviation) has a known value
+\end{itemize}
+\bigbreak \noindent
+To test the null hypothesis
+
+$$ H_0 : \mu = \mu_0$$
+versus one of these alternative hypotheses
+
+$$ H_A : \mu < \mu_0$$
+$$H_A : \mu > \mu_0$$
+$$ H_A : \mu \neq \mu_0$$
+\bigbreak \noindent
+Use the test statistic
+
+$$ Z = \dfrac{\bar{x} - \mu_0}{\dfrac{\sigma}{\sqrt{n}}}$$
+\bigbreak \noindent
+\nt{
+  The standard deviation
+  $$ \sigma_{\bar{x}} = \dfrac{\sigma}{\sqrt{n}}$$
+  Is often called the standard error of $\bar{x}$
+}
+\bigbreak \noindent
+Rejection Region
+\bigbreak \noindent
+If (i): \hspace{10mm} Reject $H_0$ if $Z \leq - Z_a$
+\bigbreak \noindent
+If (ii): \hspace{10mm} Reject $H_0$ if $Z \geq Z_a$
+\bigbreak \noindent
+If (iii): \hspace{10mm} Reject $H_0$ if $Z \leq -Z_{\frac{a}{2}}$ or if $Z \geq Z_{\frac{a}{2}}$
+
+\pagebreak
+\subsection*{Example}
+The principal of a high school claims that \( \mu \), the mean SAT score for all graduates
+of his school, is higher than the national average of 500. To prove his claim, he selects a sample
+of 75 recent graduates and calculates a sample mean of \( \bar{x} = 520 \). Does the sample provide
+enough evidence to support his claim? We may assume that the SAT scores for all graduates of his high
+school follow a normal distribution with a population standard deviation of \( \sigma = 100 \). Test using
+a level of significance \( \alpha = 0.05 \).
+\bigbreak \noindent
+\textbf{Problem 1.} Give the population and the parameter
+\bigbreak \noindent
+\textit{\textbf{Our population:}}
+$$\text{all grads of this highschool who took the sat}$$
+\bigbreak \noindent
+\textit{\textbf{our parameter:}}
+$$ \mu = \text { Mean SAT score for this population}$$
+\bigbreak \noindent
+\textbf{Problem 2.} State the null and alternative hypotheses
+$$ H_0 : \mu = 500$$
+$$ H_A : \mu > 500$$
+\bigbreak \noindent
+\textbf{Problem 3.} Calculate the test statistic
+\bigbreak \noindent
+\textit{\textbf{Using the formula}}
+$$ Z = \dfrac{\bar{x} - \mu_0}{\frac{\sigma}{\sqrt{n}}}$$
+\textit{\textbf{We get}}
+$$ \dfrac{520 - 500}{\dfrac{100}{\sqrt{75}}} = 1.73$$
+\nt{
+  When $H_0$ : $\mu = 500$ is true, $\bar{x}$ should be around 500
+  \bigbreak \noindent
+  Is $\bar{x} = 520$ close to or far from 500?
+}
+\noindent\textbf{Problem 4.} Find the rejection region
+\bigbreak \noindent
+\textbf{Problem 5.} Give the decision and write a conclusion to the problem
+
+\pagebreak
+\noindent 
+\q
+Buiness and management (in the book)
+\bigbreak \noindent 
+$$ H_0 : \mu = 51500$$
+$$ H_A : \mu < 51500$$
+$$ \alpha = .01$$
+\textit{\textbf{Big sample and population standard deviation tells us this is a Z test}}
+$$ Z = \dfrac{\bar{x} - \mu}{\dfrac{\sigma}{\sqrt{n}}}$$
+\textit{\textbf{So,}}
+
+$$ \dfrac{49762 - 51500}{\dfrac{3750}{\sqrt{38}}}$$
+
+$$ = -2.86$$
+\textit{\textbf{Looking up the z score we get in the table we get}}
+$$ Z = -2.3263$$
+\textit{\textbf{Reject $H_0$ if Z $\le$ -2.3263}}
+So, we reject $H_0$, there is enough evidence at the 1\% level, to conclude mean salaray has decreased.
+\nt{
+  if $<$, we use the left end of the tail
+  \bigbreak \noindent
+  if $>$, we use the right end of the tail
+}
+\section*{9.4 - $p$ Values}
+The \textbf{p value} of a hypotheses test
+\begin{itemize}[label=$\circ$]
+  \item measures the strength of the evidence against $ H_0$
+  \item indicates how likely the sample data was to have occured when $H_0$ is true
+  \item $p$ value = probability of obtaining another test statistic value at least as extreme as the actual (or observed) value of the test statistic, when $H_0$ is true
+  \item the \textbf{smaller} the $p$ value the \textbf{more evidence} there is \textbf{against} $H_0$ and \textbf{in favor} of $H_A$
+    \begin{itemize}[label=$\bullet$]
+      \item If $p$ value $\leq \alpha$ then \textbf{reject} $H_0$
+      \item If $p$ value $> \alpha$ then \textbf{do not reject} $H_0$
+    \end{itemize}
+\end{itemize}
+\subsection*{Example (SAT problem)}
+\textit{\textbf{Hypothesis}}
+$$ H_0 : \mu = 500$$
+$$ H_A : \mu >500$$
+\textit{\textbf{Find the area beyond 1.73}}
+$$ 1 - .9582$$
+$$ = .0418$$
+Since the $p$ value is less than alpha, we reject the null
+
+\pagebreak
+\section*{9.5 - Hypotheses Tests Concerning a Population Mean when $\sigma$ is unknown}
+Provided
+\begin{itemize}[label=$\circ$]
+  \item Underlying population has a normal distribtution 
+  \item $\sigma$ has an unknown value
+  \item $s$ has a known value
+\end{itemize}
+\bigbreak \noindent
+To test the null hypothesis
+$$ H_0 : \mu = \mu_0$$
+\bigbreak \noindent
+Versus one of these alternative hypothesis
+\begin{enumerate}
+    \item[(i)] $H_A: \mu < \mu_0$
+    \item[(ii)] $H_A: \mu > \mu_0$
+    \item[(iii)] $H_A: \mu \neq \mu_0$
+\end{enumerate}
+\bigbreak \noindent \bigbreak \noindent
+Use the test statistic 
+
+$$T = \frac{\bar{x} - \mu_0}{\frac{s}{\sqrt{n}}}$$
+\bigbreak \noindent
+\nt{the standard deviation $\hat{\sigma}_{\bar{X}} = \frac{s}{\sqrt{n}}$ is often called the (estimated) standard error of $\bar{X}$.)}
+\bigbreak \noindent \bigbreak \noindent
+\textbf{Rejection Region:}
+\begin{itemize}
+    \item Use the $t$ distribution with degrees of freedom $df = n - 1$.
+    \item If (i): Reject $H_0$ if $T \leq -t_{\alpha}$.
+    \item If (ii): Reject $H_0$ if $T \geq t_{\alpha}$.
+    \item If (iii): Reject $H_0$ if $T \leq -t_{\alpha/2}$ or if $T \geq t_{\alpha/2}$.
+\end{itemize}
+\q
+A major car manufacturer wants to test a new engine to determine whether it meets air pollution standards. The mean emission, $\mu$, of all engines of this type must be less than 20 parts per million of carbon. Ten engines are manufactured for testing purposes and their emission levels yield a sample mean of $\bar{x} = 17.57$ and a sample standard deviation of $s = 2.95$. Does the sample give enough evidence to conclude that this type of engine meets the pollution standard? Assume emission levels for all engines of this type are normally distributed. Test using the level of significance $\alpha = 0.05$.
+\bigbreak \noindent
+\textbf{Problem 1.} Give the population and the parameter
+\bigbreak \noindent
+\textit{\textbf{Population:}} All engines of this type produced by the manufacturer
+\bigbreak \noindent
+\textit{\textbf{Parameter:}} The mean emission level
+\bigbreak \noindent
+\textbf{Problem 2.} State the null and alternative hypotheses
+$$ H_0 : \mu = 20$$
+$$ H_A : \mu < 20$$
+\bigbreak \noindent
+\textbf{Problem 3.} Calculate the test statistic
+\bigbreak \noindent
+\textit{\textbf{Using the formula}}
+
+$$ T = \dfrac{\bar{x} - \mu}{\dfrac{s}{\sqrt{n}}}$$
+\textit{\textbf{We have}}
+
+$$ T = \dfrac{17.57 - 20}{\dfrac{2.95}{\sqrt{10}}}$$
+
+$$ T = -2.60$$
+\textbf{Problem 4.} Find the rejection region
+\bigbreak \noindent
+\textit{\textbf{Finding our rejection region, we have}}
+$$ \alpha = .05$$
+$$ t_{.05,9} = -1.8331$$
+\textit{\textbf{So,}}
+\bigbreak \noindent
+Since, $T \leq t_a$, we reject the null
+\bigbreak\noindent
+\hrule
+\bigbreak \noindent
+\q
+Most water treatment facilities monitor the pH of their drinking water on an hourly basis. One such water treatment facility has a target pH of 8.5. During one particular hour, 17 water specimens were selected and yielded a sample mean of $\bar{x} = 8.42$ and a sample standard deviation of $s = 0.16$. Does the sample give enough evidence to conclude that the mean pH level differs from 8.5? Assume the pH levels vary according to a normal distribution. Test using the level of significance $\alpha = 0.05$.
+\bigbreak \noindent
+\textbf{Problem 1.} Give the population and parameter
+\bigbreak \noindent
+\textbf{Population:} All water at this facility
+\bigbreak \noindent
+\textbf{Parameter: } Mean pH levels
+\bigbreak \noindent 
+$$ H_0 : \mu = 8.5$$
+$$ H_A : \mu \neq 8.5$$
+\textit{\textbf{This will be a two tailed test}}
+\bigbreak \noindent
+$$ T = \dfrac{\bar{x}-\mu}{\dfrac{s}{\sqrt{n}}}$$
+\textit{\textbf{So,}}
+$$\dfrac{8.42 - 8.5}{\dfrac{.16}{\sqrt{17}}} = -2.06$$
+\bigbreak \noindent
+$$ df = n -1$$
+$$ 17 -1$$ 
+$$ = 16$$
+$$\alpha = .025$$
+critical test statistic:
+$$-2.1199, 2.1199$$
+\textit{\textbf{Reject $H_0$ if}}
+$$ T \geq 2.1199$$
+$$ T \leq -2.1199$$
+\textit{\textbf{So, we reject, the sample does not have enough evidence, at $\alpha = .05$ to show $\mu$ differes }}
+\bigbreak \noindent
+The p value is between $.025 \& .05$, and on the right $.025 \& .05$
+$$ .05 < \text{ p-value } < .10$$
+\textit{\textbf{Since p is bigger than alpha, we reject $H_0$}}
+\q
+Biology and Enviromental Science
+\bigbreak \noindent 
+\textit{\textbf{We have}}
+$$ n = 26 \ \ \ \mu = 31.9 \ \ \ \bar{x} = 30.088 \ \ \ s = 4.433 \ \ \ \alpha = .01$$
+$$ H_0 : \mu = 3.19$$
+$$ H_A : \mu < 31.9$$
+\textit{\textbf{No $\sigma$, so its a t test}}
+$$ \dfrac{30.088 - 31.9}{\dfrac{4.433}{\sqrt{26}}} = -2.08$$
+$$ t_{25, .01} = -2.4851$$
+\textit{\textbf{Reject $H_0$ if}}
+$$ T \leq -2.4851$$
+\textit{\textbf{Do not reject $H_0$, The sample does not have evidence at the $\alpha = 1\%$ to show the mean yield decreased}}
+
+\noindent \textit{\textbf{For p value, we have}}
+$$ T_{25, ?} = -2.08$$
+\textit{\textbf{looking in the table, we see that the p-value is between .01, and .025}}
+\bigbreak \noindent
+We can conclude that the p value is bigger than alpha, so we reject $H_0$
+\q
+overweight study....
+\bigbreak \noindent
+\textbf{problem 1.} 
+\bigbreak \noindent
+\textit{\textbf{Population: All 8th-graders from this district}}
+\bigbreak \noindent
+\textit{\textbf{Parameter: percent of population that is overweight }}
+
+\pagebreak
+\section*{9.6 - Large-Sample Hypothesis Tests Concerning a Population Proportion}
+Previously:
+\begin{itemize}
+    \item Measurements or data values were quantitative.
+    \item Population parameter was $\mu =$ population mean.
+    \item Sample statistic was $\bar{x} =$ sample mean.
+\end{itemize}
+\bigbreak \noindent
+Now:
+\begin{itemize}
+    \item Measurements or data values will be qualitative.
+    \item Population parameter: $p =$ proportion of individuals in the population with a specified characteristic.
+    \item Sample statistic: $\hat{p} =$ proportion of individuals in the sample with the specified characteristic.
+\end{itemize}
+\bigbreak \noindent
+Provided:
+\begin{itemize}
+    \item $n$ is large enough that both $np_0 \geq 5$* and $n(1 - p_0) \geq 5$* are true. \\ 
+*Comparing each against the values 10 or 15 are common alternative conditions.
+\end{itemize}
+\bigbreak \noindent
+To test the null hypothesis 
+$$H_0: p = p_0$$
+Versus one of these alternative hypotheses:
+\begin{enumerate}
+    \item[(i)] $H_A: p < p_0$
+    \item[(ii)] $H_A: p > p_0$
+    \item[(iii)] $H_A: p \neq p_0$
+\end{enumerate}
+\bigbreak \noindent
+Use the test statistic 
+
+$$Z = \frac{\hat{p} - p_0}{\sqrt{\frac{p_0(1-p_0)}{n}}}$$
+\bigbreak \noindent
+(Note -- the standard deviation $\sigma_{\hat{p}} = \sqrt{\frac{p_0(1-p_0)}{n}}$ is often called the standard error of $\hat{p}$.)
+\bigbreak \noindent
+\textbf{Rejection Region:}
+\begin{itemize}
+    \item If (i): Reject $H_0$ if $Z \leq -z_{\alpha}$.
+    \item If (ii): Reject $H_0$ if $Z \geq z_{\alpha}$.
+    \item If (iii): Reject $H_0$ if $Z \leq -z_{\alpha/2}$ or if $Z \geq z_{\alpha/2}$.
+\end{itemize}
+
+\pagebreak
+\q
+A recent study claimed that 15\% of all 8th grade students are overweight. Health administrators in a particular school district selected a random sample of 120 8th grade students and found 10 to be overweight. Does the sample give enough evidence to conclude that this district has a lower percent of overweight 8th grade students? Test using the level of significance $\alpha = 0.05$.
+\end{document}
