@@ -1,0 +1,13 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{  }\PYG{n}{Student}\PYG{o}{::}\PYG{n}{Student}\PYG{p}{()}
+\PYG{+w}{  }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{n}{strcpy}\PYG{p}{(}\PYG{n}{name}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}None\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{gpa}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mf}{0.0}\PYG{p}{;}
+\PYG{+w}{  }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{  }\PYG{n}{Student}\PYG{o}{::}\PYG{n}{Student}\PYG{p}{(}\PYG{k}{const}\PYG{+w}{ }\PYG{k+kt}{char}\PYG{o}{*}\PYG{+w}{ }\PYG{n}{new\PYGZus{}name}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{new\PYGZus{}gpa}\PYG{p}{)}
+\PYG{+w}{  }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{n}{set\PYGZus{}name}\PYG{p}{(}\PYG{n}{new\PYGZus{}name}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{set\PYGZus{}gpa}\PYG{p}{(}\PYG{n}{new\PYGZus{}gpa}\PYG{p}{);}
+\PYG{+w}{  }\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

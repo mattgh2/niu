@@ -1,0 +1,28 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{  }\PYG{k}{class}\PYG{+w}{ }\PYG{n+nc}{InitTest}
+\PYG{+w}{  }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{k}{private}\PYG{o}{:}
+
+\PYG{+w}{    }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{a}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{b}\PYG{p}{\PYGZob{}}\PYG{l+m+mi}{10}\PYG{p}{\PYGZcb{};}
+
+\PYG{+w}{    }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{c}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mf}{9.9}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{d}\PYG{p}{\PYGZob{}}\PYG{l+m+mf}{23.76}\PYG{p}{\PYGZcb{};}
+
+\PYG{+w}{    }\PYG{k+kt}{bool}\PYG{+w}{ }\PYG{n}{e}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nb}{false}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k+kt}{bool}\PYG{+w}{ }\PYG{n}{f}\PYG{p}{\PYGZob{}}\PYG{n+nb}{true}\PYG{p}{\PYGZcb{};}
+
+\PYG{+w}{    }\PYG{k+kt}{char}\PYG{+w}{ }\PYG{n}{g}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+sc}{\PYGZsq{}a\PYGZsq{}}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k+kt}{char}\PYG{+w}{ }\PYG{n}{h}\PYG{p}{\PYGZob{}}\PYG{l+s+sc}{\PYGZsq{}x\PYGZsq{}}\PYG{p}{\PYGZcb{};}
+
+\PYG{+w}{    }\PYG{k+kt}{char}\PYG{+w}{ }\PYG{n}{str1}\PYG{p}{[}\PYG{l+m+mi}{21}\PYG{p}{]\PYGZob{}\PYGZcb{};}\PYG{+w}{    }\PYG{c+c1}{// initilized to an empty string}
+\PYG{+w}{    }\PYG{k+kt}{char}\PYG{+w}{ }\PYG{n}{str2}\PYG{p}{[}\PYG{l+m+mi}{11}\PYG{p}{]\PYGZob{}}\PYG{l+s}{\PYGZdq{}Joe\PYGZdq{}}\PYG{p}{\PYGZcb{};}
+
+\PYG{+w}{    }\PYG{n}{string}\PYG{+w}{ }\PYG{n}{str3}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Hello\PYGZdq{}}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{string}\PYG{+w}{ }\PYG{n}{str4}\PYG{p}{\PYGZob{}}\PYG{l+s}{\PYGZdq{}goodbye\PYGZdq{}}\PYG{p}{\PYGZcb{};}
+
+\PYG{+w}{    }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{ar1}\PYG{p}{[}\PYG{l+m+mi}{4}\PYG{p}{]\PYGZob{}}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{4}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{6}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{8}\PYG{p}{\PYGZcb{};}
+
+\PYG{+w}{    }\PYG{p}{...}
+\PYG{+w}{  }\PYG{p}{\PYGZcb{};}
+\end{Verbatim}
