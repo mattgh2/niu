@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{  }\PYG{k+kt}{char}\PYG{+w}{ }\PYG{n}{s1}\PYG{p}{[}\PYG{l+m+mi}{20}\PYG{p}{];}\PYG{+w}{ }\PYG{c+c1}{// character array \PYGZhy{} can hold C string, not yet a valid string}
+
+\PYG{+w}{  }\PYG{k+kt}{char}\PYG{+w}{ }\PYG{n}{s2}\PYG{p}{[}\PYG{l+m+mi}{20}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{l+s+sc}{\PYGZsq{}h\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s+sc}{\PYGZsq{}e\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s+sc}{\PYGZsq{}l\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s+sc}{\PYGZsq{}l\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s+sc}{\PYGZsq{}o\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s+sc}{\PYGZsq{}\PYGZbs{}0\PYGZsq{}}\PYG{p}{\PYGZcb{};}\PYG{+w}{ }\PYG{c+c1}{// Array init}
+
+\PYG{+w}{  }\PYG{k+kt}{char}\PYG{+w}{ }\PYG{n}{s3}\PYG{p}{[}\PYG{l+m+mi}{20}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Hello\PYGZdq{}}\PYG{p}{;}\PYG{+w}{ }\PYG{c+c1}{// Shortcut array init}
+
+\PYG{+w}{  }\PYG{k+kt}{char}\PYG{+w}{ }\PYG{n}{s4}\PYG{p}{[}\PYG{l+m+mi}{20}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{  }\PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}\PYG{c+c1}{// Empty or \PYGZdq{}null\PYGZdq{} C string of length 0, equal to the string literal \PYGZdq{}\PYGZdq{}}
+\end{Verbatim}

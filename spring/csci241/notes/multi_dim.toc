@@ -1,0 +1,7 @@
+\contentsline {section}{\numberline {1}Overview}{3}{section.0.1}%
+\contentsline {section}{\numberline {2}Declaring 2d arrays}{3}{section.0.2}%
+\contentsline {section}{\numberline {3}Initilizing a 2d array}{3}{section.0.3}%
+\contentsline {section}{\numberline {4}Accessing an Element of a 2d array}{3}{section.0.4}%
+\contentsline {section}{\numberline {5}Iterating over the Elements of a 2D array}{3}{section.0.5}%
+\contentsline {section}{\numberline {6}Passing 2D Arrays to Functions}{4}{section.0.6}%
+\contentsfinish 

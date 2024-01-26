@@ -1,0 +1,72 @@
+\documentclass{report}
+
+\input{~/latex/template/preamble.tex}
+\input{~/latex/template/macros.tex}
+
+\title{\Huge{C-style strings}}
+\author{\huge{Matt Warner}}
+\date{\huge{}}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{}
+\lhead{\leftmark}
+\cfoot{\thepage}
+% \usepackage[default]{sourcecodepro} \usepackage[T1]{fontenc}
+
+\pgfpagesdeclarelayout{boxed}
+{
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=1,%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {
+    border code=\pgfsetlinewidth{1.5pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.95\pgfphysicalwidth,%
+    resized height=.95\pgfphysicalheight,%
+    center=\pgfpoint{.5\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+}
+
+\pgfpagesuselayout{boxed}
+
+\begin{document}
+  \maketitle
+  \section{Overview}
+  A C string (also known as a \textit{null-terminated string}) is usually declared as an array of \colorbox{lightgray}{char}. However, an array of \colorbox{lightgray}{char} is not by itself a C string.
+  \bigbreak \noindent
+  A valid C string requires the presence of a terminating ``null character''.
+  \nt{
+    A \textbf{null character has an ASCII value 0, usually represented by the character literal \texttt{'\textbackslash 0'}}
+  }
+  \bigbreak \noindent
+  Since \colorbox{lightgray}{char} is a built-in data type, no header file needs to be included to create a C string. The C library header file \textless cstring\textgreater contains a number of utility functions that operate on C strings
+  \bigbreak \noindent
+  Here are some examples of declaring C strings as arrays of \colorbox{lightgray}{char}
+  \begin{mdframed}
+  \begin{minted}{c++}
+  char s1[20]; // character array - can hold C string, not yet a valid string
+   
+  char s2[20] = {'h', 'e', 'l', 'l', 'o', '\0'}; // Array init
+
+  char s3[20] = "Hello"; // Shortcut array init
+
+  char s4[20] =  "";// Empty or "null" C string of length 0, equal to the string literal "" 
+  \end{minted}
+  \end{mdframed}
+  \bigbreak \noindent
+  It is also possible to declare a C string as a pointer to a char.
+  \begin{mdframed}
+  \begin{minted}{c++}
+  const char* s3 = "Hello";
+  \end{minted}
+  \end{mdframed}
+  \bigbreak \noindent
+  This creates an unnamed character array just large enough to hold the string (including the null character) and places the address of the first element of the aray in the \colorbox{lightgray}{char} pointer \colorbox{lightgray}{s3}
+  \bigbreak \noindent
+  This is a somewhat advanced method of manipulating C strings that should probaly be avoided by inexperienced programmers who dont understand pointers yet.
+\end{document}
