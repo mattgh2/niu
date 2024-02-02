@@ -1,0 +1,78 @@
+\documentclass{report}
+
+\input{~/latex/template/preamble.tex}
+\input{~/latex/template/macros.tex}
+
+\title{\Huge{GDB Debugger}}
+\author{\huge{Matt Warner}}
+\date{\huge{}}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{}
+\lhead{\leftmark}
+\cfoot{\thepage}
+% \usepackage[default]{sourcecodepro} \usepackage[T1]{fontenc}
+
+\pgfpagesdeclarelayout{boxed}
+{
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=1,%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {
+    border code=\pgfsetlinewidth{1.5pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.95\pgfphysicalwidth,%
+    resized height=.95\pgfphysicalheight,%
+    center=\pgfpoint{.5\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+}
+
+\pgfpagesuselayout{boxed}
+
+\begin{document}
+  \maketitle
+  \section{Setup}
+  To compile a program with debug information we use the flag -g 
+  \bigbreak \noindent
+  \textit{\textbf{It would look like this:}}
+  \begin{minted}{c++}
+  g++ main.cpp -o main -g
+  \end{minted}
+  \bigbreak \noindent
+  \textit{\textbf{Now we can run gdb on our executable file}}
+  \begin{minted}{c++}
+  gdb ./main 
+  \end{minted}
+  \bigbreak \noindent
+  Now that we are in the debugger, we can run the command
+  \begin{minted}{c++}
+  lay next
+  \end{minted}
+  \bigbreak \noindent
+  This gives us a view on the source code and a look at the assembly instructions
+  \section{Analysis} 
+  We now have the option to run the program using the \textbf{run} command. This will run the program untill it hits a breakpoint or terminates.
+\bigbreak \noindent
+Before running the program, we can establish breakpoints. This pauses the program at a specific points of interest and allows us to perform step-by-step analysis on the code. We can setup break points like this:
+\begin{minted}{c++}
+break function-name
+\end{minted}
+or
+\begin{minted}{C++}
+break line_number
+\end{minted}
+\bigbreak \noindent
+Once we have established a break point, we can run the program by typing: \textbf{run}
+\bigbreak \noindent
+Now the program will run and stop at the breakpoint. We can use the \textbf{next} command or \textbf{n} to execute the next program statement
+\nt{
+  When programs print in gdb, it messes up the layout of the source code
+  \bigbreak \noindent
+  To fix this use the \textbf{ref} command
+}
+\end{document}
