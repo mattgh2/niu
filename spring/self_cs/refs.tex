@@ -1,0 +1,211 @@
+\documentclass{report}
+
+\input{~/latex/template/preamble.tex}
+\input{~/latex/template/macros.tex}
+\usepackage{minted}
+\usemintedstyle{xcode}
+\title{\Huge{References and Pointers}}
+\author{\huge{Matt Warner}}
+\date{\huge{}}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{}
+\lhead{\leftmark}
+\cfoot{\thepage}
+\lstset{
+  showstringspaces=false,
+  % ... (other options)
+}
+% \usepackage[default]{sourcecodepro} \usepackage[T1]{fontenc}
+
+\pgfpagesdeclarelayout{boxed}
+{
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=1,%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {
+    border code=\pgfsetlinewidth{1.5pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.95\pgfphysicalwidth,%
+    resized height=.95\pgfphysicalheight,%
+    center=\pgfpoint{.5\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+}
+
+\pgfpagesuselayout{boxed}
+
+\begin{document}
+\tableofcontents
+\newpage
+\vspace{-10mm}\chapter*{References and Pointers}
+  \section{Introduction}
+A computers memory is a sequency of bytes. We can number the bytes from 0 to the last one. Each number, known as an address, represents a location in the memory.
+\bigbreak \noindent
+Everything we put into memory has an adresss. For example, when we declare and initilize an \textit{int} variable named \textit{power}:
+\bigbreak \noindent
+\centerline{int power = 9000;}
+\bigbreak \noindent
+This will set aside an \textit{int}-size piece of memory for the variable \textit{power} somewhere and put the value $9000$ into that memory.
+\bigbreak \noindent
+\section{References}
+In c++, reference variable is an alias for something else, that is, another name for an already existing variable.
+\bigbreak \noindent
+So suppose we make Sonny a reference to someone named Mark. You can refer to the person as either Sonnny or Mark
+\bigbreak \noindent
+Heres how we do that with code:
+\bigbreak \noindent
+Suppose we have an \textit{int} variable called \textit{Mark}, we can create an alias to it by using the \& sign in the declaration.
+\bigbreak \noindent
+\centerline{int \&sonny = mark;}
+\bigbreak \noindent
+So here, we made \textit{sonny} a reference to \textit{mark}
+\bigbreak \noindent
+Now when we make changes to \textit{sonny} (add 1, subtract 2, etc), \textit{mark} also changes
+\bigbreak \noindent
+\nt{
+Two things to note about references
+\begin{itemize}
+  \item Anything we do to the reference also happens to the original 
+  \item Aliases cannot be changed to alias something else
+\end{itemize}
+}
+\newpage
+\section{Pass-By-Reference}
+Pass-by-reference referes to passing parameters to a function by using references. When called, the function can modify the value of the arguments by using the reference passed in.
+\nt{
+  Arrays do this by default. If you wanted to modify an array passed into the function, using pass-by-refernence is not needed.
+  \bigbreak \noindent
+  You would do this to modify all other data types, like int and such
+}
+\bigbreak \noindent
+This allows us to:
+\begin{itemize}
+\item Modify the value of the functions arguments
+\item Avoid making copies of a variable/object for performance reasons.
+\end{itemize}
+\bigbreak \noindent
+The following code snippet shows an example of pass-by-reference
+\bigbreak \noindent
+\begin{minted}{C++}
+
+void swap_num(int &i, int &j) {
+
+  int temp = i;
+  i = j;
+  j = temp;
+
+}
+
+int main() {
+
+  int a = 100;
+  int b = 200;
+
+  swap_num(a, b);
+
+  std::cout << "A is " << a << "\n";
+  std::cout << "B is " << b << "\n";
+
+}
+\end{minted}
+\section{Pass-By-Reference with Const}
+Sometimes, we use \textit{const} in a function parameter; this is when we know for a fact that we want to write a function where the parameter won't change inside the function. Here's an example:
+\bigbreak \noindent
+\begin{minted}{c++}
+int triple(int const i) {
+
+  return i * 3;
+
+}
+\end{minted}
+In this example, we are not modifying the \colorbox{lightgray}{i}. If inside the function \colorbox{lightgray}{triple()}, the value of \colorbox{lightgray}{i} is changed, there will be a compiler error.
+\bigbreak \noindent
+So to save the computational cost for a function that doesn't modify the parameter values(s), we can actually go a step further and use a \colorbox{lightgray}{const} reference.
+\bigbreak \noindent
+\begin{minted}{c++}
+int triple(int const &i) {
+
+  return i * 3;
+
+}
+\end{minted}
+This will ensure the same thing: the parameter won't be changed.
+However, by making \colorbox{lightgray}{i} a reference to the argument, this saves the computational cost of making a copy of the argument
+\section{Memory Address}
+The \colorbox{lightgray}{\&} symbol can have another meaning. The ``address of'' operator, \colorbox{lightgray}{\&}, is used to get the \textbf{memory address}, the location in the memory of an object.
+Suppose we declare a variable called:
+\begin{minted}{c++}
+int porcupine_count = 3;
+\end{minted}
+We can find where this variable is stored in memory by printing out \colorbox{lightgray}{\&porcupine\_count}
+\begin{minted}{c++}
+std::cout << &porcupine_count << "\n";
+\end{minted}
+It will return something like:
+\begin{minted}{c++}
+0x7ffd7caa5b54
+\end{minted}
+This is a memory address represented in \textbf{hexadecimal}. A memory address is usually denoted in hexadecimal instead of binary for readability and concisness.
+\nt{
+  \begin{itemize}
+    \item When \colorbox{lightgray}{\&} is used in a declaration, it is a reference operator.
+    \item When \colorbox{lightgray}{\&} is not used in a declaration, it is an address operator
+  \end{itemize}
+}
+\section{Pointers}
+In C++, a \textbf{pointer} variable is mostly the same as other variables, which can store a piece of date.
+\bigbreak \noindent
+Unlike normal variables, which store a value (such as an \colorbox{lightgray}{int}, \colorbox{lightgray}{double}, \colorbox{lightgray}{char}), a pointer stores a memory address.
+\bigbreak \noindent
+While references are a newer mechanism that originated in C++, pointers are an older mechanism that was inherited from C. It is recommended to avoid pointers as much as possible; usually, a reference will do the trick.
+\nt{
+  pointers must be delcared before they can be used, just like a normal variable. They are syntactically distinguished by the \colorbox{lightgray}{*}, so that \colorbox{lightgray}{int*} means ``pointer to int'' and \colorbox{lightgray}{double*} means `` pointer to double''
+}
+\bigbreak \noindent
+\begin{minted}{c++}
+int* number;
+double* decimal;
+char* character;
+\end{minted}
+We can point our pointers to the memory address of variables by writting
+\begin{minted}{c++}
+int* var = &otherVar;
+\end{minted}
+\newpage
+\section{Dereference}
+The asterisk sign \colorbox{lightgray}{*} a.k.a the dereference operator is used to obtain the value pointed to by a variable. This can be done by preceding the name of a pointer variable with \colorbox{lightgray}{*}.
+\begin{minted}{c++}
+int foo = *ptr;
+\end{minted}
+\nt{
+  \begin{itemize}
+    
+    \item When \colorbox{lightgray}{*} is used in a declaration, it is creating a pointer.
+    \item When \colorbox{lightgray}{*} is not used in a declaration, it is a dereference operator.
+  \end{itemize}
+}
+\section{Null Pointer}
+When we declare a pointer variable like so, its content is not initilized:
+\begin{minted}{c++}
+int* ptr;
+\end{minted}
+In other words, it contains an address of ``somewhere'', which is of course not a valid location. This is \textbf{dangerous} We need to initilize a pointer by assigning it a valid address.
+\bigbreak \noindent
+But suppose we don't know where we are pointing to, we can use a \textbf{null pointer}.
+\bigbreak \noindent
+\colorbox{lightgray}{nullptr} is a new keyword introduced in C++11. It provides a typesafe pointer value representing an empty pointer.
+\bigbreak \noindent
+We can use \colorbox{lightgray}{nullptr} like so:
+\begin{minted}{c++}
+int* ptr = nullptr;
+\end{minted}
+\nt{
+  In older C/C++ code, \colorbox{lightgray}{NULL} was used for this purpose. \colorbox{lightgray}{nullptr} is meant as a modern replacement to \colorbox{lightgray}{NULL}
+}
+
+\end{document}

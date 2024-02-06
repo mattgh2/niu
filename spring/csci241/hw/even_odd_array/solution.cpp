@@ -30,14 +30,14 @@ void even_odd(int a[], int b[], int len)
     else
     {
       odds.push_back(a[i]);
-      oddCount++;
+      ++oddCount;
     }
   }
 
   int count = 0;
 
   // fill b[] with even numbers
-  while (count < evenCount && j < len)
+  while (count <= evenCount)
   {
       b[j] = evens[count];
       count++;
@@ -49,14 +49,13 @@ void even_odd(int a[], int b[], int len)
   // fill b[] with odds
   count = 0; 
   j = 1;
-  while (count < oddCount && j < len)
+  while (count <= oddCount)
   {
     b[j] = odds[count];
     count++;
-
-    if (j + 2 < len)
-      j+=2;
-    else
-      j++;
+  if (j + 2 < len)
+    j+=2;
+  else
+    j++;
   }
 }

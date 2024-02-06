@@ -1,0 +1,154 @@
+\documentclass{report}
+
+\input{~/latex/template/preamble.tex}
+\input{~/latex/template/macros.tex}
+
+\tite{\Huge{File System}}
+\author{\huge{Matt Warner}}
+\date{\huge{}}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{}
+\lhead{\leftmark}
+\cfoot{\thepage}
+% \usepackage[default]{sourcecodepro} \usepackage[T1]{fontenc}
+
+\pgfpagesdeclarelayout{boxed}
+{
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=1,%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {
+    border code=\pgfsetlinewidth{1.5pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.95\pgfphysicalwidth,%
+    resized height=.95\pgfphysicalheight,%
+    center=\pgfpoint{.5\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+}
+
+\pgfpagesuselayout{boxed}
+
+\begin{document}
+  \maketitle
+  \section{Some Basic Commands}
+  List of basic commands shown in the lecture
+  \begin{mdframed}
+  \begin{itemize}
+    \item passwd - change password 
+    \item ls - list files
+    \item more - show content of file, page by page
+    \item logout - logout from system
+    \item date - display date and time
+    \item who - display who is on the screen
+    \item clear - clears the terminal
+    \item man - find and display system manual pages
+  \end{itemize}
+\end{mdframed}
+  \section{RTFM - The man Command}
+  \subsection{Overview}
+  shows pages from system manual
+  \bigbreak \noindent
+  \textit{\textbf{Syntax:}} man [option] [-S section] command-name
+  \begin{itemize}
+    \item \$ man date 
+    \item \$ man - k date
+    \item \$ man crontab
+    \item \$ man -S 5 crontab
+  \end{itemize}
+  \bigbreak \noindent
+  Caveates: \vspace{1mm}
+
+  Some commands are aliases \vspace{1mm}
+
+  Some commands are part of shell
+  \subsection{Section info}
+  \begin{enumerate}
+    \item User commands 
+    \item System calls
+    \item C libray function
+    \item Special system files
+    \item File formats
+    \item Games
+    \item Misc. features
+    \item System admin utilities
+  \end{enumerate} 
+  \newpage
+  \section{The Unix file system}
+  The UNIX file system has a hierarchical organinzation of files and it is organized as a single tree.
+  \nt{
+    The typical Unix file system type is ext4
+    \bigbreak \noindent
+    It also supports FAT, NTFS, UDF, ...
+  } 
+  \subsection{Directory terminology}
+  \begin{itemize}
+  \item Root Directory: /
+    \subitem top-most directory in any UNIX file structure
+  \item Home Directory: \~{}
+    \subitem directory owned by a user
+    \subitem default location where user logs in
+  \item Current Directory: .
+    \subitem default location for working with files
+  \item Parent Directory: ..
+    \subitem directory immediately above the current directory
+  \end{itemize}    
+  \section{Paths}
+  a path is simply a list of names seperated by ``/''. There are two types of paths to refer to a file or directory.
+  \begin{itemize}
+    \item \textit{\textbf{Absolute Path}} 
+    \subitem Traces a path from root to a file or a directory
+     \subitem Always begins with the root (/) directory
+     \subitem \textit{\textbf{Example:}} /home/student/Desktop/assign1.txt
+   \item \textit{\textbf{Relative Path}}
+     \subitem Traces a path from the current directory
+     \subitem No initial forward slash (/)
+     \subsubitem dot (.) refers to current directory
+     \subsubitem two dots (..) refers to one level up in directory hierarchy
+     \subitem \textit{\textbf{Example:}} Desktop/assign1.txt
+  \end{itemize}
+  \section{Linking Files}
+  Allows one file to be known by a different name 
+  \vspace{1.5mm}
+
+\noindent  Link is a reference to another file stored elsewhere 
+\bigbreak \noindent
+There are 2 types of links, we have
+\begin{itemize}
+  \item Hard link (default) 
+  \item Symbolic link (a.k.a ``soft link'')
+\end{itemize}
+\textit{\textbf{Syntax:}} ln [-s] target local
+\newpage
+\subsection{Symbolic Link}
+\begin{itemize}
+  \item Refers to target file via path 
+  \item Created without checking the existence or permissions of target file
+  \item Can be circular linked to another symbolic link
+  \item Can cross physical file systems
+\end{itemize}
+\subsection{Hard Link}
+\begin{itemize}
+  \item Refers to target file by its inode number 
+  \subitem inode number of a file is unique only
+  \subitem within physical device file system
+  \item Checks for the existence of target file
+  \item Other file continues to exist as long as at least one directory contains it
+  \item Cannot link to a file in a different physical file system
+\end{itemize}
+\section{Locating Files: find}
+\textit{\textbf{Syntax:}} find path-list expression(s)
+\bigbreak \noindent
+``find'' recursively descends through directories in path-list and applies expression to every file
+\bigbreak \noindent
+\textit{\textbf{Examples:}}
+\begin{itemize}
+  \item find . -name ``*.txt'' 
+  \item find /tmp -empty -delete
+\end{itemize}
+\end{document}

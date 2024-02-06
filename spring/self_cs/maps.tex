@@ -1,0 +1,139 @@
+\documentclass{report}
+
+\input{~/latex/template/preamble.tex}
+\input{~/latex/template/macros.tex}
+
+\title{\Huge{Maps and Unordered Maps}}
+
+\author{\huge{Matt Warner}}
+\date{\huge{}}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{}
+\lhead{\leftmark}
+\cfoot{\thepage}
+% \usepackage[default]{sourcecodepro} \usepackage[T1]{fontenc}
+
+\pgfpagesdeclarelayout{boxed}
+{
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=1,%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {
+    border code=\pgfsetlinewidth{1.5pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.95\pgfphysicalwidth,%
+    resized height=.95\pgfphysicalheight,%
+    center=\pgfpoint{.5\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+}
+
+\pgfpagesuselayout{boxed}
+
+\begin{document}
+  \maketitle
+  \section{Maps} 
+  Maps can be used by adding the map header file to your program:
+  \begin{minted}{c++}
+  #include <map>
+  \end{minted}
+\bigbreak \noindent
+Maps are \textbf{associative containers} that store elements in a mapped fashion. Each element has a key value and a mapped value. No two mapped values can have the same key value.
+\begin{mdframed}
+ Some basic functions associate with std::map are: 
+ \bigbreak \noindent
+ \begin{itemize}
+   \item begin() - Returns an iterator to the first element in the map. 
+   \item end() - Returns an iterator to the theoretical element that follows the last element in the map
+   \item size() - Returns the number of elements in the map.
+   \item max\_size() - Returns the maximum number of elements that the map can hold
+   \item empty() - Returns whether the map is empty.
+   \item pair insert(keyvalue, mapvalue)  - Adds a new element to the map.
+   \item erase(iterator position) - Removes the elements at the position pointed by the iterator
+   \item erase(const g) - Removes the key-value 'g' from the map.
+   \item clear() - Removes all the elements from the map.
+ \end{itemize}
+\end{mdframed}
+\bigbreak \noindent
+\subsection*{Examples of std::map}
+The following examples shows how to perform basic operations on map containers
+\bigbreak \noindent
+\textbf{Example 1: using .begin() and .end()}
+\begin{minted}{c++}
+#include <iostream>
+#include <map>
+#include <string>
+using namespace std;
+
+int main()
+{
+  map<string, int> mp;    // Creates a map of strings to integers
+
+  // Insert some values into the map
+  mp["one"] = 1;
+  mp["two"] = 2;
+  mp["three"] = 3;
+  
+  // Get an iterator pointing to the first element in the map
+  map<string, int>::iterator it = mp.begin();
+
+  // Iterate through the map and print the elements
+  while (it != mp.end())
+  {
+    cout << "Key: " << it->first
+         << ", Value: " << it->second endl;
+    it++;
+  }
+  return 0;
+}
+\end{minted}
+ \noindent
+\textbf{Output:}
+\begin{mdframed}
+ Key: one, Value: 1 
+ \bigbreak \noindent
+ Key: three, Value: 3 
+ \bigbreak \noindent
+ Key: two, Value: 2 
+\end{mdframed}
+\nt{
+  Maps are implemented as a balanced binary tree, and it automatically sorts its elements based on the key.
+  \bigbreak \noindent
+  The sorting is done in ascending order according to the key's value.
+}
+\textbf{Example 2: Using size() function}
+\begin{minted}{c++}
+int main(}
+{
+  map<string,int> map;
+
+  map["one"] = 1;
+  map["two"] = 2;
+  map["three"] = 3;
+
+  cout << "Size of map: " << map.size() << endl;
+
+  return 0;
+}
+\end{minted}
+\textbf{Output:}
+\begin{mdframed}
+  \vspace{.5mm}
+  Size of map: 3  
+\end{mdframed}
+  \vspace{.5mm}
+  \textbf{Example 3: inserting elements }
+  \begin{minted}{c++}
+  std::map<int,int> mp;
+
+  mp.insert(pair<int,int>(1,40));  // First method for inserting elements
+
+  mp[1] = 3;     // Second method
+  \end{minted}
+
+\end{document}
