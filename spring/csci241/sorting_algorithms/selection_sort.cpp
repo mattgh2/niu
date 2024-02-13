@@ -1,0 +1,18 @@
+#include <utility>
+#include <iostream>
+
+void selection_sort(int array, int n)
+{
+  for (int i = 0; i < n - 1; i++)
+  {
+    int min_index = i;
+
+    for (int j = i + 1; j < n; j++)
+    {
+      if (array[j] < array[min_index])
+        min_index = j;
+    }
+
+    std::swap(array[i], array[min_index]);
+  }
+}

@@ -1,0 +1,95 @@
+\documentclass{report}
+
+\input{~/latex/template/preamble.tex}
+\input{~/latex/template/macros.tex}
+
+\title{\Huge{Permissions}}
+\author{\huge{Matt Warner}}
+\date{\huge{}}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{}
+\lhead{\leftmark}
+\cfoot{\thepage}
+% \usepackage[default]{sourcecodepro} \usepackage[T1]{fontenc}
+
+\pgfpagesdeclarelayout{boxed}
+{
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=1,%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {
+    border code=\pgfsetlinewidth{1.5pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.95\pgfphysicalwidth,%
+    resized height=.95\pgfphysicalheight,%
+    center=\pgfpoint{.5\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+}
+
+\pgfpagesuselayout{boxed}
+
+\begin{document}
+  \maketitle
+  \section{Overview}
+  Unix is a multi user system, meaning more than one user has access to the system. Therefore, access to directories and files needs to be controlled, so that one user does not interfere with what other users have in mind
+  \bigbreak \noindent
+  Unix uses discretionary access control (DAC)  model. So,
+  \begin{itemize}
+    \item Each directory/file has an owner 
+    \item The owner has discretion over access control details
+  \end{itemize}
+  Access control includes
+  \begin{itemize}
+    \item read, write: to protect information 
+    \item execute: to protect state of system
+  \end{itemize}
+  \nt{
+    There is an exception for the super user. The super user does not need permission to access directories/files. They have access to everything
+  } 
+  \section{User Terminology}
+  \begin{itemize}
+    \item user 
+      \begin{itemize}
+        \item any one who has account on the system, listed in /etc/passwd 
+          \item protected via password, listen in /etc/shadow
+          \item internally recognized via a number called ``user id''
+      \end{itemize}
+    \item group
+      \begin{itemize}
+        \item users are organized into groups, listed in /etc/group 
+        \item user can belong to multiple groups
+      \end{itemize}
+    \item super user, root
+      \begin{itemize}
+        \item has user id ``0'' 
+        \item responsible for system administration
+      \end{itemize}
+  \end{itemize}
+  \section{File/Directory access}
+  \begin{itemize}
+    \item file or directory has an owner, that is, the user who created it.
+    \item owner sets access permissions
+      \begin{itemize}
+        \item access mode: read, write, execute 
+        \item accessor category: self, group, others
+      \end{itemize}
+    \item ownership change via: \textbf{chown}
+  \end{itemize}
+\begin{table}[ht]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+ & \textbf{Meaning on File} & \textbf{Meaning on Directory} \\ \hline
+\textbf{r (read)} & View file contents (open, read) & List directory contents \\ \hline
+\textbf{w (write)} & Change file contents & Change directory contents \\ \hline
+\textbf{x (execute)} & Run executable file & Make it current directory, search for files in it \\ \hline
+\end{tabular}
+\caption{Permissions and their meanings on files and directories}
+\end{table}
+\end{document}
