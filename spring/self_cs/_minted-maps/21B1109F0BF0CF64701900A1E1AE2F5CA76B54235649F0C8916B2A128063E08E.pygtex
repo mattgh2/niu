@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{  }\PYG{n}{std}\PYG{o}{::}\PYG{n}{map}\PYG{o}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{p}{,}\PYG{k+kt}{int}\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{mp}\PYG{p}{;}
+
+\PYG{+w}{  }\PYG{n}{mp}\PYG{p}{.}\PYG{n}{insert}\PYG{p}{(}\PYG{n}{pair}\PYG{o}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{p}{,}\PYG{k+kt}{int}\PYG{o}{\PYGZgt{}}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+m+mi}{40}\PYG{p}{));}\PYG{+w}{  }\PYG{c+c1}{// First method for inserting elements}
+
+\PYG{+w}{  }\PYG{n}{mp}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{3}\PYG{p}{;}\PYG{+w}{     }\PYG{c+c1}{// Second method}
+\end{Verbatim}

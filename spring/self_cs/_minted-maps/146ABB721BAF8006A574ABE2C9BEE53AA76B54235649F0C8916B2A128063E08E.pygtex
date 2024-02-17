@@ -1,0 +1,14 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{main}\PYG{p}{(\PYGZcb{}}
+\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{n}{map}\PYG{o}{\PYGZlt{}}\PYG{n}{string}\PYG{p}{,}\PYG{k+kt}{int}\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{map}\PYG{p}{;}
+
+\PYG{+w}{  }\PYG{n}{map}\PYG{p}{[}\PYG{l+s}{\PYGZdq{}one\PYGZdq{}}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{;}
+\PYG{+w}{  }\PYG{n}{map}\PYG{p}{[}\PYG{l+s}{\PYGZdq{}two\PYGZdq{}}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{p}{;}
+\PYG{+w}{  }\PYG{n}{map}\PYG{p}{[}\PYG{l+s}{\PYGZdq{}three\PYGZdq{}}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{3}\PYG{p}{;}
+
+\PYG{+w}{  }\PYG{n}{cout}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Size of map: \PYGZdq{}}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{n}{map}\PYG{p}{.}\PYG{n}{size}\PYG{p}{()}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{n}{endl}\PYG{p}{;}
+
+\PYG{+w}{  }\PYG{k}{return}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

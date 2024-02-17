@@ -1,0 +1,28 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cp}{\PYGZsh{}include}\PYG{+w}{ }\PYG{c+cpf}{\PYGZlt{}iostream\PYGZgt{}}
+\PYG{c+cp}{\PYGZsh{}include}\PYG{+w}{ }\PYG{c+cpf}{\PYGZlt{}map\PYGZgt{}}
+\PYG{c+cp}{\PYGZsh{}include}\PYG{+w}{ }\PYG{c+cpf}{\PYGZlt{}string\PYGZgt{}}
+\PYG{k}{using}\PYG{+w}{ }\PYG{k}{namespace}\PYG{+w}{ }\PYG{n+nn}{std}\PYG{p}{;}
+
+\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n+nf}{main}\PYG{p}{()}
+\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{n}{map}\PYG{o}{\PYGZlt{}}\PYG{n}{string}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{mp}\PYG{p}{;}\PYG{+w}{    }\PYG{c+c1}{// Creates a map of strings to integers}
+
+\PYG{+w}{  }\PYG{c+c1}{// Insert some values into the map}
+\PYG{+w}{  }\PYG{n}{mp}\PYG{p}{[}\PYG{l+s}{\PYGZdq{}one\PYGZdq{}}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{;}
+\PYG{+w}{  }\PYG{n}{mp}\PYG{p}{[}\PYG{l+s}{\PYGZdq{}two\PYGZdq{}}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{p}{;}
+\PYG{+w}{  }\PYG{n}{mp}\PYG{p}{[}\PYG{l+s}{\PYGZdq{}three\PYGZdq{}}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{3}\PYG{p}{;}
+
+\PYG{+w}{  }\PYG{c+c1}{// Get an iterator pointing to the first element in the map}
+\PYG{+w}{  }\PYG{n}{map}\PYG{o}{\PYGZlt{}}\PYG{n}{string}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{o}{\PYGZgt{}::}\PYG{n}{iterator}\PYG{+w}{ }\PYG{n}{it}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{mp}\PYG{p}{.}\PYG{n}{begin}\PYG{p}{();}
+
+\PYG{+w}{  }\PYG{c+c1}{// Iterate through the map and print the elements}
+\PYG{+w}{  }\PYG{k}{while}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{it}\PYG{+w}{ }\PYG{o}{!=}\PYG{+w}{ }\PYG{n}{mp}\PYG{p}{.}\PYG{n}{end}\PYG{p}{())}
+\PYG{+w}{  }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{n}{cout}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Key: \PYGZdq{}}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{n}{it}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{first}
+\PYG{+w}{         }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}, Value: \PYGZdq{}}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{n}{it}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{second}\PYG{+w}{ }\PYG{n}{endl}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{it}\PYG{o}{++}\PYG{p}{;}
+\PYG{+w}{  }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{  }\PYG{k}{return}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}
