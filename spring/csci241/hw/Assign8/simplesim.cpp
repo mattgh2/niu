@@ -3,7 +3,7 @@
 // simplesim.cpp
 // CSCI 241 Assignment 8
 //
-// Created by your-name (your-zid)
+// Created by Matt Warner
 //
 //********************************************************************
 
@@ -116,14 +116,18 @@ void simplesim::execute_program()
 		switch (operation_code)
 		{
         case READ:
+            // takes in the input
             int word;
-            cin >> word;
+            cin >> word; 
+            // checks for illegal input
             if (word < -9999 || word > 9999)
             {
                 cout << "*** ABEND: illegal input ***\n";
                 return;
             }
+            // stores input in memory
             memory[operand] = word;
+            
             cout << "READ: " << FOUR_DIGIT_SIGNED_FORMAT << word << endl;
             break;
 
@@ -131,16 +135,18 @@ void simplesim::execute_program()
             cout << FOUR_DIGIT_SIGNED_FORMAT << memory[operand] << endl;
             break;
 
-        // TODO - Insert cases for the other op codes.
         case LOAD:
+            // places the word in the memory location identified by operand into the accumulator
             accumulator = memory[operand];
             break;
 
         case STORE:
+            // places the accumulator into the memory location identified by operand
             memory[operand] = accumulator;
             break;
 
         case ADD:
+            // checks if arithmetic operation causes overflow/underflow
             if ((accumulator + memory[operand]) > 9999) 
             {
                 cout << "*** ABEND: overflow ***" << endl;
@@ -152,11 +158,13 @@ void simplesim::execute_program()
                 return;
             }
             else
+                // Places the arithmetic operation in the accumulator
                 accumulator = accumulator + memory[operand];
 
             break;
 
         case SUBTRACT:
+            // checks if arithmetic operation causes overflow/underflow
             if ((accumulator - memory[operand]) > 9999) 
             {
                 cout << "*** ABEND: overflow ***" << endl;
@@ -168,10 +176,12 @@ void simplesim::execute_program()
                 return;
             }
             else
+                // Places the arithmetic operation in the accumulator
                 accumulator = accumulator - memory[operand];
             break;
 
         case MULTIPLY:
+            // checks if arithmetic operation causes overflow/underflow
             if ((accumulator * memory[operand]) > 9999)
             {
                 cout << "*** ABEND: overflow ***" << endl;
@@ -183,38 +193,45 @@ void simplesim::execute_program()
                 return;
             }
             else
+                // Places the arithmetic operation in the accumulator
                 accumulator= accumulator * memory[operand];
             break;
 
         case DIVIDE:
+            // checks for division by 0
             if (memory[operand] == 0)
             {
                 cout <<"*** ABEND: attempted division by 0 ***" << endl;
                 return;
             }
             else
+                // Places the arithmetic operation in the accumulator
                 accumulator/= memory[operand];
             break;
 
         case BRANCH:
+            // Sets the instruction_counter to the value in operand
             instruction_counter = operand;
             break;
         case BRANCHNEG:
             if (accumulator < 0) 
+            // Sets the instruction_counter to the value in operand
                 instruction_counter = operand;
             else
                 instruction_counter++;
             break;
         case BRANCHZERO:
             if (accumulator == 0)
+             // Sets the instruction_counter to the value in operand
                 instruction_counter = operand;
             else
                 instruction_counter++;
             break;
 
-        case HALT:
+        case HALT: // Stops the execution of the SML program
             done = true;
             break;
+
         default:
             cout << "*** ABEND: invalid opcode ***\n";
             return;
@@ -246,17 +263,20 @@ void simplesim::dump() const
 
     // Print memory.
     cout << "\nMEMORY:\n";
+
+    // prints the column headers
     for (int i = 0; i < 10; i++) (i == 0) ? cout << setw(8) << right << setfill(' ') << noshowpos << i : cout << COL_HEADER_FORMAT << i; // Gives sufficient allignment
 
-    int test = 0; 
+    int rowHeaderNum = 0;
+    // iterates through each word in memory
     for (int i = 0; i < MAX_MEMORY; i++)
     {
-        if (i % 10 == 0)
+        if (i % 10 == 0) // starts a new row and prints the next row header after 10 iterations
         {
-            cout << '\n' << ROW_HEADER_FORMAT << test << ' ';
-            test+= 10;
+            cout << '\n' << ROW_HEADER_FORMAT << rowHeaderNum << ' ';
+            rowHeaderNum+= 10; // adds 10 since row headers are in increments of 10
         }
-        cout << FOUR_DIGIT_SIGNED_FORMAT << memory[i] << ' ';
+        cout << FOUR_DIGIT_SIGNED_FORMAT << memory[i] << ' '; // prints word in memory
     }
     cout << endl;
 
