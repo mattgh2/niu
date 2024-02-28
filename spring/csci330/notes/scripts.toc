@@ -1,0 +1,19 @@
+\contentsline {section}{\numberline {1}Overview}{3}{section.0.1}%
+\contentsline {section}{\numberline {2}Shell Script features}{3}{section.0.2}%
+\contentsline {section}{\numberline {3}The basics}{3}{section.0.3}%
+\contentsline {subsection}{\numberline {3.1}Simple Script}{3}{subsection.0.3.1}%
+\contentsline {section}{\numberline {4}Bash Shell Programming Features}{3}{section.0.4}%
+\contentsline {section}{\numberline {5}User-defined shell variables}{4}{section.0.5}%
+\contentsline {section}{\numberline {6}Output via echo command}{4}{section.0.6}%
+\contentsline {subsection}{\numberline {6.1}Examples: shell scripts with output}{4}{subsection.0.6.1}%
+\contentsline {section}{\numberline {7}Command line arguments}{5}{section.0.7}%
+\contentsline {subsection}{\numberline {7.1}Meanings}{5}{subsection.0.7.1}%
+\contentsline {subsection}{\numberline {7.2}Example: Command Line Arguments}{5}{subsection.0.7.2}%
+\contentsline {section}{\numberline {8}Arithmetic expressions}{5}{section.0.8}%
+\contentsline {section}{\numberline {9}Array variables}{6}{section.0.9}%
+\contentsline {subsection}{\numberline {9.1}Using array variables}{6}{subsection.0.9.1}%
+\contentsline {section}{\numberline {10}Output: printf command}{6}{section.0.10}%
+\contentsline {subsection}{\numberline {10.1}printf format specifiers}{6}{subsection.0.10.1}%
+\contentsline {section}{\numberline {11}User input: read command}{7}{section.0.11}%
+\contentsline {subsection}{\numberline {11.1}Example: Accepting User input}{7}{subsection.0.11.1}%
+\contentsfinish 

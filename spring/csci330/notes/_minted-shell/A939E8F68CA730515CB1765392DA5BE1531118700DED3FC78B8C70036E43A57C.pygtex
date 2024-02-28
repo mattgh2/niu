@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{wc}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{l}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{n}{done}
+\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{line}\PYG{+w}{ }\PYG{n}{one}
+\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{line}\PYG{+w}{ }\PYG{n}{two}
+\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{DONE}
+\PYG{l+m+mi}{2}
+\end{Verbatim}

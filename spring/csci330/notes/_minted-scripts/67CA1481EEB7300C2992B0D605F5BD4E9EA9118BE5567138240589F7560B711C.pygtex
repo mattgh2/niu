@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{count}\PYG{o}{=}\PYG{l+m+mi}{1}
+\PYG{n}{count}\PYG{o}{=}\PYG{n}{\PYGZdl{}}\PYG{p}{((}\PYG{n}{count}\PYG{o}{+}\PYG{l+m+mi}{20}\PYG{p}{))}
+\PYG{n}{echo}\PYG{+w}{ }\PYG{n}{\PYGZdl{}count}
+\end{Verbatim}

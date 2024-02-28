@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k}{const}\PYG{+w}{ }\PYG{k}{auto}\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{n}{pair}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{n}{mp}\PYG{p}{)}
+\PYG{p}{;}
+\end{Verbatim}

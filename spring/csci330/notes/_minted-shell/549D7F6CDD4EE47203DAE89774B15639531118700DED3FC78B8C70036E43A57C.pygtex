@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{date}\PYG{+w}{ }\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{usage}\PYG{o}{\PYGZhy{}}\PYG{n}{status}
+\PYG{n}{ls}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{n}{l}\PYG{+w}{ }\PYG{o}{\PYGZgt{}\PYGZgt{}}\PYG{+w}{ }\PYG{n}{usage}\PYG{o}{\PYGZhy{}}\PYG{n}{status}
+\PYG{n}{du}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{n}{s}\PYG{+w}{ }\PYG{o}{\PYGZgt{}\PYGZgt{}}\PYG{+w}{ }\PYG{n}{usage}\PYG{o}{\PYGZhy{}}\PYG{n}{status}
+\end{Verbatim}

@@ -135,5 +135,60 @@ int main(}
 
   mp[1] = 3;     // Second method
   \end{minted}
+\newpage
+\noindent
+We can iterate through an unordered\_map as such.
+\begin{minted}{c++}
+for (const auto& pair : mp)
+;
+\end{minted}
+\subsection{Example:}
+Lets say that we iterated through an array of integers and created a hash map to hold their frequencys
+\begin{minted}{c++}
+for (const auto& i : array) ++mp[i];
+\end{minted}
+Now, lets say we wanted to find the element that appears the most amount of times in the array. \\ We can do so by setting up two variables. One to hold the value (that is the highest count) \\ and one to hold the key (that is the element we are searching for)
+\bigbreak \noindent
+Now, just like linear search, we can iterate through the pairs in the hash map, and find the largest value, while also storing its key in our targetelement variable.
+\begin{mdframed}
+\begin{minted}{c++}
+int largestFrequency = 0; // starting point for comparison
+int targetelement; // will end up holding our target element
 
+for (const auto& pair : mp) {
+  if (pair.second > largestFrequency)
+  {
+    largestFrequency = pair.second;
+    targetelement = pair.first
+  }
+  std::cout << targetelement;
+}
+\end{minted}
+\end{mdframed}
+if we wanted to build on this and find the next most frequent element, we can use the \colorbox{lightgray}{.erase(key)} method to remove it from the map and continue. 
+\bigbreak \noindent
+That would look something like this:
+\begin{mdframed}
+\begin{minted}{c++}
+int i = 0; // loop counter
+int k = 3; // k most frequent elements
+std::vector<int> solution; // vector to hold the k most frequent elements
+While (i < k) {
+  int largestFrequency = 0;
+  int targetElement;
+  for (const auto& pair : mp) // iterate through the key,value pairs in mp
+  {
+    if (pair.second > largestFrequency)
+    {
+      largestFrequency = pair.second; // update largestFrequency 
+      targetElement = pair.first // update targetElement
+    }
+  }
+  solution.push_back(targetElement); // append element to solution vector
+  mp.erase(targetElement); // remove from hash map
+  i++; // increment loop count
+
+}
+\end{minted}
+\end{mdframed}
 \end{document}

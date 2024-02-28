@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="3.8243239in"
+   height="1.0526946in"
+   viewBox="0 0 97.137827 26.738441"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25, custom)"
+   sodipodi:docname="venn9.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs2">
+    <marker
+       style="overflow:visible"
+       id="Triangle"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.8125141"
+     inkscape:cx="128.88824"
+     inkscape:cy="53.155289"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     showborder="true"
+     width="200mm"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:window-width="1920"
+     inkscape:window-height="1080"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:showpageshadow="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid815"
+       units="mm"
+       spacingx="10"
+       spacingy="10"
+       empspacing="4"
+       dotted="false"
+       originx="-6.1808083"
+       originy="-17.283239"
+       visible="false" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-6.1808084,-194.28324)">
+    <rect
+       style="fill:#000000;fill-opacity:0.258824;fill-rule:evenodd;stroke:#000000;stroke-width:0.2;stroke-miterlimit:4.1;paint-order:stroke fill markers"
+       id="rect1"
+       width="65.665909"
+       height="26.538441"
+       x="6.2808084"
+       y="194.38324" />
+    <circle
+       style="fill:#ffffff;fill-opacity:0.838745;fill-rule:evenodd;stroke:#000000;stroke-width:0.3;stroke-miterlimit:4.1;stroke-dasharray:none;paint-order:stroke fill markers"
+       id="path1-3"
+       cx="56.454556"
+       cy="208.67955"
+       r="9.4744701" />
+    <circle
+       style="fill:#ffffff;fill-opacity:0.838745;fill-rule:evenodd;stroke:#000000;stroke-width:0.3;stroke-miterlimit:4.1;stroke-dasharray:none;paint-order:stroke fill markers"
+       id="path1-3-5"
+       cx="22.103807"
+       cy="208.67955"
+       r="9.4744701" />
+    <text
+       style="font-size:2.64583px;font-family:monospace;-inkscape-font-specification:'monospace, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"
+       id="text1"
+       y="197.83282"
+       x="16.427805"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         x="16.427805"
+         y="197.83282"
+         style="stroke-width:0.264583">Event A</tspan></text>
+    <text
+       style="font-size:2.64583px;font-family:monospace;-inkscape-font-specification:'monospace, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"
+       id="text1-6"
+       y="197.90489"
+       x="50.816666"><tspan
+         sodipodi:role="line"
+         id="tspan1-2"
+         x="50.816666"
+         y="197.90489"
+         style="stroke-width:0.264583">Event B</tspan></text>
+    <text
+       style="font-size:2.64583px;font-family:monospace;-inkscape-font-specification:'monospace, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"
+       id="text1-9"
+       y="196.88171"
+       x="78.153542"><tspan
+         sodipodi:role="line"
+         id="tspan1-1"
+         x="78.153542"
+         y="196.88171"
+         style="stroke-width:0.264583">Sample space $S$</tspan></text>
+    <path
+       style="fill:#ffffff;fill-opacity:0.838745;fill-rule:evenodd;stroke:#000000;stroke-width:0.291;stroke-miterlimit:4.1;stroke-dasharray:none;marker-start:url(#Triangle);paint-order:stroke fill markers"
+       d="m 73.072715,196.07782 h 4.336808"
+       id="path1" />
+  </g>
+</svg>

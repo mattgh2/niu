@@ -8,6 +8,7 @@
 //***************************************************************************
 #include <iostream>
 #include <iomanip>
+#include <utility>
 
 using std::cin;
 using std::cout;
@@ -72,9 +73,7 @@ void insertion_sort(double array[], int n)
     for (int j = i; j > 0 && array[j-1] > array[j]; j--)
     {
       // swap elements
-      double temp = array[j];
-      array[j] = array[j-1];
-      array[j-1] = temp;
+      std::swap(array[j-1], array[j]);
     }
   }
 }

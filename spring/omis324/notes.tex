@@ -1,0 +1,592 @@
+\documentclass{report}
+
+\input{~/latex/template/preamble.tex}
+\input{~/latex/template/macros.tex}
+\usepackage{float}
+\usepackage{booktabs}
+\title{\Huge{Intro to Bus Data Analyt Tools}}
+\author{\huge{Matt Warner}}
+\date{\huge{}}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{}
+\lhead{\leftmark}
+\cfoot{\thepage}
+% \usepackage[default]{sourcecodepro} \usepackage[T1]{fontenc}
+
+\pgfpagesdeclarelayout{boxed}
+{
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=1,%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {
+    border code=\pgfsetlinewidth{1.5pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.95\pgfphysicalwidth,%
+    resized height=.95\pgfphysicalheight,%
+    center=\pgfpoint{.5\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+}
+
+\pgfpagesuselayout{boxed}
+
+\begin{document}
+  \maketitle
+  \newpage
+  \chapter{Probability}
+  \section{Introduction}
+  \begin{itemize}
+    \item Uncertainty is an ever-present fact of life for decision makers 
+  \item Much time and effort are spent trying to plan for and respond to uncertainty.
+  \item \textbf{Probability} is the numerical measure of the likelihood that an event will occur.
+  \item This measure of uncertainty is often communicated through a probability distribution.
+    \begin{itemize}[label=$\circ$]
+    \item Extermely helpful in providing additional information about an event.
+    \item Can be used to help a decision maker evaluate possible actions and determine best course of action.
+  \end{itemize}
+  \end{itemize}
+  \section{Events and Probabilities}
+  \begin{itemize}
+    \item A \textbf{radom experiment}  is a process that generates well-defined outcomes.
+    \item By specifying all possible outcomes, we identify the \textbf{sample space} for a random experiment; examples:
+      \begin{itemize}[label=$\circ$]
+      \item A coin toss.
+      \item Rolling a die.
+      \end{itemize}
+    \item An \textbf{Event} is defined as a collection of outcomes.
+  \end{itemize}
+\begin{table}[h!]
+\centering
+\begin{tabular}{ll}
+\textbf{Random Experiment} & \textbf{Experimental Outcomes} \\[0.5em]
+Toss a coin & Head, tail \\[0.5em]
+Roll a die & 1, 2, 3, 4, 5, 6 \\[0.5em]
+Conduct a sales call & Purchase, no purchase \\[0.5em]
+Hold a particular share of stock for one year & Price of stock goes up, price of stock goes down, no change in stock price \\[0.5em]
+Reduce price of product & Demand goes up, demand goes down, no change in demand \\[0.5em]
+\end{tabular}
+\caption{Random Experiments and Their Outcomes}
+\label{table:experiments_outcomes}
+\end{table}
+\bigbreak \noindent
+\begin{large}{ \textit{\textbf{Example:}} California Power \& Light Company (CP\&L)}\end{large}
+\bigbreak \noindent
+CP\&L is starting a project designed to increase the generating capacity of one of its plants in southern California. \\ Analysis of similar construction projects indicates that the possibe completion times for the project are: \\
+8, 9, 10, 11, and 12 months
+\newpage
+\begin{table}[h!]
+\hspace{-9mm}\begin{tabular}{lcc}
+\textbf{Completion Time (months)} & \textbf{No. of Past Projects Having This Completion Time} & \textbf{Probability of Outcome} \\[0.5em]
+8 & 6 & 6/40 = 0.15 \\[0.5em]
+9 & 10 & 10/40 = 0.25 \\[0.5em]
+10 & 12 & 12/40 = 0.30 \\[0.5em]
+11 & 6 & 6/40 = 0.15 \\[0.5em]
+12 & 6 & 6/40 = 0.15 \\[0.5em]
+\textbf{Total} & \textbf{40} & \textbf{1.00} \\[0.5em]
+\end{tabular}
+\caption{Project Completion Times and Probabilities}
+\label{table:project_completion}
+\end{table}
+\begin{itemize}
+  \item The \textbf{probability of an event} is equal to the sum of Probabilities of outcomes for the event
+  \item CP\&L example: let $C$ denote the event that the project is completed in 10 months or less, $C = \{8, 9, 10\}$
+  \item The probability of event $C$, denoted $P(C)$, is given by
+    $$ P(C) = P(8) + P(9) + P(10) + 0.15 + 0.25 + 0.30 = 0.70$$
+  \item We can tell CP\&L management that there is a 0.70 probability that the project will be completed in 10 months or less.
+\end{itemize}
+\section{Some Basic Relationships of Probability}
+\subsection{Completion of an Event:}
+\begin{itemize}
+  \item Given an event $A$, the \textbf{complement of A}  is defined to be the event consisting of all outcomes that are \textit{not} in a.
+  \item The figure below shows what is known as a \textbf{Venn diagram}, which illustrates the concept of a complement:
+    \begin{itemize}[label=$\circ$]
+      \item Rectangular area represents the sample space for the random experiment and contains all possible outcomes. 
+      \item Circle represents event $A$ and contains only the outcomes that belong to $A$
+      \item Shaded region of the rectangle contains all outcomes not in event $A$
+    \end{itemize}
+    \bigbreak \noindent
+\begin{figure}[ht]
+    \centering
+    \hspace{15mm}\incfig[1]{venn}
+    %\label{fig:venn}
+\end{figure}
+\end{itemize}
+In any probability application, either event $A$ or its complement $A^C$ must occur.
+\bigbreak \noindent
+Solving for $P(A)$, we obtain the following result:
+$$ P(A) = 1 - P(A^C)$$
+The probability of an event $A$ can be computed easily if the probability of its complement is known.
+\newpage
+\subsection{Addition Law}
+\begin{itemize}
+  \item The addition law is helpful when we are interested in knowing the probability that at least one of two events will occur. 
+  \item Concepts related to the combination of events
+    \begin{itemize}[label=$\circ$]
+    \item The union of events 
+    \item The intersection of events.
+  \end{itemize}
+\item Given two events $A$ and $B$, the \textbf{union of \textit{A} and \textit{B}} is defined as the event containing all outcomes belonging to $A$ or $B$ or both.
+\item The union of $A$ and $B$ is denoted by AB
+\item The Venn diagram in the figure below depicts the union of $A$ and $B$:
+  \begin{itemize}[label=$\circ$]
+    \item One circle contains all the outcomes of $A$ 
+    \item The other circle contains all the outcomes of $B$
+  \end{itemize}
+\bigbreak \noindent
+\begin{figure}[ht]
+    \centering
+    \incfig[1]{venn3}
+    %\caption{venn3}
+    %\label{fig:venn3}
+\end{figure}
+\item The definition of the \textbf{intersection of \textit{A} and \textit{B}} is the event containing the outcomes that belong to both $A$ and $B$
+\item The intersection of $A$ and $B$ is denoted by $A$
+\item The Venn diagram below depicts the intersection of $A$ and $B$
+  \begin{itemize}[label=$\circ$]
+    \item The area in which the two circles overlap is the intersection 
+    \item It contains outcomes that are in both $A$ and $B$
+  \end{itemize}
+% HERE 
+  \bigbreak \noindent
+\begin{figure}[ht]
+    \centering
+    \hspace{19mm}\incfig[1]{venn8}
+    %\caption{venn8}
+    %\label{fig:venn8}
+\end{figure}
+\item The \textbf{addition law} provides a way to compute the probability that event $A$ or event $B$ or both will occur
+\item Used to compute the probability of the union of two events
+  \bigbreak \noindent
+ADDITION LAW:
+$$ P(A\cup B) = P(A) + P(B) - P(A \cap B)$$
+\newpage
+\item A special case arises for \textbf{mutually exclusive events:}
+  \begin{itemize}[label=$\circ$]
+    \item If the occurrences of one event precludes the occurence of the other. 
+    \item If the events have no outcomes in common.
+  \end{itemize}
+  \bigbreak \noindent
+\begin{figure}[ht]
+    \centering
+    \hspace{19mm}\incfig[1]{venn9}
+    %\caption{venn9}
+    %\label{fig:venn9}
+\end{figure}
+\bigbreak \noindent
+ADDITION LAW FOR MUTUALLY EXCLUSIVE EVENTS:
+$$ P(A\cup B) = P(A) + P(B)$$
+\section{Conditional Probability}
+
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  \chapter{Descriptive Data Mining}
+  \section{Introduction}
+  Data mining can be described as the process of discovering patterns, trends, insights, and useful information from large datasets.
+  it involves the use of various techniques and algorithms to extract knowledge and valuable patterns from raw data
+  \bigbreak \noindent
+The increase in the use of data-mining techniques in business has been caused largely by three events:
+\begin{itemize}
+  \item The explosion in the amount of data being produced and electronically tracked
+  \item The ability to electronically warehouse these data
+  \item The affordability of computer power to analyze the data
+\end{itemize}
+\subsection{Unsupervised Learning}
+\textbf{unsupervised learning} is a category of machine learning where the algorithm is trained on a dataset \textbf{without} explicit supervision or \textbf{labeled outcomes}
+\bigbreak \noindent
+Unlike \textbf{supervised learing}, where the algorithm learns to make predictions based on labeled examples, \textbf{unsupervised learning} aims to find patterns, relationships, and structures within the data witout any predefined target or output variable.
+\bigbreak \noindent
+In short, the primary goal of unsupervised learning is to discover inherent structures within the data itself
+\bigbreak \noindent
+\textit{\textbf{Example 1: Clustering (Unsupervised Learning)}}
+\begin{itemize}
+  \item Imagine you have a dataset containing customer purchasing behavior, but you don't have predefined categories or labels. 
+  \item In unsupervised learning, you can use clustering algorithms like k-means to group similar customers together based on their purchasing patterns
+  \item The algorithm identifies natural clusters within the data without being told in advance what those clusters should be.
+\end{itemize}
+\bigbreak \noindent
+\textit{\textbf{Example 2: Predicting Customer Churn (Supervised Learning)}}
+\begin{itemize}
+  \item Suppose you have another dataset with customer information, including whether each customer churned or not (a binary label: churned or not churned) 
+  \item In supervised learning, you can train a classification algorithm (e.g., logistic regression) using this labeled data.
+  \item The algorithm learns to predict whether new customers are likely to churn based on features such as usage patterns, customer support interactions, etc.
+  \item Here, the algorithm relies on the labeled outcomes to make predictions.
+\end{itemize}
+\newpage
+\section{Cluster Analysis}
+The goal of clustering is to segment observations into similar groups based on observed variables.
+\bigbreak \noindent
+This can be employed during the data-preparation step to identify variables or observations that can be aggregated or removed from consideration.
+\vspace{2mm}
+
+\noindent Cluster analysis is commonly used in marketing to divide customers into different homogenous groups; known as \textbf{market segmentation}
+\nt{
+  Also used to identify outliers
+}
+\subsection{Clustering methods}
+\begin{itemize}
+  \item Bottom-up \textbf{hierarchical clustering} starts with each observation belonging to its own cluster and then sequentially merges the most similar cluster to create a series of nested clusters 
+  \item \textbf{\textit{k}-means clustering} assigns each observation to one of $k$ clusters in a manner such that the observations assigned to the same cluster are as similar as possible.
+\end{itemize}
+\bigbreak \noindent
+Both methods depend on how two observations are similar - hence, we have to measure similarity between observations.
+\subsection{Measuring similarity Between Observations}
+When observations include numeric variables, \textbf{Euclidean distance} is the most common method to measure dissimilarity between observations.
+\bigbreak \noindent
+Let observations $u$ = $\left(u_1, u_2, \ldots, u_q \right)$ and $v= \left(v_1,v_2,\ldots,v_q\right)$ each comprise measurements of $q$ variables.
+\bigbreak \noindent
+The Euclidean distance between observations $u$ and $v$ is:
+$$ d_{uv} = \sqrt{\left(u_1-v_1\right)^2 + \left(u_2-v_2\right)^2 + \ldots + \left(u_q-v_q\right)^2}$$
+\bigbreak \noindent
+\begin{large}{\textbf{Illustration:}}\end{large}
+\begin{itemize}
+  \item KTC is a financial advising company that provides personalized financial advice to its clients.
+  \item KTC would like to segment its customers into several groups (or clusters) so that the customers within a group are similar and dissimilar with respect to key characteristics
+  \item For each customer, KTC has an observation of seven variables: Age, Female, Income, Married, Children, Car Loan, Mortgage.
+\end{itemize}
+The observation $u$ = $\left(61, 0, 57881, 1, 2, 0, 0\right)$ corresponds to a 61-year old male with an annual income of \$57,881, married with two children, but no car loan and no mortgage.
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.35\textwidth]{ /home/mattw/distance.png }
+\end{figure}
+\nt{
+  Euclidean distance becomes smaller as a pair of observations becomes more similar with respect to their variable values.
+}
+\bigbreak \noindent
+\begin{itemize}
+  \item Euclidean distance is highly influenced by the scale on which variables are measured.
+  \item We need to standardize the units of each variable $j$ of each observation $u$.
+\end{itemize}
+\textit{\textbf{Example:}}
+$u_j$, the value of variable $j$, in observation $u$, is replaced with its z-score $z_j$
+\begin{itemize}
+  \item The conversion to z-score also makes it easier to identify outlier measurements, which can distort the Euclidean distance between observations. 
+\end{itemize}
+\begin{itemize}
+  \item When clustering observations solely on the basic of categorical variables encoded as binary values (0, or 1) , a \textbf{better measure of similarity} between two observations can be achieved by \textbf{counting} the number of variables with matching values.
+  \item Matching values indicates agreement between observations, while differing values represent disagreement.
+  \item By counting matching values, you are effectively measuring how many categorical variables the two observations have in common.
+  \item This count can serve as a similarity measure for clustering, with a higher count indicating greater similarity.
+  \item The simplest overlap measure is called the \textbf{matching coefficient} and is computed as:
+    $$ \frac{\text{number of variables with matching value for observations $u$ and $v$}}{\text{total number of variables}}$$
+\end{itemize}
+A weakness of the matching coefficient is that if two observations both have a 0 entry for a cetegorical variable, this is counted as a sign of similarity between the two observations.
+\vspace{2mm}
+
+\noindent To avoid misstating similarity due to the absence of a feature, a similarity measure called \textbf{Jaccard's coefficient} does not count matching zero entries and is computed as:
+$$\frac{\text{number of variables with matching nonzero value for observation $u$ and $v$}}{(\text{total number of variables) - (number of variables with matching zero values for observations $u$ and $v$)}}$$
+\bigbreak \noindent
+\begin{table}[ht]
+\centering
+\begin{tabular}{ccccc}
+\toprule
+Observation & Female & Married & Loan & Mortgage \\
+\midrule
+1 & 1 & 0 & 0 & 0 \\
+2 & 0 & 1 & 1 & 1 \\
+3 & 1 & 1 & 1 & 0 \\
+4 & 1 & 1 & 0 & 0 \\
+5 & 1 & 1 & 0 & 0 \\
+\bottomrule
+\end{tabular}
+\caption{Sample data table}
+\end{table}
+\newpage
+\begin{itemize}
+  \item Similarity Based on Matching coefficient 
+\begin{table}[ht]
+\centering
+\begin{tabular}{cccccc}
+\toprule
+Observation & 1 & 2 & 3 & 4 & 5 \\
+\midrule
+1 & 1 &  &  &  &  \\
+2 & 0 & 1 &  &  &  \\
+3 & 0.5 & 0.5 & 1 &  &  \\
+4 & 0.75 & 0.25 & 0.75 & 1 &  \\
+5 & 0.75 & 0.25 & 0.75 & 1 & 1 \\
+\bottomrule
+\end{tabular}
+\end{table}
+\item Similarity Matrix Based on Jaccard's Coefficient
+\begin{table}[ht]
+\centering
+\begin{tabular}{cccccc}
+\toprule
+Observation & 1 & 2 & 3 & 4 & 5 \\
+\midrule
+1 & 1 &  &  &  &  \\
+2 & 0 & 1 &  &  &  \\
+3 & 0.333 & 0.5 & 1 &  &  \\
+4 & 0.5 & 0.25 & 0.667 & 1 &  \\
+5 & 0.5 & 0.25 & 0.667 & 1 & 1 \\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{itemize}
+\subsection{Hierarchical Clustering}
+\begin{itemize}
+  \item Determines the similarity of two clusters by considering the similarity between the observations composing either cluster
+  \item Starts with each observation in its own cluster and then iteratively combines the two clusters that are the most similar into a single cluster
+  \item Given a way to measure similarity between observations, there are several clustering method alternatives for comparing observations in two clusters to obtain a cluster similarity measure:
+    \begin{itemize}[label=$\circ$]
+    \item Single linkage 
+    \item Complete linkage
+    \item Group average linkage
+    \item Median linkage
+    \item Centroid linkage
+  \end{itemize}
+\end{itemize}
+ \begin{itemize}
+   \item \textbf{Single linkage:} The similarity between two clusters is defined by the similarity of the pair of observations (one from each cluster) that are the most similar
+   \item \textbf{Complete linkage}: This clustering method defines the similarity between two clusters as the similarity of the pair of observations (one from each cluster) that are the most different
+   \item \textbf{Group Average linkage}: Defines the similarity between two clusters to be the average similarity computed over all pairs of observations between the two clusters
+   \item \textbf{Median linkage}: Analogous to group average linkage except that it uses the median of the similarities computer between all pairs of observations between the two clusters
+   \item \textbf{Centroid linkage} uses the averaging concept of cluster centroids to define between-cluster similarity.
+ \end{itemize} 
+ \newpage
+ \vspace*{\fill}\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{/home/mattw/lala.png}
+    \caption{Measuring Similarity Between Clusters}
+\end{figure}
+\vspace*{\fill}
+\clearpage
+\vspace*{\fill}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{/home/mattw/dend.png}
+    \caption{Dendrogram for KTC Using Matching Coefficients and Group Average Linkage}
+\end{figure}
+\vspace*{\fill}
+\clearpage
+\subsection{k-Means Clustering}
+\begin{itemize}
+  \item Given a value of $k$, the $k$-means algorithm randomly assigns each observation to one of the $k$ clusters 
+  \item After all observations have been assigned to a cluster, the resulting cluster centroid are calculated.
+  \item Using the updated cluster centroids, all observations are reassigned to the cluster with the closest centroid.
+\end{itemize}
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}lcc@{}}
+\toprule
+             & No. of Observations & Average Distance Between Observations in Cluster \\ \midrule
+Cluster 1 & 12                 & 0.622                                           \\
+Cluster 2 & 8                  & 0.739                                           \\
+Cluster 3 & 10                 & 0.520                                           \\ \bottomrule
+\end{tabular}
+\caption{Cluster Observations and Distances}
+\end{table}
+\bigbreak \noindent
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}lccc@{}}
+\toprule
+          & Cluster 1 & Cluster 2 & Cluster 3 \\ \midrule
+Cluster 1 & 0         & 2.784     & 1.529     \\
+Cluster 2 & 2.784     & 0         & 1.964     \\
+Cluster 3 & 1.529     & 1.964     & 0         \\ \bottomrule
+\end{tabular}
+\caption{Distances Between Clusters}
+\end{table}
+  \subsection{Hierarchical Clustering vs k-Means Clustering}
+  \bigbreak \noindent \bigbreak \noindent
+\begin{minipage}{0.5\textwidth}
+  \begin{center}
+    \textbf{Hierarchical Clustering} 
+  \end{center}	
+  Suitable when we have a small data set (e.g., fewer than 500 observations) and want to easily examine solutions with increasing numbers of clusters.
+  \bigbreak \noindent
+Convenient method if you want to observe how clusters are nested  .
+\end{minipage}
+\hspace{6mm}\begin{minipage}{0.4\textwidth}
+\begin{center}
+  \textbf{$k$-Means Clustering} 
+\end{center}	
+Suitable when you know how many clusters you want and you have a larger data set (e.g., more than 500 observations)
+\bigbreak \noindent
+Paritions the observations, which is appropriate if trying to summarize the data with $k$ ``average'' observations that describe the data with the minimum amount of error. In other words, you're looking to group similar data points together so that each cluster can be represented by a single ``average'' data point, known as the cluster centroid.
+\end{minipage}
+\section{Association Rules}
+\begin{itemize}
+  \item \textbf{Association rules:} if-then statements which convey the likelihood of certain items being purchased together.
+  \item Although association rules are an important tool in \textbf{market basket analysis}, they are also applicable to other disciplines.
+  \item \textbf{Antecendent}: The collection of tiems (or item set) corresponding to the \textit{if} portion of the rule.
+  \item \textbf{Consequent}: The item set corresponding to the \textit{then} portion of the rule.
+  \item \textbf{Support count} of an item set: \textbf{N}umber of transactions in the data that include that item set.
+\end{itemize}
+\clearpage
+\begin{table}[h]
+\centering
+\caption{Shopping Cart Transactions}
+\begin{tabular}{cl}
+\toprule
+Transaction & Shopping Cart \\
+\midrule
+1 & bread, peanut butter, milk, fruit, jelly \\
+2 & bread, jelly, soda, potato chips, milk, fruit, vegetables, peanut butter \\
+3 & whipped cream, fruit, chocolate sauce, beer \\
+4 & steak, jelly, soda, potato chips, bread, fruit \\
+5 & jelly, soda, peanut butter, milk, fruit \\
+6 & fruit, soda, potato chips, milk, bread, fruit \\
+7 & fruit, soda, potato chips, milk \\
+8 & fruit, soda, peanut butter, milk \\
+9 & fruit, cheese, yogurt \\
+10 & yogurt, vegetables, beer \\
+\bottomrule
+\end{tabular}
+\end{table}
+\noindent
+\textbf{Confidence}: Helps identify reliable association rules:
+$$ \frac{\text{support of \{antecedent and consequent\}}}{\text{support of antecedent}}$$
+\textbf{Lift ratio}: Measure to evalulate the efficiency of a rule:
+$$ \frac{\text{confidence}}{\text{support of consequent/total number of transactions}}$$
+\bigbreak \noindent
+\begin{itemize}
+  \item For the data in Table 1.4, the rule ``if \{bread, jelly\}, then \{peanut butter\}'' has confidence
+    $$ = \dfrac{2}{4} = 0.5 \text{ and a lift ratio } = \dfrac{0.5}{\left(\dfrac{4}{10}\right)} = 1.25$$
+\end{itemize}
+\begin{table}[htbp]
+  \hspace{-15mm} \begin{tabular}{llccccc}
+    \toprule
+    Antecedent (A) & Consequent (C) & Support for A & Support for C & Support for A \& C & Confidence (\%) & Lift Ratio \\
+    \midrule
+    Bread & Fruit, Jelly & 4 & 5 & 4 & 100.0 & 2.00 \\
+    Bread & Jelly & 4 & 5 & 4 & 100.0 & 2.00 \\
+    Bread, Fruit & Jelly & 4 & 5 & 4 & 100.0 & 2.00 \\
+    Fruit, Jelly & Bread & 5 & 4 & 4 & 80.0 & 2.00 \\
+    Jelly & Bread & 5 & 4 & 4 & 80.0 & 2.00 \\
+    Jelly & Bread, Fruit & 5 & 4 & 4 & 80.0 & 2.00 \\
+    Fruit, Potato Chips & Soda & 4 & 6 & 4 & 100.0 & 1.67 \\
+    Peanut Butter & Milk & 4 & 6 & 4 & 100.0 & 1.67 \\
+    Peanut Butter & Milk, Fruit & 4 & 6 & 4 & 100.0 & 1.67 \\
+    \addlinespace % Add space before the next image's table rows
+    Peanut Butter, Fruit & Milk & 4 & 6 & 4 & 100.0 & 1.67 \\
+    Potato Chips & Fruit, Soda & 4 & 6 & 4 & 100.0 & 1.67 \\
+    Fruit, Soda & Potato Chips & 6 & 4 & 4 & 66.7 & 1.67 \\
+    Milk & Peanut Butter, Fruit & 6 & 4 & 4 & 66.7 & 1.67 \\
+    Milk, Fruit & Peanut Butter & 6 & 4 & 4 & 66.7 & 1.67 \\
+    \addlinespace % Add space before the next image's table rows
+    Soda & Potato Chips & 6 & 4 & 4 & 66.7 & 1.67 \\
+    Fruit, Soda & Milk & 6 & 6 & 5 & 83.3 & 1.39 \\
+    Milk & Fruit, Soda & 6 & 6 & 5 & 83.3 & 1.39 \\
+    Milk, Fruit & Soda & 6 & 6 & 5 & 83.3 & 1.39 \\
+    Soda & Milk & 6 & 6 & 5 & 83.3 & 1.39 \\
+    Milk & Soda & 6 & 6 & 5 & 83.3 & 1.39 \\
+    Soda & Milk, Fruit & 6 & 6 & 5 & 83.3 & 1.39 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+\newpage
+\subsection{Evaluating Association Rules:}
+\begin{itemize}
+  \item An association rule is ultimately judged on how actionable it is and how well it explains the relationship between item sets.
+  \item For example, Walmart mined its transactional data to uncover strong evidence of the association rule, ``if a customer purchases a Barbie doll, then a customer also purchased a candy bar.''
+  \item An association rule is useful if it is well supported and explains an important previously unknown relationship.
+\end{itemize}
+\section{Text Mining}
+\begin{itemize}
+  \item Text, like numerical data, may contain information that can help sove problems and lead to better decisions. 
+  \item \textbf{Text mining} is the process of extracting useful information from text data.
+  \item Text data is often referred to as \textbf{unstructured data} becuase in its raw form, it cannot be stored in a traditional structured database (rows and columns).
+  \item Audio and video data are also examples of unstructured data.
+    \item Data mining with text data is more challenging than data mining with traditional numerical data, because it requires more preprocessing to conver the text to a format amenable for analysis.
+\end{itemize}
+\bigbreak \noindent
+\begin{large}{Voice of the Customer at Triad Airline}\end{large}
+\begin{itemize}
+  \item Triad solicits feedback from its customers through a follow-up e-mail the day after the customer has completed a flight 
+  \item Survey asks the customer to rate various aspects of the flight and asks the respondent to type comments into a dialog box in the e-mail;\\ includes:
+    \begin{itemize}[label=$\circ$]
+      \item Quantiative feedback from the ratings 
+      \item Comments entered by the respondents which need to be analyzed.
+    \end{itemize}
+\end{itemize}
+\nt {A collection of text documents to be analyzed is called a \textbf{corpus}}
+\bigbreak \noindent
+\textbf{Concerns}
+\bigbreak \noindent
+The wi-fi service was horrible. It was slow and cut off several times.
+\vspace{2mm}
+
+\noindent My seat was uncomfortable
+\vspace{2mm}
+
+\noindent My flight was delayed 2 hours for no apparent reason.
+\vspace{2mm}
+
+\noindent My seat would not recline.
+\vspace{2mm}
+
+\noindent The man at the ticket counter was rude. Service was horrible.
+\vspace{2mm}
+
+\noindent The flight attendant was rude. Service was bad.
+\vspace{2mm}
+
+\noindent My flight was delayed with no explaination.
+\vspace{2mm}
+
+\noindent My drink spilled when the guy in from of me reclined his seat.
+\vspace{2mm}
+
+\noindent My flight was canceled.
+\vspace{2mm}
+
+\noindent The arm rest of my seat was nasty.
+\newpage
+\noindent
+To be analyzed, text data needs to be converted to structured data (rows and columns of numerical data) so that the tools of descriptive statistics, data visualization and data mining can be applied.
+\bigbreak \noindent
+Think of converting a group of documents into a matrix of rows and columns where the rows correspond to a document and the columns correspond to a particular word.
+\bigbreak \noindent
+A \textbf{presence/absence or binary term-document matrix} is a matrix with the rows representing documents and the columns representing words.
+\begin{itemize}[label=$\circ$]
+  \item  Entries in the columns indicate either the presence or the absence of a particular word in a particular document
+\end{itemize}
+\bigbreak \noindent
+Creating the list of terms to use in the presence/absence matrix can be a complicated matter:
+\begin{itemize}
+  \item Too many terms results in a matrix with many columns, which may be difficult to manage and could yield meaningless results. 
+  \item Too few terms may miss important relationships
+\end{itemize}
+Term frequency along with the problem context are often used as a guide.
+\bigbreak \noindent
+In Triad's case, management used word frequency and the contex of having a goal of statisfied customers to come up with the following list of terms they feel are relevant for categorizing the respondent's comments: delayed, flight, horrible recline, rude, seat, and service. In Triad's case, management used word frequency and the context of having a goal of statisfied customers to come up with the following list of terms they feel are relevant for categorizing the respondent's comments: delayed, flight, horrible recline, rude, seat, and service.
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{cccccccc}
+    \toprule
+    Document & Delayed & Flight & Horrible & Recline & Rude & Seat & Service \\
+    \midrule
+    1 & 0 & 0 & 1 & 0 & 0 & 1 & 1 \\
+    2 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
+    3 & 1 & 1 & 0 & 0 & 0 & 0 & 0 \\
+    4 & 0 & 0 & 1 & 0 & 0 & 1 & 1 \\
+    5 & 0 & 0 & 0 & 1 & 1 & 0 & 0 \\
+    6 & 0 & 0 & 1 & 0 & 0 & 1 & 1 \\
+    7 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
+    8 & 1 & 1 & 0 & 0 & 0 & 0 & 0 \\
+    9 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+    10 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+\end{document}

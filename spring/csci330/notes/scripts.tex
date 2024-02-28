@@ -1,0 +1,286 @@
+\documentclass{report}
+
+\input{~/latex/template/preamble.tex}
+\input{~/latex/template/macros.tex}
+
+\title{\Huge{Shell Scripts}}
+\author{\huge{Matt Warner}}
+\date{\huge{}}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{}
+\lhead{\leftmark}
+\cfoot{\thepage}
+% \usepackage[default]{sourcecodepro} \usepackage[T1]{fontenc}
+
+\pgfpagesdeclarelayout{boxed}
+{
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=1,%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {
+    border code=\pgfsetlinewidth{1.5pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.95\pgfphysicalwidth,%
+    resized height=.95\pgfphysicalheight,%
+    center=\pgfpoint{.5\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+}
+
+\pgfpagesuselayout{boxed}
+
+\begin{document}
+  \maketitle
+\tableofcontents
+\newpage
+  \section{Overview}
+Shell scripts can do what can be done on command line
+\bigbreak \noindent
+Shell scripts simplify recurring tasks. If you cannot find an existing utility to accomplish a task, you can build one using a shell script
+\nt{
+  Much of UNIX administration and house keeping is done via shell scripts
+}
+\section{Shell Script features}
+\begin{itemize}
+  \item Variables for storing data 
+\item Decision-making control (e.g. if and case statements)
+\item Looping abilities (e.g. for and while loops)
+\item Functions for modularity
+\item Any UNIX command
+  \subitem file manipulation: cat, cp, mv, ls, wc, tr, ...
+  \subitem utilities: grep, sed, awk, ...
+\item Comments: lines starting with \#
+\end{itemize}
+\section{The basics}
+\textit{\textbf{First line is always shebang}}
+\begin{minted}{c++}
+#! /bin/bash
+\end{minted}
+\textit{\textbf{To run shell scripts}}
+\begin{minted}{c++}
+bash script
+\end{minted}
+\textit{\textbf{Or, make executable}}
+\begin{minted}{c++}
+chmod +x script
+./script
+\end{minted}
+\subsection{Simple Script}
+\begin{mdframed}
+\begin{minted}{c++}
+#! /bin/bash
+date > usage-status
+ls -l >> usage-status
+du -s * >> usage-status
+\end{minted}
+\end{mdframed}
+\section{Bash Shell Programming Features}
+\begin{itemize}
+  \item Variables 
+    \subitem string, number, array
+  \item input/output
+    \subitem echo, printf
+    \subitem command line args, read from user
+  \item Decision
+    \subitem conditional execution, if-then-else, case
+  \item Repetition
+    \subitem while, until, for
+  \item Functions
+\end{itemize}
+\section{User-defined shell variables}
+\textit{\textbf{Syntax:}}
+\begin{minted}{c++}
+varname=value
+\end{minted}
+\textit{\textbf{Example:}}
+\begin{minted}{c++}
+rate=moderate
+echo "Rate today: $rate"
+\end{minted}
+\nt{
+
+  use double quotes if value of variable contains white spaces 
+  \bigbreak \noindent
+\textit{\textbf{Example:}}
+\bigbreak \noindent
+name=``Thomas William Flowers''
+}
+\section{Output via echo command}
+\begin{itemize}
+  \item Simplest form of writing to standard output 
+\end{itemize}
+\textit{\textbf{Syntax:}}
+\begin{minted}{c++}
+echo [-ne] arguments
+\end{minted}
+-n suppresses trailing newline
+\vspace{2mm}
+
+\noindent -e enables escape sequences:
+\\ \\ 
+\textbackslash t horizontal tab \\
+\textbackslash b backspace \\
+\textbackslash a alert \\
+\textbackslash n newline
+\subsection{Examples: shell scripts with output}
+\begin{minted}{c++}
+#! /bin/bash
+echo "You are running these processes:"
+ps
+
+
+#! /bin/bash
+echo -ne "Dear $USER:\nWhat's up this month:"
+cal
+\end{minted}
+\section{Command line arguments}
+\begin{itemize}
+  \item Use arguments to modify script behavior 
+  \item command line arguments become positional parameters to shell script
+  \item positional paramters are numbered variables
+    \subitem \$1, \$2, \$3 \ldots
+\end{itemize}
+\subsection{Meanings}
+\$1 \ \ \ first parameter \vspace{2mm}
+
+\noindent \$2 \ \ \ second parameter \vspace{2mm}
+
+\noindent     \$\{10\}  \ \ 10th parameter \ \ (prevents ``\$1'' misunderstanding) \vspace{2mm}
+
+\noindent \$0  \ \ name of the script \vspace{2mm}
+
+\noindent \$*  \ \ all positional parameters \vspace{2mm}
+
+\noindent \$\#  \ \ the number of arguments
+\subsection{Example: Command Line Arguments}
+\begin{mdframed}
+\begin{minted}{c++}
+#! /bin/bash
+# Usage: greetings name1 name2
+
+echo $0 to you $1 $2
+echo Today is `date`
+echo Good Bye $1
+\end{minted}
+\end{mdframed}
+Make sure to protect complete argument 
+\begin{minted}{c++}
+#! /bin/bash
+# counts lines in directory listing
+
+ls -l "$1" | wc -l
+\end{minted}
+If we had a bash script as such:
+\begin{minted}{c++}
+#! /bin/bash
+ls -l $1 | wc -l
+\end{minted}
+And had a file called ``file example'' \\
+We would not be able to use this file as a parameter, since our argument is not protected.
+\section{Arithmetic expressions}
+\textit{\textbf{Syntax:}}
+\begin{minted}{c++}
+$((expression))
+\end{minted}
+This can be used for simple arithmetic
+\begin{minted}{c++}
+count=1
+count=$((count+20))
+echo $count
+\end{minted}
+\section{Array variables}
+\textit{\textbf{Syntax:}}
+\begin{minted}{c++}
+varname=(list of words)
+\end{minted}
+Accessed via index:
+\begin{minted}{c++}
+${varname[index]}
+${varname[0]}     first word in array
+${varname[*]}     all words in array
+\end{minted}
+\subsection{Using array variables}
+\textit{\textbf{Examples}}
+\begin{minted}{c++}
+ml=(mary ann bruce linda dara)
+echo $ml
+**prints mary**
+
+echo ${ml[*]}
+**prints mary ann bruce linda dara**
+
+echo ${ml[2]}
+**prints bruce**
+
+ml[2]=john
+echo ${ml[*]}
+**prints mary ann john linda dara**
+\end{minted}
+\section{Output: printf command}
+\textit{\textbf{Syntax:}}
+\begin{minted}{c++}
+printf format[arguments]
+\end{minted}
+Writes formatted arguments to standard output under the control of ``format''
+\bigbreak \noindent
+Format string may contain:
+\begin{itemize}
+  \item plain characters: printed to output 
+  \item escape characters: e.g. \textbackslash t, \textbackslash n, \textbackslash a \ldots
+  \item format specifiers: prints next successive arguement
+\end{itemize}
+\subsection{printf format specifiers}
+\begin{minted}{c++}
+%d  number
+\end{minted}
+\textit{\textbf{also}}
+\begin{minted}{c++}
+%10d    10 chars wide
+%-10d   left justified
+\end{minted}
+\begin{minted}{c++}
+%s  string
+\end{minted}
+\textit{\textbf{also}}
+\begin{minted}{c++}
+%20s    20 chars wide
+%-20s   left justifed
+\end{minted}
+\newpage
+\begin{mdframed}
+\begin{minted}{c++}
+printf "random number\n"
+
+printf "random number %d\n" 12
+
+printf "random number %d\n" $RANDOM
+
+printf "random number %10d\n" $RANDOM
+
+printf "rando number %-10d %s\n" $RANDOM $USER
+\end{minted}
+\end{mdframed}
+\section{User input: read command}
+\textit{\textbf{Syntax:}}
+\begin{minted}{c++}
+read [-p "prompt"] varname [more vars]
+\end{minted}
+words entered by user are assigned to \vspace{2mm}
+
+\noindent varname and "more vars"
+\bigbreak \noindent
+Last variable gets rest of input file
+\subsection{Example: Accepting User input}
+\begin{minted}{c++}
+#! /bin/bash
+read -p "enter your name: "  first last
+
+echo "First name: $first""
+echo "Last name: $last"
+\end{minted}
+\end{document}

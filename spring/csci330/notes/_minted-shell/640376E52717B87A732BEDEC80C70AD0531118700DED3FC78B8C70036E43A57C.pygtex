@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{cat}\PYG{+w}{ }\PYG{n}{mouse}\PYG{+w}{ }\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{o}{/}\PYG{n}{tmp}\PYG{o}{/}\PYG{n}{out}\PYG{p}{.}\PYG{n}{txt}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{o}{\PYGZgt{}\PYGZam{}}\PYG{l+m+mi}{1}
+
+\PYG{n}{cat}\PYG{+w}{ }\PYG{n}{mouse}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZgt{}}\PYG{+w}{ }\PYG{o}{/}\PYG{n}{tmp}\PYG{o}{/}\PYG{n}{out}\PYG{p}{.}\PYG{n}{txt}
+
+\end{Verbatim}

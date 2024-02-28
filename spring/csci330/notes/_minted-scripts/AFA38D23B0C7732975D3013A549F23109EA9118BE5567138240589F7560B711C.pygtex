@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{chmod}\PYG{+w}{ }\PYG{o}{+}\PYG{n}{x}\PYG{+w}{ }\PYG{n}{script}
+\PYG{p}{.}\PYG{o}{/}\PYG{n}{script}
+\end{Verbatim}

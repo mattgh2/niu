@@ -1,0 +1,71 @@
+#!/bin/bash
+
+# Author: Matt Warner
+# Date Created: 02/27/2024
+# Last Modified: 02/28/2024
+#
+# Description
+# Simple file spell checker script
+#
+# Usage
+# z2004200.spell file
+
+
+# checks if file lives in scripts directory
+if [ ! -f "$1" ]; then
+  echo "File could not be found"
+  exit 0
+fi
+# checks if file has r bit
+if [ ! -r "$1" ]; then
+  echo "File is not read-able"
+  exit 0
+fi
+
+# Extra credit step 1 (create the personal dict)
+if [ ! -f /home/$USER/secondary_dict ]; then
+  touch /home/$USER/secondary_dict
+
+  # including proper header line as stated in: 
+  # http://aspell.net/man-html/Format-of-the-Personal-and-Replacement-Dictionaries.html
+  echo "personal_ws-1.1 en" > /home/$USER/secondary_dict
+fi
+
+# uses process substitution to fill the array with output from aspell list < "$1"
+readarray -t wl < <(aspell -p /home/$USER/secondary_dict list < "$1") 
+
+# initilizes an empty array that will hold the target words
+misspelled=()
+corrections=()
+
+# Iterates over the array of misspelled words
+for word in "${wl[@]}"
+do 
+
+  # prints simple prompt for the invoker
+  printf "$word is misspelled. Press Enter to keep this spelling, or type a correction here: "
+
+  # grabs the input from invoker
+  read choice; printf "\n"
+
+  # checks if the input is non-empty (opted for correction)
+  if [ -n "$choice" ]; then
+
+    # adds the target words to their respected arrays
+    misspelled+=("$word")
+    corrections+=("$choice") 
+    # adds to personal dict
+    echo "$word" >> /home/$USER/secondary_dict # **Extra credit step**
+  fi
+done
+
+# DUMP OUTPUT
+printf "%-20s %20s\n\n" "MISSPELLED:" "CORRECTIONS:"
+
+for i in "${!misspelled[@]}"
+do
+  printf "%-20s %20s\n" "${misspelled[i]}" "${corrections[i]}"
+done
+
+printf "\n\n"
+exit 0

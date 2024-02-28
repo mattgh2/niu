@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{printf}\PYG{+w}{ }\PYG{n}{format}\PYG{p}{[}\PYG{n}{arguments}\PYG{p}{]}
+\end{Verbatim}

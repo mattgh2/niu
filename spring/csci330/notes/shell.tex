@@ -1,0 +1,274 @@
+\documentclass{report}
+
+\input{~/latex/template/preamble.tex}
+\input{~/latex/template/macros.tex}
+
+\title{\Huge{Shell}}
+\author{\huge{Matt Warner}}
+\date{\huge{}}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{}
+\lhead{\leftmark}
+\cfoot{\thepage}
+% \usepackage[default]{sourcecodepro} \usepackage[T1]{fontenc}
+
+\pgfpagesdeclarelayout{boxed}
+{
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=1,%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {
+    border code=\pgfsetlinewidth{1.5pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.95\pgfphysicalwidth,%
+    resized height=.95\pgfphysicalheight,%
+    center=\pgfpoint{.5\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+}
+
+\pgfpagesuselayout{boxed}
+
+\begin{document}
+  \maketitle
+  \section{UNIX Command Interpreters}
+ A command Interpreter is commonly refered to as a \textbf{shell} \\
+ Ever UNIX system has a ``Bourne shell compatible'' shell  \\
+ The shell is where is simply where your commands are typed, and then interpreted.
+ \subsection{History}
+ \begin{itemize}
+   \item sh: original Bourne shell, written in 1978 by Steve Bourne 
+   \item ash: Almquist shell, BSD-licensed replacement of sh
+ \end{itemize}
+ \subsection{Today}
+ \begin{itemize}
+   \item bash: Bourne-again shell, GNU replacement of sh 
+   \item dash: Debian Almquist shell, small scripting shell
+ \end{itemize}
+\section{Variables}
+The shell remembers values stored in variables. \\ Variables have a name and a type, these types are limited to: \textbf{strings}, \textbf{numbers}, \textbf{arrays}.
+\bigbreak \noindent
+To set a string variable we would write
+\begin{minted}{c++}
+$ variable=value
+\end{minted}
+To display our variable we would write,
+\begin{minted}{c++}
+$ echo $variable
+\end{minted}
+We can also change the value stored in our variable by just repeating the same syntax used to create it.
+
+\subsection{Variable Scope}
+Varible holds values for the duration of shell invocation, i.e., when the shell is exited, the variable goes away.
+\bigbreak \noindent
+Variables can be exported into enviroment: \\ The enviroment is basically a set of key,value pairs, where the key is the variable name and the value if the value stored in the variable.
+\\ So if a variable is exported into an enviroment, if the shell ends, its still in the enviroment. Therefore it has changed to an enivorment variable.
+the command we use is
+\begin{minted}{c++}
+$ export varname
+\end{minted}
+Basically, when the user logs in, there is an enviroment for the user. The enviroment is basically a set of variables
+\bigbreak \noindent
+Here are some examples of those variables.
+\begin{itemize}
+  \item HOME: full pathname of your home directory
+  \item PATH: list of directories to search for commands
+  \item USER: Your user name, also UID for user id
+  \item SHELL: full pathname of your login shell
+  \item PWD Current working directory
+  \item HOSTNAME: current hostname of the system
+  \item HISTSIZE: Number of commands to remember
+  \item PS1: primary prompt
+  \item ?: Return status of most recently executed command
+  \item \$: Process id of current process.
+\end{itemize}
+\subsection{The PATH Variable}
+One variable that is quite useful is the PATH variable.
+The path variable lists a set of directories. \\
+The shell finds commands in these directories.
+\bigbreak \noindent
+\subsection{Bash shell prompt}
+the prompt can be changed vua the PS1 shell variable
+\begin{minted}{c++}
+PS1="$USER > "
+\end{minted}
+\textbf{Special ``PS1'' shell variable settings:}
+\begin{itemize}
+  \item \textbackslash w \ \ \ current working directory
+  \item \textbackslash h \ \ \ hostname
+  \item \textbackslash u \ \ \ username
+  \item \textbackslash d \ \ \ date
+  \item \textbackslash t \ \ \ time
+  \item \textbackslash a righ the ``bell''
+\end{itemize}
+\textit{\textbf{Example:}}
+\begin{minted}{c++}
+$ PS1="\u@\h \w \$ "
+student@csci330 ~ $
+\end{minted}
+\section{Shell aliases}
+Allows you to assign a different name to a command
+\bigbreak \noindent
+To check current aliases:
+\begin{minted}{c++}
+$ alias
+\end{minted}
+to set alias:
+\begin{minted}{c++}
+$ alias ll="ls -al"
+\end{minted}
+to remove alias
+\begin{minted}{c++}
+$ unalias ll
+\end{minted}
+\newpage
+\section{Keeping variables}
+Variables set on the command line end when the shell end. \\
+What we can do is create a file and write our aliases there. After we write them to the file, we can run the command \colorbox{lightgray}{source} on the file and run it as a shell script.
+\begin{minted}{c++}
+source aliases
+\end{minted}
+Now, all the alias created in the file will be able to be used.
+\section{Shell History}
+The shell can remember commands that you have typed in. This is called the shell history \\
+Commands in the shell history can be:
+\begin{itemize}
+  \item re-called
+  \item edited
+  \item re-executed
+ \end{itemize}
+ The size of the history is set via shell variables 
+ \begin{itemize}
+   \item per session \ \ \ \ \ \ \ \ HISTSIZE=500 
+   \item per user \ \ \ \ \ \ HISTFILESIZE=100
+\end{itemize}
+To view the history buffer:
+\begin{minted}{c++}
+history [-c] [count]
+\end{minted}
+\section{Command Sequence}
+allows series of commands all at one
+\begin{minted}{c++}
+date;pwd;ls
+\end{minted}
+\section{Command substiution}
+command surrounded by back quotes is run and replaced by its standard output
+\bigbreak \noindent
+newlines in the output are replaced by spaces
+\begin{minted}{c++}
+ls -l `which passwd`
+var=`whoami`;echo $var
+\end{minted}
+We can also perform command substitution like this
+\begin{minted}{c++}
+$ (command)
+\end{minted}
+Here is an example of that:
+\begin{minted}{c++}
+echo User $(whoami) is on $(hostname)
+\end{minted}
+\section{Output redirection}
+\textit{\textbf{Syntax:}} command $>$ file \\
+sends command output to file, instead of the terminal
+\bigbreak \noindent
+\textit{\textbf{Examples:}}
+\begin{minted}{c++}
+ls > listing
+cat listing > filecopy
+\end{minted}
+\vspace{1.5mm}
+\noindent
+  NOTE: if ``file'' exists, it is overwritten
+\newpage
+\section{Input Redirection}
+\textit{\textbf{Syntax:}}
+\begin{minted}{c++}
+command < file
+\end{minted}
+command reads (takes input) from file instead of keyboard
+\bigbreak \noindent
+\textit{\textbf{Example:}}
+\begin{minted}{c++}
+tr a-z A-Z < listing
+\end{minted}
+this translates all the lowercase characters from the file \textit{listing} to uppercase.
+\subsection{Examples: Output / input}
+redirecting input and output
+\begin{minted}{c++}
+tr A-Z a-z < r.in > r.out
+\end{minted}
+Output of command becomes input to next:
+\begin{minted}{c++}
+ls > /tmp/out.txt; wc< /tmp/out.txt
+\end{minted}
+Eliminate the middleman by using the pipe command
+\begin{minted}{c++}
+ls | wc
+\end{minted}
+\section{Appending Output}
+\textit{\textbf{Sytax}}
+\begin{minted}{c++}
+command >> file
+\end{minted}
+This adds output of command at the end of file \\ 
+if the file does not exist, the shell creates it
+\bigbreak \noindent
+\textit{\textbf{Examples:}}
+\begin{minted}{c++}
+date > usage-status
+ls -l >> usage-status
+du -s >> usage-status
+\end{minted}
+\subsection{Here Document}
+read unput for current source, uses $<<$ symbol \\
+\textit{\textbf{Syntax:}}
+\begin{minted}{c++}
+command << LABEL
+\end{minted}
+This reads following lines until line starting with ``LABEL''
+\bigbreak \noindent
+\textit{\textbf{Example}}
+\begin{minted}{c++}
+wc - l << done
+> line one
+> line two
+> DONE
+2
+\end{minted}
+\section{File Descriptor}
+
+\begin{itemize}
+  \item positive integer for every open file
+  \item process tracks its open files with this number
+    \bigbreak \noindent
+    \subitem 0 - standard input
+    \subitem 1 - standard output
+    \subitem 2 - standard error output
+\end{itemize}
+\nt{ 
+  bash can use file descriptor to refer to a file
+}
+\section{Redirecting syntax}
+\begin{itemize}
+  \item Output
+    \subitem $>$ or 1$>$ filename
+\subitem  \ \ \ \ \ \ \ 2$>$ filename
+\item input
+  \subitem $<$ or 0$<$
+\item Combining outputs
+  \subitem 2$>$\&1 \ \ \ or \ \ \ \&$>$ \ \ \ or \ \ \ $>$\&
+\end{itemize}
+\textit{\textbf{Example:}}
+\begin{minted}{c++}
+cat mouse > /tmp/out.txt 2>&1
+
+cat mouse &> /tmp/out.txt
+
+\end{minted}
+
+\end{document}

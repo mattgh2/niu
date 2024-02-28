@@ -1,0 +1,10 @@
+\contentsline {chapter}{\numberline {1}Descriptive Data Mining}{3}{chapter.1}%
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1}Unsupervised Learning}{3}{subsection.1.1.1}%
+\contentsline {section}{\numberline {2}Cluster Analysis}{4}{section.1.2}%
+\contentsline {subsection}{\numberline {2.1}Clustering methods}{4}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {2.2}Measuring similarity Between Observations}{4}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {2.3}Hierarchical Clustering}{6}{subsection.1.2.3}%
+\contentsline {subsection}{\numberline {2.4}k-Means Clustering}{9}{subsection.1.2.4}%
+\contentsline {subsection}{\numberline {2.5}Hierarchical Clustering vs k-Means Clustering}{9}{subsection.1.2.5}%
+\contentsfinish 

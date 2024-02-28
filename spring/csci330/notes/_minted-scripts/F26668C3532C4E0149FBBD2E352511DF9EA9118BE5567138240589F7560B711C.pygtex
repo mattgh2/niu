@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{rate}\PYG{o}{=}\PYG{n}{moderate}
+\PYG{n}{echo}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Rate today: \PYGZdl{}rate\PYGZdq{}}
+\end{Verbatim}

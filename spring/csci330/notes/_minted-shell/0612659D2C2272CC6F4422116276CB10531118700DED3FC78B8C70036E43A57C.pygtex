@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{echo}\PYG{+w}{ }\PYG{n}{User}\PYG{+w}{ }\PYG{n}{\PYGZdl{}}\PYG{p}{(}\PYG{n}{whoami}\PYG{p}{)}\PYG{+w}{ }\PYG{n}{is}\PYG{+w}{ }\PYG{n}{on}\PYG{+w}{ }\PYG{n}{\PYGZdl{}}\PYG{p}{(}\PYG{n}{hostname}\PYG{p}{)}
+\end{Verbatim}

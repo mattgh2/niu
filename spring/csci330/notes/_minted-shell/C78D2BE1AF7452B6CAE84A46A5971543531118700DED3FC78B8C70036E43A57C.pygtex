@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{ls}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{n}{l}\PYG{+w}{ }\PYG{err}{`}\PYG{n}{which}\PYG{+w}{ }\PYG{n}{passwd}\PYG{err}{`}
+\PYG{n}{var}\PYG{o}{=}\PYG{err}{`}\PYG{n}{whoami}\PYG{err}{`}\PYG{p}{;}\PYG{n}{echo}\PYG{+w}{ }\PYG{n}{\PYGZdl{}var}
+\end{Verbatim}
