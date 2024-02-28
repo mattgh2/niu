@@ -23,16 +23,16 @@ if [ ! -r "$1" ]; then
 fi
 
 # Extra credit step 1 (create the personal dict)
-if [ ! -f /home/$USER/secondary_dict ]; then
-  touch /home/$USER/secondary_dict
+if [ ! -f $HOME/secondary_dict ]; then
+  touch $HOME/secondary_dict
 
   # including proper header line as stated in: 
   # http://aspell.net/man-html/Format-of-the-Personal-and-Replacement-Dictionaries.html
-  echo "personal_ws-1.1 en" > /home/$USER/secondary_dict
+  echo "personal_ws-1.1 en" > $HOME/secondary_dict
 fi
 
 # uses process substitution to fill the array with output from aspell list < "$1"
-readarray -t wl < <(aspell -p /home/$USER/secondary_dict list < "$1") 
+readarray -t wl < <(aspell -p $HOME/secondary_dict list < "$1") 
 
 # initilizes an empty array that will hold the target words
 misspelled=()
@@ -55,7 +55,7 @@ do
     misspelled+=("$word")
     corrections+=("$choice") 
     # adds to personal dict
-    echo "$word" >> /home/$USER/secondary_dict # **Extra credit step**
+    echo "$word" >> $HOME/secondary_dict # **Extra credit step**
   fi
 done
 
