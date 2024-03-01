@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{cmd1}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{n}{cmd2}\PYG{+w}{ }\PYG{err}{\PYGZsh{}}\PYG{+w}{ }\PYG{n}{cmd2}\PYG{+w}{ }\PYG{n}{executed}\PYG{+w}{ }\PYG{k}{if}\PYG{+w}{ }\PYG{n}{cmd1}\PYG{+w}{ }\PYG{n}{succeeds}
+
+\PYG{n}{cmd1}\PYG{+w}{ }\PYG{o}{||}\PYG{+w}{ }\PYG{n}{cmd2}\PYG{+w}{ }\PYG{err}{\PYGZsh{}}\PYG{+w}{ }\PYG{n}{mcd2}\PYG{+w}{ }\PYG{n}{executed}\PYG{+w}{ }\PYG{k}{if}\PYG{+w}{ }\PYG{n}{cmd1}\PYG{+w}{ }\PYG{n}{fails}
+\end{Verbatim}

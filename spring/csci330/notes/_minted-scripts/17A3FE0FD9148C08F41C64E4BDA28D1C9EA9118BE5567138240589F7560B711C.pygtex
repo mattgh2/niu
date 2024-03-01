@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{ls}\PYG{+w}{ }\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{o}{/}\PYG{n}{tmp}\PYG{o}{/}\PYG{n}{out}
+\PYG{n}{echo}\PYG{+w}{ }\PYG{n}{\PYGZdl{}}\PYG{o}{?}
+
+\PYG{n}{grep}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{n}{q}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}root\PYGZdq{}}\PYG{+w}{ }\PYG{o}{/}\PYG{n}{var}\PYG{o}{/}\PYG{n}{log}\PYG{o}{/}\PYG{n}{auth}\PYG{p}{.}\PYG{n}{log}\PYG{+w}{ }\PYG{err}{\PYGZsh{}}\PYG{+w}{ }\PYG{n}{grep}\PYG{+w}{ }\PYG{n}{in}\PYG{+w}{ }\PYG{n}{quiet}\PYG{+w}{ }\PYG{n}{mode}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{exits}\PYG{+w}{ }\PYG{n}{with}\PYG{+w}{ }\PYG{n}{zero}\PYG{+w}{ }\PYG{n}{status}\PYG{+w}{ }\PYG{k}{if}\PYG{+w}{ }\PYG{n}{any}\PYG{+w}{ }\PYG{n}{match}\PYG{+w}{ }\PYG{n}{is}\PYG{+w}{ }\PYG{n}{found}\PYG{p}{)}
+\PYG{n}{echo}\PYG{+w}{ }\PYG{n}{\PYGZdl{}}\PYG{o}{?}
+\end{Verbatim}

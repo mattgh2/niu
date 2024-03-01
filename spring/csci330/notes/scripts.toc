@@ -16,4 +16,15 @@
 \contentsline {subsection}{\numberline {10.1}printf format specifiers}{6}{subsection.0.10.1}%
 \contentsline {section}{\numberline {11}User input: read command}{7}{section.0.11}%
 \contentsline {subsection}{\numberline {11.1}Example: Accepting User input}{7}{subsection.0.11.1}%
-\contentsfinish 
+\contentsline {section}{\numberline {12}exit Command}{7}{section.0.12}%
+\contentsline {section}{\numberline {13}Conditional Execution}{8}{section.0.13}%
+\contentsline {subsection}{\numberline {13.1}Conditional Execution: Examples}{8}{subsection.0.13.1}%
+\contentsline {section}{\numberline {14}test command}{8}{section.0.14}%
+\contentsline {section}{\numberline {15}if statements}{8}{section.0.15}%
+\contentsline {subsection}{\numberline {15.1}test Relation Operators}{9}{subsection.0.15.1}%
+\contentsline {subsection}{\numberline {15.2}Compound logical expressions}{9}{subsection.0.15.2}%
+\contentsline {subsection}{\numberline {15.3}Example: compound logical expressions}{9}{subsection.0.15.3}%
+\contentsline {subsection}{\numberline {15.4}File Testing operators}{9}{subsection.0.15.4}%
+\contentsline {section}{\numberline {16}Debugging using ``set"}{10}{section.0.16}%
+\contentsline {section}{\numberline {17}The case Statement}{10}{section.0.17}%
+\contentsline {section}{\numberline {18}The while loop}{11}{section.0.18}%

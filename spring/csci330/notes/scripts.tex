@@ -3,6 +3,7 @@
 \input{~/latex/template/preamble.tex}
 \input{~/latex/template/macros.tex}
 
+\usepackage{booktabs}
 \title{\Huge{Shell Scripts}}
 \author{\huge{Matt Warner}}
 \date{\huge{}}
@@ -283,4 +284,256 @@ read -p "enter your name: "  first last
 echo "First name: $first""
 echo "Last name: $last"
 \end{minted}
+\nt{
+  -p for prompt
+}
+\section{exit Command}
+This terminates the current shell, the running script.
+\bigbreak \noindent
+\textit{\textbf{Syntax}}
+\begin{minted}{c++}
+exit [status]
+\end{minted}
+\textit{\textbf{Note:}} The default exit status is 0
+
+\nt{
+  Generall convention: use negative exit status is something went wrong.
+\bigbreak \noindent
+0 indicates exit success \\ 
+1 indicates something minor went wrong 
+}
+\bigbreak \noindent
+Predefined variable ``?'' holds exit status of last command \vspace{2mm}
+
+\noindent ``0'' indicates success, all else if failure.
+\newpage
+\noindent \textbf{\underline{Examples:}}
+\begin{minted}{c++}
+ls > /tmp/out
+echo $?
+
+grep -q "root" /var/log/auth.log # grep in quiet mode (exits with zero status if any match is found)
+echo $?
+\end{minted}
+\section{Conditional Execution}
+Operators $\|$ and \&\& allow conditonal execution
+\bigbreak \noindent
+\textit{\textbf{Syntax:}}
+\begin{minted}{c++}
+cmd1 && cmd2 # cmd2 executed if cmd1 succeeds
+
+cmd1 || cmd2 # mcd2 executed if cmd1 fails
+\end{minted}
+\subsection{Conditional Execution: Examples}
+\begin{minted}{c++}
+grep $USER /etc/passwd && echo "$USER found"
+
+grep student /etc/group || echo "no student group"
+\end{minted}
+\section{test command}
+\textit{\textbf{Syntax:}}
+\begin{minted}{c++}
+test expression
+[ expression ]
+\end{minted}
+Evaluates `expression' and returns true or false
+\begin{mdframed}
+\begin{minted}{c++}
+if test $name = "Joe"
+then
+  echo "Hello Joe"
+fi
+
+if [ $name = "Joe" ]
+then 
+  echo "Hello Joe"
+fi
+\end{minted}
+\end{mdframed}
+\section{if statements}
+\begin{minted}{c++}
+if [ condition ]; then
+  statements
+elif [ condition ]; then
+  statements
+else
+  statements
+fi
+\end{minted}
+\newpage
+\subsection{test Relation Operators}
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Meaning}          & \textbf{Numeric} & \textbf{String}    \\ \midrule
+Greater than              & -gt              &                    \\
+Greater than or equal     & -ge              &                    \\
+Less than                 & -lt              &                    \\
+Less than or equal        & -le              &                    \\
+Equal                     & -eq              & =                  \\
+Not equal                 & -ne              & !=                 \\
+String length is zero     &                  & -z str             \\
+String length is non-zero &                  & -n str             \\
+file1 is newer than file2 &                  & file1 -nt file2    \\
+file1 is older than file2 &                  & file1 -ot file2    \\ \bottomrule
+\end{tabular}
+\caption{test relation operators}
+\label{your-label-here}
+\end{table}
+\subsection{Compound logical expressions}
+\bigbreak \noindent
+\noindent\textbf{\texttt{! expression}}
+\begin{itemize}[leftmargin=*,label={}]
+  \item True if \texttt{expression} is false.
+\end{itemize}
+
+\noindent\textbf{\texttt{expression -a expression}}
+\begin{itemize}[leftmargin=*,label={}]
+  \item True if both \texttt{expressions} are true.
+\end{itemize}
+
+\noindent\textbf{\texttt{expression -o expression}}
+\begin{itemize}[leftmargin=*,label={}]
+  \item True if one of the \texttt{expressions} is true.
+\end{itemize}
+\subsection{Example: compound logical expressions}
+\begin{minted}{c++}
+if [ ! $Years -lt 20 ]; then
+  echo "You can retire now."
+fi
+
+if [ "$Status" = "H" ] && [ "$Shift" = 3 ]; then
+  echo "shift $Shift gets \$$Bonus bonus"
+fi
+
+if [ "$Calls" -gt 150 ] || [ "$Closed" -gt 50 ]; then
+  echo "You are entitled to a bonus"
+fi
+\end{minted}
+\subsection{File Testing operators}
+ \begin{table}[ht]
+\centering
+\begin{tabular}{@{}ll@{}}
+\toprule
+\textbf{Command} & \textbf{Meaning} \\
+\midrule
+\texttt{-d file} & true if `file' is a directory \\
+\texttt{-f file} & true if `file' is a regular file \\
+\texttt{-r file} & true if `file' is readable \\
+\texttt{-w file} & true if `file' is writable \\
+\texttt{-x file} & true if `file' is executable \\
+\texttt{-s file} & true if length of `file' is nonzero \\
+\bottomrule
+\end{tabular}
+\end{table}
+\newpage
+\section{Debugging using ``set"}
+The ``set'' command is a shell built-in command. It has options to allow tracing of execution.
+\vspace{1.5mm}
+
+-v print shell input lines as they are read \vspace{1.5mm}
+
+-x option displays expanded commands and its arguments
+\bigbreak \noindent
+Options can be turned on or off \vspace{1.5mm}
+
+To turn on the option: \ \ \textbf{set -xv} \vspace{1.5mm}
+
+To turn off the options: \ \ \textbf{set +xv}
+\bigbreak \noindent
+Options can also be set via she-bang line \vspace{1.5mm}
+\begin{minted}{c++}
+#! /bin/bash -xv
+\end{minted}
+\bigbreak \noindent
+\textbf{\underline{Example:}} Using the following script
+\begin{minted}{c++}
+#!/bin/bash
+read -p "enter your name: " first last
+set -v
+echo "First name: $first"
+set +v
+echo "Last name: $last"
+\end{minted}
+This will add the following line to the output
+\begin{minted}{c++}
+echo "First name: $first"
+\end{minted}
+Additionally, using -x will instead print the whats inside the variable.
+\section{The case Statement}
+To make decision that is based on multiple choices, we use case statements. This is can be thought of in the same way as a switch statement in C++.
+\bigbreak \noindent
+\textit{\textbf{Syntax:}}
+\begin{minted}{c++}
+case word in
+  pattern1) command-list1
+  ;;
+  pattern2) command-list2
+  ;;
+  patternN) command-listN
+  ;;
+esac
+\end{minted}
+Additionally, the case pattern can contain meta characters, such as: \vspace{1.5mm}
+
+* \vspace{1.5mm}
+
+? \vspace{1.5mm}
+
+[ \ldots ] \vspace{1.5mm}
+
+[ :class: ]
+\nt{
+  Multiple patterns can be listed via $|$ (pipeline)
+}
+\newline
+\begin{mdframed}
+\begin{minted}{c++}
+#!/bin/bash
+echo "Enter Y to see all files including hidden files"
+echo "Enter N to see all non-hidden files"
+echo "Enter Q to quit"
+
+read -p "Enter your choice: " reply
+
+case "$reply" in
+  Y|YES) echo "Displaying all (really...) files"
+         ls -a ;;
+
+  N|NO) echo "Displaying all non-hidden files..."
+        ls ;;
+
+  Q)    exit 0 ;;
+
+  *) echo "Invalid choice!"; exit 1 ;;
+esac
+\end{minted}
+\end{mdframed}
+\section{The while loop}
+This executes ``command-list'' as long as ``test-command'' evaluates successfully
+\bigbreak \noindent
+\textit{\textbf{Syntax:}}
+\begin{minted}{c++}
+while test-command
+do
+  command-list
+done
+\end{minted}
+\bigbreak \noindent
+\textbf{\underline{Example:}}
+\begin{mdframed}
+\begin{minted}{c++}
+#!/bin/bash
+#script shows users's active processes
+
+cont="y"
+while [ "$cont" = "y" ]; do
+  ps
+  read -p "again (y/n)? " cont
+done
+echo "done"
+
+\end{minted}
+\end{mdframed}
 \end{document}

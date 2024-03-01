@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{int}\PYG{o}{*}\PYG{+w}{ }\PYG{n}{number}\PYG{p}{;}
+\PYG{k+kt}{double}\PYG{o}{*}\PYG{+w}{ }\PYG{n}{decimal}\PYG{p}{;}
+\PYG{k+kt}{char}\PYG{o}{*}\PYG{+w}{ }\PYG{n}{character}\PYG{p}{;}
+\end{Verbatim}

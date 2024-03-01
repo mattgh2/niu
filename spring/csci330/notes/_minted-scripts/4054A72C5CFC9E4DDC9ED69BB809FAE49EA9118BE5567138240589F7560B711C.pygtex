@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{if}\PYG{+w}{ }\PYG{p}{[}\PYG{+w}{ }\PYG{n}{condition}\PYG{+w}{ }\PYG{p}{];}\PYG{+w}{ }\PYG{n}{then}
+\PYG{+w}{  }\PYG{n}{statements}
+\PYG{n}{elif}\PYG{+w}{ }\PYG{p}{[}\PYG{+w}{ }\PYG{n}{condition}\PYG{+w}{ }\PYG{p}{];}\PYG{+w}{ }\PYG{n}{then}
+\PYG{+w}{  }\PYG{n}{statements}
+\PYG{k}{else}
+\PYG{+w}{  }\PYG{n}{statements}
+\PYG{n}{fi}
+\end{Verbatim}

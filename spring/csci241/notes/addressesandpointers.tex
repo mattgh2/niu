@@ -1,0 +1,270 @@
+\documentclass{report}
+
+\input{~/latex/template/preamble.tex}
+\input{~/latex/template/macros.tex}
+
+\title{\Huge{Addresses and Pointers}}
+\author{\huge{Matt Warner}}
+\date{\huge{}}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{}
+\lhead{\leftmark}
+\cfoot{\thepage}
+% \usepackage[default]{sourcecodepro} \usepackage[T1]{fontenc}
+
+\pgfpagesdeclarelayout{boxed}
+{
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=1,%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {
+    border code=\pgfsetlinewidth{1.5pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.95\pgfphysicalwidth,%
+    resized height=.95\pgfphysicalheight,%
+    center=\pgfpoint{.5\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+}
+
+\pgfpagesuselayout{boxed}
+
+\begin{document}
+  \maketitle
+\tableofcontents
+\clearpage
+\section{Number Systems}
+The decimal number system we normally use for representing numbers is a \textbf{\textit{positional number system}} in which any natural number may be uniquely represented by use of the ten symbols 0,1,2\ldots,9.  \vspace{1.5mm}
+
+\noindent In this system these then symbols, also referred to as decimal digits, represent the numbers zero, one, two,\ldots, nine, respectively. A unique representation of any natural number $m$ can be given in the form
+$$ d_nd_{n-1}d_{n-2}\ldots d_1d_0$$
+where $m\ge 0$. The same natural number $m$ can also be represented in the form
+$$d_n\cdot 10^n + d_{n-1}\cdot 10^{n-1} + d_{n-2}\cdot 10^{n-2}+\ldots + d_1\cdot 10^1+d_0\cdot 1-^0$$
+For example, the number one hundred twenty-three may be represented by
+$$123$$
+Or by
+$$ 1\cdot 10^2+2\cdot 10^1 + 3 \cdot 10^0$$
+\bigbreak \noindent
+The decimal number system is also called the \textbf{\textit{base ten system}} since ten digits are utilized in the number representations in this system.  \vspace{1.5mm}
+
+\noindent There is, however, nothing sacred about the base ten since the notion of a positional number system can easily be generalized to any given base $b$ where $b$ is a natural number greater than or equal to two.
+\bigbreak \noindent
+For example, we can also represent the number one hundred twenty-three in the \textit{\textbf{base two}} or \textit{\textbf{binary number system}}. The symbols 0 and 1 are chosen to represent zero and one, just as then symbols were selected in the base ten system to represent zero, one, two, \ldots nine. Then, since
+$$ 123 = 1\cdot 2^6 + 1 \cdot 2^5 + 1 \cdot 2^3 + 0\cdot 2^2 + 1 \cdot 2^1 + 1 \cdot 2^0$$
+The number one hundred twenty-three would be represented in the binary number system by
+$$ 1111011 $$
+\bigbreak \noindent
+So, any natural number that we can represent in base ten can also be represented in base two. It's also \textbf{much} easier to represent \textit{two} distinct states in a phyiscal system like a computer than it is to represent \textit{ten} distinct states. You can use the two stable states of a flip-flop, two positions of an electrical switch, two distinct voltage or current levels allowed by a circuit, two distinct levels of light intensity, two directions of magnetization or polarization, etc.
+\bigbreak \noindent
+The fact that it's easy to represent binary numbers with hardware which has made base two the number system of choice in digital devices such as computers
+\section{Bits and Bytes}
+Computer memory (often called RAM - "random access memory") is measured using different units (like inches, feet, yards). Most commonly, we use
+\begin{itemize}
+  \item \textbf{bit} (binary digit): Each bit can hold a 0 or a 1, nothing more. A 2 is too big.
+  \item \textbf{byte}: Can hold 8 bits, or a decimal value from 0 to 255.
+  \item \textbf{word}: Size depends on the system. Usually 2,4, or 8 bytes. 2 bytes can hold a value from 0 up to about 65,000. 4 bytes can hold a value up to about 4 billion. 8 bytes can hold a value up to about $1.8 \cdot 10^{19}$
+\end{itemize}
+\clearpage
+\noindent We can represent many different types of data using just groups of bits:
+\begin{itemize}
+  \item As outlined above, groups of bits can be used to represent the larger integer numbers we might want to store in a computer program. 
+  \item One bit can be used for the number's sign (0 = positive, 1 = negative), which allows us to represent negative values.
+  \item Character data can be represented using a numeric code such as ASCII or Unicode that assigns a distinct integer representation to each character.
+  \item Boolean values can also be easily represented as an integer (0 = false, 1 = true).
+  \item Floating-point numbers can be represented (with some loss of precision) as two integer values packed together, one for the fraction and one for the exponent (similar to scientific notation).
+\end{itemize}
+\bigbreak \noindent
+The variables you define in a C++ program and the code for the functions you write all occupy space in the computer's memory when the program is run. That means they occupy some number of bytes. FOr a variable, the number of bytes occupied depends on the variable's data type and the system the program is compiled and run on. Here are the sizes of some different data types on our Unix system:
+\begin{itemize}
+  \item \textit{char} = 1 byte (0 to 255)
+  \item \textit{bool} = 1 byte
+  \item \textit{short int} = 2 bytes (-32,768 to 32,767)
+  \item \textit{unsigned short int} = 2 bytes (0 to 65,535)
+  \item \textit{int} = 4 bytes (-2,147,483,648  to 2,147,483,295)
+  \item \textit{unsigned int} = 4 bytes (0 to 4,294,967,295)
+  \item \textit{long int} = 8 bytes (-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807)
+  \item \textit{unsigned long int} = 8 bytes (0 to 18,446,744,073,709,551,615)
+  \item \textit{float} = 4 bytes (plus or minus $10^{38}$, limited to $\approx$ 6 significant digits) 
+  \item \textit{double} = 8 bytes (plus or minus $10^{308}$, limited to $\approx$ 12 significant digits)
+  \item \textit{long double} = 16 bytes (plus or minus $10^{308}$, limited to $\approx$ 31 significant digits)
+  \item C string = depends on number of chars in the array
+  \item object type = sum of the sizes of the individual data members
+\end{itemize}
+\nt{
+  These sizes may be different on a different computer. To find the size of a data type or a variable if you don't know it, use the \colorbox{lightgray}{sizeof} operator:
+  \bigbreak \noindent
+  sizeof(int)   \ \ \ \ // An expression that evaluates to 4 on our Unix system. \vspace{1.5mm}
+
+\noindent  sizeof(x) \ \ \ \  // Evaluates to the amount of memory that x occupies
+\bigbreak \noindent
+Also, sizeof looks a bit like a function, but it's not, really. It's and operator built-in to the C++ language.
+}
+\bigbreak \noindent
+The uncertainty of the size of various data types in C and C++ is a problem. It was never defined as part of the language and it's far too late to change now. More modern languages such as Java standardize the size (and therefore the range) of numeric data types so that there is no uncertainty.
+\clearpage
+\section{Addresses}
+Bytes in the computer's memory are asigned consecutive increasing mumbers starting with the number 0, Thus, storage may be pictorially represented as
+\begin{figure}[ht]
+    \centering
+    \incfig[1]{byte}
+    %\caption{byte}
+    %\label{fig:byte}
+\end{figure}
+\bigbreak \noindent
+Where each of the b's represents a bit and the number assigned to a given byte is called the \textit{\textbf{address}} of that byte. Addresses range from 0 to the maximum amount on the computer. Addresses are binary numbers, but are often printed in hexadecimal (base 16) to save space. You can print an address in decimal by type casting it to an integer.
+\bigbreak \noindent
+The \textit{\textbf{address of a variable}} is the address of its first byte of storage that it occupies. Similarly, the address of a function is the address of the first byte of storage that the function's code occupies. \vspace{1.5mm}
+
+\noindent We rarely have to know the actual address of a variable or function, but we do need to understand the idea of addresses and the fact that variables take up a certain amount of space in memory.
+\bigbreak \noindent
+To obtain the address of a non-array variable, we can use the \& operator.
+\bigbreak \noindent
+This is not the same operator as the \& when declaring a reference variable. It also has nothing to do with the \&\& operator used in compound conditions. This is confusing, but you just have to keep in mind the context in which you're using the \&.
+\bigbreak \noindent \bigbreak \noindent \bigbreak \noindent
+\begin{tabularx}{\textwidth}{|c|X|X|X|}
+\hline
+\textbf{Symbol} & \textbf{Context} & \textbf{Means} & \textbf{Example} \\
+\hline
+\& & In the declaration of a data type (variable declaration, function return data type, function parameter) & This data type is a reference type & \texttt{int\& x = num;} \\
+\hline
+\& & As a unary operator (variable or function name to the right of the operator, no whitespace), usually in an assignment statement or function call & "Address of" operator & \texttt{cout << \&num;} \\
+\hline
+\& & As a binary operator (variable or literal on both sides of the operator), usually in an assignment statement & Bitwise AND operator & \texttt{num = num \& 5;} \\
+\hline
+\&\& & As a binary operator, usually in a decision or loop condition & Logical AND operator & \texttt{if (num >= 5 \&\& num <= 10)} \\
+\hline
+\&\& & In the declaration of a data type (variable declaration, function return data type, function parameter) & This data type is an "r-value reference" (an advanced data type used in C++ "move semantics") & \texttt{string\&\& other} \\
+\hline
+\end{tabularx}
+\newpage
+\noindent We can use the \& operator to obtain the address of a variable and print it (in either hexadecimal or decimal) in a program:
+\begin{mdframed}
+  \begin{minted}{c++}
+#include <iostream>
+
+using std::cout;
+using std::endl;
+
+int main()
+{
+  
+  int num  = 5;
+
+  cout << "Value of num is " << num << endl;          
+  cout << "Address of num (hexadecimal) is " << &num << endl;         // prints base 16
+  cout << "Address of num (decimal) is " << (long int) &num << endl;  // Prints base 10
+
+  return 0;
+}
+\end{minted}
+\end{mdframed}
+We can declare a pointer variable to any non-array data type. C++ considers all of these pointer types to be different data types; a pointer delcared as \colorbox{lightgray}{int*} and a pointer delcared as \colorbox{lightgray}{char*} are not the same data type.
+\begin{mdframed}
+\begin{minted}{c++}
+float* floatPtr;    // floatPtr is a pointer to a float.
+
+char* first;         // first is a pointer to a char.
+
+Date* dataPtr;      // dataPtr is a pointer to a Date object.
+
+double* x, * y;     // x and y are both pointers to double.
+\end{minted}
+\end{mdframed}
+We can use the \& operator to put the address of a variable into the appropriate type of pointer variable.
+\begin{mdframed}
+\begin{minted}{c++}
+int num = 5;
+
+int* p = &num;
+\end{minted}
+\end{mdframed}
+Now we can say ``p contains the address of num'' or ``p points to num''. The figure below illustrates the relationship we've established with these two lines of code.
+\begin{figure}[ht]
+    \centering
+    \incfig[1]{diagram}
+    %\caption{diagram}
+    %\label{fig:diagram}
+\end{figure}
+\newpage
+\noindent
+Note that since \textit{p} is itself a variable, it occupies some number of bytes in the computer's memory and has its own address (14072863404556 in this example)
+\bigbreak \noindent
+What good does this do? Some of the most important uses will come later, but for right now, we can use this together with one more new idea to create a new way to access the value in a variable.
+\bigbreak \noindent
+We know we can access the value in \colorbox{lightgray}{num} by using \colorbox{lightgray}{num} itself; for example:
+\begin{mdframed}
+\begin{minted}{c++}
+cout << num << endl;
+\end{minted}
+\end{mdframed}
+Now we can use the pointer variable to get to \colorbox{lightgray}{num's} value (assuming as above that p points to \colorbox{lightgray}{num}). This will prove very useful soon.
+\bigbreak \noindent
+But first we have to know \textit{how} we can access the value stored in \colorbox{lightgray}{num} by using the pointer p? We \textit{\textbf{dereference}} the pointer. ``Dreference a pointer'' means ``access the value of the variable that the pointer points to.''
+\bigbreak \noindent
+The \textit{\textbf{dereference operator}} is the *. Write the * before the pointer and you have an expression that refers to the ``value pointed to'' by the pointer.
+\bigbreak \noindent
+So given the declarations and assignments above, we can code:
+\begin{mdframed}
+\begin{minted}{c++}
+cout << num << endl;    // Prints 5.
+cout << *p << endl;     // Also prints 5.
+\end{minted}
+\end{mdframed}
+\nt{
+  In the first line of code, we print the value stored in the variable \colorbox{lightgray}{num} \vspace{1.5mm}
+
+  \noindent In the second line of code, we print the value stored in the \textit{int} variable pointed to by \textit{p} (which is the value in \colorbox{lightgray}{num})
+  \bigbreak \noindent
+  They are the same thing
+}
+Notice another possible source of confusion:
+\bigbreak \noindent
+In a declaration, you write:
+\begin{mdframed}
+\begin{minted}{c++}
+int* p;
+\end{minted}
+\end{mdframed}
+This declares p to be a variable that can hold the address of an integer variable. The data type of \textit{p} is \textit{int*} (pointer to an integer).
+\bigbreak \noindent
+In contrast, in an \textbf{executable statement} you might write:
+\begin{mdframed}
+\begin{minted}{c++}
+x = *p;
+\end{minted}
+\end{mdframed}
+Here, *p refers to ``the value in the variable whose address is stored in the pointer variable p'' or more briefly, ``the value pointed to by p''
+\bigbreak \noindent
+\newpage
+\noindent In all, there are three different contexts in which you might use the character * in C++.
+\bigbreak \noindent
+\begin{tabularx}{\textwidth}{@{}lXlX@{}}
+\toprule
+\textbf{Symbol} & \textbf{Context} & \textbf{Means} & \textbf{Example} \\
+\midrule
+\texttt{*} & In the declaration of a data type (variable declaration, function return data type, function parameter) & This data type is a pointer type & \texttt{int* p;} \\ \\
+\texttt{*} & As a unary operator, with a pointer variable name or pointer arithmetic expression to the right of the operator & Dereference operator & \texttt{cout << *p;} \\ \\ 
+\texttt{*} & As a binary operator & Multiplication operator & \texttt{num = num * 5;} \\
+\bottomrule
+\end{tabularx}
+\section{Pointers to Objects}
+We can create pointers to objects in the same fashion as pointers to built-in types like \textit{int} and \textit{double}. Pointers to objects have some additional syntax associated with them when it comes to accessing members of the object:
+\bigbreak \noindent
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+\toprule
+\textbf{Expression} & \textbf{Meaning} \\
+\midrule
+\texttt{pointer-name} & Address of the object pointed to by \texttt{pointer-name} \\ \\
+\texttt{*pointer-name} & Value of the object pointed to by \texttt{pointer-name} \\ \\ 
+\texttt{(*pointer-name).member\_name} & Syntax to access the data member \texttt{member\_name} of the object pointed to by \texttt{pointer-name} \\ \\
+\texttt{pointer-name->member\_name} & Alternative syntax to access the data member \texttt{member\_name} of the object pointed to by \texttt{pointer-name} \\ \\
+\texttt{(*pointer-name).member\_function\_name(arguments)} & Syntax to call the member function \texttt{member\_function\_name()} of the object pointed to by \texttt{pointer-name} \\ \\
+\texttt{pointer-name->member\_function\_name(arguments)} & Alternative syntax to call the member function \texttt{member\_function\_name()} of the object pointed to by \texttt{pointer-name} \\ \\ 
+\bottomrule
+\end{tabularx}
+\end{document}
