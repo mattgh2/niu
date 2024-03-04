@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+ch}{\PYGZsh{}! /bin/bash}
+\PYG{n+nb}{read}\PYG{+w}{ }\PYGZhy{}p\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}enter your name: \PYGZdq{}}\PYG{+w}{  }first\PYG{+w}{ }last
+
+\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}First name: }\PYG{n+nv}{\PYGZdl{}first}\PYG{l+s+s2}{\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+s2}{echo \PYGZdq{}}Last\PYG{+w}{ }name:\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}last}\PYG{l+s+s2}{\PYGZdq{}}
+\end{Verbatim}

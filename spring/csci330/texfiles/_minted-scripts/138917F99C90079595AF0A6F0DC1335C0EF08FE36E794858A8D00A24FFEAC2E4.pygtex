@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+ch}{\PYGZsh{}!/bin/bash}
+\PYG{c+c1}{\PYGZsh{} script shows user\PYGZsq{}s active processes}
+
+\PYG{n+nv}{stop}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}n\PYGZdq{}}
+untill\PYG{+w}{ }\PYG{o}{[}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}stop}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}y\PYGZdq{}}\PYG{+w}{ }\PYG{o}{]}\PYG{p}{;}\PYG{+w}{ }\PYG{k}{do}
+\PYG{+w}{  }ps
+\PYG{+w}{  }\PYG{n+nb}{read}\PYG{+w}{ }\PYGZhy{}p\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}done (y/n)? \PYGZdq{}}\PYG{+w}{ }stop
+\PYG{k}{done}
+\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}done\PYGZdq{}}
+\end{Verbatim}

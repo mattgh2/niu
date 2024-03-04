@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{l+s+si}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{varname}\PYG{p}{[index]}\PYG{l+s+si}{\PYGZcb{}}
+\PYG{l+s+si}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{varname}\PYG{p}{[0]}\PYG{l+s+si}{\PYGZcb{}}\PYG{+w}{     }first\PYG{+w}{ }word\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }array
+\PYG{l+s+si}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{varname}\PYG{p}{[*]}\PYG{l+s+si}{\PYGZcb{}}\PYG{+w}{     }all\PYG{+w}{ }words\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }array
+\end{Verbatim}

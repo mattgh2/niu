@@ -1,0 +1,16 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGZti{}\PYGZdl{}\PYG{+w}{ }cat\PYG{+w}{ }emps
+Tom\PYG{+w}{ }Jones\PYG{+w}{     }\PYG{l+m}{4424}\PYG{+w}{     }\PYG{l+m}{5}/12/66\PYG{+w}{    }\PYG{l+m}{543354}
+Mary\PYG{+w}{ }Adams\PYG{+w}{    }\PYG{l+m}{5346}\PYG{+w}{     }\PYG{l+m}{11}/4/63\PYG{+w}{    }\PYG{l+m}{28765}
+Sally\PYG{+w}{ }Chang\PYG{+w}{   }\PYG{l+m}{1654}\PYG{+w}{     }\PYG{l+m}{7}/22/54\PYG{+w}{    }\PYG{l+m}{6500000}
+Billy\PYG{+w}{ }Black\PYG{+w}{   }\PYG{l+m}{1683}\PYG{+w}{     }\PYG{l+m}{9}/23/44\PYG{+w}{    }\PYG{l+m}{336500}
+
+\PYGZdl{}\PYG{+w}{ }awk\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}/Tom/ \PYGZob{} print \PYGZdl{}0 \PYGZcb{}\PYGZsq{}}\PYG{+w}{ }emps
+Tom\PYG{+w}{ }Jones\PYG{+w}{     }\PYG{l+m}{4424}\PYG{+w}{     }\PYG{l+m}{5}/12/66\PYG{+w}{    }\PYG{l+m}{543354}
+
+\PYGZdl{}\PYG{+w}{ }awk\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}\PYGZob{} print NR, \PYGZdl{}0 \PYGZcb{}\PYGZsq{}}\PYG{+w}{ }emps
+\PYG{l+m}{1}\PYG{+w}{ }Tom\PYG{+w}{ }Jones\PYG{+w}{     }\PYG{l+m}{4424}\PYG{+w}{     }\PYG{l+m}{5}/12/66\PYG{+w}{    }\PYG{l+m}{543354}
+\PYG{l+m}{2}\PYG{+w}{ }Mary\PYG{+w}{ }Adams\PYG{+w}{    }\PYG{l+m}{5346}\PYG{+w}{     }\PYG{l+m}{11}/4/63\PYG{+w}{    }\PYG{l+m}{28765}
+\PYG{l+m}{3}\PYG{+w}{ }Sally\PYG{+w}{ }Chang\PYG{+w}{   }\PYG{l+m}{1654}\PYG{+w}{     }\PYG{l+m}{7}/22/54\PYG{+w}{    }\PYG{l+m}{6500000}
+\PYG{l+m}{4}\PYG{+w}{ }Billy\PYG{+w}{ }Black\PYG{+w}{   }\PYG{l+m}{1683}\PYG{+w}{     }\PYG{l+m}{9}/23/44\PYG{+w}{    }\PYG{l+m}{336500}
+\end{Verbatim}

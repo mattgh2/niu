@@ -1,6 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\}]
-\PYG{k}{while}\PYG{+w}{ }\PYG{n}{test}\PYG{o}{\PYGZhy{}}\PYG{n}{command}
-\PYG{k}{do}
-\PYG{+w}{  }\PYG{n}{command}\PYG{o}{\PYGZhy{}}\PYG{n}{list}
-\PYG{n}{done}
-\end{Verbatim}

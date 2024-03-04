@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+cmd1\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }cmd2\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} cmd2 executed if cmd1 succeeds}
+
+cmd1\PYG{+w}{ }\PYG{o}{||}\PYG{+w}{ }cmd2\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} mcd2 executed if cmd1 fails}
+\end{Verbatim}

@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nb}{printf}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}random number\PYGZbs{}n\PYGZdq{}}
+
+\PYG{n+nb}{printf}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}random number \PYGZpc{}d\PYGZbs{}n\PYGZdq{}}\PYG{+w}{ }\PYG{l+m}{12}
+
+\PYG{n+nb}{printf}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}random number \PYGZpc{}d\PYGZbs{}n\PYGZdq{}}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}RANDOM}
+
+\PYG{n+nb}{printf}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}random number \PYGZpc{}10d\PYGZbs{}n\PYGZdq{}}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}RANDOM}
+
+\PYG{n+nb}{printf}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}rando number \PYGZpc{}\PYGZhy{}10d \PYGZpc{}s\PYGZbs{}n\PYGZdq{}}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}RANDOM}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}USER}
+\end{Verbatim}

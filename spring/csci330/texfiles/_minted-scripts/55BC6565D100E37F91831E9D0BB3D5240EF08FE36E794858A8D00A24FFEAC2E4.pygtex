@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{function}\PYGZhy{}name\PYG{+w}{ }\PYG{o}{()}\PYG{+w}{ }\PYG{o}{\PYGZob{}}
+\PYG{+w}{  }statements
+\PYG{o}{\PYGZcb{}}
+\end{Verbatim}

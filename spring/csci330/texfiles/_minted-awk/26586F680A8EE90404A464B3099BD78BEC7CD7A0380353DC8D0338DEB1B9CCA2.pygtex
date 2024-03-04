@@ -1,0 +1,13 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGZti{}\PYGZdl{}\PYG{+w}{ }cat\PYG{+w}{ }emps2
+Tom\PYG{+w}{ }Jones:4424:5/12/66:543354
+Mary\PYG{+w}{ }Adams:5346:11/4/63:28765
+Sally\PYG{+w}{ }Chang:1654:7/22/54:650000
+Billy\PYG{+w}{ }Black:1683:9/23/44:336500
+
+awk\PYG{+w}{ }\PYGZhy{}F:\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}/Jones/\PYGZob{} print \PYGZdl{}1, \PYGZdl{}2 \PYGZcb{}\PYGZsq{}}\PYG{+w}{ }emps2
+Tom\PYG{+w}{ }Jones\PYG{+w}{ }\PYG{l+m}{4424}
+
+awk\PYG{+w}{ }\PYGZhy{}F:\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}/Jones/\PYGZob{}print \PYGZdl{}1, \PYGZdl{}3\PYGZcb{}\PYGZsq{}}\PYG{+w}{ }emps2
+Tom\PYG{+w}{ }Jones\PYG{+w}{ }\PYG{l+m}{5}/12/66
+\end{Verbatim}

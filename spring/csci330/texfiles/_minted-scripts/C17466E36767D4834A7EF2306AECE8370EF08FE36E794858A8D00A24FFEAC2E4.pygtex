@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+ch}{\PYGZsh{}!/bin/bash}
+\PYG{k}{for}\PYG{+w}{ }parm
+\PYG{k}{do}
+\PYG{+w}{  }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}parm}
+\PYG{k}{done}
+\end{Verbatim}

@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+ch}{\PYGZsh{}! /bin/bash}
+\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}You are running these processes:\PYGZdq{}}
+ps
+
+
+\PYG{c+c1}{\PYGZsh{}! /bin/bash}
+\PYG{n+nb}{echo}\PYG{+w}{ }\PYGZhy{}ne\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Dear }\PYG{n+nv}{\PYGZdl{}USER}\PYG{l+s+s2}{:\PYGZbs{}nWhat\PYGZsq{}s up this month:\PYGZdq{}}
+cal
+\end{Verbatim}

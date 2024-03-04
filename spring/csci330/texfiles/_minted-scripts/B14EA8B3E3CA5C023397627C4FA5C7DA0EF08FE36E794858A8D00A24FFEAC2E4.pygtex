@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+ch}{\PYGZsh{}! /bin/bash}
+\PYG{c+c1}{\PYGZsh{} Usage: greetings name1 name2}
+
+\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}0}\PYG{+w}{ }to\PYG{+w}{ }you\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}1}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}2}
+\PYG{n+nb}{echo}\PYG{+w}{ }Today\PYG{+w}{ }is\PYG{+w}{ }\PYG{l+s+sb}{`}date\PYG{l+s+sb}{`}
+\PYG{n+nb}{echo}\PYG{+w}{ }Good\PYG{+w}{ }Bye\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}1}
+\end{Verbatim}

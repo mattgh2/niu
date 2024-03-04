@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+awk\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}script\PYGZsq{}}\PYG{+w}{ }file\PYG{o}{(}s\PYG{o}{)}
+
+awk\PYG{+w}{ }\PYGZhy{}f\PYG{+w}{ }scriptfile\PYG{+w}{ }file\PYG{o}{(}s\PYG{o}{)}
+\end{Verbatim}

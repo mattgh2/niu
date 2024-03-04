@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nv}{ml}\PYG{o}{=(}mary\PYG{+w}{ }ann\PYG{+w}{ }bruce\PYG{+w}{ }linda\PYG{+w}{ }dara\PYG{o}{)}
+\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}ml}
+**prints\PYG{+w}{ }mary**
+
+\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+si}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{ml}\PYG{p}{[*]}\PYG{l+s+si}{\PYGZcb{}}
+**prints\PYG{+w}{ }mary\PYG{+w}{ }ann\PYG{+w}{ }bruce\PYG{+w}{ }linda\PYG{+w}{ }dara**
+
+\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+si}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{ml}\PYG{p}{[2]}\PYG{l+s+si}{\PYGZcb{}}
+**prints\PYG{+w}{ }bruce**
+
+ml\PYG{o}{[}\PYG{l+m}{2}\PYG{o}{]=}john
+\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+si}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{ml}\PYG{p}{[*]}\PYG{l+s+si}{\PYGZcb{}}
+**prints\PYG{+w}{ }mary\PYG{+w}{ }ann\PYG{+w}{ }john\PYG{+w}{ }linda\PYG{+w}{ }dara**
+\end{Verbatim}

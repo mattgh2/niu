@@ -1,0 +1,20 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+ch}{\PYGZsh{}!/bin/bash}
+\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Enter Y to see all files including hidden files\PYGZdq{}}
+\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Enter N to see all non\PYGZhy{}hidden files\PYGZdq{}}
+\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Enter Q to quit\PYGZdq{}}
+
+\PYG{n+nb}{read}\PYG{+w}{ }\PYGZhy{}p\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Enter your choice: \PYGZdq{}}\PYG{+w}{ }reply
+
+\PYG{k}{case}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}reply}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{k}{in}
+\PYG{+w}{  }Y\PYG{p}{|}YES\PYG{o}{)}\PYG{+w}{ }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Displaying all (really...) files\PYGZdq{}}
+\PYG{+w}{         }ls\PYG{+w}{ }\PYGZhy{}a\PYG{+w}{ }\PYG{p}{;;}
+
+\PYG{+w}{  }N\PYG{p}{|}NO\PYG{o}{)}\PYG{+w}{ }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Displaying all non\PYGZhy{}hidden files...\PYGZdq{}}
+\PYG{+w}{        }ls\PYG{+w}{ }\PYG{p}{;;}
+
+\PYG{+w}{  }Q\PYG{o}{)}\PYG{+w}{    }\PYG{n+nb}{exit}\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }\PYG{p}{;;}
+
+\PYG{+w}{  }*\PYG{o}{)}\PYG{+w}{ }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Invalid choice!\PYGZdq{}}\PYG{p}{;}\PYG{+w}{ }\PYG{n+nb}{exit}\PYG{+w}{ }\PYG{l+m}{1}\PYG{+w}{ }\PYG{p}{;;}
+\PYG{k}{esac}
+\end{Verbatim}

@@ -1,0 +1,770 @@
+\documentclass{report}
+
+\input{~/latex/template/preamble.tex}
+\input{~/latex/template/macros.tex}
+
+\usepackage{booktabs}
+\title{\Huge{Shell Scripts}}
+\author{\huge{Matt Warner}}
+\date{\huge{}}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{}
+\lhead{\leftmark}
+\cfoot{\thepage}
+% \usepackage[default]{sourcecodepro} \usepackage[T1]{fontenc}
+
+\pgfpagesdeclarelayout{boxed}
+{
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=1,%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {
+    border code=\pgfsetlinewidth{1.5pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.95\pgfphysicalwidth,%
+    resized height=.95\pgfphysicalheight,%
+    center=\pgfpoint{.5\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+}
+
+\pgfpagesuselayout{boxed}
+
+\begin{document}
+  \maketitle
+\tableofcontents
+\newpage
+  \section{Overview}
+Shell scripts can do what can be done on command line
+\bigbreak \noindent
+Shell scripts simplify recurring tasks. If you cannot find an existing utility to accomplish a task, you can build one using a shell script
+\nt{
+  Much of UNIX administration and house keeping is done via shell scripts
+}
+\section{Shell Script features}
+\begin{itemize}
+  \item Variables for storing data 
+\item Decision-making control (e.g. if and case statements)
+\item Looping abilities (e.g. for and while loops)
+\item Functions for modularity
+\item Any UNIX command
+  \subitem file manipulation: cat, cp, mv, ls, wc, tr, ...
+  \subitem utilities: grep, sed, awk, ...
+\item Comments: lines starting with \#
+\end{itemize}
+\section{The basics}
+\textit{\textbf{First line is always shebang}}
+\begin{minted}{bash}
+#! /bin/bash
+\end{minted}
+\textit{\textbf{To run shell scripts}}
+\begin{minted}{bash}
+bash script
+\end{minted}
+\textit{\textbf{Or, make executable}}
+\begin{minted}{bash}
+chmod +x script
+./script
+\end{minted}
+\subsection{Simple Script}
+\begin{mdframed}
+  \begin{minted}{bash}
+#! /bin/bash
+date > usage-status
+ls -l >> usage-status
+du -s * >> usage-status
+\end{minted}
+\end{mdframed}
+\section{Bash Shell Programming Features}
+\begin{itemize}
+  \item Variables 
+    \subitem string, number, array
+  \item input/output
+    \subitem echo, printf
+    \subitem command line args, read from user
+  \item Decision
+    \subitem conditional execution, if-then-else, case
+  \item Repetition
+    \subitem while, until, for
+  \item Functions
+\end{itemize}
+\section{User-defined shell variables}
+\textit{\textbf{Syntax:}}
+\begin{minted}{bash}
+varname=value
+\end{minted}
+\textit{\textbf{Example:}}
+\begin{minted}{bash}
+rate=moderate
+echo "Rate today: $rate"
+\end{minted}
+\nt{
+
+  use double quotes if value of variable contains white spaces 
+  \bigbreak \noindent
+\textit{\textbf{Example:}}
+\bigbreak \noindent
+name=``Thomas William Flowers''
+}
+\section{Output via echo command}
+\begin{itemize}
+  \item Simplest form of writing to standard output 
+\end{itemize}
+\textit{\textbf{Syntax:}}
+\begin{minted}{bash}
+echo [-ne] arguments
+\end{minted}
+-n suppresses trailing newline
+\vspace{2mm}
+
+\noindent -e enables escape sequences:
+\\ \\ 
+\textbackslash t horizontal tab \\
+\textbackslash b backspace \\
+\textbackslash a alert \\
+\textbackslash n newline
+\subsection{Examples: shell scripts with output}
+\begin{minted}{bash}
+#! /bin/bash
+echo "You are running these processes:"
+ps
+
+
+#! /bin/bash
+echo -ne "Dear $USER:\nWhat's up this month:"
+cal
+\end{minted}
+\section{Command line arguments}
+\begin{itemize}
+  \item Use arguments to modify script behavior 
+  \item command line arguments become positional parameters to shell script
+  \item positional paramters are numbered variables
+    \subitem \$1, \$2, \$3 \ldots
+\end{itemize}
+\subsection{Meanings}
+\$1 \ \ \ first parameter \vspace{2mm}
+
+\noindent \$2 \ \ \ second parameter \vspace{2mm}
+
+\noindent     \$\{10\}  \ \ 10th parameter \ \ (prevents ``\$1'' misunderstanding) \vspace{2mm}
+
+\noindent \$0  \ \ name of the script \vspace{2mm}
+
+\noindent \$*  \ \ all positional parameters \vspace{2mm}
+
+\noindent \$\#  \ \ the number of arguments
+\subsection{Example: Command Line Arguments}
+\begin{mdframed}
+  \begin{minted}{bash}
+#! /bin/bash
+# Usage: greetings name1 name2
+
+echo $0 to you $1 $2
+echo Today is `date`
+echo Good Bye $1
+\end{minted}
+\end{mdframed}
+Make sure to protect complete argument 
+\begin{minted}{bash}
+#! /bin/bash
+# counts lines in directory listing
+
+ls -l "$1" | wc -l
+\end{minted}
+If we had a bash script as such:
+\begin{minted}{bash}
+#! /bin/bash
+ls -l $1 | wc -l
+\end{minted}
+And had a file called ``file example'' \\
+We would not be able to use this file as a parameter, since our argument is not protected.
+\section{Arithmetic expressions}
+\textit{\textbf{Syntax:}}
+\begin{minted}{bash}
+$((expression))
+\end{minted}
+This can be used for simple arithmetic
+\begin{minted}{bash}
+count=1
+count=$((count+20))
+echo $count
+\end{minted}
+\section{Array variables}
+\textit{\textbf{Syntax:}}
+\begin{minted}{bash}
+varname=(list of words)
+\end{minted}
+Accessed via index:
+\begin{minted}{bash}
+${varname[index]}
+${varname[0]}     first word in array
+${varname[*]}     all words in array
+\end{minted}
+\subsection{Using array variables}
+\textit{\textbf{Examples}}
+\begin{minted}{bash}
+ml=(mary ann bruce linda dara)
+echo $ml
+**prints mary**
+
+echo ${ml[*]}
+**prints mary ann bruce linda dara**
+
+echo ${ml[2]}
+**prints bruce**
+
+ml[2]=john
+echo ${ml[*]}
+**prints mary ann john linda dara**
+\end{minted}
+\section{Output: printf command}
+\textit{\textbf{Syntax:}}
+\begin{minted}{bash}
+printf format[arguments]
+\end{minted}
+Writes formatted arguments to standard output under the control of ``format''
+\bigbreak \noindent
+Format string may contain:
+\begin{itemize}
+  \item plain characters: printed to output 
+  \item escape characters: e.g. \textbackslash t, \textbackslash n, \textbackslash a \ldots
+  \item format specifiers: prints next successive arguement
+\end{itemize}
+\subsection{printf format specifiers}
+\begin{minted}{bash}
+%d  number
+\end{minted}
+\textit{\textbf{also}}
+\begin{minted}{bash}
+%10d    10 chars wide
+%-10d   left justified
+\end{minted}
+\begin{minted}{bash}
+%s  string
+\end{minted}
+\textit{\textbf{also}}
+\begin{minted}{bash}
+%20s    20 chars wide
+%-20s   left justifed
+\end{minted}
+\newpage
+\begin{mdframed}
+  \begin{minted}{bash}
+printf "random number\n"
+
+printf "random number %d\n" 12
+
+printf "random number %d\n" $RANDOM
+
+printf "random number %10d\n" $RANDOM
+
+printf "rando number %-10d %s\n" $RANDOM $USER
+\end{minted}
+\end{mdframed}
+\section{User input: read command}
+\textit{\textbf{Syntax:}}
+\begin{minted}{bash}
+read [-p "prompt"] varname [more vars]
+\end{minted}
+words entered by user are assigned to \vspace{2mm}
+
+\noindent varname and "more vars"
+\bigbreak \noindent
+Last variable gets rest of input file
+\subsection{Example: Accepting User input}
+\begin{minted}{bash}
+#! /bin/bash
+read -p "enter your name: "  first last
+
+echo "First name: $first""
+echo "Last name: $last"
+\end{minted}
+\nt{
+  -p for prompt
+}
+\section{exit Command}
+This terminates the current shell, the running script.
+\bigbreak \noindent
+\textit{\textbf{Syntax}}
+\begin{minted}{bash}
+exit [status]
+\end{minted}
+\textit{\textbf{Note:}} The default exit status is 0
+
+\nt{
+  Generall convention: use negative exit status is something went wrong.
+\bigbreak \noindent
+0 indicates exit success \\ 
+1 indicates something minor went wrong 
+}
+\bigbreak \noindent
+Predefined variable ``?'' holds exit status of last command \vspace{2mm}
+
+\noindent ``0'' indicates success, all else if failure.
+\newpage
+\noindent \textbf{\underline{Examples:}}
+\begin{minted}{bash}
+ls > /tmp/out
+echo $?
+
+grep -q "root" /var/log/auth.log # grep in quiet mode (exits with zero status if any match is found)
+echo $?
+\end{minted}
+\section{Conditional Execution}
+Operators $\|$ and \&\& allow conditonal execution
+\bigbreak \noindent
+\textit{\textbf{Syntax:}}
+\begin{minted}{bash}
+cmd1 && cmd2 # cmd2 executed if cmd1 succeeds
+
+cmd1 || cmd2 # mcd2 executed if cmd1 fails
+\end{minted}
+\subsection{Conditional Execution: Examples}
+\begin{minted}{bash}
+grep $USER /etc/passwd && echo "$USER found"
+
+grep student /etc/group || echo "no student group"
+\end{minted}
+\section{test command}
+\textit{\textbf{Syntax:}}
+\begin{minted}{bash}
+test expression
+[ expression ]
+\end{minted}
+Evaluates `expression' and returns true or false
+\begin{mdframed}
+  \begin{minted}{bash}
+if test $name = "Joe"
+then
+  echo "Hello Joe"
+fi
+
+if [ $name = "Joe" ]
+then 
+  echo "Hello Joe"
+fi
+\end{minted}
+\end{mdframed}
+\section{if statements}
+\begin{minted}{bash}
+if [ condition ]; then
+  statements
+elif [ condition ]; then
+  statements
+else
+  statements
+fi
+\end{minted}
+\newpage
+\subsection{test Relation Operators}
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Meaning}          & \textbf{Numeric} & \textbf{String}    \\ \midrule
+Greater than              & -gt              &                    \\
+Greater than or equal     & -ge              &                    \\
+Less than                 & -lt              &                    \\
+Less than or equal        & -le              &                    \\
+Equal                     & -eq              & =                  \\
+Not equal                 & -ne              & !=                 \\
+String length is zero     &                  & -z str             \\
+String length is non-zero &                  & -n str             \\
+file1 is newer than file2 &                  & file1 -nt file2    \\
+file1 is older than file2 &                  & file1 -ot file2    \\ \bottomrule
+\end{tabular}
+\caption{test relation operators}
+\label{your-label-here}
+\end{table}
+\subsection{Compound logical expressions}
+\bigbreak \noindent
+\noindent\textbf{\texttt{! expression}}
+\begin{itemize}[leftmargin=*,label={}]
+  \item True if \texttt{expression} is false.
+\end{itemize}
+
+\noindent\textbf{\texttt{expression -a expression}}
+\begin{itemize}[leftmargin=*,label={}]
+  \item True if both \texttt{expressions} are true.
+\end{itemize}
+
+\noindent\textbf{\texttt{expression -o expression}}
+\begin{itemize}[leftmargin=*,label={}]
+  \item True if one of the \texttt{expressions} is true.
+\end{itemize}
+\subsection{Example: compound logical expressions}
+\begin{minted}{bash}
+if [ ! $Years -lt 20 ]; then
+  echo "You can retire now."
+fi
+
+if [ "$Status" = "H" ] && [ "$Shift" = 3 ]; then
+  echo "shift $Shift gets \$$Bonus bonus"
+fi
+
+if [ "$Calls" -gt 150 ] || [ "$Closed" -gt 50 ]; then
+  echo "You are entitled to a bonus"
+fi
+\end{minted}
+\subsection{File Testing operators}
+ \begin{table}[ht]
+\centering
+\begin{tabular}{@{}ll@{}}
+\toprule
+\textbf{Command} & \textbf{Meaning} \\
+\midrule
+\texttt{-d file} & true if `file' is a directory \\
+\texttt{-f file} & true if `file' is a regular file \\
+\texttt{-r file} & true if `file' is readable \\
+\texttt{-w file} & true if `file' is writable \\
+\texttt{-x file} & true if `file' is executable \\
+\texttt{-s file} & true if length of `file' is nonzero \\
+\bottomrule
+\end{tabular}
+\end{table}
+\newpage
+\section{Debugging using ``set"}
+The ``set'' command is a shell built-in command. It has options to allow tracing of execution.
+\vspace{1.5mm}
+
+-v print shell input lines as they are read \vspace{1.5mm}
+
+-x option displays expanded commands and its arguments
+\bigbreak \noindent
+Options can be turned on or off \vspace{1.5mm}
+
+To turn on the option: \ \ \textbf{set -xv} \vspace{1.5mm}
+
+To turn off the options: \ \ \textbf{set +xv}
+\bigbreak \noindent
+Options can also be set via she-bang line \vspace{1.5mm}
+\begin{minted}{bash}
+#! /bin/bash -xv
+\end{minted}
+\bigbreak \noindent
+\textbf{\underline{Example:}} Using the following script
+\begin{minted}{bash}
+#!/bin/bash
+read -p "enter your name: " first last
+set -v
+echo "First name: $first"
+set +v
+echo "Last name: $last"
+\end{minted}
+This will add the following line to the output
+\begin{minted}{bash}
+echo "First name: $first"
+\end{minted}
+Additionally, using -x will instead print the whats inside the variable.
+\section{The case Statement}
+To make decision that is based on multiple choices, we use case statements. This is can be thought of in the same way as a switch statement in C++.
+\bigbreak \noindent
+\textit{\textbf{Syntax:}}
+\begin{minted}{bash}
+case word in
+  pattern1) command-list1
+  ;;
+  pattern2) command-list2
+  ;;
+  patternN) command-listN
+  ;;
+esac
+\end{minted}
+Additionally, the case pattern can contain meta characters, such as: \vspace{1.5mm}
+
+* \vspace{1.5mm}
+
+? \vspace{1.5mm}
+
+[ \ldots ] \vspace{1.5mm}
+
+[ :class: ]
+\nt{
+  Multiple patterns can be listed via $|$ (pipeline)
+}
+\newpage
+\begin{mdframed}
+  \begin{minted}{bash}
+#!/bin/bash
+echo "Enter Y to see all files including hidden files"
+echo "Enter N to see all non-hidden files"
+echo "Enter Q to quit"
+
+read -p "Enter your choice: " reply
+
+case "$reply" in
+  Y|YES) echo "Displaying all (really...) files"
+         ls -a ;;
+
+  N|NO) echo "Displaying all non-hidden files..."
+        ls ;;
+
+  Q)    exit 0 ;;
+
+  *) echo "Invalid choice!"; exit 1 ;;
+esac
+\end{minted}
+\end{mdframed}
+\section{The while loop}
+This executes ``command-list'' as long as ``test-command'' evaluates successfully
+\bigbreak \noindent
+\textit{\textbf{Syntax:}}
+\begin{minted}{bash}
+while test-command
+do
+  command-list
+done
+\end{minted}
+\bigbreak \noindent
+\textbf{\underline{Example:}}
+\begin{mdframed}
+\begin{minted}{bash}
+#!/bin/bash
+#script shows users's active processes
+
+cont="y"
+while [ "$cont" = "y" ]; do
+  ps
+  read -p "again (y/n)? " cont
+done
+echo "done"
+
+\end{minted}
+\end{mdframed}
+\bigbreak \noindent
+\textbf{\underline{Example:}}
+\begin{mdframed}
+\begin{minted}{bash}
+#!/bin/bash
+# copies files from home into webserver directory
+# a new directory is created every hour
+PICSDIR=/home/student/pics
+WEBDIR=/var/www/webcam
+while true; do
+  DATE=`date +%Y%m%d` 
+  HOUR=`date +%H`
+  mkdir $WEBDIR/$DATE 
+  while [ "$HOUR != "00" ]; do
+    mkdir $WEBDIR/$DATE/$HOUR
+    mv $PICSDIR/*.jpg $WEBDIR/$DATE/$HOUR
+    sleep 3688
+    HOUR=`date +%H`
+  done
+done
+\end{minted}
+\end{mdframed}
+\section{The until Loop}
+executes ``command-list'' as long as \\ ``test-command'' does \textbf{not} evaluate successfully
+\bigbreak \noindent
+\textit{\textbf{Syntax:}}
+  \begin{minted}{bash}
+untill test-command
+do
+  command-list
+done
+\end{minted}
+\bigbreak \noindent
+\textbf{\underline{Example:}}
+\begin{mdframed}
+  \begin{minted}{bash}
+#!/bin/bash
+# script shows user's active processes
+
+stop="n"
+untill [ "$stop" = "y" ]; do
+  ps
+  read -p "done (y/n)? " stop
+done
+echo "done"
+\end{minted}
+\end{mdframed}
+\section{The for Loop}
+executes "commands" as many times as the number of words in the ``word-list''
+\bigbreak \noindent
+\textit{\textbf{Syntax:}}
+\begin{minted}{bash}
+for variable in word-list
+do
+  commands
+done
+\end{minted}
+\bigbreak \noindent
+\textbf{\underline{Example:}}
+\begin{mdframed}
+  \begin{minted}{bash}
+#!/bin/bash
+
+for index in 7 6 5 4 3 2
+do
+  echo $index
+done
+\end{minted}
+\end{mdframed}
+\clearpage \noindent
+\textbf{\underline{Example:}}
+\begin{mdframed}
+\begin{minted}{bash}
+#!/bin/bash
+# compute average weekly temperature
+TempTotal=0
+for day in 1 2 3 4 5 6 7
+do
+  read -p "Enter temp for $day: " Temp
+  TempTotal=$((TempTotal+Temp))
+done
+AvgTemp=$((TempTotal/7))
+echo "Average temperature: " $AvgTemp
+\end{minted}
+\end{mdframed}
+\nt{
+  instead of explicitly writting out 1 2 3 4 5 6 7 
+  \bigbreak \noindent
+  We can just write: for day in `seq 7`
+  \bigbreak \noindent
+  Or we could write: for day in Mon Tue Wed Thu Fri Sat Sun
+  \bigbreak \noindent
+  Better yet: If we had the days of the week in a file, we could write: for day in `cat day-file`
+}
+\section{Looping over arguments}
+Simplest form will iterate over all command line arguments
+\bigbreak \noindent
+\textbf{\underline{Example:}}
+\begin{mdframed}
+\begin{minted}{bash}
+#!/bin/bash
+for parm
+do
+  echo $parm
+done
+\end{minted}
+\end{mdframed}
+\section{break and continue}
+using the keywords \textbf{break} or \textbf{continue} will interrupt for, while or until loop
+\bigbreak \noindent
+\textit{\textbf{break statement:}} \vspace{1.5mm}
+
+\noindent Terminates execution of the loop \vspace{1.5mm}
+
+\noindent transfers control to the statement AFTER the done statement
+\bigbreak \noindent
+\textit{\textbf{continue statement:}} \vspace{1.5mm}
+
+\noindent skips the rest of the current iteration \vspace{1.5mm}
+
+\noindent continues execution of the loop
+\pagebreak
+\section{Shell Functions}
+must be defined before they can be referenced.
+\nt{
+  Usually placed at the beginning of the script
+}
+\bigbreak \noindent
+\textbf{\textit{Syntax:}}
+\begin{minted}{bash}
+function-name () {
+  statements
+}
+\end{minted}
+\bigbreak \noindent
+\textbf{\underline{Example:}}
+\begin{mdframed}
+\begin{minted}{bash}
+#!/bin/bash
+
+funky () {
+  # This is a simple function
+  echo "This is a funky function"
+}
+
+# declaration must precede call:
+
+funky # function call
+\end{minted}
+\end{mdframed}
+\subsection{Function parameters}
+\begin{itemize}
+  \item Need not be declared 
+  \item Arguments provided via function call are accessible inside function as \$1, \$2, \$3, \ldots
+\end{itemize}
+\bigbreak \noindent
+\textbf{\underline{Example:}}
+\begin{mdframed}
+\begin{minted}{bash}
+#!/bin/bash
+checkfile() {
+  for file
+  do
+    if [ -f "$file" ]; then
+      echo "$file is a file"
+    else
+      if [ -d "$file" ]; then
+        echo "$file is a directory"
+        fi
+    fi
+  done
+}
+checkfile . funtest
+\end{minted}
+\end{mdframed}
+\subsection{Local Variables in Functions}
+Variables defined within functions are global, i.e their values are known throughout the entire script
+\bigbreak \noindent
+Keyword \textbf{local} inside a function defines variables that are local to that function, i.e not visible outside
+\pagebreak
+\bigbreak \noindent
+\textbf{\underline{Example:}}
+\begin{mdframed}
+\begin{minted}{bash}
+#!/bin/bash
+global="pretty good variable"
+
+foo () {
+  local inside="not so good variable"
+  echo $global
+  echo $inside
+  global="better variable"
+}
+
+echo $global
+foo
+echo $global
+echo $inside
+\end{minted}
+\end{mdframed}
+\subsection{return from function}
+\bigbreak \noindent
+\textbf{\textit{Syntax:}}
+\begin{minted}{bash}
+return [status]
+\end{minted}
+\bigbreak \noindent
+Ends exeuction of function \vspace{1.5mm}
+
+\noindent optional numeric argument sets return status
+
+default is ``return 0''
+\bigbreak \noindent
+\textbf{\underline{Example:}}
+\begin{mdframed}
+\begin{minted}{bash}
+#!/bin/bash
+testfile() {
+  if [ $# -gt 0 ]; then
+    if [ ! -r $1 ]; then
+      return 1
+    fi
+  fi
+}
+if testfile funtest; then
+  echo "funtest is readable"
+fi
+\end{minted}
+\end{mdframed}
+
+
+\end{document}

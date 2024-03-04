@@ -1,0 +1,18 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+ch}{\PYGZsh{}!/bin/bash}
+\PYG{c+c1}{\PYGZsh{} copies files from home into webserver directory}
+\PYG{c+c1}{\PYGZsh{} a new directory is created every hour}
+\PYG{n+nv}{PICSDIR}\PYG{o}{=}/home/student/pics
+\PYG{n+nv}{WEBDIR}\PYG{o}{=}/var/www/webcam
+\PYG{k}{while}\PYG{+w}{ }true\PYG{p}{;}\PYG{+w}{ }\PYG{k}{do}
+\PYG{+w}{  }\PYG{n+nv}{DATE}\PYG{o}{=}\PYG{l+s+sb}{`}date\PYG{+w}{ }+\PYGZpc{}Y\PYGZpc{}m\PYGZpc{}d\PYG{l+s+sb}{`}
+\PYG{+w}{  }\PYG{n+nv}{HOUR}\PYG{o}{=}\PYG{l+s+sb}{`}date\PYG{+w}{ }+\PYGZpc{}H\PYG{l+s+sb}{`}
+\PYG{+w}{  }mkdir\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}WEBDIR}/\PYG{n+nv}{\PYGZdl{}DATE}
+\PYG{+w}{  }\PYG{k}{while}\PYG{+w}{ }\PYG{o}{[}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}HOUR}\PYG{l+s+s2}{ != \PYGZdq{}}\PYG{l+m}{00}\PYG{l+s+s2}{\PYGZdq{} ]; do}
+\PYG{l+s+s2}{    mkdir }\PYG{n+nv}{\PYGZdl{}WEBDIR}\PYG{l+s+s2}{/}\PYG{n+nv}{\PYGZdl{}DATE}\PYG{l+s+s2}{/}\PYG{n+nv}{\PYGZdl{}HOUR}
+\PYG{l+s+s2}{    mv }\PYG{n+nv}{\PYGZdl{}PICSDIR}\PYG{l+s+s2}{/*.jpg }\PYG{n+nv}{\PYGZdl{}WEBDIR}\PYG{l+s+s2}{/}\PYG{n+nv}{\PYGZdl{}DATE}\PYG{l+s+s2}{/}\PYG{n+nv}{\PYGZdl{}HOUR}
+\PYG{l+s+s2}{    sleep 3688}
+\PYG{l+s+s2}{    HOUR=`date +\PYGZpc{}H`}
+\PYG{l+s+s2}{  done}
+\PYG{l+s+s2}{done}
+\end{Verbatim}

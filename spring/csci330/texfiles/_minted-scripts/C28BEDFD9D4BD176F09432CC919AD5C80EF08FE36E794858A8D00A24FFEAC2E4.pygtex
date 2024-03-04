@@ -1,0 +1,13 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{if}\PYG{+w}{ }\PYG{o}{[}\PYG{+w}{ }!\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}Years}\PYG{+w}{ }\PYGZhy{}lt\PYG{+w}{ }\PYG{l+m}{20}\PYG{+w}{ }\PYG{o}{]}\PYG{p}{;}\PYG{+w}{ }\PYG{k}{then}
+\PYG{+w}{  }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}You can retire now.\PYGZdq{}}
+\PYG{k}{fi}
+
+\PYG{k}{if}\PYG{+w}{ }\PYG{o}{[}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}Status}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}H\PYGZdq{}}\PYG{+w}{ }\PYG{o}{]}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{o}{[}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}Shift}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{3}\PYG{+w}{ }\PYG{o}{]}\PYG{p}{;}\PYG{+w}{ }\PYG{k}{then}
+\PYG{+w}{  }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}shift }\PYG{n+nv}{\PYGZdl{}Shift}\PYG{l+s+s2}{ gets \PYGZbs{}\PYGZdl{}}\PYG{n+nv}{\PYGZdl{}Bonus}\PYG{l+s+s2}{ bonus\PYGZdq{}}
+\PYG{k}{fi}
+
+\PYG{k}{if}\PYG{+w}{ }\PYG{o}{[}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}Calls}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYGZhy{}gt\PYG{+w}{ }\PYG{l+m}{150}\PYG{+w}{ }\PYG{o}{]}\PYG{+w}{ }\PYG{o}{||}\PYG{+w}{ }\PYG{o}{[}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}Closed}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYGZhy{}gt\PYG{+w}{ }\PYG{l+m}{50}\PYG{+w}{ }\PYG{o}{]}\PYG{p}{;}\PYG{+w}{ }\PYG{k}{then}
+\PYG{+w}{  }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}You are entitled to a bonus\PYGZdq{}}
+\PYG{k}{fi}
+\end{Verbatim}

@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+ls\PYG{+w}{ }\PYGZgt{}\PYG{+w}{ }/tmp/out
+\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}?}
+
+grep\PYG{+w}{ }\PYGZhy{}q\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}root\PYGZdq{}}\PYG{+w}{ }/var/log/auth.log\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} grep in quiet mode (exits with zero status if any match is found)}
+\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}?}
+\end{Verbatim}

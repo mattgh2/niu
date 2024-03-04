@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+grep\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}USER}\PYG{+w}{ }/etc/passwd\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}USER}\PYG{l+s+s2}{ found\PYGZdq{}}
+
+grep\PYG{+w}{ }student\PYG{+w}{ }/etc/group\PYG{+w}{ }\PYG{o}{||}\PYG{+w}{ }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}no student group\PYGZdq{}}
+\end{Verbatim}

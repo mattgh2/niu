@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+ch}{\PYGZsh{}! /bin/bash}
+ls\PYG{+w}{ }\PYGZhy{}l\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}1}\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }wc\PYG{+w}{ }\PYGZhy{}l
+\end{Verbatim}

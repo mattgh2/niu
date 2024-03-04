@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+ch}{\PYGZsh{}!/bin/bash}
+
+funky\PYG{+w}{ }\PYG{o}{()}\PYG{+w}{ }\PYG{o}{\PYGZob{}}
+\PYG{+w}{  }\PYG{c+c1}{\PYGZsh{} This is a simple function}
+\PYG{+w}{  }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}This is a funky function\PYGZdq{}}
+\PYG{o}{\PYGZcb{}}
+
+\PYG{c+c1}{\PYGZsh{} declaration must precede call:}
+
+funky\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} function call}
+\end{Verbatim}

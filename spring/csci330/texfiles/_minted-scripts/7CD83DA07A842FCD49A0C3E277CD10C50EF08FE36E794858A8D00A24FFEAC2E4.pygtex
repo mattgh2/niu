@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+ch}{\PYGZsh{}! /bin/bash}
+date\PYG{+w}{ }\PYGZgt{}\PYG{+w}{ }usage\PYGZhy{}status
+ls\PYG{+w}{ }\PYGZhy{}l\PYG{+w}{ }\PYGZgt{}\PYGZgt{}\PYG{+w}{ }usage\PYGZhy{}status
+du\PYG{+w}{ }\PYGZhy{}s\PYG{+w}{ }*\PYG{+w}{ }\PYGZgt{}\PYGZgt{}\PYG{+w}{ }usage\PYGZhy{}status
+\end{Verbatim}
