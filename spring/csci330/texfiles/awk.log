@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2024.1.29)  4 MAR 2024 14:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2024.1.29)  4 MAR 2024 16:40
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1376,8 +1376,49 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
 )
 \c@question=\count519
-) (/home/mattw/latex/template/macros.tex)
-\pgfpages@box@1=\box163
+) (/home/mattw/latex/template/macros.tex) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.code.tex
+File: tikzlibraryshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.misc.code.tex
+File: tikzlibraryshapes.misc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.misc.code.tex
+File: pgflibraryshapes.misc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.symbols.code.tex
+File: tikzlibraryshapes.symbols.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(/usr/share/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.symbols.code.tex
+File: pgflibraryshapes.symbols.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.arrows.code.tex
+File: tikzlibraryshapes.arrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.arrows.code.tex
+File: pgflibraryshapes.arrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.callouts.code.tex (/usr/share/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.callouts.code.tex)) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.multipart.code.tex
+File: tikzlibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.multipart.code.tex
+File: pgflibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodepartlowerbox=\box163
+\pgfnodeparttwobox=\box164
+\pgfnodepartthreebox=\box165
+\pgfnodepartfourbox=\box166
+\pgfnodeparttwentybox=\box167
+\pgfnodepartnineteenbox=\box168
+\pgfnodeparteighteenbox=\box169
+\pgfnodepartseventeenbox=\box170
+\pgfnodepartsixteenbox=\box171
+\pgfnodepartfifteenbox=\box172
+\pgfnodepartfourteenbox=\box173
+\pgfnodepartthirteenbox=\box174
+\pgfnodeparttwelvebox=\box175
+\pgfnodepartelevenbox=\box176
+\pgfnodeparttenbox=\box177
+\pgfnodepartninebox=\box178
+\pgfnodeparteightbox=\box179
+\pgfnodepartsevenbox=\box180
+\pgfnodepartsixbox=\box181
+\pgfnodepartfivebox=\box182
+))) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarychains.code.tex
+File: tikzlibrarychains.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+\pgfpages@box@1=\box183
 runsystem(which pygmentize && touch awk.aex)...executed.
 
 runsystem(rm awk.aex)...executed.
@@ -1446,7 +1487,7 @@ LaTeX Font Info:    ... okay on input line 37.
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count521
 \scratchdimen=\dimen383
-\scratchbox=\box164
+\scratchbox=\box184
 \nofMPsegments=\count522
 \nofMParguments=\count523
 \everyMPshowfont=\toks62
@@ -1509,15 +1550,22 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 39.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) (./awk.toc
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 1.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 1.
 )
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 41.
+\tf@toc=\write7
+\openout7 = `awk.toc'.
+
+ [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 43.
  (/usr/share/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 52.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 52.
 \openout3 = `awk.pyg'.
 
  (./_minted-awk/xcode.pygstyle) (./_minted-awk/406D9BB0BAE744B1E645863F81BF8EEAEC7CD7A0380353DC8D0338DEB1B9CCA2.pygtex
@@ -1534,52 +1582,2225 @@ File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
  (./_minted-awk/E556B063D72AC3F0E3496A37BD8A244BEC7CD7A0380353DC8D0338DEB1B9CCA2.pygtex)
 \openout3 = `awk.pyg'.
 
- (./_minted-awk/070C13EF396C5EA9FE05B537478BD0F9EC7CD7A0380353DC8D0338DEB1B9CCA2.pygtex) [1
+ (./_minted-awk/070C13EF396C5EA9FE05B537478BD0F9EC7CD7A0380353DC8D0338DEB1B9CCA2.pygtex) [2
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}]
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.103    \newpage
+                  \noindent]
 \openout3 = `awk.pyg'.
 
  (./_minted-awk/D5B36CFD5CD5CCFC834FBC67B68BD545EC7CD7A0380353DC8D0338DEB1B9CCA2.pygtex)
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 145.
+(mdframed)              on input line 147.
 \openout3 = `awk.pyg'.
 
- (./_minted-awk/93AD427C5D598C618F338C007C315D2AEC7CD7A0380353DC8D0338DEB1B9CCA2.pygtex) [2
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+ (./_minted-awk/93AD427C5D598C618F338C007C315D2AEC7CD7A0380353DC8D0338DEB1B9CCA2.pygtex) [3
 
-\pgfpages@shipoutshipoutbox ...physicalpagesizes }
-                                                  \endgroup 
-l.160 \newpage
-              {/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.enc}]
+{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.enc}]
 \openout3 = `awk.pyg'.
 
  (./_minted-awk/26586F680A8EE90404A464B3099BD78BEC7CD7A0380353DC8D0338DEB1B9CCA2.pygtex)
-./awk.tex:177: Missing $ inserted.
-<inserted text> 
-                $
-l.177 \end{document}
-                    
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
+./awk.tex:180: Misplaced alignment tab character &.
+l.180 Jan &
+            13 & 25 & 15 & 115 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
 
-[3] [4{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}] (./awk.aux)
+./awk.tex:180: Misplaced alignment tab character &.
+l.180 Jan & 13 &
+                 25 & 15 & 115 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:180: Misplaced alignment tab character &.
+l.180 Jan & 13 & 25 &
+                      15 & 115 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:180: Misplaced alignment tab character &.
+l.180 Jan & 13 & 25 & 15 &
+                           115 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:181: Misplaced alignment tab character &.
+l.181 Feb &
+            15 & 32 & 24 & 22 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:181: Misplaced alignment tab character &.
+l.181 Feb & 15 &
+                 32 & 24 & 22 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:181: Misplaced alignment tab character &.
+l.181 Feb & 15 & 32 &
+                      24 & 22 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:181: Misplaced alignment tab character &.
+l.181 Feb & 15 & 32 & 24 &
+                           22 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:182: Misplaced alignment tab character &.
+l.182 Mar &
+            15 & 24 & 34 & 228 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:182: Misplaced alignment tab character &.
+l.182 Mar & 15 &
+                 24 & 34 & 228 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:182: Misplaced alignment tab character &.
+l.182 Mar & 15 & 24 &
+                      34 & 228 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:182: Misplaced alignment tab character &.
+l.182 Mar & 15 & 24 & 34 &
+                           228 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:183: Misplaced alignment tab character &.
+l.183 Apr &
+            31 & 52 & 63 & 420 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:183: Misplaced alignment tab character &.
+l.183 Apr & 31 &
+                 52 & 63 & 420 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:183: Misplaced alignment tab character &.
+l.183 Apr & 31 & 52 &
+                      63 & 420 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:183: Misplaced alignment tab character &.
+l.183 Apr & 31 & 52 & 63 &
+                           420 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:184: Misplaced alignment tab character &.
+l.184 May &
+            16 & 34 & 29 & 208 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:184: Misplaced alignment tab character &.
+l.184 May & 16 &
+                 34 & 29 & 208 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:184: Misplaced alignment tab character &.
+l.184 May & 16 & 34 &
+                      29 & 208 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:184: Misplaced alignment tab character &.
+l.184 May & 16 & 34 & 29 &
+                           208 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:185: Misplaced alignment tab character &.
+l.185 Jun &
+            31 & 42 & 75 & 492 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:185: Misplaced alignment tab character &.
+l.185 Jun & 31 &
+                 42 & 75 & 492 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:185: Misplaced alignment tab character &.
+l.185 Jun & 31 & 42 &
+                      75 & 492 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:185: Misplaced alignment tab character &.
+l.185 Jun & 31 & 42 & 75 &
+                           492 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:186: Misplaced alignment tab character &.
+l.186 Jul &
+            24 & 34 & 67 & 436 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:186: Misplaced alignment tab character &.
+l.186 Jul & 24 &
+                 34 & 67 & 436 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:186: Misplaced alignment tab character &.
+l.186 Jul & 24 & 34 &
+                      67 & 436 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:186: Misplaced alignment tab character &.
+l.186 Jul & 24 & 34 & 67 &
+                           436 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:187: Misplaced alignment tab character &.
+l.187 Aug &
+            15 & 34 & 47 & 316 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:187: Misplaced alignment tab character &.
+l.187 Aug & 15 &
+                 34 & 47 & 316 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:187: Misplaced alignment tab character &.
+l.187 Aug & 15 & 34 &
+                      47 & 316 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:187: Misplaced alignment tab character &.
+l.187 Aug & 15 & 34 & 47 &
+                           316 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:188: Misplaced alignment tab character &.
+l.188 Sep &
+            15 & 53 & 67 & 277 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:188: Misplaced alignment tab character &.
+l.188 Sep & 15 &
+                 53 & 67 & 277 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:188: Misplaced alignment tab character &.
+l.188 Sep & 15 & 53 &
+                      67 & 277 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:188: Misplaced alignment tab character &.
+l.188 Sep & 15 & 53 & 67 &
+                           277 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:189: Misplaced alignment tab character &.
+l.189 Oct &
+            29 & 54 & 68 & 525 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:189: Misplaced alignment tab character &.
+l.189 Oct & 29 &
+                 54 & 68 & 525 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:189: Misplaced alignment tab character &.
+l.189 Oct & 29 & 54 &
+                      68 & 525 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:189: Misplaced alignment tab character &.
+l.189 Oct & 29 & 54 & 68 &
+                           525 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:190: Misplaced alignment tab character &.
+l.190 Nov &
+            20 & 87 & 82 & 577 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:190: Misplaced alignment tab character &.
+l.190 Nov & 20 &
+                 87 & 82 & 577 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:190: Misplaced alignment tab character &.
+l.190 Nov & 20 & 87 &
+                      82 & 577 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:190: Misplaced alignment tab character &.
+l.190 Nov & 20 & 87 & 82 &
+                           577 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:191: Misplaced alignment tab character &.
+l.191 Dec &
+            17 & 35 & 61 & 401 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:191: Misplaced alignment tab character &.
+l.191 Dec & 17 &
+                 35 & 61 & 401 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:191: Misplaced alignment tab character &.
+l.191 Dec & 17 & 35 &
+                      61 & 401 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:191: Misplaced alignment tab character &.
+l.191 Dec & 17 & 35 & 61 &
+                           401 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:192: Misplaced alignment tab character &.
+l.192 Jan &
+            21 & 36 & 64 & 620 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:192: Misplaced alignment tab character &.
+l.192 Jan & 21 &
+                 36 & 64 & 620 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:192: Misplaced alignment tab character &.
+l.192 Jan & 21 & 36 &
+                      64 & 620 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:192: Misplaced alignment tab character &.
+l.192 Jan & 21 & 36 & 64 &
+                           620 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:193: Misplaced alignment tab character &.
+l.193 Feb &
+            26 & 58 & 80 & 652 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:193: Misplaced alignment tab character &.
+l.193 Feb & 26 &
+                 58 & 80 & 652 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:193: Misplaced alignment tab character &.
+l.193 Feb & 26 & 58 &
+                      80 & 652 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:193: Misplaced alignment tab character &.
+l.193 Feb & 26 & 58 & 80 &
+                           652 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:194: Misplaced alignment tab character &.
+l.194 Mar &
+            24 & 75 & 70 & 495 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:194: Misplaced alignment tab character &.
+l.194 Mar & 24 &
+                 75 & 70 & 495 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:194: Misplaced alignment tab character &.
+l.194 Mar & 24 & 75 &
+                      70 & 495 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:194: Misplaced alignment tab character &.
+l.194 Mar & 24 & 75 & 70 &
+                           495 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:195: Misplaced alignment tab character &.
+l.195 Apr &
+            21 & 70 & 74 & 514 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:195: Misplaced alignment tab character &.
+l.195 Apr & 21 &
+                 70 & 74 & 514 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:195: Misplaced alignment tab character &.
+l.195 Apr & 21 & 70 &
+                      74 & 514 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:195: Misplaced alignment tab character &.
+l.195 Apr & 21 & 70 & 74 &
+                           514 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+\openout3 = `awk.pyg'.
+
+(./_minted-awk/2C43819DECA623EB57596D5B2BC7330DEC7CD7A0380353DC8D0338DEB1B9CCA2.pygtex
+Underfull \hbox (badness 10000) in paragraph at lines 179--1
+
+ []
+
+) [4]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 232.
+
+./awk.tex:233: Misplaced alignment tab character &.
+l.233 Jan &
+            13 & 25 & 15 & 115 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:233: Misplaced alignment tab character &.
+l.233 Jan & 13 &
+                 25 & 15 & 115 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:233: Misplaced alignment tab character &.
+l.233 Jan & 13 & 25 &
+                      15 & 115 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:233: Misplaced alignment tab character &.
+l.233 Jan & 13 & 25 & 15 &
+                           115 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:234: Misplaced alignment tab character &.
+l.234 Feb &
+            15 & 32 & 24 & 22 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:234: Misplaced alignment tab character &.
+l.234 Feb & 15 &
+                 32 & 24 & 22 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:234: Misplaced alignment tab character &.
+l.234 Feb & 15 & 32 &
+                      24 & 22 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:234: Misplaced alignment tab character &.
+l.234 Feb & 15 & 32 & 24 &
+                           22 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:235: Misplaced alignment tab character &.
+l.235 Mar &
+            15 & 24 & 34 & 228 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:235: Misplaced alignment tab character &.
+l.235 Mar & 15 &
+                 24 & 34 & 228 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:235: Misplaced alignment tab character &.
+l.235 Mar & 15 & 24 &
+                      34 & 228 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:235: Misplaced alignment tab character &.
+l.235 Mar & 15 & 24 & 34 &
+                           228 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:236: Misplaced alignment tab character &.
+l.236 Apr &
+            31 & 52 & 63 & 420 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:236: Misplaced alignment tab character &.
+l.236 Apr & 31 &
+                 52 & 63 & 420 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:236: Misplaced alignment tab character &.
+l.236 Apr & 31 & 52 &
+                      63 & 420 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:236: Misplaced alignment tab character &.
+l.236 Apr & 31 & 52 & 63 &
+                           420 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:237: Misplaced alignment tab character &.
+l.237 May &
+            16 & 34 & 29 & 208 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:237: Misplaced alignment tab character &.
+l.237 May & 16 &
+                 34 & 29 & 208 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:237: Misplaced alignment tab character &.
+l.237 May & 16 & 34 &
+                      29 & 208 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:237: Misplaced alignment tab character &.
+l.237 May & 16 & 34 & 29 &
+                           208 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:238: Misplaced alignment tab character &.
+l.238 Jun &
+            31 & 42 & 75 & 492 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:238: Misplaced alignment tab character &.
+l.238 Jun & 31 &
+                 42 & 75 & 492 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:238: Misplaced alignment tab character &.
+l.238 Jun & 31 & 42 &
+                      75 & 492 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:238: Misplaced alignment tab character &.
+l.238 Jun & 31 & 42 & 75 &
+                           492 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:239: Misplaced alignment tab character &.
+l.239 Jul &
+            24 & 34 & 67 & 436 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:239: Misplaced alignment tab character &.
+l.239 Jul & 24 &
+                 34 & 67 & 436 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:239: Misplaced alignment tab character &.
+l.239 Jul & 24 & 34 &
+                      67 & 436 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:239: Misplaced alignment tab character &.
+l.239 Jul & 24 & 34 & 67 &
+                           436 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:240: Misplaced alignment tab character &.
+l.240 Aug &
+            15 & 34 & 47 & 316 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:240: Misplaced alignment tab character &.
+l.240 Aug & 15 &
+                 34 & 47 & 316 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:240: Misplaced alignment tab character &.
+l.240 Aug & 15 & 34 &
+                      47 & 316 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:240: Misplaced alignment tab character &.
+l.240 Aug & 15 & 34 & 47 &
+                           316 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:241: Misplaced alignment tab character &.
+l.241 Sep &
+            15 & 53 & 67 & 277 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:241: Misplaced alignment tab character &.
+l.241 Sep & 15 &
+                 53 & 67 & 277 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:241: Misplaced alignment tab character &.
+l.241 Sep & 15 & 53 &
+                      67 & 277 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:241: Misplaced alignment tab character &.
+l.241 Sep & 15 & 53 & 67 &
+                           277 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:242: Misplaced alignment tab character &.
+l.242 Oct &
+            29 & 54 & 68 & 525 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:242: Misplaced alignment tab character &.
+l.242 Oct & 29 &
+                 54 & 68 & 525 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:242: Misplaced alignment tab character &.
+l.242 Oct & 29 & 54 &
+                      68 & 525 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:242: Misplaced alignment tab character &.
+l.242 Oct & 29 & 54 & 68 &
+                           525 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:243: Misplaced alignment tab character &.
+l.243 Nov &
+            20 & 87 & 82 & 577 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:243: Misplaced alignment tab character &.
+l.243 Nov & 20 &
+                 87 & 82 & 577 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:243: Misplaced alignment tab character &.
+l.243 Nov & 20 & 87 &
+                      82 & 577 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:243: Misplaced alignment tab character &.
+l.243 Nov & 20 & 87 & 82 &
+                           577 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:244: Misplaced alignment tab character &.
+l.244 Dec &
+            17 & 35 & 61 & 401 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:244: Misplaced alignment tab character &.
+l.244 Dec & 17 &
+                 35 & 61 & 401 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:244: Misplaced alignment tab character &.
+l.244 Dec & 17 & 35 &
+                      61 & 401 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:244: Misplaced alignment tab character &.
+l.244 Dec & 17 & 35 & 61 &
+                           401 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:245: Misplaced alignment tab character &.
+l.245 Jan &
+            21 & 36 & 64 & 620 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:245: Misplaced alignment tab character &.
+l.245 Jan & 21 &
+                 36 & 64 & 620 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:245: Misplaced alignment tab character &.
+l.245 Jan & 21 & 36 &
+                      64 & 620 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:245: Misplaced alignment tab character &.
+l.245 Jan & 21 & 36 & 64 &
+                           620 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:246: Misplaced alignment tab character &.
+l.246 Feb &
+            26 & 58 & 80 & 652 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:246: Misplaced alignment tab character &.
+l.246 Feb & 26 &
+                 58 & 80 & 652 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:246: Misplaced alignment tab character &.
+l.246 Feb & 26 & 58 &
+                      80 & 652 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:246: Misplaced alignment tab character &.
+l.246 Feb & 26 & 58 & 80 &
+                           652 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:247: Misplaced alignment tab character &.
+l.247 Mar &
+            24 & 75 & 70 & 495 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:247: Misplaced alignment tab character &.
+l.247 Mar & 24 &
+                 75 & 70 & 495 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:247: Misplaced alignment tab character &.
+l.247 Mar & 24 & 75 &
+                      70 & 495 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:247: Misplaced alignment tab character &.
+l.247 Mar & 24 & 75 & 70 &
+                           495 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:248: Misplaced alignment tab character &.
+l.248 Apr &
+            21 & 70 & 74 & 514 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:248: Misplaced alignment tab character &.
+l.248 Apr & 21 &
+                 70 & 74 & 514 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:248: Misplaced alignment tab character &.
+l.248 Apr & 21 & 70 &
+                      74 & 514 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:248: Misplaced alignment tab character &.
+l.248 Apr & 21 & 70 & 74 &
+                           514 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+\openout3 = `awk.pyg'.
+
+(./_minted-awk/52B60F6C8AA22C64F3B8C6AB260E4CF8EC7CD7A0380353DC8D0338DEB1B9CCA2.pygtex
+Underfull \hbox (badness 10000) in paragraph at lines 232--1
+
+ []
+
+) [5]
+\openout3 = `awk.pyg'.
+
+ (./_minted-awk/7E25046622E24EFD41974CF0D433F2A6EC7CD7A0380353DC8D0338DEB1B9CCA2.pygtex)
+\openout3 = `awk.pyg'.
+
+ (./_minted-awk/8625D28BA0F8E6E063F73598AF0A1E6EEC7CD7A0380353DC8D0338DEB1B9CCA2.pygtex)
+./awk.tex:317: Misplaced alignment tab character &.
+l.317 Jan &
+            13 & 25 & 15 & 115 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:317: Misplaced alignment tab character &.
+l.317 Jan & 13 &
+                 25 & 15 & 115 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:317: Misplaced alignment tab character &.
+l.317 Jan & 13 & 25 &
+                      15 & 115 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:317: Misplaced alignment tab character &.
+l.317 Jan & 13 & 25 & 15 &
+                           115 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:318: Misplaced alignment tab character &.
+l.318 Feb &
+            15 & 32 & 24 & 22 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:318: Misplaced alignment tab character &.
+l.318 Feb & 15 &
+                 32 & 24 & 22 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:318: Misplaced alignment tab character &.
+l.318 Feb & 15 & 32 &
+                      24 & 22 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:318: Misplaced alignment tab character &.
+l.318 Feb & 15 & 32 & 24 &
+                           22 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:319: Misplaced alignment tab character &.
+l.319 Mar &
+            15 & 24 & 34 & 228 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:319: Misplaced alignment tab character &.
+l.319 Mar & 15 &
+                 24 & 34 & 228 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:319: Misplaced alignment tab character &.
+l.319 Mar & 15 & 24 &
+                      34 & 228 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:319: Misplaced alignment tab character &.
+l.319 Mar & 15 & 24 & 34 &
+                           228 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:320: Misplaced alignment tab character &.
+l.320 Apr &
+            31 & 52 & 63 & 420 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:320: Misplaced alignment tab character &.
+l.320 Apr & 31 &
+                 52 & 63 & 420 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:320: Misplaced alignment tab character &.
+l.320 Apr & 31 & 52 &
+                      63 & 420 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:320: Misplaced alignment tab character &.
+l.320 Apr & 31 & 52 & 63 &
+                           420 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:321: Misplaced alignment tab character &.
+l.321 May &
+            16 & 34 & 29 & 208 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:321: Misplaced alignment tab character &.
+l.321 May & 16 &
+                 34 & 29 & 208 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:321: Misplaced alignment tab character &.
+l.321 May & 16 & 34 &
+                      29 & 208 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:321: Misplaced alignment tab character &.
+l.321 May & 16 & 34 & 29 &
+                           208 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:322: Misplaced alignment tab character &.
+l.322 Jun &
+            31 & 42 & 75 & 492 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:322: Misplaced alignment tab character &.
+l.322 Jun & 31 &
+                 42 & 75 & 492 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:322: Misplaced alignment tab character &.
+l.322 Jun & 31 & 42 &
+                      75 & 492 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:322: Misplaced alignment tab character &.
+l.322 Jun & 31 & 42 & 75 &
+                           492 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:323: Misplaced alignment tab character &.
+l.323 Jul &
+            24 & 34 & 67 & 436 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:323: Misplaced alignment tab character &.
+l.323 Jul & 24 &
+                 34 & 67 & 436 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:323: Misplaced alignment tab character &.
+l.323 Jul & 24 & 34 &
+                      67 & 436 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:323: Misplaced alignment tab character &.
+l.323 Jul & 24 & 34 & 67 &
+                           436 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:324: Misplaced alignment tab character &.
+l.324 Aug &
+            15 & 34 & 47 & 316 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:324: Misplaced alignment tab character &.
+l.324 Aug & 15 &
+                 34 & 47 & 316 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:324: Misplaced alignment tab character &.
+l.324 Aug & 15 & 34 &
+                      47 & 316 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:324: Misplaced alignment tab character &.
+l.324 Aug & 15 & 34 & 47 &
+                           316 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:325: Misplaced alignment tab character &.
+l.325 Jan &
+            21 & 36 & 64 & 620 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:325: Misplaced alignment tab character &.
+l.325 Jan & 21 &
+                 36 & 64 & 620 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:325: Misplaced alignment tab character &.
+l.325 Jan & 21 & 36 &
+                      64 & 620 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:325: Misplaced alignment tab character &.
+l.325 Jan & 21 & 36 & 64 &
+                           620 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 317--326
+
+ []
+
+[6]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 328.
+\openout3 = `awk.pyg'.
+
+ (./_minted-awk/CE6B821ACB0EB980DA95E8E710817C45EC7CD7A0380353DC8D0338DEB1B9CCA2.pygtex)
+Package mdframed Info: Not enough space on this page on input line 352.
+LaTeX Font Info:    Trying to load font information for OMS+lmr on input line 363.
+ (/usr/share/texmf-dist/tex/latex/lm/omslmr.fd
+File: omslmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 363.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 369.
+\openout3 = `awk.pyg'.
+
+ (./_minted-awk/ECEB6906F3E638B4C7AB5AA49E5CD39FEC7CD7A0380353DC8D0338DEB1B9CCA2.pygtex) [7{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}]
+\openout3 = `awk.pyg'.
+
+ (./_minted-awk/63B5E330046BC2D1AEBF0BE0F13A9799EC7CD7A0380353DC8D0338DEB1B9CCA2.pygtex)
+./awk.tex:414: Misplaced alignment tab character &.
+l.414 101: &
+             propeller & 97.95 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:414: Misplaced alignment tab character &.
+l.414 101: & propeller &
+                         97.95 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:415: Misplaced alignment tab character &.
+l.415 102: &
+             trailer hitch & 97.95 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:415: Misplaced alignment tab character &.
+l.415 102: & trailer hitch &
+                             97.95 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:416: Misplaced alignment tab character &.
+l.416 103: &
+             sway bar & 49.99 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:416: Misplaced alignment tab character &.
+l.416 103: & sway bar &
+                        49.99 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:417: Misplaced alignment tab character &.
+l.417 104: &
+             fishing line & 0.99 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:417: Misplaced alignment tab character &.
+l.417 104: & fishing line &
+                            0.99 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:418: Misplaced alignment tab character &.
+l.418 105: &
+             mirror & 4.99 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:418: Misplaced alignment tab character &.
+l.418 105: & mirror &
+                      4.99 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:419: Misplaced alignment tab character &.
+l.419 106: &
+             cup holder & 2.49 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:419: Misplaced alignment tab character &.
+l.419 106: & cup holder &
+                          2.49 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:420: Misplaced alignment tab character &.
+l.420 107: &
+             cooler & 14.89 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:420: Misplaced alignment tab character &.
+l.420 107: & cooler &
+                      14.89 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:421: Misplaced alignment tab character &.
+l.421 108: &
+             wheel & 49.99 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:421: Misplaced alignment tab character &.
+l.421 108: & wheel &
+                     49.99 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:422: Misplaced alignment tab character &.
+l.422 109: &
+             transom & 199.00 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:422: Misplaced alignment tab character &.
+l.422 109: & transom &
+                       199.00 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:423: Misplaced alignment tab character &.
+l.423 110: &
+             pulley & 9.88 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:423: Misplaced alignment tab character &.
+l.423 110: & pulley &
+                      9.88 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:424: Misplaced alignment tab character &.
+l.424 111: &
+             lock & 31.00 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:424: Misplaced alignment tab character &.
+l.424 111: & lock &
+                    31.00 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:425: Misplaced alignment tab character &.
+l.425 112: &
+             boat cover & 120.00 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:425: Misplaced alignment tab character &.
+l.425 112: & boat cover &
+                          120.00 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:426: Misplaced alignment tab character &.
+l.426 113: &
+             premium fish bait & 1.00 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:426: Misplaced alignment tab character &.
+l.426 113: & premium fish bait &
+                                 1.00 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+\openout3 = `awk.pyg'.
+
+(./_minted-awk/35F5C744162FA12374EC8A588D01F5ABEC7CD7A0380353DC8D0338DEB1B9CCA2.pygtex
+Underfull \hbox (badness 10000) in paragraph at lines 414--1
+
+ []
+
+) [8] (./figures/awkparts.pdf_tex
+<./figures//awkparts.pdf, id=139, page=1, 212.08208pt x 90.45168pt>
+File: ./figures//awkparts.pdf Graphic file (type pdf)
+<use ./figures//awkparts.pdf, page 1>
+Package pdftex.def Info: ./figures//awkparts.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 212.08206pt x 90.45282pt.
+<./figures//awkparts.pdf, id=140, page=2, 212.08208pt x 90.45168pt>
+File: ./figures//awkparts.pdf Graphic file (type pdf)
+<use ./figures//awkparts.pdf, page 2>
+Package pdftex.def Info: ./figures//awkparts.pdf , page2 used on input line 58.
+(pdftex.def)             Requested size: 212.08206pt x 90.45282pt.
+)
+\openout3 = `awk.pyg'.
+
+ (./_minted-awk/D9820787C58A6A38031CB574DBC251A1EC7CD7A0380353DC8D0338DEB1B9CCA2.pygtex)
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 482.
+\openout3 = `awk.pyg'.
+
+ (./_minted-awk/D6BDECA2D60E73DE6DAE2DFA3272BE24EC7CD7A0380353DC8D0338DEB1B9CCA2.pygtex)
+\openout3 = `awk.pyg'.
+
+ (./_minted-awk/9302BA1D0B7EABCDAECBE250EF37A6F66E2F9A2386FBDE7C09AFA86C17C8C359.pygtex) [9]
+./awk.tex:499: Misplaced alignment tab character &.
+l.499 \noindent 1 &
+                    clothing & 3141 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:499: Misplaced alignment tab character &.
+l.499 \noindent 1 & clothing &
+                               3141 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:500: Misplaced alignment tab character &.
+l.500 1 &
+          computers & 9161 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:500: Misplaced alignment tab character &.
+l.500 1 & computers &
+                      9161 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:501: Misplaced alignment tab character &.
+l.501 1 &
+          textbooks & 21321 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:501: Misplaced alignment tab character &.
+l.501 1 & textbooks &
+                      21321 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:502: Misplaced alignment tab character &.
+l.502 2 &
+          clothing & 3252 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:502: Misplaced alignment tab character &.
+l.502 2 & clothing &
+                     3252 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:503: Misplaced alignment tab character &.
+l.503 2 &
+          computers & 12321 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:503: Misplaced alignment tab character &.
+l.503 2 & computers &
+                      12321 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:504: Misplaced alignment tab character &.
+l.504 2 &
+          supplies & 2242 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:504: Misplaced alignment tab character &.
+l.504 2 & supplies &
+                     2242 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:505: Misplaced alignment tab character &.
+l.505 2 &
+          textbooks & 15462 \vspace{4mm}
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./awk.tex:505: Misplaced alignment tab character &.
+l.505 2 & textbooks &
+                      15462 \vspace{4mm}
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 511.
+\openout3 = `awk.pyg'.
+
+(./_minted-awk/5D50A0001E82D93616DD6BE3D5A9BFFEEC7CD7A0380353DC8D0338DEB1B9CCA2.pygtex)
+\openout3 = `awk.pyg'.
+
+ (./_minted-awk/551F81A6BB1EB32235C677E20EAB6734EC7CD7A0380353DC8D0338DEB1B9CCA2.pygtex)
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 544.
+\openout3 = `awk.pyg'.
+
+ (./_minted-awk/4C53F92A9DF15B02D7B3AEBE4EE8A9DFEC7CD7A0380353DC8D0338DEB1B9CCA2.pygtex) [10 <./figures//awkparts.pdf> <./figures//awkparts.pdf>]
+\openout3 = `awk.pyg'.
+
+ (./_minted-awk/C8A96C160138E98D90AC5200FB38E975EC7CD7A0380353DC8D0338DEB1B9CCA2.pygtex)
+\openout3 = `awk.pyg'.
+
+ (./_minted-awk/5E4EBB37C748A901EF59EEF27544789DEC7CD7A0380353DC8D0338DEB1B9CCA2.pygtex)
+\openout3 = `awk.pyg'.
+
+ (./_minted-awk/583CAA4A68BF8D1ADD54C680C71EF281EC7CD7A0380353DC8D0338DEB1B9CCA2.pygtex)
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 609.
+\openout3 = `awk.pyg'.
+
+ (./_minted-awk/FBD771D10176F3C87705845A1D27ED70EC7CD7A0380353DC8D0338DEB1B9CCA2.pygtex)
+\openout3 = `awk.pyg'.
+
+ (./_minted-awk/E96D1FD0EC9ED96174704C72AA1D8A78EC7CD7A0380353DC8D0338DEB1B9CCA2.pygtex) [11]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 626.
+\openout3 = `awk.pyg'.
+
+ (./_minted-awk/4C8ACE783CE25F2AEB7079179948A60E6E2F9A2386FBDE7C09AFA86C17C8C359.pygtex)
+\openout3 = `awk.pyg'.
+
+ (./_minted-awk/C8E51370DDF6DBD24CC2A8684034D585EC7CD7A0380353DC8D0338DEB1B9CCA2.pygtex)
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 641.
+\openout3 = `awk.pyg'.
+
+ (./_minted-awk/357B387C20D323507E067EF023086D34EC7CD7A0380353DC8D0338DEB1B9CCA2.pygtex)
+\openout3 = `awk.pyg'.
+
+ (./_minted-awk/52C152EAA8AEF5726CDE8FFD0232DD726E2F9A2386FBDE7C09AFA86C17C8C359.pygtex)
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 658.
+\openout3 = `awk.pyg'.
+
+ (./_minted-awk/53F295DE09DFB262330266D3C3CBB75A6E2F9A2386FBDE7C09AFA86C17C8C359.pygtex) [12] [13] (./awk.aux)
 runsystem(rm awk.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 51183 strings out of 476872
- 1188483 string characters out of 5820378
- 1869388 words of memory out of 5000000
- 70610 multiletter control sequences out of 15000+600000
- 562691 words of font info for 70 fonts, out of 8000000 for 9000
+ 53047 strings out of 476872
+ 1249977 string characters out of 5820378
+ 1873388 words of memory out of 5000000
+ 72319 multiletter control sequences out of 15000+600000
+ 565637 words of font info for 71 fonts, out of 8000000 for 9000
  725 hyphenation exceptions out of 8191
- 85i,11n,99p,762b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 85i,13n,99p,762b,1672s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on awk.pdf (4 pages, 173514 bytes).
+Output written on awk.pdf (13 pages, 209567 bytes).
 PDF statistics:
- 145 PDF objects out of 1000 (max. 8388607)
- 96 compressed objects within 1 object stream
- 13 named destinations out of 1000 (max. 500000)
- 205 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 311 PDF objects out of 1000 (max. 8388607)
+ 245 compressed objects within 3 object streams
+ 46 named destinations out of 1000 (max. 500000)
+ 391 words of extra memory for PDF output out of 10000 (max. 10000000)
 

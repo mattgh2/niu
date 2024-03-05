@@ -1,0 +1,16 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+BEGIN\PYG{+w}{ }\PYG{o}{\PYGZob{}}
+\PYG{+w}{  }\PYG{n+nv}{FS}\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}:\PYGZdq{}}
+\PYG{+w}{  }print\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Marine Parts R Us\PYGZdq{}}
+\PYG{+w}{  }print\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Main catalog\PYGZdq{}}
+\PYG{+w}{  }print\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Part\PYGZhy{}id\PYGZbs{}tname\PYGZbs{}t\PYGZbs{}t\PYGZbs{}t price\PYGZdq{}}
+\PYG{+w}{  }print\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}==================================\PYGZdq{}}
+\PYG{o}{\PYGZcb{}}
+\PYG{o}{\PYGZob{}}
+\PYG{+w}{  }printf\PYG{o}{(}\PYG{l+s+s2}{\PYGZdq{}\PYGZpc{}3d\PYGZbs{}t\PYGZpc{}\PYGZhy{}20s\PYGZbs{}t\PYGZpc{}6.2f\PYGZbs{}n\PYGZdq{}},\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}1},\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}2},\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}3}\PYG{o}{)}
+\PYG{o}{\PYGZcb{}}
+END\PYG{+w}{ }\PYG{o}{\PYGZob{}}
+\PYG{+w}{  }print\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}==================================\PYGZdq{}}
+\PYG{+w}{  }print\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Catalog has\PYGZdq{}},\PYG{+w}{ }NR,\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}parts\PYGZdq{}}
+\PYG{o}{\PYGZcb{}}
+\end{Verbatim}

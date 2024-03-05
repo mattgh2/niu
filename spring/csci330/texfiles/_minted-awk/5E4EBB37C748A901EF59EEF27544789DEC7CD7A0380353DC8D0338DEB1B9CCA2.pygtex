@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{if}\PYG{+w}{ }\PYG{o}{(}\PYG{+w}{ }NR\PYG{+w}{ }\PYGZlt{}\PYG{+w}{ }\PYG{l+m}{3}\PYG{+w}{ }\PYG{o}{)}
+\PYG{+w}{  }print\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}2}
+\PYG{k}{else}
+\PYG{+w}{  }print\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}3}
+\end{Verbatim}

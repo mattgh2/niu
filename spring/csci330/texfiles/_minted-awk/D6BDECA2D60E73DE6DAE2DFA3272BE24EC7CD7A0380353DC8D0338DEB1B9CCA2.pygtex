@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+list\PYG{o}{[}\PYG{l+m}{1}\PYG{o}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}some value\PYGZdq{}}
+list\PYG{o}{[}\PYG{l+m}{2}\PYG{o}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{123}
+
+list\PYG{o}{[}\PYG{l+s+s2}{\PYGZdq{}other\PYGZdq{}}\PYG{o}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}oh my !\PYGZdq{}}
+\end{Verbatim}

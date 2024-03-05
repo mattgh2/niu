@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{for}\PYG{+w}{ }\PYG{o}{(}x\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }deptSales\PYG{o}{)}\PYG{+w}{ }\PYG{o}{\PYGZob{}}
+\PYG{+w}{  }print\PYG{+w}{ }x
+\PYG{+w}{  }print\PYG{+w}{ }deptSales\PYG{o}{[}x\PYG{o}{]}
+\PYG{o}{\PYGZcb{}}
+\end{Verbatim}

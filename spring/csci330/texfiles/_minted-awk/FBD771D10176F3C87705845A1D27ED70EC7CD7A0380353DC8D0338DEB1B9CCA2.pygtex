@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{if}\PYG{+w}{ }\PYG{o}{(}\PYG{l+s+s2}{\PYGZdq{}clothing\PYGZdq{}}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }deptSales\PYG{o}{)}
+\PYG{+w}{  }print\PYG{+w}{ }deptSales\PYG{o}{[}\PYG{l+s+s2}{\PYGZdq{}clothing\PYGZdq{}}\PYG{o}{]}
+\PYG{k}{else}
+\PYG{+w}{  }print\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}not found\PYGZdq{}}
+\end{Verbatim}

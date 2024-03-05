@@ -12,7 +12,7 @@
 \lhead{\leftmark}
 \cfoot{\thepage}
 % \usepackage[default]{sourcecodepro} \usepackage[T1]{fontenc}
-
+\usetikzlibrary{matrix,shapes,arrows,positioning,chains}
 \pgfpagesdeclarelayout{boxed}
 {
   \edef\pgfpageoptionborder{0pt}
@@ -36,6 +36,8 @@
 
 \begin{document}
   \maketitle
+  \tableofcontents
+  \clearpage
   \section{What is awk?}  
   \begin{itemize}
     \item Created by: 
@@ -173,5 +175,501 @@ awk -F: '/Jones/{print $1, $3}' emps2
 Tom Jones 5/12/66
 \end{minted}
 \subsection*{Example: File Processing}
-$ cat input
+\$ cat input
+\bigbreak \noindent
+Jan & 13 & 25 & 15 & 115 \\
+Feb & 15 & 32 & 24 & 22 \\
+Mar & 15 & 24 & 34 & 228 \\
+Apr & 31 & 52 & 63 & 420 \\
+May & 16 & 34 & 29 & 208 \\
+Jun & 31 & 42 & 75 & 492 \\
+Jul & 24 & 34 & 67 & 436 \\
+Aug & 15 & 34 & 47 & 316 \\
+Sep & 15 & 53 & 67 & 277 \\
+Oct & 29 & 54 & 68 & 525 \\
+Nov & 20 & 87 & 82 & 577 \\
+Dec & 17 & 35 & 61 & 401 \\
+Jan & 21 & 36 & 64 & 620 \\
+Feb & 26 & 58 & 80 & 652 \\
+Mar & 24 & 75 & 70 & 495 \\
+Apr & 21 & 70 & 74 & 514 \\
+\begin{minted}{bash}
+# prints all records
+awk '{print}' input
+
+# prints only first field of each record
+awk '{print $1}' input
+\end{minted}
+\section{Simple Patterns}
+\begin{itemize}
+  \item BEGIN 
+    \begin{itemize}[label=$\bullet$]
+      \item Matches before the first line of input 
+      \item Used to create header for report
+    \end{itemize}
+  \item END
+    \begin{itemize}[label=$\bullet$]
+      \item Matches after the last line of input 
+      \item Used to create footer for report
+    \end{itemize}
+\end{itemize}
+\subsection{More Patterns}
+\begin{itemize}
+  \item expression patterns: whole line vs. explicit field match
+    \begin{itemize}[label=$\bullet$]
+      \item whoe line \ \ \ \ \ \ \ \ /regExp/ 
+      \item field match \ \ \ \$2 \textasciitilde /regExp/
+    \end{itemize}
+  \item range patterns
+    \begin{itemize}[label=$\bullet$]
+      \item specified as from and to: 
+        \subitem example: \ \ \ \ /regExp/,/regExp/
+    \end{itemize}
+\end{itemize}
+\bigbreak \noindent
+\textbf{\underline{Example:}}
+\begin{mdframed}
+\$ cat input \\
+Jan & 13 & 25 & 15 & 115 \\
+Feb & 15 & 32 & 24 & 22 \\
+Mar & 15 & 24 & 34 & 228 \\
+Apr & 31 & 52 & 63 & 420 \\
+May & 16 & 34 & 29 & 208 \\
+Jun & 31 & 42 & 75 & 492 \\
+Jul & 24 & 34 & 67 & 436 \\
+Aug & 15 & 34 & 47 & 316 \\
+Sep & 15 & 53 & 67 & 277 \\
+Oct & 29 & 54 & 68 & 525 \\
+Nov & 20 & 87 & 82 & 577 \\
+Dec & 17 & 35 & 61 & 401 \\
+Jan & 21 & 36 & 64 & 620 \\
+Feb & 26 & 58 & 80 & 652 \\
+Mar & 24 & 75 & 70 & 495 \\
+Apr & 21 & 70 & 74 & 514 \\
+\begin{minted}{bash}
+$ cat script
+BEGIN {
+  print "January Sales Revenue"
+}
+$1 ~ /Jan/ {
+  print $1, $2+$3+$4, $5
+}
+END {
+  print NR, " records processed"
+}
+# invoking script
+awk -f script input
+
+#OUTPUT
+January Sales Revenue
+Jan 53 115
+Jan 121 620
+16 records processed
+\end{minted}
+\end{mdframed}
+\newpage
+\section{awk actions}
+\begin{itemize}
+  \item basic expressions 
+  \item output: print, printf
+  \item decisions: if
+  \item loops: for, while
+\end{itemize}
+\section{awk Expressions}
+Consists of: \textbf{operands} and \textbf{operators} 
+\begin{itemize}
+  \item operands:
+    \begin{itemize}[label=$\bullet$]
+      \item numeric and string constants 
+      \item variables
+      \item functions and regular expressions
+    \end{itemize}
+  \item operators:
+    \begin{itemize}[label=$\bullet$]
+      \item assignment: = \ ++ \ -- \ += \ -= \ *= \ /=
+      \item arithmetic: + \ - \ * \ \% \ \textasciicircum
+      \item logical: \&\& \ $\|$ \ !
+      \item relational: $>$ \ $<$ \ $>=$ \ $<=$ \ $==$ \ $!=$
+      \item match: \textasciitilde \ \ \ !\textasciitilde
+      \item string concatenation: space
+    \end{itemize}
+\end{itemize}
+\section{awk Variables}
+\begin{itemize}
+  \item Created via assignment 
+\end{itemize}
+\bigbreak \noindent
+\textbf{\textit{Syntax:}}
+\begin{minted}{bash}
+var = expression
+\end{minted}
+\begin{itemize}
+  \item types: number (not limited to integer) 
+  \item variables come into existence when first used
+  \item type of variable depends on its use
+  \item variables are initilized to either o or ``''
+\end{itemize}
+\bigbreak \noindent
+\textbf{\underline{Example:}}
+\begin{minted}{bash}
+cat input 
+\end{minted}
+Jan & 13 & 25 & 15 & 115 \\
+Feb & 15 & 32 & 24 & 22 \\
+Mar & 15 & 24 & 34 & 228 \\
+Apr & 31 & 52 & 63 & 420 \\
+May & 16 & 34 & 29 & 208 \\
+Jun & 31 & 42 & 75 & 492 \\
+Jul & 24 & 34 & 67 & 436 \\
+Aug & 15 & 34 & 47 & 316 \\
+Jan & 21 & 36 & 64 & 620 \\
+\newpage
+\begin{mdframed}
+  \begin{minted}{bash}
+cat script
+BEGIN {
+  print "January Sales Revenue"
+  count = 0
+  sum = 0
+}
+$1 ~ /Jan/ && NF == 5 {
+  print $1, $2+$3+$4, $5
+  count++
+  sum+= $5
+}
+END {
+  print count, " records produce: ", sum
+}
+# invoke
+awk -f script input
+
+# OUTPUT
+January Sales Revenue
+Jan 53 115
+Jan 121 620
+2 records produce: 735
+\end{minted}
+\end{mdframed}
+\section{awk output: print}
+\begin{itemize}
+  \item Writes to standard output 
+    \begin{itemize}
+      \item Output is terminated by newline 
+    \end{itemize}
+  \item If called with no parameter, it will print \$0
+  \item Printed parameters are seperated by blank   
+  \item Print control characters are allowed:
+    \begin{itemize}
+      \item \textbackslash n \textbackslash a \textbackslash t \textbackslash b \ldots
+    \end{itemize}
+\end{itemize}
+\bigbreak \noindent
+\textbf{\underline{Print examples:}}
+\begin{mdframed}
+\begin{minted}{bash}
+$ cat grades
+john 85
+andrea 89
+jasper 84
+
+# Normal Output
+$ awk '{print $1, $2}' grades
+
+# values seperated by comma
+$ awk '{print $1 "," $2}' grades
+
+$ awk '{print $1 "," $2, " some more"}' grades
+\end{minted}
+\end{mdframed}
+\newpage
+\section{printf: Formatting output}
+\bigbreak \noindent
+\textbf{\textit{Syntax:}}
+\begin{minted}{bash}
+printf(format-string, var1, var2, ...)
+\end{minted}
+\begin{itemize}
+  \item Each format specifier within ``format-string'' requires additional argument of matching type 
+    \subitem \%d, \%i \ \ \ decimal integer
+    \subitem \%c \ \ \ single character
+    \subitem \%s \ \ \ string of characters
+    \subitem \%f \ \ \ floating point number
+\end{itemize}
+\subsection{Format specifier modifers}
+\begin{itemize}
+  \item between ``\%'' and letter 
+    \subitem \%10s
+    \subitem \%7d
+    \subitem \%10.4f
+    \subitem \%-20s
+  \item Meaning:
+    \begin{itemize}[
+      label = $\circ$
+      ]
+      \item  width of field, field is printed right justified (``-'' for left justify)
+      \item  Precision: number of digits after decimal point
+    \end{itemize}
+\end{itemize}
+\section{awk Example: list of products}
+101: & propeller & 97.95 \\
+102: & trailer hitch & 97.95 \\
+103: & sway bar & 49.99 \\
+104: & fishing line & 0.99 \\
+105: & mirror & 4.99 \\
+106: & cup holder & 2.49 \\
+107: & cooler & 14.89 \\
+108: & wheel & 49.99 \\
+109: & transom & 199.00 \\
+110: & pulley & 9.88 \\
+111: & lock & 31.00 \\
+112: & boat cover & 120.00 \\
+113: & premium fish bait & 1.00 \\
+  \begin{minted}{bash}
+BEGIN {
+  FS= ":"
+  print "Marine Parts R Us"
+  print "Main catalog"
+  print "Part-id\tname\t\t\t price"
+  print "=================================="
+}
+{
+  printf("%3d\t%-20s\t%6.2f\n", $1, $2, $3)
+}
+END {
+  print "=================================="
+  print "Catalog has", NR, "parts"
+}
+\end{minted}
+\newpage
+\section{Typical awk script}
+Divided into three major parts: \vspace{3mm}
+
+\begin{figure}[ht]
+    \centering
+    \incfig[1]{awkparts}
+    %\caption{awkparts}
+    %\label{fig:awkparts}
+\end{figure}
+\nt{
+  Comment lines start with \#
+}
+\section{awk Array}
+\begin{itemize}
+  \item awk allows one-dimensional arrays 
+    \begin{itemize}[label=$\circ$]
+      \item index can be number or string 
+      \item elements can be string or number
+\end{itemize}
+\item array need not be declared
+  \begin{itemize}[label=$\circ$]
+    \item its size 
+    \item its element type
+  \end{itemize}
+\item array elements are created  when first used
+  \begin{itemize}[label=$\circ$]
+    \item initalized to 0 or ``'' 
+  \end{itemize}
+\end{itemize}
+\subsection{Arrays}
+\bigbreak \noindent
+\textbf{\textit{Syntax:}}
+\begin{minted}{bash}
+arrayName[index] = value
+\end{minted}
+\bigbreak \noindent
+\textbf{\underline{Examples:}}
+\begin{mdframed}
+\begin{minted}{bash}
+list[1] = "some value"
+list[2] = 123
+
+list["other"] = "oh my !"
+\end{minted}
+\end{mdframed}
+\subsection*{Array as Map}
+\begin{minted}{awk}
+Age["Robert"] = 46
+Age["George"] = 22
+Age["Juan"] = 19
+\end{minted}
+\newpage
+\subsection{Array Examples}
+Input file: \vspace{1.5mm}
+
+\noindent 1 & clothing & 3141 \\
+1 & computers & 9161 \\
+1 & textbooks & 21321 \\
+2 & clothing & 3252 \\
+2 & computers & 12321 \\
+2 & supplies & 2242 \\
+2 & textbooks & 15462 \vspace{4mm}
+
+\noindent Desired output: \textbf{summary of department sales}
+\bigbreak \noindent
+\textbf{\underline{Complete program:}}
+\begin{mdframed}
+\begin{minted}{bash}
+{
+  deptSales[$2] += $3
+}
+END {
+  for (x in deptSales)
+    print x, deptSales[x]
+}
+\end{minted}
+\end{mdframed}
+\section{awk built-in functions}
+\begin{itemize}
+  \item \textbf{arithmetic} 
+    \subitem \underline{ex:} sqrt, rand
+  \item \textbf{string}
+    \subitem \underline{ex:} index, length, split, substr, sprintf, tolower, toupper
+  \item \textbf{misc.}
+    \subitem \underline{ex:} system, systime
+\end{itemize}
+\subsection*{The split function}
+\bigbreak \noindent
+\textbf{\textit{Syntax:}}
+\begin{minted}{bash}
+split(string, array, fieldsep)
+\end{minted}
+This divides \textbf{string} into pieces separated by \textbf{fieldsep} \vspace{1mm}
+
+\noindent It then stores the pieces in \textbf{array} \vspace{1mm}
+
+\noindent if \textbf{fieldsep} is omitted, the value of FS is used
+\bigbreak \noindent
+\textbf{\underline{Example:}}
+\begin{mdframed}
+\begin{minted}{bash}
+split("26:Miller:Comedian", fields, ":")
+
+# Results
+fields[1] = "26"
+fields[2] = "Miller"
+fields[3] = "Comedian"
+\end{minted}
+\end{mdframed}
+\newpage
+\section{awk control structures}
+\begin{itemize}
+  \item \textbf{Conditional} 
+    \begin{itemize}[label=$\circ$]
+      \item if-else 
+    \end{itemize}
+  \item \textbf{Repetition}
+    \begin{itemize}[label=$\circ$]
+      \item for 
+        \begin{itemize}
+          \item with counter 
+          \item with array index
+        \end{itemize}
+      \item while
+        \subitem \underline{also:} break, continue
+    \end{itemize}
+\end{itemize}
+\section{If Statement}
+\bigbreak \noindent
+\textbf{\textit{Syntax:}}
+\begin{minted}{bash}
+if (conditional expression)
+  statement-1
+else
+  statement-2
+\end{minted}
+\bigbreak \noindent
+\textbf{\underline{Example:}}
+\begin{minted}{bash}
+if ( NR < 3 )
+  print $2
+else
+  print $3
+\end{minted}
+\nt{
+  Use compound \{ \} for more than one statement. \\ 
+  \{ \vspace{1.5mm}
+
+    ...
+    ... \vspace{1.5mm}
+
+  \}
+}
+\subsection*{If Statement for arrays}
+\bigbreak \noindent
+\textbf{\textit{Syntax:}}
+\begin{minted}{bash}
+if (value in array)
+  statement-1
+else 
+  statement-2
+\end{minted}
+\bigbreak \noindent
+\textbf{\underline{Example:}}
+\begin{mdframed}
+\begin{minted}{bash}
+if ("clothing" in deptSales)
+  print deptSales["clothing"]
+else
+  print "not found"
+\end{minted}
+\end{mdframed}
+\section{for Loop}
+\bigbreak \noindent
+\textbf{\textit{Syntax:}}
+\begin{minted}{bash}
+for (initialization; limit-test; update)
+  statement
+\end{minted}
+\bigbreak \noindent
+\textbf{\underline{Example:}}
+\begin{mdframed}
+\begin{minted}{awk}
+for (i=1; i <= 10; i++)
+  print "The square of ", i, " is ", i*i
+\end{minted}
+\end{mdframed}
+\subsection*{for Loop for arrays}
+\bigbreak \noindent
+\textbf{\textit{Syntax:}}
+\begin{minted}{bash}
+for (var in array)
+  statement
+\end{minted}
+\bigbreak \noindent
+\textbf{\underline{Example:}}
+\begin{mdframed}
+\begin{minted}{bash}
+for (x in deptSales) {
+  print x
+  print deptSales[x]
+}
+\end{minted}
+\end{mdframed}
+\section{while Loop}
+\bigbreak \noindent
+\textbf{\textit{Syntax:}}
+\begin{minted}{awk}
+while (logical expression)
+  statement
+\end{minted}
+\bigbreak \noindent
+\textbf{\underline{Example:}}
+\begin{mdframed}
+\begin{minted}{awk}
+i=1 
+while (i <= 10) {
+  print "The square of ", i, " is ", i*i
+  i=i+1
+}
+\end{minted}
+\end{mdframed}
+\section{loop control statements}
+\begin{itemize}
+  \item \textbf{break} 
+    \subitem exits loop
+  \item \textbf{continue}
+    \subitem skips the rest of current iteration, continues with next iteration
+\end{itemize}
+\newpage
+
 \end{document}

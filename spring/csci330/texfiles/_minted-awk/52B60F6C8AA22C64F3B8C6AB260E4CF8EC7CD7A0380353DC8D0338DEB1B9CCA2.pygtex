@@ -1,0 +1,20 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGZdl{}\PYG{+w}{ }cat\PYG{+w}{ }script
+BEGIN\PYG{+w}{ }\PYG{o}{\PYGZob{}}
+\PYG{+w}{  }print\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}January Sales Revenue\PYGZdq{}}
+\PYG{o}{\PYGZcb{}}
+\PYG{n+nv}{\PYGZdl{}1}\PYG{+w}{ }\PYGZti{}\PYG{+w}{ }/Jan/\PYG{+w}{ }\PYG{o}{\PYGZob{}}
+\PYG{+w}{  }print\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}1},\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}2}+\PYG{n+nv}{\PYGZdl{}3}+\PYG{n+nv}{\PYGZdl{}4},\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}5}
+\PYG{o}{\PYGZcb{}}
+END\PYG{+w}{ }\PYG{o}{\PYGZob{}}
+\PYG{+w}{  }print\PYG{+w}{ }NR,\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{} records processed\PYGZdq{}}
+\PYG{o}{\PYGZcb{}}
+\PYG{c+c1}{\PYGZsh{} invoking script}
+awk\PYG{+w}{ }\PYGZhy{}f\PYG{+w}{ }script\PYG{+w}{ }input
+
+\PYG{c+c1}{\PYGZsh{}OUTPUT}
+January\PYG{+w}{ }Sales\PYG{+w}{ }Revenue
+Jan\PYG{+w}{ }\PYG{l+m}{53}\PYG{+w}{ }\PYG{l+m}{115}
+Jan\PYG{+w}{ }\PYG{l+m}{121}\PYG{+w}{ }\PYG{l+m}{620}
+\PYG{l+m}{16}\PYG{+w}{ }records\PYG{+w}{ }processed
+\end{Verbatim}

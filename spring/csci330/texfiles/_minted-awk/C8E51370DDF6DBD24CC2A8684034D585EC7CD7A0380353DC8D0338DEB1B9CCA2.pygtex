@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{for}\PYG{+w}{ }\PYG{o}{(}var\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }array\PYG{o}{)}
+\PYG{+w}{  }statement
+\end{Verbatim}

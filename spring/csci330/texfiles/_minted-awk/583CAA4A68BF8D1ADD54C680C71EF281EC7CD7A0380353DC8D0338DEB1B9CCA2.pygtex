@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{if}\PYG{+w}{ }\PYG{o}{(}value\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }array\PYG{o}{)}
+\PYG{+w}{  }statement\PYGZhy{}1
+\PYG{k}{else}
+\PYG{+w}{  }statement\PYGZhy{}2
+\end{Verbatim}

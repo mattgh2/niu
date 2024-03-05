@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{for} \PYG{p}{(}\PYG{n+nx}{i}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{;} \PYG{n+nx}{i} \PYG{o}{\PYGZlt{}=} \PYG{l+m+mi}{10}\PYG{p}{;} \PYG{n+nx}{i}\PYG{o}{++}\PYG{p}{)}
+  \PYG{k+kr}{print} \PYG{l+s+s2}{\PYGZdq{}The square of \PYGZdq{}}\PYG{p}{,} \PYG{n+nx}{i}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{} is \PYGZdq{}}\PYG{p}{,} \PYG{n+nx}{i}\PYG{o}{*}\PYG{n+nx}{i}
+\end{Verbatim}

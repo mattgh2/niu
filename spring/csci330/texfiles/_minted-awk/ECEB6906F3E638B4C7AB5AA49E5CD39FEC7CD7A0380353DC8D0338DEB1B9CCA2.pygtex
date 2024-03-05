@@ -1,0 +1,14 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGZdl{}\PYG{+w}{ }cat\PYG{+w}{ }grades
+john\PYG{+w}{ }\PYG{l+m}{85}
+andrea\PYG{+w}{ }\PYG{l+m}{89}
+jasper\PYG{+w}{ }\PYG{l+m}{84}
+
+\PYG{c+c1}{\PYGZsh{} Normal Output}
+\PYGZdl{}\PYG{+w}{ }awk\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}\PYGZob{}print \PYGZdl{}1, \PYGZdl{}2\PYGZcb{}\PYGZsq{}}\PYG{+w}{ }grades
+
+\PYG{c+c1}{\PYGZsh{} values seperated by comma}
+\PYGZdl{}\PYG{+w}{ }awk\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}\PYGZob{}print \PYGZdl{}1 \PYGZdq{},\PYGZdq{} \PYGZdl{}2\PYGZcb{}\PYGZsq{}}\PYG{+w}{ }grades
+
+\PYGZdl{}\PYG{+w}{ }awk\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}\PYGZob{}print \PYGZdl{}1 \PYGZdq{},\PYGZdq{} \PYGZdl{}2, \PYGZdq{} some more\PYGZdq{}\PYGZcb{}\PYGZsq{}}\PYG{+w}{ }grades
+\end{Verbatim}

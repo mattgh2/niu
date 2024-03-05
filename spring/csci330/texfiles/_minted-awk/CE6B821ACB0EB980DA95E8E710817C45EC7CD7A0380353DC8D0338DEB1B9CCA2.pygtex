@@ -1,0 +1,24 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+cat\PYG{+w}{ }script
+BEGIN\PYG{+w}{ }\PYG{o}{\PYGZob{}}
+\PYG{+w}{  }print\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}January Sales Revenue\PYGZdq{}}
+\PYG{+w}{  }\PYG{n+nv}{count}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{0}
+\PYG{+w}{  }\PYG{n+nv}{sum}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{0}
+\PYG{o}{\PYGZcb{}}
+\PYG{n+nv}{\PYGZdl{}1}\PYG{+w}{ }\PYGZti{}\PYG{+w}{ }/Jan/\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{n+nv}{NF}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{l+m}{5}\PYG{+w}{ }\PYG{o}{\PYGZob{}}
+\PYG{+w}{  }print\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}1},\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}2}+\PYG{n+nv}{\PYGZdl{}3}+\PYG{n+nv}{\PYGZdl{}4},\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}5}
+\PYG{+w}{  }count++
+\PYG{+w}{  }\PYG{n+nv}{sum}\PYG{o}{+=}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}5}
+\PYG{o}{\PYGZcb{}}
+END\PYG{+w}{ }\PYG{o}{\PYGZob{}}
+\PYG{+w}{  }print\PYG{+w}{ }count,\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{} records produce: \PYGZdq{}},\PYG{+w}{ }sum
+\PYG{o}{\PYGZcb{}}
+\PYG{c+c1}{\PYGZsh{} invoke}
+awk\PYG{+w}{ }\PYGZhy{}f\PYG{+w}{ }script\PYG{+w}{ }input
+
+\PYG{c+c1}{\PYGZsh{} OUTPUT}
+January\PYG{+w}{ }Sales\PYG{+w}{ }Revenue
+Jan\PYG{+w}{ }\PYG{l+m}{53}\PYG{+w}{ }\PYG{l+m}{115}
+Jan\PYG{+w}{ }\PYG{l+m}{121}\PYG{+w}{ }\PYG{l+m}{620}
+\PYG{l+m}{2}\PYG{+w}{ }records\PYG{+w}{ }produce:\PYG{+w}{ }\PYG{l+m}{735}
+\end{Verbatim}

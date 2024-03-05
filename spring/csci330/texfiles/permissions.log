@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2024.1.29)  3 MAR 2024 15:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2024.1.29)  4 MAR 2024 17:42
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1385,17 +1385,7 @@ runsystem(rm permissions.aex)...executed.
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 37.
  (/usr/share/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) (./permissions.aux
-./permissions.aux:27: Undefined control sequence.
-l.27 \ttl@finishall
-                   
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-)
+) (./permissions.aux)
 \openout1 = `permissions.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
@@ -1535,21 +1525,21 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has b
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.95 \end{document}
-                   {/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] (./permissions.aux) ) 
+l.99 \end{document}
+                   {/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] [3] (./permissions.aux) ) 
 Here is how much of TeX's memory you used:
- 51164 strings out of 476872
- 1187920 string characters out of 5820378
- 1868388 words of memory out of 5000000
- 70635 multiletter control sequences out of 15000+600000
+ 51167 strings out of 476872
+ 1187942 string characters out of 5820378
+ 1869388 words of memory out of 5000000
+ 70636 multiletter control sequences out of 15000+600000
  550685 words of font info for 65 fonts, out of 8000000 for 9000
  725 hyphenation exceptions out of 8191
  85i,11n,99p,770b,1672s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr17.pfb>
-Output written on permissions.pdf (2 pages, 116426 bytes).
+Output written on permissions.pdf (3 pages, 117882 bytes).
 PDF statistics:
- 98 PDF objects out of 1000 (max. 8388607)
- 58 compressed objects within 1 object stream
- 6 named destinations out of 1000 (max. 500000)
- 193 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 108 PDF objects out of 1000 (max. 8388607)
+ 67 compressed objects within 1 object stream
+ 8 named destinations out of 1000 (max. 500000)
+ 201 words of extra memory for PDF output out of 10000 (max. 10000000)
 

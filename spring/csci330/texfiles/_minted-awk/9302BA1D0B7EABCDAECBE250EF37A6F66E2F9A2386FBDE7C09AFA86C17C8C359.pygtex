@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nx}{Age}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}Robert\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{46}
+\PYG{n+nx}{Age}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}George\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{22}
+\PYG{n+nx}{Age}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}Juan\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{19}
+\end{Verbatim}

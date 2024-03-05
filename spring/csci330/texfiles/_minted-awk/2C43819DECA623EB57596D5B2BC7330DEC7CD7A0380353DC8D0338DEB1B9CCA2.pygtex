@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} prints all records}
+awk\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}\PYGZob{}print\PYGZcb{}\PYGZsq{}}\PYG{+w}{ }input
+
+\PYG{c+c1}{\PYGZsh{} prints only first field of each record}
+awk\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}\PYGZob{}print \PYGZdl{}1\PYGZcb{}\PYGZsq{}}\PYG{+w}{ }input
+\end{Verbatim}

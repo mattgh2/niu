@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{o}{\PYGZob{}}
+\PYG{+w}{  }deptSales\PYG{o}{[}\PYG{n+nv}{\PYGZdl{}2}\PYG{o}{]}\PYG{+w}{ }+\PYG{o}{=}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}3}
+\PYG{o}{\PYGZcb{}}
+END\PYG{+w}{ }\PYG{o}{\PYGZob{}}
+\PYG{+w}{  }\PYG{k}{for}\PYG{+w}{ }\PYG{o}{(}x\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }deptSales\PYG{o}{)}
+\PYG{+w}{    }print\PYG{+w}{ }x,\PYG{+w}{ }deptSales\PYG{o}{[}x\PYG{o}{]}
+\PYG{o}{\PYGZcb{}}
+\end{Verbatim}

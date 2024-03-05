@@ -1,0 +1,25 @@
+\contentsline {section}{\numberline {1}What is awk?}{3}{section.0.1}%
+\contentsline {section}{\numberline {2}What can you do with awk?}{3}{section.0.2}%
+\contentsline {section}{\numberline {3}Basic awk invocation}{3}{section.0.3}%
+\contentsline {section}{\numberline {4}Basic awk script}{3}{section.0.4}%
+\contentsline {section}{\numberline {5}awk variables}{4}{section.0.5}%
+\contentsline {subsection}{\numberline {5.1}More variables}{4}{subsection.0.5.1}%
+\contentsline {section}{\numberline {6}Simple Patterns}{5}{section.0.6}%
+\contentsline {subsection}{\numberline {6.1}More Patterns}{6}{subsection.0.6.1}%
+\contentsline {section}{\numberline {7}awk actions}{7}{section.0.7}%
+\contentsline {section}{\numberline {8}awk Expressions}{7}{section.0.8}%
+\contentsline {section}{\numberline {9}awk Variables}{7}{section.0.9}%
+\contentsline {section}{\numberline {10}awk output: print}{8}{section.0.10}%
+\contentsline {section}{\numberline {11}printf: Formatting output}{9}{section.0.11}%
+\contentsline {subsection}{\numberline {11.1}Format specifier modifers}{9}{subsection.0.11.1}%
+\contentsline {section}{\numberline {12}awk Example: list of products}{9}{section.0.12}%
+\contentsline {section}{\numberline {13}Typical awk script}{10}{section.0.13}%
+\contentsline {section}{\numberline {14}awk Array}{10}{section.0.14}%
+\contentsline {subsection}{\numberline {14.1}Arrays}{10}{subsection.0.14.1}%
+\contentsline {subsection}{\numberline {14.2}Array Examples}{11}{subsection.0.14.2}%
+\contentsline {section}{\numberline {15}awk built-in functions}{11}{section.0.15}%
+\contentsline {section}{\numberline {16}awk control structures}{12}{section.0.16}%
+\contentsline {section}{\numberline {17}If Statement}{12}{section.0.17}%
+\contentsline {section}{\numberline {18}for Loop}{13}{section.0.18}%
+\contentsline {section}{\numberline {19}while Loop}{13}{section.0.19}%
+\contentsline {section}{\numberline {20}loop control statements}{13}{section.0.20}%

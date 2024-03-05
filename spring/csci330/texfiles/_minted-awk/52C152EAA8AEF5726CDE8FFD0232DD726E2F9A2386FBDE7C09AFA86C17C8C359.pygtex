@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{while} \PYG{p}{(}\PYG{n+nx}{logical} \PYG{n+nx}{expression}\PYG{p}{)}
+  \PYG{n+nx}{statement}
+\end{Verbatim}

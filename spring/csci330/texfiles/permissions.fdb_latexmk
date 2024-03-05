@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1709500038 "permissions.tex" "permissions.pdf" "permissions" 1709500040 2
-  "/dev/null" 1709494080 0 d41d8cd98f00b204e9800998ecf8427e ""
+["pdflatex"] 1709595763 "permissions.tex" "permissions.pdf" "permissions" 1709595765 0
+  "/dev/null" 1709572699 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/home/mattw/latex/template/macros.tex" 1678847294 3389 93000260d2aea292d29c76d4ace77a29 ""
   "/home/mattw/latex/template/preamble.tex" 1709170729 22618 a2accd023098de216688882fb78b01d2 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc" 1704400182 2327 9d6df24f9c4f7368395224341a95523a ""
@@ -314,8 +314,8 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1704400182 40684 9b9ec0b4288972636ff6a3b9c4238efc ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1706562162 4609286 2d8299e49804530e6f7abe7bb9d71f41 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1706562150 6969272 e322c0736be4610f8e334a21950f21b9 ""
-  "permissions.aux" 1709500039 2006 a8ddb8e4beff1d907a0d080481e059d8 "pdflatex"
-  "permissions.tex" 1707529350 3102 54d15dee6682f9af67ace914ed362ee9 ""
+  "permissions.aux" 1709595765 2429 d9359da4513679e8c4e7896cfd7c15f5 "pdflatex"
+  "permissions.tex" 1709595761 3176 b0ae8d2e1e831c19430ea65734a3b4aa ""
   (generated)
   "permissions.aux"
   "permissions.log"
