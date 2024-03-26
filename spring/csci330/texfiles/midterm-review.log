@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2024.1.29)  6 MAR 2024 14:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2024.1.29)  5 MAR 2024 21:19
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**scripts.tex
-(./scripts.tex
+**midterm-review.tex
+(./midterm-review.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-22> (/usr/share/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2022/07/02 v1.4n Standard LaTeX document class
@@ -126,10 +126,10 @@ Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )) (/usr/share/texmf-dist/tex/generic/iftex/ifluatex.sty
 Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
 )
-runsystem(uname -s > "scripts.w18")...executed.
+runsystem(uname -s > "midterm-review.w18")...executed.
 
- (./scripts.w18)
-runsystem(rm -- "scripts.w18")...executed.
+ (./midterm-review.w18)
+runsystem(rm -- "midterm-review.w18")...executed.
 
 ) (/usr/share/texmf-dist/tex/generic/xstring/xstring.sty (/usr/share/texmf-dist/tex/generic/xstring/xstring.tex
 \integerpart=\count286
@@ -159,7 +159,7 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@every@listing=\toks20
 \c@listing=\count291
 )
-runsystem(mkdir -p _minted-scripts)...executed.
+runsystem(mkdir -p _minted-midterm-review)...executed.
 
  (/usr/share/texmf-dist/tex/latex/listings/listings.sty
 \lst@mode=\count292
@@ -1378,34 +1378,34 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 \c@question=\count519
 ) (/home/mattw/latex/template/macros.tex)
 \pgfpages@box@1=\box163
-runsystem(which pygmentize && touch scripts.aex)...executed.
+runsystem(which pygmentize && touch midterm-review.aex)...executed.
 
-runsystem(rm scripts.aex)...executed.
+runsystem(rm midterm-review.aex)...executed.
 
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 38.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 37.
  (/usr/share/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) (./scripts.aux)
-\openout1 = `scripts.aux'.
+) (./midterm-review.aux)
+\openout1 = `midterm-review.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
 \c@lstlisting=\count520
 
 *geometry* driver: auto-detecting
@@ -1461,7 +1461,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring OFF on input line 38.
+Package hyperref Info: Link coloring OFF on input line 37.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: longtable package is loaded.
  (/usr/share/texmf-dist/tex/latex/caption/ltcaption.sty
@@ -1484,297 +1484,211 @@ Package: inputenc 2021/02/14 v1.3d Input encoding file
 \inpenc@prehook=\toks64
 \inpenc@posthook=\toks65
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 40.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 39.
  (/usr/share/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 40.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 39.
  (/usr/share/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 40.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 39.
  (/usr/share/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <16> on input line 40.
+(Font)              <16> on input line 39.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 40.
+(Font)              <10> on input line 39.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 40.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 40.
+(Font)              <12> on input line 39.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 39.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 40.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 39.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (./scripts.toc
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 1.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 1.
 )
-\tf@toc=\write7
-\openout7 = `scripts.toc'.
-
- [1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 51.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 41.
  (/usr/share/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-\openout3 = `scripts.pyg'.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 55.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 55.
+ [1
 
- (./_minted-scripts/xcode.pygstyle) (./_minted-scripts/3D47B8E895A71930BDA5D4F3D8FC85890EF08FE36E794858A8D00A24FFEAC2E4.pygtex
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}]
+\openout3 = `midterm-review.pyg'.
+
+ (./_minted-midterm-review/xcode.pygstyle) (./_minted-midterm-review/26E606437E180C8D17A9CF0E9B88CB8841FC5E0E118262065CAE3AD74555E5D4.pygtex
 LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 1.
  (/usr/share/texmf-dist/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ))
-\openout3 = `scripts.pyg'.
+\openout3 = `midterm-review.pyg'.
 
- (./_minted-scripts/B9CB348394F550709ED656EFE022FCEF0EF08FE36E794858A8D00A24FFEAC2E4.pygtex)
-\openout3 = `scripts.pyg'.
-
- (./_minted-scripts/AFA38D23B0C7732975D3013A549F23100EF08FE36E794858A8D00A24FFEAC2E4.pygtex)
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 76.
-\openout3 = `scripts.pyg'.
-
- (./_minted-scripts/7CD83DA07A842FCD49A0C3E277CD10C50EF08FE36E794858A8D00A24FFEAC2E4.pygtex) [2
+ (./_minted-midterm-review/4C0858D8231366B3F5C394145CB7854D41FC5E0E118262065CAE3AD74555E5D4.pygtex) [2
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.93     \subitem
-                  while, until, for]
-\openout3 = `scripts.pyg'.
+l.156 \newpage
+              {/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}] [3{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.enc}]
+./midterm-review.tex:263: You can't use a prefix with `end-group character }'.
+<to be read again> 
+                   \egroup 
+l.263     \item substitution (\`\`
+                                  )
+I'll pretend you didn't say \long or \outer or \global or \protected.
 
- (./_minted-scripts/3035D027B7FF338E7FB6B4D0FAC669810EF08FE36E794858A8D00A24FFEAC2E4.pygtex)
-\openout3 = `scripts.pyg'.
+./midterm-review.tex:263: Extra }, or forgotten \endgroup.
+\add@accent ...spaces \relax \accent #1 #2\egroup 
+                                                  \ifmmode \else \spacefacto...
+l.263     \item substitution (\`\`
+                                  )
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
- (./_minted-scripts/F26668C3532C4E0149FBBD2E352511DF0EF08FE36E794858A8D00A24FFEAC2E4.pygtex)
-\openout3 = `scripts.pyg'.
-
- (./_minted-scripts/B0E1645ECF126D3886DAFEE2AF9690320EF08FE36E794858A8D00A24FFEAC2E4.pygtex)
-LaTeX Font Info:    Trying to load font information for OMS+lmr on input line 127.
+[4]
+LaTeX Font Info:    Trying to load font information for OMS+lmr on input line 283.
  (/usr/share/texmf-dist/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 127.
+LaTeX Font Info:    Font shape `OMS/lmr/bx/n' in size <14.4> not available
+(Font)              Font shape `OMS/lmsy/b/n' tried instead on input line 283.
 
-Underfull \hbox (badness 10000) in paragraph at lines 125--131
-
+Overfull \hbox (2.2222pt too wide) in paragraph at lines 285--299
+$[]$ $[]$ 
  []
 
-\openout3 = `scripts.pyg'.
+LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 302.
+[5] [6{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}]
+\openout3 = `midterm-review.pyg'.
 
-(./_minted-scripts/277C4BDF3EB557ED0A033AB7B5CB3D230EF08FE36E794858A8D00A24FFEAC2E4.pygtex
-LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 8.
+ (./_minted-midterm-review/268DB6D69DD7E47D10F77D7C73D0730D41FC5E0E118262065CAE3AD74555E5D4.pygtex)
+\openout3 = `midterm-review.pyg'.
+
+ (./_minted-midterm-review/95C35F255ECD1C9293DDB2B907392CF441FC5E0E118262065CAE3AD74555E5D4.pygtex)
+\openout3 = `midterm-review.pyg'.
+
+ (./_minted-midterm-review/5C62657899640B9525DE53357C26168F41FC5E0E118262065CAE3AD74555E5D4.pygtex)
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 417.
+\openout3 = `midterm-review.pyg'.
+
+ (./_minted-midterm-review/7C008D2102E4C0B2EC3AFFC5F3476A8241FC5E0E118262065CAE3AD74555E5D4.pygtex) [7]
+\openout3 = `midterm-review.pyg'.
+
+ (./_minted-midterm-review/BA908E57F5B631A006FEEFDF7C5F961D41FC5E0E118262065CAE3AD74555E5D4.pygtex)
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 478.
+\openout3 = `midterm-review.pyg'.
+
+ (./_minted-midterm-review/8FD88977423E8944FCB72872897C55D041FC5E0E118262065CAE3AD74555E5D4.pygtex
+LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 2.
  (/usr/share/texmf-dist/tex/latex/lm/ts1lmtt.fd
 File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)) [3{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.enc}]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 163.
-\openout3 = `scripts.pyg'.
+))
 
- (./_minted-scripts/B14EA8B3E3CA5C023397627C4FA5C7DA0EF08FE36E794858A8D00A24FFEAC2E4.pygtex)
-\openout3 = `scripts.pyg'.
+./midterm-review.tex:521: LaTeX Error: There's no line here to end.
 
- (./_minted-scripts/0051F9E67C53A56C2DC705865C01DB610EF08FE36E794858A8D00A24FFEAC2E4.pygtex)
-\openout3 = `scripts.pyg'.
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.521 \newline
+              
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
 
- (./_minted-scripts/8BCDB3D1E529FF76F93933C687C2EF4C0EF08FE36E794858A8D00A24FFEAC2E4.pygtex)
-\openout3 = `scripts.pyg'.
+[8]
 
- (./_minted-scripts/05F46594E5E18B4583F57599FF5461740EF08FE36E794858A8D00A24FFEAC2E4.pygtex)
-\openout3 = `scripts.pyg'.
+./midterm-review.tex:547: LaTeX Error: Something's wrong--perhaps a missing \item.
 
- (./_minted-scripts/67CA1481EEB7300C2992B0D605F5BD4E0EF08FE36E794858A8D00A24FFEAC2E4.pygtex)
-\openout3 = `scripts.pyg'.
-
- (./_minted-scripts/138E59FAF8609774A26CB2043F0AD2150EF08FE36E794858A8D00A24FFEAC2E4.pygtex)
-\openout3 = `scripts.pyg'.
-
- (./_minted-scripts/79BB3DF9358B59FC3F12BCC40FCE0DD70EF08FE36E794858A8D00A24FFEAC2E4.pygtex [4{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}])
-\openout3 = `scripts.pyg'.
-
- (./_minted-scripts/896F5CC201BAC6EB87FE48134E8758710EF08FE36E794858A8D00A24FFEAC2E4.pygtex)
-\openout3 = `scripts.pyg'.
-
- (./_minted-scripts/B2685C7609B38F05378D871A184CEAC60EF08FE36E794858A8D00A24FFEAC2E4.pygtex)
-\openout3 = `scripts.pyg'.
-
- (./_minted-scripts/50680021BDF2F62BB899022202AAFB020EF08FE36E794858A8D00A24FFEAC2E4.pygtex)
-\openout3 = `scripts.pyg'.
-
- (./_minted-scripts/3F82CA326BD28F4DB5CC403D477A4DEE0EF08FE36E794858A8D00A24FFEAC2E4.pygtex)
-\openout3 = `scripts.pyg'.
-
- (./_minted-scripts/632C66AAF4A17281D157578C713FD25A0EF08FE36E794858A8D00A24FFEAC2E4.pygtex)
-\openout3 = `scripts.pyg'.
-
- (./_minted-scripts/AC07A9E61F659F2B396E308C00B05A640EF08FE36E794858A8D00A24FFEAC2E4.pygtex) [5]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 257.
-\openout3 = `scripts.pyg'.
-
- (./_minted-scripts/8861625B2D1D9873FFBA76F3CBF9F83A0EF08FE36E794858A8D00A24FFEAC2E4.pygtex)
-Package mdframed Info: Not enough space on this page on input line 268.
-\openout3 = `scripts.pyg'.
-
- (./_minted-scripts/268DB6D69DD7E47D10F77D7C73D0730D0EF08FE36E794858A8D00A24FFEAC2E4.pygtex)
-\openout3 = `scripts.pyg'.
-
- (./_minted-scripts/23ADEA712462B827C7E953BF8B0D96F80EF08FE36E794858A8D00A24FFEAC2E4.pygtex)
-\openout3 = `scripts.pyg'.
-
- (./_minted-scripts/80145CB357D96F9D66D73DF4FE9460530EF08FE36E794858A8D00A24FFEAC2E4.pygtex) [6]
-\openout3 = `scripts.pyg'.
-
- (./_minted-scripts/17A3FE0FD9148C08F41C64E4BDA28D1C0EF08FE36E794858A8D00A24FFEAC2E4.pygtex)
-\openout3 = `scripts.pyg'.
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.547   \begin{itemize}[label=$\circ$]
+                                      
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
 
-(./_minted-scripts/03DB07B5193E0C2CF2B5CB172B49F9A50EF08FE36E794858A8D00A24FFEAC2E4.pygtex)
-\openout3 = `scripts.pyg'.
+./midterm-review.tex:548: LaTeX Error: Something's wrong--perhaps a missing \item.
 
- (./_minted-scripts/CE13999DF372BCAB32BF3BB8ED01BB4B0EF08FE36E794858A8D00A24FFEAC2E4.pygtex)
-\openout3 = `scripts.pyg'.
-
- (./_minted-scripts/5C62657899640B9525DE53357C26168F0EF08FE36E794858A8D00A24FFEAC2E4.pygtex)
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 341.
-\openout3 = `scripts.pyg'.
-
- (./_minted-scripts/ABFAE12AE40E25D9959E1FDDA45DDB4A0EF08FE36E794858A8D00A24FFEAC2E4.pygtex)
-\openout3 = `scripts.pyg'.
-
- (./_minted-scripts/4054A72C5CFC9E4DDC9ED69BB809FAE40EF08FE36E794858A8D00A24FFEAC2E4.pygtex) [7]
-LaTeX Font Info:    Font shape `OT1/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `OT1/lmtt/b/n' tried instead on input line 386.
-\openout3 = `scripts.pyg'.
-
- (./_minted-scripts/C28BEDFD9D4BD176F09432CC919AD5C80EF08FE36E794858A8D00A24FFEAC2E4.pygtex) [8]
-\openout3 = `scripts.pyg'.
-
- (./_minted-scripts/45A00382FAEAEB8607639081D2B733D80EF08FE36E794858A8D00A24FFEAC2E4.pygtex)
-\openout3 = `scripts.pyg'.
-
- (./_minted-scripts/A02B54970A6997FAAE4348A69DC7928A0EF08FE36E794858A8D00A24FFEAC2E4.pygtex)
-\openout3 = `scripts.pyg'.
-
- (./_minted-scripts/6E1D528F9B67872F674C5D5E449ED00E0EF08FE36E794858A8D00A24FFEAC2E4.pygtex)
-\openout3 = `scripts.pyg'.
-
- (./_minted-scripts/CE87E75BB3230A4D21C9E96737963DB50EF08FE36E794858A8D00A24FFEAC2E4.pygtex) [9]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 492.
-\openout3 = `scripts.pyg'.
-
- (./_minted-scripts/FC6B679C25199F56164AF5D456A291950EF08FE36E794858A8D00A24FFEAC2E4.pygtex)
-Package mdframed Info: Not enough space on this page on input line 512.
-\openout3 = `scripts.pyg'.
-
- (./_minted-scripts/51DC05F05C3198A176872F9F5D1A05AB0EF08FE36E794858A8D00A24FFEAC2E4.pygtex)
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 526.
-\openout3 = `scripts.pyg'.
-
- (./_minted-scripts/0DA59A56E80BE42CD6C5F181061AC0B50EF08FE36E794858A8D00A24FFEAC2E4.pygtex)
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 542.
-\openout3 = `scripts.pyg'.
-
- (./_minted-scripts/14DA881BF01483D7ED73AA93D043D3470EF08FE36E794858A8D00A24FFEAC2E4.pygtex) [10]
-\openout3 = `scripts.pyg'.
-
- (./_minted-scripts/B4AE13AC2AB11A86B88C9AE80FD7EB4D0EF08FE36E794858A8D00A24FFEAC2E4.pygtex)
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 574.
-\openout3 = `scripts.pyg'.
-
- (./_minted-scripts/138917F99C90079595AF0A6F0DC1335C0EF08FE36E794858A8D00A24FFEAC2E4.pygtex)
-\openout3 = `scripts.pyg'.
-
- (./_minted-scripts/CA943AEF48989E7E34348B69502CAAFE0EF08FE36E794858A8D00A24FFEAC2E4.pygtex)
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 599.
-\openout3 = `scripts.pyg'.
-
- (./_minted-scripts/EE776FDB3595933E3872F3A4DDD81F150EF08FE36E794858A8D00A24FFEAC2E4.pygtex) [11]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 611.
-\openout3 = `scripts.pyg'.
-
- (./_minted-scripts/474212424A0BFE047749F27C9B20815D0EF08FE36E794858A8D00A24FFEAC2E4.pygtex)
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 638.
-\openout3 = `scripts.pyg'.
-
- (./_minted-scripts/C17466E36767D4834A7EF2306AECE8370EF08FE36E794858A8D00A24FFEAC2E4.pygtex) [12]
-\openout3 = `scripts.pyg'.
-
- (./_minted-scripts/55BC6565D100E37F91831E9D0BB3D5240EF08FE36E794858A8D00A24FFEAC2E4.pygtex)
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 676.
-\openout3 = `scripts.pyg'.
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.548     \item i
+                 f no address is given, then the command is applied to each ...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
 
-(./_minted-scripts/8C78E0777455F79AE42894F6C06892540EF08FE36E794858A8D00A24FFEAC2E4.pygtex)
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 697.
-\openout3 = `scripts.pyg'.
+./midterm-review.tex:548: LaTeX Error: Something's wrong--perhaps a missing \item.
 
- (./_minted-scripts/C0959B9622284CB3DD5668C004286A3F0EF08FE36E794858A8D00A24FFEAC2E4.pygtex) [13
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.548     \item i
+                 f no address is given, then the command is applied to each ...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
-]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 722.
-\openout3 = `scripts.pyg'.
 
- (./_minted-scripts/4E5F740AD06127CF1B242C5866B11B790EF08FE36E794858A8D00A24FFEAC2E4.pygtex)
-\openout3 = `scripts.pyg'.
+./midterm-review.tex:548: LaTeX Error: Something's wrong--perhaps a missing \item.
 
- (./_minted-scripts/C1D609864F9F4C36B1D99318F3BCA5780EF08FE36E794858A8D00A24FFEAC2E4.pygtex)
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 754.
-\openout3 = `scripts.pyg'.
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.548     \item i
+                 f no address is given, then the command is applied to each ...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
- (./_minted-scripts/27A5C5552382EE88466AAB74693DAE860EF08FE36E794858A8D00A24FFEAC2E4.pygtex) [14] [15] (./scripts.aux)
-runsystem(rm scripts.pyg)...executed.
+
+./midterm-review.tex:549: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.549   \end{itemize}
+                     
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[9] [10] (./midterm-review.aux)
+runsystem(rm midterm-review.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 51820 strings out of 476872
- 1218987 string characters out of 5820378
+ 51511 strings out of 476872
+ 1196121 string characters out of 5820378
  1874388 words of memory out of 5000000
- 71061 multiletter control sequences out of 15000+600000
- 565947 words of font info for 72 fonts, out of 8000000 for 9000
+ 70897 multiletter control sequences out of 15000+600000
+ 560046 words of font info for 70 fonts, out of 8000000 for 9000
  725 hyphenation exceptions out of 8191
- 85i,12n,99p,766b,1672s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on scripts.pdf (15 pages, 245587 bytes).
+ 85i,11n,99p,773b,1672s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf-dist/fonts/type1/public/lm/lmbsy10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
+Output written on midterm-review.pdf (10 pages, 203950 bytes).
 PDF statistics:
- 396 PDF objects out of 1000 (max. 8388607)
- 319 compressed objects within 4 object streams
- 55 named destinations out of 1000 (max. 500000)
- 545 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 300 PDF objects out of 1000 (max. 8388607)
+ 235 compressed objects within 3 object streams
+ 44 named destinations out of 1000 (max. 500000)
+ 449 words of extra memory for PDF output out of 10000 (max. 10000000)
 

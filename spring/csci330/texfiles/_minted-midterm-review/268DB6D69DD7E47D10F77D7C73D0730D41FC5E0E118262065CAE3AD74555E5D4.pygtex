@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nb}{read}\PYG{+w}{ }\PYG{o}{[}\PYGZhy{}p\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}prompt\PYGZdq{}}\PYG{o}{]}\PYG{+w}{ }varname\PYG{+w}{ }\PYG{o}{[}more\PYG{+w}{ }vars\PYG{o}{]}
+\end{Verbatim}

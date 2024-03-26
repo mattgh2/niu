@@ -1,0 +1,557 @@
+\documentclass{report}
+
+\input{~/latex/template/preamble.tex}
+\input{~/latex/template/macros.tex}
+
+\title{\Huge{Midterm Review}}
+\author{\huge{Matt Warner}}
+\date{\huge{}}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{}
+\lhead{\leftmark}
+\cfoot{\thepage}
+% \usepackage[default]{sourcecodepro} \usepackage[T1]{fontenc}
+
+\pgfpagesdeclarelayout{boxed}
+{
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=1,%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {
+    border code=\pgfsetlinewidth{1.5pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.95\pgfphysicalwidth,%
+    resized height=.95\pgfphysicalheight,%
+    center=\pgfpoint{.5\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+}
+
+\pgfpagesuselayout{boxed}
+
+\begin{document}
+  \maketitle
+\section{Topics covered so far}
+\begin{itemize}
+  \item Introduction 
+  \item File system
+  \item Editors
+  \item Net Ultilities
+  \item Permissions
+  \item Shell
+  \item Shell scripts
+  \item awk report generator
+  \item sed stream editor
+\end{itemize}
+\section{History of UNIX}
+\begin{itemize}
+  \item Invented by Ken Thomson at Bell Labs in 1969 
+    \begin{itemize}[label=$\bullet$]
+      \item First version written in assembly language 
+      \item single user system, no network capability
+    \end{itemize}
+  \item Thompson, Dennis Ritchie, Brian Kernighan
+    \begin{itemize}[label=$\bullet$]
+      \item Rewrote Unix in C 
+    \end{itemize}
+  \item Unix evolution:
+    \begin{itemize}[label=$\bullet$]
+      \item Bell Labs, USL, Novell, SCO  \hspace{30mm}$\bullet$ Newest:
+        \begin{itemize}[label=$\bullet$]
+          \item BSD, FreeBSD, Mach, OS X \hspace{30mm} $\bullet$ Linux on portables: Android
+          \item AIX, Ultrix, Irix, Solaris, \ldots
+        \end{itemize}
+      \item Linux: Linus Torvalds
+    \end{itemize}
+\end{itemize}
+\section{Command Line Structure}
+\bigbreak \noindent
+\textbf{\textit{Syntax:}}
+\$ command [-options] [arguments]
+\begin{itemize}
+  \item UNIX is case sensitive
+  \item Must be a space between command, options and arguments
+  \item Fields enclosed in [ ] are optional
+\end{itemize}
+\nt{
+  The brackets as used to show that they are optional
+}
+\newpage
+\section{RTFM: The man Command}
+  Shows pages from system manual 
+\bigbreak \noindent
+\begin{minipage}{0.5\textwidth}
+\textbf{\textit{Syntax:}}
+\begin{minted}{bash}
+$ man date
+$ man -k date
+$ man crontab
+$ man -S 5 crontab
+\end{minted}
+\end{minipage}
+\begin{table}[h!]
+  \centering
+\begin{tabular}{|m{2cm}|m{6cm}|}
+\hline
+\textbf{Section} & \textbf{Description} \\ \hline
+1                & User commands        \\ \hline
+2                & System calls         \\ \hline
+3                & C library functions  \\ \hline
+4                & Special system files \\ \hline
+5                & File formats         \\ \hline
+6                & Games                \\ \hline
+7                & Misc. features       \\ \hline
+8                & System admin utilities \\ \hline
+\end{tabular}
+\end{table}
+\bigbreak \noindent
+\textit{\textbf{Caveats:}} \vspace{1.5mm}
+
+\noindent Some commands are aliases \vspace{1.5mm}
+
+\noindent Some commands are part of the shell
+\section{Path}
+\begin{itemize}
+  \item path: list of names seperated  by ``/''
+  \item \textbf{Absolute Path}
+    \begin{itemize}[label=$\circ$]
+      \item Traces a path from root to a file or a directory
+      \item Always begins with the root (/) directory \vspace{1mm}
+        
+       \noindent \textbf{\underline{Example:}} /home/student/Desktop/assign1.txt
+    \end{itemize}
+  \item \textbf{Relative Path}
+    \begin{itemize}[label=$\circ$]
+      \item Traces a path from the current directory
+      \item No inital forward slash (/)
+        \begin{itemize}[label=$\circ$]
+          \item dot (.) refers to current directory
+          \item (..) referes to one level up in the directory hierarchy \vspace{1.5mm}
+
+       \noindent \textbf{\underline{Example:}} Desktop/assign1.txt
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+\section{Linking Files}
+\begin{itemize}
+  \item Allows one file to be known by different names 
+  \item Link is a reference to a file stored elsewhere
+    \bigbreak \noindent
+  \item 2 types:
+    \begin{itemize}[label=$\circ$]
+      \item Hard link (default) 
+      \item Symbolic link (a.k.a. ``soft link'')
+    \end{itemize}
+\end{itemize}
+\bigbreak \noindent
+\textbf{\textit{Syntax:}}
+\begin{minted}{bash}
+ln [-s] target local
+\end{minted}
+\newpage
+\section{User's Disk Quota}
+\begin{itemize}
+  \item Quota is upper limit of \hspace{20mm} $\bullet$ 2 Kinds of limits:
+    \begin{itemize}[label=$\circ$]
+      \item amount of disk space  \hspace{20mm} $\circ$ Soft limit: ex. 100MB (system will only complain)
+      \item number of files \hspace{30mm} $\circ$ Hard limit ex. 120MB (Cannot be exceeded)
+    \end{itemize}
+    For each user account
+    \bigbreak \noindent
+  \item \textbf{command:} quota -v
+    \begin{itemize}[label=$\circ$]
+      \item displays the user's disk usage and limits
+    \end{itemize}
+\end{itemize}
+\section{Unix Text editors}
+\begin{itemize}
+  \item Vi or vim 
+  \item pico, nano
+  \bigbreak \noindent
+\item GUI editors
+  \begin{itemize}[label=$\circ$]
+    \item gedit or ``text Editor'' 
+    \item geany
+    \item emacs
+    \item VS code
+  \end{itemize}
+\end{itemize}
+\section{Networking Utilities}
+\begin{itemize}
+  \item Most network protocols were developed on UNIX 
+  \item Most (not all) UNIX systems provided them:
+    \bigbreak \noindent
+  \item login to another computer
+    \begin{itemize}[label=$\circ$]
+    \item telnet, rlogin, rsh, ssh 
+  \end{itemize}
+\item copy files to another computer
+  \begin{itemize}[label=$\circ$]
+    \item rcp, spc 
+    \item ftp, sftp
+  \end{itemize}
+\item Linux desktop provides GUI-enabled tools
+  \begin{itemize}[label=$\circ$]
+    \item file manager 
+  \end{itemize}
+\end{itemize}
+\section{Special Permissions}
+\begin{itemize}
+  \item The regular file permissions (rwx) are used to assign security to files and directories
+  \item 3 additional special permissions can be optionally used on files and directories
+    \begin{itemize}[label=$\circ$]
+    \item Set User Id (SUID) (allows programs to run with the permissions of the owner of the file)
+    \item Set Group ID (SGID) (allows programs to run with the permissions of the group of the file)
+    \item Sticky bit (makes sure you can only delete files that you actually own)
+    \end{itemize}
+\end{itemize}
+\newpage
+\section{Permissions}
+\section{File mode creation mask}
+\begin{itemize}
+  \item umask (user mask)
+    \begin{itemize}[label=$\circ$]
+      \item governs default permissions for files and directories
+      \item sequence of 9 bits: 3 times 3 bits of rwx
+      \item default 000 010 010 (022)
+    \end{itemize}
+  \item in octal form its bits are removed from:
+    \begin{itemize}[label=$\circ$]
+      \item for a file: \hspace{10mm} 110 110 110 (666)
+      \item for a directory: \hspace{1mm} 111 111 111 (777)
+    \end{itemize}
+  \item new permissions
+    \begin{itemize}[label=$\circ$]
+      \item file: 110 100 100 (644)
+      \item directory: 111 101 101 (755)
+    \end{itemize}
+\end{itemize}
+\section{UNIX Command Interpreters}
+\textbf{Common Term: Shell}
+\begin{itemize}
+  \item Standard:  
+    \begin{itemize}[label=$\circ$]
+      \item every UNIX system has a ``Bourne shell compatible'' shell
+    \end{itemize}
+  \item history:
+    \begin{itemize}[label=$\circ$]
+      \item sh: Original Bourne shell, written in 1978 by Steve Bourne
+      \item ash: Almquist shell, BSD-licensed replacement of sh
+    \end{itemize}
+  \item Today:
+    \begin{itemize}[label=$\circ$]
+      \item bash: Bourne again shell, GNU replacement of sh
+      \item dash: Debian Almquist shell, small scripting shell
+    \end{itemize}
+\end{itemize}
+\section{Bash shell basics}
+\begin{itemize}
+  \item Customization
+\begin{itemize}[label=$\circ$]
+  \item startup and initilization
+  \item variables, prompt and aliases
+\end{itemize}
+\item Command line behavior
+  \begin{itemize}[label=$\circ$]
+    \item history
+    \item sequence  (;)
+    \item substitution (\`\`)
+    \item redirections and pipe
+  \end{itemize}
+\end{itemize}
+\newpage
+\section{Redirections and Pipe}
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}ll@{}}
+\toprule
+Command Syntax       & Meaning                                                   \\ \midrule
+\texttt{command < file}         & redirect input from \texttt{file} to \texttt{command}                 \\
+\texttt{command > file}         & redirect output from \texttt{command} to \texttt{file}                \\
+\texttt{command >> file}        & redirect output of \texttt{command} and appends it to \texttt{file}   \\
+\texttt{command 2> file}        & add error output to standard output, redirect both into \texttt{file} \\
+\texttt{command 2>\&1}          & redirect both standard output and standard error to \texttt{file}     \\
+\texttt{command1 | command2}    & take/pipe output of \texttt{command1} as input to \texttt{command2}   \\
+\texttt{command <\& label}      & take input from current source until \texttt{LABEL} line              \\ \bottomrule
+\end{tabular}
+\end{table}
+\section{Wildcards: * ? [ ] \{ \}}
+A pattern of special characters used to match file names on the command line
+\bigbreak \noindent
+\begin{minipage}{0.5\textwidth}
+* \ \ zero or more characters	\\ 
+\$ rm *  \\ 
+\$ ls *.txt \\
+\$ wc -l assign.* \\
+\$ cp a*.txt docs
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+? \ exactly one character (can be chained together)	 \\
+\$ ls assign?.cc \\ 
+\$ wc assign?.?? \\
+\$ rm junk.???
+\end{minipage}
+\section{Regular Expressions}
+\begin{itemize}
+  \item A pattern of special characters to match strings in a search 
+  \item Typically made up from special characters called meta-characters: . * + ? [ ] \{ \} ( )
+  \item Regular expressions are used throughout UNIX:
+    \begin{itemize}[label=$\circ$]
+      \item utilities: grep, awk, sed, \ldots
+    \end{itemize}
+  \item 2 types of regular expressions: basic vs. extended
+\end{itemize}
+\section{Metacharacters}
+. \hspace{10mm} Any one character, except new line \vspace{2mm}
+
+\noindent [a-z]\hspace{6mm} Any one of the enclosed characters (e.g. a-z) \vspace{2mm}
+
+\noindent * \hspace{10mm} Zero or more preceding characters \vspace{2mm}
+
+\noindent ? \ also \ \textbackslash ? \hspace{2mm} Zero or one of the preceding characters \vspace{2mm}
+
+\noindent + \ also: \textbackslash +  \hspace{2mm} One or more of the preceding characters \vspace{2mm}
+
+\noindent \textasciicircum  \ or  \$ \hspace{10mm} Beginning or end of line \vspace{2mm}
+
+\noindent \textbackslash $<$ or \textbackslash $>$ \hspace{10mm} Beginning or end of word \vspace{2mm}
+
+\noindent ( ) \ also: \ \textbackslash( \textbackslash) \hspace{3mm} Groups matched characters to be used later \vspace{2mm}
+
+\noindent $|$ also: \textbackslash$|$ \hspace{10mm} Alternate\vspace{2mm}
+
+\noindent x\{m,n\} also: \ x\textbackslash\{m,n\textbackslash\} \hspace{2mm} Repetition of character x between m and n times
+\newpage
+\section{Quoting and Escaping}
+Allows to distinguish between the literal value of a symbol and the symbols used as meta-characters
+\bigbreak \noindent
+Done via the following symbols:
+\begin{itemize}
+  \item Backslash (\textbackslash)
+  \item Single quote (')
+  \item Double quote (")
+\end{itemize}
+\section{Shell Script: the basics}
+\begin{itemize}
+  \item 1. line for shell script
+    \subitem \#! /bin/bash
+    \subitem or: \#! /bin/sh
+  \item to run:
+    \subitem \$ bash script
+  \item or:
+    \begin{itemize}[label=$\circ$]
+      \item make executable: \hspace{5mm} \$ chmod +x script
+      \item invoke via: \hspace{15mm} \$ ./script
+    \end{itemize}
+\end{itemize}
+\section{bash shell Programming Features}
+\begin{itemize}
+  \item Variables
+    \begin{itemize}[label=$\circ$]
+      \item string, number, array
+    \end{itemize}
+  \item Input/Output
+    \begin{itemize}[label=$\circ$]
+      \item echo, printf
+      \item command line arguments, read from user
+    \end{itemize}
+  \item Decision 
+    \begin{itemize}[label=$\circ$]
+      \item conditional execution, if-then else
+    \end{itemize}
+  \item Repetition
+    \begin{itemize}[label=$\circ$]
+      \item while, until, for
+    \end{itemize}
+  \item Functions
+\end{itemize}
+\section{Command line arguments}
+\hspace{15mm} \underline{Meaning} \vspace{1.5mm}
+
+\noindent \$1 \ \ \ \ \ \ \ \ \ \ first parameter \vspace{1.5mm}
+
+\noindent \$2 \ \ \ \ \ \ \ \ \ \ second parameter \vspace{1.5mm}
+
+\noindent \${10} \ \ \ \ \ \ \ \ 10th parameter
+\bigbreak \noindent
+\$0 \ \ \ \ \ \ \ \ \ \ Name of the script \vspace{1.5mm}
+
+\noindent \$* \ \ \ \ \ \ \ \ \ \ all positional parameters \vspace{1.5mm}
+
+\noindent \$\# \ \ \ \ \ \ \ \ \ The number of arguments
+\newpage
+\section{User input: read command}
+\bigbreak \noindent
+\textbf{\textit{Syntax:}}
+\begin{minted}{bash}
+read [-p "prompt"] varname [more vars] 
+\end{minted}
+\nt{
+Once again the brackets are for stuff that is optional
+}
+\begin{itemize}
+  \item words entered by user are assigned to
+    \begin{minted}{bash}
+    varname and "more vars"
+    \end{minted}
+  \item last variable gets rest of input line
+\end{itemize}
+\section{test command}
+\bigbreak \noindent
+\textbf{\textit{Syntax:}}
+\begin{minted}{bash}
+test expression
+[ expression ]
+\end{minted}
+\begin{itemize}
+  \item evaluates 'expression' and returns true or false
+\end{itemize}
+\bigbreak \noindent
+\textbf{\underline{Example:}}
+\begin{mdframed}
+\begin{minted}{bash}
+if test $name = "Joe"
+then
+  echo "Hello Joe"
+
+if [ $name = "Joe" ]; then
+  echo "Hello Joe"
+\end{minted}
+\end{mdframed}
+\section{Shell scripting features}
+\begin{itemize}
+  \item How to debug?
+  \item Decision
+    \begin{itemize}[label=$\circ$]
+      \item case
+    \end{itemize}
+  \item Repetition
+    \begin{itemize}[label=$\circ$]
+      \item while, until
+      \item for
+    \end{itemize}
+  \item Functions
+\end{itemize}
+\section{What can you do with awk?}
+\begin{itemize}
+  \item awk operation: 
+    \begin{itemize}[label=$\circ$]
+      \item reads a file line by line 
+      \item splits each input line into fields
+      \item compares input line/fields to pattern
+        performs action(s) on matched lines
+    \end{itemize}
+  \item Useful for:
+    \begin{itemize}[label=$\circ$]
+      \item transforming data files 
+      \item producing formatted reports
+    \end{itemize}
+  \item Programming constructs
+    \begin{itemize}[label=$\circ$]
+      \item format output lines 
+      \item arithmetic and string operations
+      \item conditionals and loops
+    \end{itemize}
+\end{itemize}
+\section{Basic awk script}
+\begin{itemize}
+  \item consists of patterns and actions
+\end{itemize}
+\bigbreak \noindent
+\textbf{\textit{Syntax:}}
+\begin{minted}{bash}
+pattern {action}
+\end{minted}
+\begin{itemize}
+  \item if pattern is missing, action is applied to all lines
+  \item if action is missing, the matched line is printed
+  \item must have either pattern or action
+\end{itemize}
+\bigbreak \noindent
+\textbf{\underline{Example:}}
+\begin{mdframed}
+\begin{minted}{bash}
+awk '/for/ { print }' testfile
+\end{minted}
+\end{mdframed}
+\begin{itemize}
+\item prints all lines containing string ``for'' in testfile
+\end{itemize}
+\section{awk variables}
+awk reads input line into buffer: \underline{record} and \underline{fields}
+\begin{itemize}
+  \item field buffer:
+    \begin{itemize}[label=$\circ$]
+      \item one for each field in the current record
+      \item variable names: \$1, \$2, \ldots
+    \end{itemize}
+  \item record buffer
+    \begin{itemize}[label=$\circ$]
+      \item \$0 holds the entire record
+    \end{itemize}
+\end{itemize}
+\bigbreak \noindent
+\begin{itemize}
+  \item NR \ \ \ Number of the current record
+  \item NF \ \ \ Number of fields in the current record
+  \item FS \ \ \ Field separator (default=whitespace)
+\end{itemize}
+\section{awk Patterns}
+\begin{itemize}
+  \item simple patterns
+    \begin{itemize}[label=$\circ$]
+      \item BEGIN, END
+      \item expression patterns: whole line vs. explicit field match
+       \begin{itemize}[label=$\circ$]
+         \item whole line \ \ \ \ /regExp/
+         \item field match \ \ \ \ \$2 \textasciitilde /regExp
+       \end{itemize} 
+    \end{itemize}
+  \item range patterns
+  \begin{itemize}[label=$\circ$]
+    \item specified as from and to:
+      \subitem Example:  \ \ \ \ \ \ /regExp/,/regExp/
+  \end{itemize}
+\end{itemize}
+\newline
+\section{awk Patterns}
+\begin{itemize}
+  \item basic expressions
+    \bigbreak \noindent
+  \item output: \ \ \ \ print, printf
+  \item decisions: \ \ \ \ if
+  \item loops: \ \ \ \ for, while
+\end{itemize}
+\section{How Does sed Work?}
+\begin{itemize}
+  \item sed reads file line by line
+    \begin{itemize}[label=$\circ$]
+      \item line of input is copied into a temporary buffer called \underline{pattern} space
+      \item editing instructions are applied to line in the pattern space
+      \item line is sent to output (unless "-n" option was used)
+      \item line is removed from pattern space
+    \end{itemize}
+  \item sed reads next line of input, until end of file
+\end{itemize}
+\nt{
+  input file is unchanged unless ``-i'' option is used
+}
+\section{sed instruction format}
+\begin{itemize}
+  \text address determines which lines in the input file are to be processed by the commands(s)
+  \begin{itemize}[label=$\circ$]
+    \item if no address is given, then the command is applied to each input line
+  \end{itemize}
+\item address types:
+  \begin{itemize}[label=$\circ$]
+    \item Single-Line address
+    \item Set-of-Lines address
+    \item Range address
+  \end{itemize}
+\end{itemize}
+\end{document} 
