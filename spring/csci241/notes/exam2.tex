@@ -1,0 +1,243 @@
+\documentclass{report}
+
+\input{~/latex/template/preamble.tex}
+\input{~/latex/template/macros.tex}
+
+\title{\Huge{Exam 2 Review}}
+\author{\huge{Matt Warner}}
+\date{\huge{}}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{}
+\lhead{\leftmark}
+\cfoot{\thepage}
+% \usepackage[default]{sourcecodepro} \usepackage[T1]{fontenc}
+
+\pgfpagesdeclarelayout{boxed}
+{
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=1,%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {
+    border code=\pgfsetlinewidth{1.5pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.95\pgfphysicalwidth,%
+    resized height=.95\pgfphysicalheight,%
+    center=\pgfpoint{.5\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+}
+
+\pgfpagesuselayout{boxed}
+
+\begin{document}
+  \maketitle
+  \section{OOP basics (GOOD)}
+  \begin{itemize}
+    \item Given a description of a class, be able to write a header file containing a declaration for that class, including header guards, data member declarations, friend function declarations, and member function prototypes. 
+    \item Be able to wrtie common types of member functions such as \textbf{default constructor that takes no args}, \textbf{a constructor that takes args, accessor and mutator member functions (get and set functions)}.
+  \end{itemize} 
+  \begin{mdframed}
+  \begin{minted}{c++}
+#ifndef HEADER_H 
+#define HEADER_H
+  
+class Entity {
+
+  // Data member declarations
+  int x, y; 
+
+  // friend function declaration
+  friend std::ostream& operator<<(std::ostream&, const Entity&); 
+
+  // Constructors
+  Entity();
+  
+  Entity(int x, int y)
+  Entity(const Entity&); // copy constructor (used with pointers)
+
+  // Member functions
+  void push(int value);
+  void pop();
+
+  // Accessor and mutator functions (get and set)
+  void set_x(int x);
+  void get_x() const;
+};
+  \end{minted}
+  \end{mdframed}
+\begin{itemize}
+\end{itemize}
+\section{Binary Search Algorithm (GOOD)}
+\begin{itemize}
+  \item Be able to trace the execution of the binary search algorithm as it searches an array for a particular search key. You should be able to track the values of the subscripts \textbf{low, high, mid} as the algo progresses.
+\end{itemize}
+\section{C++ Pointers and References}
+\begin{itemize}
+  \item Be able to declare a pointer, a pointer to constant data, a constant pointer, or a constant pointer to constant data.
+
+\end{itemize}
+\begin{mdframed}
+\begin{minted}{c++}
+// regular pointer
+int* ptr = nullptr
+int* ptr = &num;
+
+// pointer to constant data
+int* const ptr = nullptr;
+
+// const pointer
+const int* ptr;
+
+// const pointer to const data.
+const int* const ptr;
+\end{minted}
+\end{mdframed}
+\begin{itemize}
+  \item Be able to answer questions about pointer syntax, the indirection operator (unary *), the ``address of'' operator (unary \&), and the relationship between a pointer and the variables it points to.
+  
+\end{itemize}
+\section{The const keyword}
+\begin{itemize}
+  \item Be able to declare a pointer to const data, a const pointer, or a const pointer to const data. Know what restrictions doing so places on using the pointer.
+\end{itemize}
+\bigbreak \noindent
+\begin{itemize}
+  \item int* const ptr (pointer to const data)
+    \begin{itemize}[label=$\circ$]
+      \item pointer to const data cannot change the value stored at the address being pointed to. 
+      
+    \end{itemize}
+  \item const int* ptr (const pointer)
+    \begin{itemize}[label=$\circ$]
+      \item Cannot change the address stored in the pointer variable
+    \end{itemize}
+  \item const int* const ptr; (const pointer to const data)
+    \begin{itemize}[label=$\circ$]
+      \item this prevents you from changing the value stored at the address being pointed to and it prevents you from changing the address stored in the pointer variable.
+    \end{itemize}
+\end{itemize}
+\bigbreak \noindent \bigbreak \noindent
+    \begin{itemize}
+      \item Be able to declare a reference to const data. Know what restrictions this places on using the reference.
+    \begin{itemize}[label=$\circ$]
+      \item const string\& s (Cannot change the value of the variable that the reference var refers to)
+    \end{itemize}
+  \item Be able to list the things that can't be done in a const member function.
+    \begin{itemize}[label=$\circ$]
+      \item Cannot change the values of data members
+        \item cannot call non const methods.
+        \item an object that is not const can call a const member function or a non-const member function. AN object that is const (or a pointer to a const object or a reference to a const object) can only call member functions that are const.
+    \end{itemize}
+    \end{itemize} 
+    \section{Default Function Arguments}
+    \begin{itemize}
+      \item Default values for function and member function parameters may be coded as part of a prototype.
+      \item Parameters with default values must be trailing parameters in the function prototype parameter list.
+      \item When a function defined with default parameter values is called with trailing arguments missing, the default values are used.
+    \end{itemize}
+    \section{Function and Member function overloading}
+    \begin{itemize}
+      \item You should know the criteria used by the compiler to distinguish between two or more functions or member functiosn with the same name and in the same scope
+    \begin{itemize}[label=$\circ$]
+      \item The number of args
+      \item The data types of the args
+      \item The order of the data types
+      \item Whether or not a member function is const
+    \end{itemize}
+    \end{itemize}
+    \newpage
+    \section{The this$\rightarrow$ pointer}
+    \begin{itemize}
+      \item The this pointer points to the object that called the method. 
+      \item For a member function of class \textit{class\_name}, the data type of the this pointer is either class\_name* (if the member funciton is not const) or const class\_name* (for a  const member function)
+      \item Standalone functions and static member functions do not have a this pointer since they are not called for a specific object.
+    \end{itemize}
+    \section{The friend Keyword}
+    \begin{itemize}
+      \item Know how to declare a class or standalone function to be a friend class.
+        \begin{itemize}[label=$\circ$]
+          \item For a class, code the keyword friend followed by the class name.
+          \item For a function, code the keyword friend followed by the function's prototype
+        \end{itemize}
+      \item Friendship grants direct access to the private members of a class.
+      \item Friendship must always be explicity declared.
+        \begin{itemize}[label=$\circ$]
+          \item If A is a friend of B, B is not automatically a friend of a.
+          \item If A is a friend of B and B is a friend of C, A is not automatically a friend of C (no transitive property applies)
+        \end{itemize}
+    \end{itemize}
+    \section{Operator Overloading}
+    \begin{itemize}
+      \item Be able to list the aspects of an operator that cannot be changed by operator overloading
+        \begin{itemize}[label=$\circ$]
+          \item Precedence
+          \item number of arguments (operands)
+          \item direction evaluation
+          \item and how the operator works with built-in data types
+        \end{itemize}
+      \item Know which operators must be overloaded as member functions, and when an operator must be overloaded as a standalone function
+        \begin{itemize}[label=$\circ$]
+          \item The stream insertion operator (" << ")
+          \item any other function that has an lhs operand that is not a object of our class.
+        \end{itemize}
+      \item Know what the function call generated by the compiler for an overloaded operator will look like.
+        \begin{itemize}[label=$\circ$]
+          \item a.operator+(b) (this is what it looks like for member functions)
+          \item operator+(a, b); (this is what it looks like for non-member functions)
+        \end{itemize}
+      \item Be able to write overloaded operator functions similar to those used on programming assignments and recitation projects - stream insertion operator, relational operators, arithmetic operators, subscript operators.
+    \end{itemize}
+    \section{Dynamic Storage Allocation}
+    \begin{itemize}
+      \item Know how to use the new[] operator to allocate dynamic storage for an array.
+      \item A dynamically-allocated array of objects create with new[] will call the class's default constructor for each object of the array.
+      \item Know how to use the delete[] operator to de-allocate a dynamic array.
+      \item A dynamically-allocated array of objects will have the destructor called for each object of the array when it is deleted with delete[].
+      \item A ``shallow'' copy of an object copies only the object but not the dynamic storage that it owns. A ``deep'' copy of an object copies the object and the dynamic storage that it owns.
+      \item A class that allocates dynamic storage for one or more of its data members requires coding all three of the following functions.
+        \begin{itemize}[label=$\circ$]
+          \item destructor
+          \item copy constructor
+          \item copy assignment operator
+        \end{itemize}
+  \end{itemize}
+  \section{Destructor}
+  \begin{itemize}
+    \item A destructor is called for a class object when it goes out of scope, is deleted, or the program ends.
+    \item Be able to write a destructor for a class that dynamically created an array.
+  \end{itemize}
+  \section{copy constructor}
+  \begin{itemize}
+    \item Be able to list the three situations which may result in a call to the copy constructor.
+      \begin{itemize}[label=$\circ$]
+        \item When a new object is created and initialized with an exisiting object.
+        \item When an object is passed to a function or method by value
+        \item when an object is returned from a function or method by value.
+      \end{itemize}
+  \end{itemize}
+  \section{Copy Assignment Operator}
+  \begin{itemize}
+    \item Be able to write a copy assignment operator for a class that dynamically creates an array.
+  \end{itemize}
+  \section{Abstract Data Type Definition}
+  \begin{itemize}
+    \item An \textbf{abstract data type} is a data type defined in terms of what may be stored and the operations that may be performed on it. It does not specify \textbf{how} the data is represented in memory.
+
+  \end{itemize}
+  \section{Stack and Queue ADTs}
+  \begin{itemize}
+    \item Know the behavior that the stack and queue ADTs produce (``last in, first out'' vs. ``first in, first out'')
+      \begin{itemize}[label=$\circ$]
+        \item stack is last in first out (LIFO)
+        \item queue is first in first out (FIFO)
+      \end{itemize}
+    \item Know the types of errors that can occur when using a stack or queue (underflow on pop(), top(), front(), back())
+    \item Be able to add an item to a stack or queue (array implementation only)
+    \item Be familiar with the other typical operations performed on a stack or queue (size(), empty()), copy constructor, copy assignement operator, destructor, etc.
+  \end{itemize}
+\end{document}

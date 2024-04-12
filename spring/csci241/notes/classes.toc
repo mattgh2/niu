@@ -4,4 +4,3 @@
 \contentsline {section}{\numberline {4}Accessor and Mutator Member Functions}{5}{section.0.4}%
 \contentsline {section}{\numberline {5}Other Member Functions}{6}{section.0.5}%
 \contentsline {section}{\numberline {6}C++11 initilization Option for Data Members}{6}{section.0.6}%
-\contentsfinish 

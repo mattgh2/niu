@@ -1,51 +1,49 @@
-//***************************************************************************
-//
-//  mystack.h
-//  CSCI 241 Assignment 11
-//
-//  Created by Matt Warner (z2004200)
-//
-//***************************************************************************
-#ifndef MYSTACK_H
+#ifndef MYSTACK_H 
 #define MYSTACK_H
 
-#include <cstddef>
+#include <cstdlib>
 #include <ostream>
+
 
 class mystack {
 
 private:
-  // Data members
-  char *stackArray;
-  size_t stackCapacity;
-  size_t stackSize;
+
+  struct node {
+
+    node* next;
+    int value;
+
+    node(int value, node* next = nullptr) {
+      this-> value = value;
+      this-> next = next;
+    }
+
+  };
+
+  node* head = nullptr;
+  size_t stackSize = 0;
+
+  
 
 public:
-
-  // contructors
-  mystack();
+  mystack() = default;
   mystack(const mystack& x);
-
-  // destructor
   ~mystack();
 
-  // Operation overloading
-  mystack& operator=(const mystack& x);
-  
-  // friend declaration for stream insertion operator overloading
   friend std::ostream& operator<<(std::ostream& os, const mystack& obj);
-
-  // Class methods
-  size_t capacity() const;
+  mystack& operator=(const mystack &x);
   size_t size() const;
   bool empty() const;
   void clear();
-  void reserve(size_t n);
-  const char& top() const;
-  void push(char value);
+  const int& top() const;
+  void push(int);
   void pop();
+  void clone(const mystack&);
+
+
 };
 
 std::ostream& operator<<(std::ostream& os, const mystack& obj);
-
+  
 #endif

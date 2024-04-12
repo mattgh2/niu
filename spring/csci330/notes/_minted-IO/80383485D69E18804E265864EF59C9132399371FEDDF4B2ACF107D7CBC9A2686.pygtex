@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+ssize\PYGZus{}t\PYG{+w}{ }read\PYG{o}{(}int\PYG{+w}{ }fd,\PYG{+w}{ }void\PYG{+w}{ }*buf,\PYG{+w}{ }size\PYGZus{}t\PYG{+w}{ }count\PYG{o}{)}
+\end{Verbatim}

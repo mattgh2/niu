@@ -1,6 +1,6 @@
 #ifndef EVAL_H
 #define EVAL_H
-
+#include <iostream>
 #include <string>
 #include <sstream>
 #include "inpost.h"

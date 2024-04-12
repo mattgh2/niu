@@ -1,0 +1,253 @@
+\documentclass{report}
+
+\input{~/latex/template/preamble.tex}
+\input{~/latex/template/macros.tex}
+
+\title{\Huge{Input \& Output}}
+\author{\huge{Matt Warner}}
+\date{\huge{}}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{}
+\lhead{\leftmark}
+\cfoot{\thepage}
+% \usepackage[default]{sourcecodepro} \usepackage[T1]{fontenc}
+
+\pgfpagesdeclarelayout{boxed}
+{
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=1,%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {
+    border code=\pgfsetlinewidth{1.5pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.95\pgfphysicalwidth,%
+    resized height=.95\pgfphysicalheight,%
+    center=\pgfpoint{.5\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+}
+
+\pgfpagesuselayout{boxed}
+
+\begin{document}
+  \maketitle
+  \tableofcontents
+  \newpage
+  \section{UNIX System Call} 
+  \begin{itemize}
+    \item a system call is how a program prequest a service from the operating system, i.e. UNIX kernal
+    \item System call executes code in the kernal and makes direct use of facilities provided by the kernal.
+  \end{itemize}
+  \bigbreak \noindent
+  \textit{\textbf{Versus:}}
+  \begin{itemize}
+    \item libray function is linked to executable, becomes part of the executable.
+  \end{itemize}
+  \subsection{System Call Categories}
+  \begin{itemize}
+    \item \textbf{File management}
+      \begin{itemize}[label=$\circ$]
+        \item create/delete file, open/close, read/write, get/set attributes.
+      \end{itemize}
+    \item \textbf{Process control}
+      \begin{itemize}[label=$\circ$]
+        \item create/terminate process, wait/signal event, allocate/free memory
+      \end{itemize}
+    \item \textbf{Communication}
+      \begin{itemize}[label=$\circ$]
+        \item create/delete connection, send/recieve messages, remote devices
+      \end{itemize}
+    \item \textbf{Information management}
+      \begin{itemize}[label=$\circ$]
+        \item get/set system data and attributes, e.g. time
+      \end{itemize}
+    \item \textbf{Device management}
+      \begin{itemize}[label=$\circ$]
+        \item attach/request/release/detach device, read/write/position.
+      \end{itemize}
+  \end{itemize}
+  \subsection{System Call Invocation} 
+  \begin{itemize}
+    \item Declare system call via appropriate C header file
+      \begin{itemize}[label=$\circ$]
+        \item Read man page carefully (section 2)
+      \end{itemize}
+    \item Prepare parameters using basic C data types
+      \begin{itemize}[label=$\circ$]
+        \item No c++ classes, i.e. string
+      \end{itemize}
+    \item Prepare suitable return value variable
+  \end{itemize}
+  \textit{\textbf{Note: Call like any other function}}
+  \section{File Management}
+  \begin{itemize}
+    \item \textbf{open} \hspace{6.5mm} open a file
+    \item \textbf{read} \hspace{6.5mm} read data from a file
+    \item \textbf{write} \hspace{5.5mm} write data to a file
+    \item \textbf{close} \hspace{6.5mm} close a file
+    \item \textbf{creat} \hspace{6.5mm} make a new file
+    \item \textbf{unlink} \hspace{5mm} remove file
+    \item \textbf{stat} \hspace{10mm} remove file
+    \item \textbf{chmod} \hspace{5mm} change permissions
+    \item \textbf{dup} \hspace{10mm} duplicate file descriptor
+  \end{itemize}
+  \textit{\textbf{All calls share \underline{file descriptor}, i.e. number, to identify file}}
+  \newpage
+  \subsection{System Call: open}
+  \bigbreak \noindent
+  \textbf{\textit{Syntax:}}
+  \begin{minted}{bash}
+  int open(const char* pathname, int flags)
+  \end{minted} 
+  \begin{itemize}
+    \item opens file specified as \textbf{pathname} for access
+    \item \textbf{flags} determine access types
+      \subitem\textbf{O\_RDONLY} \ \ read only
+      \subitem \textbf{O\_WRONLY} \ \ write only
+      \subitem \textbf{O\_RDWR} \ \ read and write
+    \item returns file descriptor, to be used in read/write/close
+    \item returns -1 on error
+      \bigbreak \noindent
+    \item additional \textbf{flags,} used with \textbf{O_WRONLY}
+        \subitem \textbf{O\_APPEND} \ \ to append to an existing file
+        \subitem \textbf{O\_TRUNC} \ \ existing file will overwritten (default)
+  \end{itemize}
+  \textit{\textbf{Ex:}}
+
+  \textbf{O\_WRONLY} | \textbf{O\_TRUNC} \vspace{1.5mm}
+    
+    \textbf{O\_WRONLY | O\_APPEND}
+    \begin{itemize}
+      \item additional flag: \textbf{O\_CREAT}
+        \begin{itemize}[label=$\circ$]
+          \item creates file, if file does not exist
+        \end{itemize}
+    \end{itemize}
+\subsection{System Call: read}
+\bigbreak \noindent
+\textbf{\textit{Syntax:}}
+\begin{minted}{bash}
+ssize_t read(int fd, void *buf, size_t count)
+\end{minted}
+\begin{itemize}
+  \item attempts to read \textbf{count} bytes from file descriptor \textbf{fd} into the buffer starting at \textbf{buf}
+    \begin{itemize}[label=$\circ$]
+      \item \textbf{ssize\_t} and \textbf{size\_t} are system specific integer types
+    \end{itemize}
+  \item returns the number of bytes read
+    \begin{itemize}[label=$\circ$]
+      \item maybe smaller than count, zero indicates end of file
+      \item file position is advanced by this number
+    \end{itemize}
+  \item returns -1 on error
+\end{itemize}
+\subsection{System Call: close}
+\bigbreak \noindent
+\textbf{\textit{Syntax:}}
+\begin{minted}{bash}
+int close(int fd)
+\end{minted}
+\begin{itemize}
+  Closes file specified by \textbf{fd} file descriptor
+  \begin{itemize}[label=$\circ$]
+  Makes file descriptor available
+  \end{itemize}
+  \item returns zero on success
+\end{itemize}
+\subsection{System Call: write}
+\bigbreak \noindent
+\textbf{\textit{Syntax:}}
+\begin{minted}{bash}
+ssize_t write(int fd, const void *buf, size_t count)
+\end{minted}
+\begin{itemize}
+  \item Writes up to count bytes from buffer starting at \textbf{buf} to the file referred to by file descriptor \textbf{fd}
+    \begin{itemize}[label=$\circ$]
+      \item \textbf{ssize\_t} and \textbf{size\_t} are system specific integer types
+    \end{itemize}
+  \item Returns the number of bytes written
+    \begin{itemize}[label=$\circ$]
+      \item may be smaller than count
+    \end{itemize}
+  \item returns -1 on error
+\end{itemize}
+\newpage
+\section{System Call: open with O\_CREAT}
+\begin{itemize}
+\item must specify file mode, i.e. permissions, of type \textbf{mode\_t}
+  \subitem \textbf{S\_IRWXU} \ \ 00800 \ \ user has read, write and execute permission
+  \subitem \textbf{S\_IRUSR} \ \ 00400 \ \ user has read permission
+  \subitem \textbf{S\_IWUSR} \ \ 00200 \ \ user has write permission
+  \subitem \textbf{S\_IXUSR} \ \ 00100 \ \ user has execute permission
+  \subitem \textbf{S\_IRWXG} \ \ 00070 \ \ group has read, write and execute permission
+  \subitem \textbf{S\_IRWXO} \ \ 00007 \ \ others have read, write and execute permission
+\item C++ requires leading '0' for octal numbers
+\item actual file mode is further modified by umask
+\end{itemize}
+\bigbreak \noindent
+\textbf{\underline{Example:}}
+\begin{minted}{c++}
+open("ex.txt", O_WRONLY | O_APPEND | O_CREAT, 00666)
+\end{minted}
+\subsection{System Call: creat}
+\bigbreak \noindent
+\textbf{\textit{Syntax:}}
+\begin{minted}{bash}
+int creat(const char *pathname, mode_t mode)
+\end{minted}
+\begin{itemize}
+  \item creates new file specified as \textbf{pathname} and opens file for write access
+  \item returns file descriptor
+  \item returns -1 on error
+\end{itemize}
+\begin{minted}{c++}
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <iostream>
+
+int main(int argc, char** argv) {
+
+  int ifd, ofd, count, sum=0;
+  char buffer[1024];
+
+  // check command line args
+  if (argc < 3) {
+    std::cerr << "Usage: copy fromFile toFile\n";
+    exit(EXIT_FAILURE);
+  }
+
+  // open file to read
+  ifd = open(argv[1], O_RDONLY);
+  if(ifd == -1) {
+    perror(argv[1]);
+    exit(EXIT_FAILURE);
+  }
+
+  // open file to write
+  ofd = open(argv[2], O_WRONLY | O_TRUNC | O_CREAT, 00666);
+  
+  // loop to read/write buffer
+  while ((count = read(ifd, buffer, sizeof(buffer))) != 0) {
+    if ((count == -1)) {
+      perror(argv[1]);
+      exit(EXIT_FAILURE)
+    }
+    count = write(ofd, buffer, count);
+    if (count == -1) {
+      perror(argv[2]);
+      exit(EXIT_FAILURE)
+    }
+  }
+  cout << "copied " << sum << "bytes from " << argv[1] << " to " << argv[2] << endl;
+  // close all files
+  close(ifd);
+  close(ofd);
+}
+\end{minted}
+\end{document}

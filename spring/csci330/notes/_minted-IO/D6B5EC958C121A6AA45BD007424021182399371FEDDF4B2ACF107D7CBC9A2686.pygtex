@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+int\PYG{+w}{ }close\PYG{o}{(}int\PYG{+w}{ }fd\PYG{o}{)}
+\end{Verbatim}

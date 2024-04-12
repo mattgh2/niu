@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+int\PYG{+w}{ }creat\PYG{o}{(}const\PYG{+w}{ }char\PYG{+w}{ }*pathname,\PYG{+w}{ }mode\PYGZus{}t\PYG{+w}{ }mode\PYG{o}{)}
+\end{Verbatim}

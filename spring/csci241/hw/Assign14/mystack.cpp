@@ -1,164 +1,123 @@
 //***************************************************************************
 //
 //  mystack.cpp
-//  CSCI 241 Assignment 11
+//  CSCI 241 Assignment 13
 //
 //  Created by Matt Warner (z2004200)
 //
 //***************************************************************************
 #include "mystack.h"
-
-/** Default constructor: Initilizes new mystack object to an empty stack.
- *
- */
-mystack::mystack() {
- stackArray = nullptr;  
- stackCapacity = 0;
- stackSize = 0;
-}
 /**
- * Copy constructor: Initilizes a new mystack object to the same values 
- * for all of its data members as the mystack object that is passed into the function.
+ * Copy constructor : initializes a new mystack object, copys data from ecisting object x to new object
+ * 
  *
- * @param x: a object of the mystack class.
+ * @param x: a reference to a constant mystack object.
+ *
  */
-mystack::mystack(const mystack& x) {
-
-   stackSize = x.stackSize;
-   stackCapacity = x.stackCapacity;
-
-  if (stackCapacity == 0)
-    stackArray = nullptr;
-  else
-    stackArray = new char[ stackCapacity];
+mystack::mystack(const mystack &x) {
   
-  // Loop that fills the new objects stackArray with the elements in the stackArray of object x.
-  for (size_t i = 0; i < stackSize; i++) {
-    stackArray[i] = x.stackArray[i];
+  // checks for empty stack
+  if (x.stackSize < 1) {
+    this-> head = nullptr;
+  }
+  // stack is not empty, copies over data.
+  else {
+    this-> stackSize = x.stackSize;
+    // copy the other stack's linked list
+    clone(x); 
   }
 }
 /**
- * class destructor: deletes the stack array.
+ * Class destructor: sets the stack back to empty state
  *
  */
 mystack::~mystack() {
-  delete[] stackArray;
+  clear();
 }
 /**
- * Overloaded assignment operator. Assigns one mystack object to another.
+ * overloaded " = " operator. Assigns one mystack object to another.
  *
- * @param x: a constant reference to a mystack object.
+ * @param x: a reference to a constant mystack object.
  *
- * @return a object of the mystack class
- *
+ * @return a reference to a mystack object. 
  */
-mystack& mystack::operator=(const mystack& x) {
-  this-> stackCapacity = x.stackCapacity;
-  this-> stackSize  = x.stackSize;
-
-  if (stackCapacity == 0) {
-    this-> stackArray = nullptr;
+mystack& mystack::operator=(const mystack &x) {
+  // checks for empty stack
+  if (x.stackSize < 1) {
+    this-> head = nullptr;
   }
-  else {
-    this-> stackArray = new char[stackCapacity];
-  }
-  for (size_t i = 0; i < stackSize; i++) {
-    this-> stackArray[i] = x.stackArray[i];
+  else { // stack not empty
+    this-> stackSize = x.stackSize;
+    // copy the other stack's linked list
+    clone(x);
   }
   return *this;
 }
 /**
- * Gets the capacity of the stack
- *
- * @return the stacks capacity
- */
-size_t mystack::capacity() const {
-  return stackCapacity;
-}
-/**
  * Gets the size of the stack
  *
- * @return the stacks size
+ * @return The stack size
  */
 size_t mystack::size() const {
-  return stackSize;
+  return this-> stackSize;
 }
 /**
- * Determines if a stack is empty
+ * gets the state of the stack (empty or not).
  *
- * @return true if the stack is empty, otherwise false.
+ * @return true if the stack is empty, otherwise false
  */
 bool mystack::empty() const {
   return (stackSize == 0);
 }
 /**
- * sets the stack size back to 0
+ * Sets the stack back to the empty state.
  *
  */
 void mystack::clear() {
-  stackSize = 0;
-}
-/**
- * Modifies an object's stack capacity without changing 
- * the stack size or the contents of the stack array
- *
- * @param n: the new stack capacity.
- *
- */
-void mystack::reserve(size_t n) {
-
- if (n <= stackCapacity)
-   return;
-
-  stackCapacity = n;
-  char *ptr = new char[stackCapacity];
-
-  for (size_t i = 0; i < stackSize; i++) {
-    ptr[i] = stackArray[i];
+  // repeatedly calling pop() until the stack is empty.
+  while (!empty()) {
+    pop();
   }
-
-  delete[] stackArray;
-  stackArray = ptr;
-
 }
 /**
- * Gets the top of the stack.
+ * Gets the top item of the stack
  *
- * @return the top item of the stack.
+ * @return the value on the top of the stack
  */
-const char& mystack::top() const {
-  return stackArray[stackSize - 1];
+const int& mystack::top() const {
+ return head-> value;
 }
 /**
- * Pushes a character to the top of the stack
+ * Inserts a new intem at the top of the stack
  *
- * @param value: a character value
+ * @param the value that will be placed at the top of the stack
  *
  */
-void mystack::push(char value) {
+void mystack::push(int value) {
 
-  // if the current stack capacity is zero, the capacity is increased by 1
-  if (stackCapacity == 0)
-    reserve(1);
+  // Allocate a new stack node
+  node* new_node = new node(value, head);
 
-  // If the stack is full, the capacity is doubled
-  else if (stackSize == stackCapacity)  
-    reserve(stackCapacity * 2);
+  // set the top of stack to new_node
+  head = new_node;
 
-  // adds value to the top of the stack
-  stackArray[stackSize] = value;
-  stackSize++; // increases stack size by 1
+  // increase size
+  stackSize++;
 }
 /**
- * pops the top item off of the stack by decreasing the stack size by 1
+ * Removes the top item off the stack
  *
  */
 void mystack::pop() {
+  node* delete_node = head;
+  head = head->next;
+
+  delete[] delete_node;
   stackSize--;
 }
 /**
- * Overloading the stream insertion operator to print the elements of the stack array.
- *
+ * overloading the " << " operator: prints the data in the stack.
+ * 
  * @param os: the stream insertion operator
  * @param obj: a reference to a constant object of the mystack class
  *
@@ -167,16 +126,50 @@ void mystack::pop() {
  * @note: if the stack is empty, nothing will be printed.
  */
 std::ostream& operator<<(std::ostream& os, const mystack& obj) {
+  if (!obj.empty()) {
 
-  // prints the contents of the stack if stack is not empty.
-  if (obj.stackSize > 0) {
+    mystack::node* ptr = nullptr; // Allocating new node
+    ptr = obj.head;
 
-    size_t i;
-    for (i = 0; i < obj.stackSize - 1; i++) {
-      os << obj.stackArray[i] << ", ";
+    // loops through each node
+    while (ptr != nullptr) { // ends when it points to a null address 
+      
+      if (ptr-> next == nullptr) { // prints last node (without the comma)
+        os << ptr-> value;
+      }
+
+      else { // prints every other node (with comma)
+        os << ptr-> value << ", "; // prints the nodes data
+      }
+
+      ptr=ptr->next; // moves to next node
     }
-    os << obj.stackArray[i];
   }
-
-  return os;
+  return os;  
 }
+/**
+ * Copies the linked list from the stack x to this object
+ *
+ * @param a reference to a constant mystack object
+ *
+ */
+void mystack::clone(const mystack& obj) {
+
+  node* last = nullptr;
+  node* ptr = obj.head;
+  
+  // Loops that copies over nodes
+  while (ptr != nullptr) {
+    node *new_node = new node(ptr->value); // Allocate new node
+
+    if (last == nullptr) {
+      this->head = new_node;
+    }
+    else {
+      last->next = new_node;
+    }
+    last = new_node;
+    ptr = ptr->next;
+  }
+}
+

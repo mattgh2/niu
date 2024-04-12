@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{  }int\PYG{+w}{ }open\PYG{o}{(}const\PYG{+w}{ }char*\PYG{+w}{ }pathname,\PYG{+w}{ }int\PYG{+w}{ }flags\PYG{o}{)}
+\end{Verbatim}

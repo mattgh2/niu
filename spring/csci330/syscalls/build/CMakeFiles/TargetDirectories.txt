@@ -1,0 +1,5 @@
+/home/mattw/niu/spring/csci330/syscalls/build/CMakeFiles/edit_cache.dir
+/home/mattw/niu/spring/csci330/syscalls/build/CMakeFiles/rebuild_cache.dir
+/home/mattw/niu/spring/csci330/syscalls/build/src/CMakeFiles/test.dir
+/home/mattw/niu/spring/csci330/syscalls/build/src/CMakeFiles/edit_cache.dir
+/home/mattw/niu/spring/csci330/syscalls/build/src/CMakeFiles/rebuild_cache.dir

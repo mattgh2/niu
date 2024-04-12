@@ -1,0 +1,10 @@
+\contentsline {section}{\numberline {1}UNIX System Call}{3}{section.0.1}%
+\contentsline {subsection}{\numberline {1.1}System Call Categories}{3}{subsection.0.1.1}%
+\contentsline {subsection}{\numberline {1.2}System Call Invocation}{3}{subsection.0.1.2}%
+\contentsline {section}{\numberline {2}File Management}{3}{section.0.2}%
+\contentsline {subsection}{\numberline {2.1}System Call: open}{4}{subsection.0.2.1}%
+\contentsline {subsection}{\numberline {2.2}System Call: read}{4}{subsection.0.2.2}%
+\contentsline {subsection}{\numberline {2.3}System Call: close}{4}{subsection.0.2.3}%
+\contentsline {subsection}{\numberline {2.4}System Call: write}{5}{subsection.0.2.4}%
+\contentsline {section}{\numberline {3}System Call: open with O\_CREAT}{6}{section.0.3}%
+\contentsline {subsection}{\numberline {3.1}System Call: creat}{6}{subsection.0.3.1}%
