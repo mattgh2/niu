@@ -1,0 +1,423 @@
+\documentclass{report}
+
+\input{~/latex/template/preamble.tex}
+\input{~/latex/template/macros.tex}
+
+\title{\Huge{Process \& Pipe}}
+\author{\huge{Matt Warner}}
+\date{\huge{}}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{}
+\lhead{\leftmark}
+\cfoot{\thepage}
+% \usepackage[default]{sourcecodepro} \usepackage[T1]{fontenc}
+
+\pgfpagesdeclarelayout{boxed}
+{
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=1,%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {
+    border code=\pgfsetlinewidth{1.5pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.95\pgfphysicalwidth,%
+    resized height=.95\pgfphysicalheight,%
+    center=\pgfpoint{.5\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+}
+
+\pgfpagesuselayout{boxed}
+
+\begin{document}
+  \maketitle
+\section{Unit Overview}
+\begin{itemize}
+  \item Process Management
+    \begin{itemize}[label=$\circ$]
+      \item create new process
+      \item change what process is doing
+    \end{itemize}
+  \item Pipe concept
+    \begin{itemize}[label=$\circ$]
+      \item enables inter-process communication
+    \end{itemize}
+\end{itemize}
+\section{Process Management System Calls}
+\begin{itemize}
+  \item \textbf{fork}
+    \begin{itemize}[label=$\circ$]
+      \item create a new process
+    \end{itemize}
+  \item \textbf{wait}
+    \begin{itemize}[label=$\circ$]
+    wait for a process to terminate
+    \end{itemize}
+    \item \textbf{exec}
+      \begin{itemize}[label=$\circ$]
+        \item execute a program
+      \end{itemize}
+\end{itemize}
+\subsection{System Call: fork}
+\begin{itemize}
+  \item creates new process that is duplicate of current process
+  \item new process is \textit{\textbf{almost}} the same as current process
+    \bigbreak \noindent
+  \item new process is \textit{\textbf{child}} of current process
+  \item old process is \textit{\textbf{parent of new process}}
+    \bigbreak \noindent
+  \item after call to fork, both processes run concurrently
+\end{itemize}
+\bigbreak \noindent
+\textbf{\underline{Example:}}
+\begin{minted}{c++}
+#include <sys/types.h>
+#include <unistd.h>
+#include <iostream>
+
+int main() {
+
+  std::cout << "Before fork\n";
+  
+  fork();
+
+  std::cout << "After fork\n";
+
+  return 0;
+ 
+ /*
+    ***Output***
+    Before fork
+    After fork
+    After fork
+ */
+}
+\end{minted}
+\textit{\textbf{Note:}} ``After fork'' gets printed twice because fork() duplicates the current process. Also, fork() child process will execute the remaining part of the code after the call to fork() so ``Before fork'' only gets printed once. \vspace{1.5mm}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.6\textwidth]{ $HOME/Documents/figures/ksnip_20240416-183834.png }
+\end{figure}
+
+\noindent Its also worth mentioning that the pid of the child process is 0, indicating a newly created child process, so if we had:
+\begin{minted}{c++}
+pid_t p = fork;
+
+std::cout << p << std::end;
+\end{minted}
+The output would be something like: \vspace{1mm}
+
+\noindent 4412 \\ 0
+
+\section{Fork() in depth}
+The Fork system call is used for creating a new process in Linux, and Unix systems, which is called the \textit{\textbf{child process}}, which runs concurrently with the process that makes the fork() call (parent process). After a new child process is created, both processes will execute the next instruction following the fork() system call.
+\bigbreak \noindent
+The child process uses the same pc(program counter), same CPU registers, and same open files which use in the parent process. It takes no parameters and returns an integer value.
+\bigbreak \noindent
+Below are different values returned by fork().
+\begin{itemize}
+  \item \textit{\textbf{Negative Value:}} The creation of a child process was unsuccessful.
+  \item \textit{\textbf{Zero:}} Returned to the newly created child process.
+  \item \textit{\textbf{Positive value:}} Returned to parent or caller. The value contains the process ID (PID) of the newly created child process
+\end{itemize}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.5\textwidth]{ $HOME/Documents/figures/Fork_in_C.jpg }
+\end{figure}
+\nt{
+  fork() is threading based function, to get the correct output run the program on a local system
+}
+\bigbreak \noindent
+\textbf{\underline{Example:}}
+\begin{minted}{c++}
+pid_t p = fork();
+if (p < 0) {
+  perror("fork fail");
+  exit(1);
+}
+
+std::cout << "Hellow world!" << "process_id(pid) = " <<  getpid() << std::endl;
+\end{minted}
+There are a couple things to note here. For starters, the fork system call is included in the unistd.h lib.\vspace{1.5mm}
+
+\noindent Secondly, we call the fork() function and set its return value equal to a variable of type \textit{\textbf{pid\_t}}, which is used to store the process id (PID) returned from the function call. \vspace{1.5mm}
+\nt{
+  The type of \textit{\textbf{pid\_t}} is a \textit{\textbf{signed int}}
+  \bigbreak \noindent
+  The header file which is needed to to used \textit{\textbf{pid\_t}} is \textit{\textbf{sys/types.h}}
+}
+\noindent 
+After obtaining the process id, we check for failure (if the pid is negative value) \vspace{1.5mm}
+
+\noindent We then print out the pid using the getpid function found in \textit{\textbf{sys/types.h}}
+\subsection{PID functions}
+\begin{itemize}
+  \item \textit{\textbf{getpid()}} - this function returns the process id of the calling process.
+  \item \textit{\textbf{getppid()}} - this function returns the process id of the parent process.
+\end{itemize}
+\bigbreak \noindent
+Since we know that the returned value of fork() for the child process is 0, we can implement a section of code that will only execute within the child process by comparing pid to 0. \vspace{1.5mm}
+
+\noindent That would look something like this:
+
+\begin{minted}{c++}
+{
+    pid_t p;
+    p = fork();
+    if(p<0)
+    {
+      perror("fork fail");
+      exit(1);
+    }
+    // child process because return value zero
+    else if ( p == 0)
+        printf("Hello from Child!\n");
+ 
+    // parent process because return value non-zero.
+    else
+        printf("Hello from Parent!\n");
+}
+int main()
+{
+    forkexample();
+    return 0;
+}
+\end{minted}
+\section{Systel Call: wait}
+\bigbreak \noindent
+\textbf{\textit{Syntax:}}
+\begin{minted}{cpp}
+pid_t wait(int *status)
+\end{minted}
+\begin{itemize}
+  \item lets parent process wait untill a child process terminates
+    \begin{itemize}[label=$\circ$]
+      \item parent is resumed once a child process terminates
+    \end{itemize}
+  \item returns process id of terminated child
+    \begin{itemize}[label=$\circ$]
+      \item return -1 if there is no child to wait for
+    \end{itemize}
+  \item \textbf{status} holds exit status of child
+    \begin{itemize}[label=$\circ$]
+      \item can be examined with \textbf{WEXITSTATUS(status)}
+    \end{itemize}
+\end{itemize}
+\bigbreak \noindent
+\textbf{\underline{Example:}}
+\begin{minted}{cpp}
+int pid, status;
+
+std::cout << "Before fork\n" << std::endl;
+
+fork();
+
+pid = wait(&status);
+
+if (pid == -1) {
+  std::cout << "nothing to wait for\n";
+  return 255;
+} else {
+  std::cout << "done waiting for " << pid << ". ended with: " << WEXITSTATUS(status) << std::endl;
+}
+
+std::cout << "After fork\n";
+
+/*
+  *** Output ***
+  Before fork
+  nothing to wait for
+  done waiting for: 23550, ended with: 255
+  After fork
+*/
+\end{minted}
+\section{System Call: exec}
+\begin{itemize}
+  \item family of functions that replace current process image with a new process image
+    \begin{itemize}[label=$\circ$]
+      \item actual system call: \textbf{execve}
+      \item library functions
+        \begin{itemize}[label=$\circ$]
+          \item \textbf{execl, execlp, execle}
+          \item \textbf{execv, execvp}
+        \end{itemize}
+    \end{itemize}
+      \item arguements specify new executable to run, plus its arguments and enviroment.
+\end{itemize}
+\subsection{C Library Function: execl}
+\bigbreak \noindent
+\textbf{\textit{Syntax:}}
+\begin{minted}{cpp}
+int execl(const char *path, const char *arg, ...)
+\end{minted}
+\begin{itemize}
+  \item starts executable for command spefified in \textbf{path}
+  \item new executable runs in current process
+  \item \textbf{path} is specified as absolute path
+  \item arguments are specified as list, starting at argv[0],
+    \subitem terminated with (char *NULL)
+  \item new executable keeps same enviroment
+  \item returns -1 on error
+\end{itemize}
+\bigbreak \noindent
+\textbf{\underline{Example:}}
+\begin{mdframed}
+\begin{minted}{cpp}
+#include <unistd.h>
+#include <sys/types.h>
+#include <cstdio>
+#include <cstdlib>
+#include <iostream>
+
+int main() {
+  int rs;
+
+  cout << "Program started in process " << getpid() << endl;
+
+  rs = execl("/bin/ps", "ps", (char *)NULL);
+
+  if (rs == -1) {
+    perror("execl");
+    exit(rs);
+  }
+  cout << "Maybe we see this ?\n";
+  return 0;
+}
+\end{minted}
+\end{mdframed}
+\subsection{C Library Functions: exec family}
+\begin{itemize}
+  \item \textbf{execl, execlp, execle}
+    \begin{itemize}[label=$\circ$]
+      \item specify arguments and enviroment as list
+    \end{itemize}
+  \item \textbf{execv, execvp}
+    \begin{itemize}[label=$\circ$]
+      \item specify arguments and enviroment as array of string values
+    \end{itemize}
+  \item \textbf{execlp, execvp}
+    \begin{itemize}[label=$\circ$]
+      \item look for new executable via PATH
+    \end{itemize}
+\end{itemize}
+\bigbreak \noindent
+\textbf{\underline{Example:}}
+\begin{minted}{cpp}
+#include <sys/types.h>
+#include <unistd>
+
+int rs; // return status
+
+cout << "program started in process: " << getpid();
+
+rs = execvp("ls", argv);
+if (rs == -1) {
+  perror("execvp");
+  exit(rs);
+}
+
+cout << "Maybe we see this ?\n";
+\end{minted}
+\section{Together: fork and exec}
+\begin{itemize}
+  \item UNIX does not have a \underline{single} system call to spawn a new additional process with a new executable
+  \item Instead, there are two steps that must be used:
+    \begin{itemize}[label=$\circ$]
+      \item fork to duplicate current process
+      \item execo to morph child process into new executable
+    \end{itemize}
+\end{itemize}
+\bigbreak \noindent
+\textbf{\underline{Example:}}
+\begin{minted}{cpp}
+#include <unistd>
+#include <sys/types.h>
+#include <sys/wait.h>
+
+#include <cstdio>
+#include <cstdlib>
+#include <iostream>
+
+int main(int argc, char **argv) {
+  int rs, pid, status;
+
+  // Create child process
+  pid = fork();
+
+  // Error checking
+  if (pid == -1) {
+    perror("fork");
+    exit(pid);
+  }
+  if (pid == 0) { // child process
+    rs = execvp("echo", argv)
+    if (rs == -1) {
+      perror ("execvp");
+      exit(rs);
+    }
+  } else {
+    cout << "done waiting for: " << wait(&status) << endl;
+  }
+  return 0;
+}
+\end{minted}
+\section{UNIX Pipe}
+\begin{itemize}
+  \item Can create a software \textit{\textbf{pipline:}}
+    \subitem set of processes chained by their standard IO
+  \item Output of one process becomes input of second process
+\end{itemize}
+\bigbreak \noindent
+\textbf{\textit{command line example:}}
+\begin{minted}{bash}
+  ls | wc
+\end{minted}
+\section{System Call: pipe}
+\bigbreak \noindent
+\begin{minted}{cpp}
+int pipe(int pipefd[2])
+\end{minted}
+\begin{itemize}
+  \item Creates a \textit{\textbf{channel}} to transport data
+  \item Has direction: one side to write, one side to read
+    \begin{itemize}[label=$\circ$]
+      \item available via 2 file descriptors \textbf{pipefd[2]}
+      \item read side \textbf{pipefd[0]}
+      \item write side \textbf{pipefd[1]}
+    \end{itemize}
+\end{itemize}
+\bigbreak \noindent
+\textbf{\underline{Example:}}
+\begin{minted}{cpp}
+#include <unistd.h>
+#include <iostream>
+#include <cstdlib>
+int main() {
+  cout << "Before pipe\n";
+
+  int pipefd[2], rs;
+  
+  rs = pipe(pipefd);
+  if (rs == -1) {
+    perror("pipe");
+    exit(EXIT_FAILURE);
+  }
+
+  write(pipefd[1], "Hello", 6);
+   
+  char buffer[256];
+  read(pipefd[0], buffer, sizeof(buffer));
+
+  cout << "pip contained: "  << buffer << endl;
+
+  return 0;
+
+}
+\end{minted}
+\end{document}

@@ -1,0 +1,16 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cp}{\PYGZsh{}include}\PYG{+w}{ }\PYG{c+cpf}{\PYGZlt{}sys/types.h\PYGZgt{}}
+\PYG{c+cp}{\PYGZsh{}include}\PYG{+w}{ }\PYG{c+cpf}{\PYGZlt{}unistd\PYGZgt{}}
+
+\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{rs}\PYG{p}{;}\PYG{+w}{ }\PYG{c+c1}{// return status}
+
+\PYG{n}{cout}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}program started in process: \PYGZdq{}}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{n}{getpid}\PYG{p}{();}
+
+\PYG{n}{rs}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{execvp}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}ls\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{argv}\PYG{p}{);}
+\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{rs}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{l+m+mi}{\PYGZhy{}1}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{n}{perror}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}execvp\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{exit}\PYG{p}{(}\PYG{n}{rs}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{n}{cout}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Maybe we see this ?}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}
+\end{Verbatim}
