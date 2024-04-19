@@ -95,6 +95,28 @@ void mylist::reverse()
     if (l_size == 1) {
         return;
     }
+    node *p_left = l_front;
+    node *p_right = l_front;
+    node *tmp = l_front;
 
+    // Traverse to the back
+    while (p_left->next != nullptr) {
+        p_left = p_left->next;
+    }
+    for (;;) {
+        if (p_left->next == p_right) {
+            return;
+        }
+        int temp_value = p_right->value;
+        p_right->value = p_left->value;
+        p_left->value = temp_value;
+        
+        p_right = p_right->next;
+        while (tmp->next != p_left) {
+            tmp = tmp->next;
+        }
+        p_left = tmp;
+        tmp = l_front; 
+    }
 }
 

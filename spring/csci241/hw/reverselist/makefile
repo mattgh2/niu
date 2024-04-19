@@ -1,5 +1,5 @@
 CXX = /usr/bin/g++
-CXXFLAGS = -Wall -Werror -pedantic -ansi -std=c++14
+CXXFLAGS = -Wall -Werror -pedantic -ansi -std=c++14 -g
 RM = /bin/rm
 
 qtest: FORCE
