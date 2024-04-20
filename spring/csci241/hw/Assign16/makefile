@@ -6,7 +6,7 @@
     
 # Compiler variables
 CXX = g++
-CXXFLAGS = -Wall -Werror -ansi -pedantic -std=c++14
+CXXFLAGS = -Wall -Werror -ansi -pedantic -std=c++14 -g
         
 # Rule to link object code files to create executable file
 list_test: list_test.o

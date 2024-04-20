@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1712587584.19316 "notes.tex" "notes.pdf" "notes" 1712587586.16661 0
+["pdflatex"] 1713636860.98058 "notes.tex" "notes.pdf" "notes" 1713636862.82083 2
   "/home/mattw/dend.png" 1709002239.13408 41737 57603ccb873622e29af490a9b1262352 ""
   "/home/mattw/distance.png" 1709002109.18027 9951 4066922351a764a322006538a9cbb331 ""
   "/home/mattw/lala.png" 1709002229.38404 41322 baa7aab291e0fa57eaf851c0585d2f9c ""
@@ -36,6 +36,7 @@
   "/usr/share/texmf-dist/fonts/tfm/public/lm/rm-lmri10.tfm" 1711186958 16968 1b588d0f410bd67a83eaecf8c64b2a43 ""
   "/usr/share/texmf-dist/fonts/tfm/public/lm/rm-lmri12.tfm" 1711186958 16968 09a34e0af90920bbcece784f13606525 ""
   "/usr/share/texmf-dist/fonts/tfm/public/lm/ts1-lmr10.tfm" 1711186958 1556 b86d923e6b2f9aab2e313098a95cb0b8 ""
+  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1711186958 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/share/texmf-dist/fonts/type1/public/lm/lmbx10.pfb" 1711186958 121021 1bf809ce4a594679006bd72263eba59b ""
   "/usr/share/texmf-dist/fonts/type1/public/lm/lmbx12.pfb" 1711186958 116908 1fca96723793882c2e0160350c192fc8 ""
   "/usr/share/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb" 1711186958 112766 bdd4fa8b13a0d7dd137624085bd31d40 ""
@@ -340,8 +341,8 @@
   "figures/venn8.pdf_tex" 1709061227.33975 2564 56b3bc29f2d31f84e85c722df62b65f5 ""
   "figures/venn9.pdf" 1709061714.13567 1941 79e1d42ecea629b7b1b6dd3a3720e864 ""
   "figures/venn9.pdf_tex" 1709061714.139 2567 2cacb9b77bac23964a0d20d29a99fd57 ""
-  "notes.aux" 1712587586.00491 12697 a20438943596d85238df8a2952dcbc7e "pdflatex"
-  "notes.tex" 1712587583.37156 29442 07bf8d8532ccab4a3522cb965ff41dd9 ""
+  "notes.aux" 1713636862.65989 12697 78fc13d31f70a1d6dc242dfd5c0c8196 "pdflatex"
+  "notes.tex" 1713636861.45988 29992 1f0f2a0dbe0b5548e2e2f29ab20173bb ""
   (generated)
   "notes.aux"
   "notes.log"
