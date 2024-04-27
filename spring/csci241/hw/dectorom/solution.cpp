@@ -42,4 +42,3 @@ std::string decimal_to_roman(int decimal_value) {
   return roman_value;
 }
 
-

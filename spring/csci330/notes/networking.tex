@@ -1,0 +1,305 @@
+\documentclass{report}
+
+\input{~/latex/template/preamble.tex}
+\input{~/latex/template/macros.tex}
+
+\title{\Huge{Networking Lecture Notes}}
+\author{\huge{Matt Warner}}
+\date{\huge{}}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{}
+\lhead{\leftmark}
+\cfoot{\thepage}
+% \usepackage[default]{sourcecodepro} \usepackage[T1]{fontenc}
+
+\pgfpagesdeclarelayout{boxed}
+{
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=1,%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {
+    border code=\pgfsetlinewidth{1.5pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.95\pgfphysicalwidth,%
+    resized height=.95\pgfphysicalheight,%
+    center=\pgfpoint{.5\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+}
+
+\pgfpagesuselayout{boxed}
+
+\begin{document}
+  \maketitle
+  \section{Unit Overview}
+  \begin{itemize}
+    \item Network concepts \& terminology
+    \item OSI reference model for protocols
+      \begin{itemize}[label=$\circ$]
+        \item Physical layer
+        \item Data Link layer
+        \item Network layer
+        \item Transport layer
+      \end{itemize}
+  \end{itemize}
+  \section{Network Terminology}
+\begin{itemize}
+  \item Connected graph constructed from
+    \begin{itemize}[label=$\circ$]
+      \item node
+      \item link
+    \end{itemize}
+  \item Nodes can reach others via path:
+    \begin{itemize}[label=$\circ$]
+      \item sequence of nodes and links
+    \end{itemize}
+\end{itemize}
+\nt{
+  In a network of computers, each computer becomes a node. The connection between nodes are called links.
+}
+\section{Internet Terminology}
+\begin{itemize}
+  \item node
+    \begin{itemize}[label=$\circ$]
+      \item host or intermediary
+    \end{itemize}
+  \item link
+    \begin{itemize}[label=$\circ$]
+      \item point-to-point or broadcast
+    \end{itemize}
+  \item link medium
+    \begin{itemize}[label=$\circ$]
+      \item wired or wireless
+    \end{itemize}
+  \item path
+    \begin{itemize}[label=$\circ$]
+      \item routed or switched
+    \end{itemize}
+\end{itemize}
+\section{Networking Protocol}
+\begin{itemize}
+  \item communication in a network is governed by rules and conventions
+  \item information is exchanged between nodes via messages
+  \item messages use well-defined format
+  \item each message has an exact meaning intended to provoke a defined response of the receiver
+\end{itemize}
+\nt{
+  A protocol describes the syntax, semantics, and synchronization of communication
+}
+\newpage
+\section{OSI Model}
+\begin{itemize}
+  \item The OSI model divides rules of networking into 7 layers
+\begin{itemize}[label=$\circ$]
+  \item Each layer serves a specific function
+  \item If all layers are functioning, hosts can share data
+\end{itemize}
+\end{itemize}
+\subsection{OSI reference model}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.5\textwidth]{ ~/Documents/figures/OpenSystemIntercommunicationOSI.PNG }
+\end{figure}
+\section{Layered protocols}
+\begin{itemize}
+  \item complexities of communication organized into successive layers of protocols
+    \begin{itemize}[label=$\circ$]
+      \item lower-level layers: specific to medium
+      \item higher-level layers: specific to application
+    \end{itemize}
+  \item standards achieve inter operability
+\end{itemize}
+\section{OSI reference model layers}
+Each of the seven protocol layers are responsible for a share of the communications task between two nodes in the network.
+\begin{itemize}
+  \item \textbf{Application}: provides services directly to user applications
+  \item \textbf{Presentation}: performs data transformations to provide common interface for user applications
+  \item \textbf{Session}: establishes, manages and ends user connection
+  \item \textbf{Transport}: provides functions to guarantee reliable network link
+  \item \textbf{Network}: establishes, maintains and terminates network connections
+  \item \textbf{Data link}: ensures the reliability of link
+  \item \textbf{Physical}: controls tranmission of the raw bit stream over the medium
+\end{itemize}
+\subsection{More on Layers}
+\textbf{\textit{Layer 1 - Physical - Transporting Bits}} \vspace{1.5mm}
+
+\noindent       Computer data exists in the form of Bits (1's and 0's)
+Anything that contributes to moving bits from one computer to another, is considered layer 1 technology. \vspace{1.5mm}
+
+\noindent L1 Technologies: \vspace{1.5mm}
+
+\noindent\textbf{Cables}: Ethernet, Coaxial, Fiber. \vspace{1.5mm}
+
+\noindent \textbf{Repeaters}  \vspace{1.5mm}
+
+\noindent \textbf{Hubs} \vspace{1.5mm}
+
+\noindent \textbf{Wi-Fi} is also considered to be a L1 technology. Wi-Fi solely exisits to cary 1's and 0's from one computer to the next. \vspace{1.5mm}
+\bigbreak \noindent
+\textit{\textbf{Layer 2 - Data Link}} \vspace{1.5mm}
+
+\noindent Interacts with the Wire (i.e., Physical layer). Puts bits on the wire, and retrieves bits from the wire. \vspace{2.5mm}
+
+\noindent NIC - Network Interface Cards / Wi-FI Access Cards \vspace{2.5mm}
+
+\noindent Layer 2 uses an Addressing Scheme, known as a MAC address
+\begin{itemize}
+  \item MAC addresses
+  \begin{itemize}[label=$\circ$]
+    \item 48 bits, represented as 12 hex digits
+    \item \textbf{94-65-9C-3B-8A-E5} (windows representation)
+    \item \textbf{94:65:9C:3B:8A:E5} (linux representation)
+    \item \textbf{9465.9C3B.8AE5} (cisco, routers, and switches)
+    \item Every NIC has a unique MAC address
+       
+  \end{itemize}
+\item L2 Technologies: NICs, Switches
+\end{itemize}
+
+\bigbreak \noindent
+\textit{\textbf{Layer 3 - Network - End to End delivery}} \vspace{2.5mm}
+
+\noindent Layer 3 uses its own Addressing Scheme, IP addresses \vspace{2mm}
+
+\noindent L3 Technologies: Routers, Hosts, (anything with an IP)
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.5\textwidth]{ ~/Documents/figures/OSIModel.jpg}
+\caption*{ \textit{\textbf{Figure 4.2}} OSI reference model layers}
+\end{figure}
+\section{Physical Layer: Wired Media}
+\begin{itemize}
+  \item Ethernet (grades below)
+    \begin{itemize}[label=$\circ$]
+      \item 10BASE-T, 100BASE-TX, 100BASE-T
+      \item 10Gbe, 40GbE, 100GbE
+    \end{itemize}
+  \item Business/backbone
+    \begin{itemize}[label=$\circ$]
+      \item DS1(T1): 1.54Mbs to DS5: 400Mbs
+      \item \textbf{optical circuits:} OC-1: 50Mbs to OC-768: 40Gbs
+    \end{itemize}
+  \item Last mile:
+    \begin{itemize}[label=$\circ$]
+      \item Modem
+      \item DSL
+      \item cable: DOCSIS
+      \item FiOS
+    \end{itemize}
+\end{itemize}
+\subsection{Physical Layer: Wireless Media}
+\begin{minipage}{0.5\textwidth}
+\begin{itemize}
+  \item \textbf{Cellphone Data}
+    \begin{itemize}[label=$\circ$]
+      \item EDGE, GPRS, HSPA+
+      \item 4G LTE up to 100MBs
+      \item 5G over 100Mbs
+    \end{itemize}
+  \item \textbf{Satellite}
+    \begin{itemize}[label=$\circ$]
+      \item Wildblue: 12Mbs
+      \item HughesNet: 15Mbs
+      \item Starlink: 200Mbs
+    \end{itemize}
+\end{itemize}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\begin{itemize}
+  \item WiFi: 802.11
+    \begin{itemize}[label=$\circ$]
+      \item up to 150Mbs \& MIMO
+      \item new: ``ac'' up to 1Gbs
+    \end{itemize}
+  \item WiMax: 802.16
+    \begin{itemize}[label=$\circ$]
+      \item up to 40Mbs
+    \end{itemize}
+  \item WPAN
+    \begin{itemize}[label=$\circ$]
+      \item BlueTooth up to 2Mbs
+      \item NFC up to 423Kbs
+      \item ZigBee up to 256Kbs
+    \end{itemize}
+\end{itemize}	
+\end{minipage}
+\newpage
+\section{Data Link Layer: functionality}
+\begin{itemize}
+\item Medium access control
+ \begin{itemize}[label=$\circ$]
+   \item arbitrate who transmits
+ \end{itemize} 
+\item Addressing
+  \begin{itemize}[label=$\circ$]
+    \item address of recevier, address of sender
+  \end{itemize}
+  \item Framing
+    \begin{itemize}[label=$\circ$]
+      \item delimited unit of transmission for data \& control
+    \end{itemize}
+  \item Error control and reliability
+  \item Flow control
+\end{itemize}
+\section{Network Layer}
+\begin{itemize}
+  \item also called: Internet Protocol Layer
+    \begin{itemize}[label=$\circ$]
+      \item provides host to host transmission service,
+        \subitem where hosts are not necessarily adjacent
+    \end{itemize}
+  \item layer provides services
+    \begin{itemize}[label=$\circ$]
+      \item addressing
+        \begin{itemize}[label=$\bullet$]
+        \item hosts have global addresses: IPv4, IPv6 
+        \item uses data link layer protocol to translate address: ARP
+        \end{itemize}
+      \item routing and forwarding
+        \begin{itemize}[label=$\bulllet$]
+          \item find path from host to host
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+\section{IPv4 Address}
+\begin{itemize}
+  \item IP address \hspace{5mm} $\bullet$ 127.0.0.1
+    \begin{itemize}[label=$\circ$] 
+      \item 32bit unique identifier, written as quad \hspace{5mm} $\bullet$ 131.156.145.90
+      \end{itemize}
+      \item network
+        \begin{itemize}[label=$\circ$]
+          \item first n bits of IP number, written as "\textbackslash n" \hspace{5mm}$\bullet$ 131.156.0.0\16
+          \item 8 -class A, 16 - class B, 24 - class C \hspace{5mm} $\bullet$ 131.156.145.0/24
+          \item more than 24 - class D
+        \end{itemize}
+      \item netmask
+        \begin{itemize}[label=$\circ$]
+          \item 32 bit number with first n bits all 1, rest 0 \hspace{5mm} $\bullet$ 255.255.255.0
+        \end{itemize}
+      \item broadcast
+        \begin{itemize}[label=$\circ$]
+          \item network number (first n bits), rest all 1  \hspace{5mm} $\bullet$ 131.156.145.255
+        \end{itemize}
+        \bigbreak \noindent
+      \item gateway IP  \ \ \  \ \ \ \ \ \ \ \ \ \ $\bullet$ 131.156.145.1
+      \item name server IP \ \ \ \ \ \ \ \ $\bullet$ 131.156.145.2
+\end{itemize}
+\section{IPv6 Address}
+\section{Transport Layer}
+\begin{itemize}
+  \item Provides end-to-end communication services for applications
+  \item byte format as abstraction on underlying system format
+  \item raises reliability
+  \item enables multiplexing
+    \begin{itemize}[label=$\circ$]
+      \item provides multiple endpoints on a single node: \underline{port}
+    \end{itemize}
+\end{itemize}
+\end{document}

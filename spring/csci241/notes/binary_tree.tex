@@ -1,0 +1,258 @@
+\documentclass{report}
+
+\input{~/latex/template/preamble.tex}
+\input{~/latex/template/macros.tex}
+
+\title{\Huge{CSCI - 241 - Binary Trees}}
+\author{\huge{Matt Warner}}
+\date{\huge{}}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{}
+\lhead{\leftmark}
+\cfoot{\thepage}
+% \usepackage[default]{sourcecodepro} \usepackage[T1]{fontenc}
+
+\pgfpagesdeclarelayout{boxed}
+{
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=1,%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {
+    border code=\pgfsetlinewidth{1.5pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.95\pgfphysicalwidth,%
+    resized height=.95\pgfphysicalheight,%
+    center=\pgfpoint{.5\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+}
+
+\pgfpagesuselayout{boxed}
+
+\begin{document}
+  \maketitle
+  \section{Binary Trees}
+	When every vertex in a rooted tree has at most two children and each child is designated either the (unique) left child or the (unique) right child, the result is a binary tree.
+	\vspace{5mm}
+
+\noindent	A \textbf{binary tree} is a rooted tree in which every parent has at most two children. 
+	\vspace{3mm}
+
+	\noindent Each child in a binary tree is designated either a \textbf{left child} or a \textbf{right child} (but not both), and every parent has at most one left child and one right child. 
+	\vspace{3mm}
+
+	\noindent A \textbf{full binary tree} is a binary tree in which each parent has exactly two children.
+	\vspace{3mm}
+
+\noindent	Given any parent $v$ in a binary tree $T$, if $v$ has a left child, then the \textbf{left subtree} of $v$ is the binary tree whose root is the left child of $v$, whose vertices consist of the left child of $v$ and all its descendants, and whose edges consist of all those edges of $T$ that connect the vertices of the left subtree. The \textbf{right subtree} of $v$ is defined analogously.
+\vspace{3mm}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.6\textwidth]{ ~/Documents/figures/binarytree.png }
+\caption{A Binary Tree}
+\end{figure}
+\bigbreak \noindent
+\subsection{Why trees?}
+The number one reason why tree are used, and why they are an important data structure is because you can insert items in trees, remove items, or find items in $O(\log_n)$ time. In other words, the main benefit of implementing a binary tree is its efficency with the insertion and deletion of data, which is not the case in a linked list structure.
+\bigbreak \noindent
+The way data is stored in a binary tree can be very organized. And we will see that with \textbf{Binary Search Trees}.
+\bigbreak \noindent
+Another reason to use binary trees is because they are cost efficient due to their dyamic nature.
+\bigbreak \noindent
+Unlike arrays that typically require a block of contiguous memory, binary trees utilize pointers to non-contiguous memory blocks for their nodes. This can be more memory-efficient, especially in scenarios where the data structure needs to be frequently resized. Trees only allocate memory for the nodes that are actually used, without needing to reserve extra capacity upfront.
+\bigbreak \noindent
+Since trees don't require a predefined fixed size, they can grow as new nodes are added and shrink as nodes are removed, without the overhead of resizing an array. There is, however, a case that ruins a binary trees efficency.
+\subsection{Unbalanced Binary Trees}
+An unbalanced binary tree is a type of binary tree in which the heights of the two child subtrees of any node differ significantly. This height difference can lead to suboptimal performance for basic operations such as search, insertion, and deletion. \vspace{2mm}
+
+\noindent An unbalanced binary trees built from sorted data is effectively the same as a linked list.
+\bigbreak \noindent
+With a balanced tree, acesss$^1$ is $O(\log_n)$
+\bigbreak \noindent
+With an unbalanced tree, access$^1$ is $O(n)$ (worst case)
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.5\textwidth]{ ~/Documents/figures/unbalanced.png }
+\caption{Balanced vs Unbalanced Binary Tree}
+\end{figure}
+\bigbreak \noindent
+To avoid this problem, there is a concept called \textit{\textbf{self balancing trees}}, which will be talked about in detail later on.
+\subsection{Where are Binary Trees used?}
+Here are some common areas where binary trees are used:
+\begin{itemize}
+  \item file systems
+  \item Databases
+  \item Networking
+  \item Math
+  \item Decision trees / machine learning
+  \item compression of files
+\end{itemize}
+\subsection{Node Structure}
+Structurally, the following typifies the definition of a binary tree node:
+\begin{cppcode}
+struct node {
+  int value;
+  node_ptr left;
+  node_ptr right;
+};
+\end{cppcode}
+\newpage
+\subsection{Terminology of Binary Trees}
+\begin{itemize}
+  \item \textbf{Root Node}: The topmost node of a tree, which serves as the origin or starting point of the tree structure. It has no parent and is the only node at level 0.
+  \item \textbf{Node (Vertex)}: A fundamental element of the tree structure.
+  \item \textbf{Internal Nodes}: Nodes that have at least one child, i.e., non-leaf nodes.
+  \item \textbf{Leaf Nodes (Terminal Nodes)}: Nodes without children, marking the extremities of the tree.
+  \item \textbf{Size}: The total number of nodes within the tree.
+  \item \textbf{Child \& Parent Relationships}: Describes the hierarchical link between a node and its direct descendants or ancestor.
+  \item \textbf{Siblings}: Nodes that share the same parent.
+  \item \textbf{Edge}: A line connecting two nodes, indicating a parent-child relationship.
+  \item \textbf{Height}: For a node \(t\), the height is defined as the maximum number of edges on the longest downward path between node \(t\) and a leaf.
+  \item \textbf{Level}: The level of a node \(t\) is defined as the number of edges along the unique path from the root node to \(t\). The root node is at level 0.
+  \item \textbf{Depth:} Given a node $t$, the depth of $t$ is the number of edges from the root node to $t$.
+  \item \textbf{Degree}: the degree of a node is the number of children it has, any node can either have degree: 0, 1 or 2.
+\end{itemize}
+\nt{
+\textit{\textbf{Level}} and \textit{\textbf{Depth}} are essentially the same in that they both measure the distance from the root node to a specific node in a binary tree. However, the term \textit{\textbf{Level}} is more commonly used to refer to all nodes that are at the same distance from the root, essentially categorizing nodes into horizontal groups within the tree.
+}
+\subsection{Types of Binary tree} \vspace{2mm}
+
+\subsubsection{1.7.1 Complete binary tree}
+A complete binary tree is a special type of binary tree where all the levels of the tree are filled completely except the lowest level nodes, which are filled from as left as possible.
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.3\textwidth]{ ~/Documents/figures/complete-binary-tree-2719456170.jpg }
+\end{figure}
+\subsubsection{1.7.2 Full / Strict binary tree}
+
+A binary tree in which every node either has exactly \textit{\textbf{two}} or \textit{\textbf{zero}} children.
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.25\textwidth]{ ~/Documents/figures/Binary-Tree-in-Data-Structure-2-354246584.png }
+\end{figure}
+\newpage
+\subsubsection{1.7.3 Segment tree}
+In a segment tree, all internal nodes have exactly \textit{\textbf{two}} children, and all leaf nodes are on the same \textit{\textbf{level}}.
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.3\textwidth]{ ~/Documents/figures/segment_tree.png }
+\caption{Segment tree}
+\end{figure}
+\subsubsection{1.7.4 Height balanced Binary Tree}
+A \textbf{height-balanced binary tree} is defined as a binary tree in which the \textit{\textbf{height}} of the left and the right subtree of any node differ by not more than \textit{\textbf{one}}.
+\bigbreak \noindent
+AVl tree, red-black tree are examples of \textit{\textbf{height-balanced trees}}.
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.25\textwidth]{ ~/Documents/figures/heightbalanced.png }
+\caption{height-balanced tree}
+\end{figure}
+\subsubsection{1.7.5 Skewed Binary Tree}
+A binary tree in which every \textit{\textbf{node}} has precicely \textit{\textbf{one}} child.
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.5\textwidth]{ ~/Documents/figures/skewed-trees-1024x421.png }
+\end{figure}
+\newpage
+\subsubsection{1.7.6 Perfect Tree}
+A Perfect binary tree simply refers to a binary tree in which all \textit{\textbf{levels}} are \textit{\textbf{filled}}.
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.3\textwidth]{ ~/Documents/figures/img2.png }
+\caption{A perfect binary tree}
+\end{figure}
+\section*{Some interesting theorems about binary trees}
+
+\textbf{Theorem 8.3.} If \( k \) is a positive integer and \( T \) is a full binary tree with \( k \) internal vertices, then:
+\begin{enumerate}
+    \item \( T \) has a total of \( 2k+1 \) vertices.
+    \item \( T \) has \( k+1 \) leaves.
+\end{enumerate}
+\bigbreak \noindent
+\noindent \textbf{Example 8.3.1.} Is there a full binary tree that has 10 internal vertices and 13 terminal vertices? \vspace{2mm}
+
+\noindent \textbf{\textit{Proof.}} \vspace{2mm}
+
+ No. By Theorem 8.3, a full binary tree with 10 internal vertices should have \( 10 + 1 = 11 \) leaves, not 13.
+
+\bigbreak \noindent \bigbreak \noindent
+\textbf{Theorem 8.4.} For every integer \( h \geq 0 \), if \( T \) is any binary tree with height \( h \) and \( t \) leaves, then
+\[
+t \leq 2^{h}
+\]
+Equivalently, 
+\[
+\log_2(t) \leq h
+\]
+\bigbreak \noindent
+\textbf{Example 8.4.1.} Is there a binary tree that has a height of 5 and 38 leaves? \vspace{2mm}
+
+\noindent \textbf{\textit{Proof.}}  \vspace{1.5mm}
+
+No. By Theorem 8.4, a binary tree with a height of 5 can have at most \( 2^5 = 32 \) leaves, therefore 38 leaves 
+
+is impossible.
+\bigbreak \noindent \bigbreak \noindent
+\textbf{Theorem 8.5.} For a perfect binary tree with height \( h \), the total number of nodes \( N \) is given by:
+\[
+N = 2^{h+1} - 1
+\]
+
+\bigbreak \noindent
+\textbf{Example 8.5.1.} How many nodes are there in a perfect binary tree with a height of 3? \vspace{2mm}
+
+\noindent \textbf{\textit{Proof.}} \vspace{2mm}
+
+By Theorem 8.5, the number of nodes \( N \) in a perfect binary tree with a height of 3 is calculated as:
+\[
+N = 2^{3+1} - 1 = 2^4 - 1 = 15
+\]
+Therefore, there are 15 nodes in a perfect binary tree of height 3.
+
+\subsection{Binary Search Trees}
+
+\textbf{Definition.} A binary search tree is a kind of binary tree where data records can be stored and searched efficiently. Records are arranged in a total order. If they do not have a natural total order, a key from a totally ordered set can be used. The keys guide the placement and retrieval of records.
+\bigbreak \noindent
+\noindent In a binary search tree, for every internal vertex \( v \):
+\begin{itemize}
+    \item All keys in the left subtree of \( v \) are less than the key in \( v \).
+    \item All keys in the right subtree of \( v \) are greater than the key in \( v \).
+\end{itemize}
+\bigbreak \noindent
+\textbf{Example 8.5.1.} Building a binary search tree for the keys \( 15, 10, 19, 25, 12, 4 \).
+\bigbreak \noindent
+\textbf{Solution.} 
+\begin{itemize}
+    \item \textbf{Insert 15}: as the root.
+    \item \textbf{Insert 10}: to the left of 15 because \( 10 < 15 \).
+    \item \textbf{Insert 19}: to the right of 15 because \( 19 > 15 \).
+    \item \textbf{Insert 25}: to the right of 19 because \( 25 > 19 \).
+    \item \textbf{Insert 12}: to the right of 10 because \( 12 > 10 \).
+    \item \textbf{Insert 4}: to the left of 10 because \( 4 < 10 \).
+\end{itemize}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.5\textwidth]{~/Documents/figures/tree3.png}
+    \caption{Binary Search Tree for the data listed above}
+\end{figure}
+
+\subsection*{Building a Binary Search Tree}
+
+To build a binary search tree, start by inserting the root key. To add a new key, compare it to the key at the root and decide whether to move left or right, inserting the key into the correct position to maintain the binary search tree property.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.5\textwidth]{~/Documents/figures/tree6.png}
+    \caption{Steps for building the example tree}
+\end{figure}
+
+\end{document}
+
+

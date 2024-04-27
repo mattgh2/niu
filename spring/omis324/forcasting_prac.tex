@@ -1,0 +1,203 @@
+\documentclass{report}
+
+\input{~/latex/template/preamble.tex}
+\input{~/latex/template/macros.tex}
+
+\title{\Huge{Assignment 7: Forcasting Anaylsis}}
+\author{\huge{Matt Warner}}
+\date{\huge{}}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{}
+\lhead{\leftmark}
+\cfoot{\thepage}
+% \usepackage[default]{sourcecodepro} \usepackage[T1]{fontenc}
+
+\pgfpagesdeclarelayout{boxed}
+{
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=1,%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {
+    border code=\pgfsetlinewidth{1.5pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.95\pgfphysicalwidth,%
+    resized height=.95\pgfphysicalheight,%
+    center=\pgfpoint{.5\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+}
+
+\pgfpagesuselayout{boxed}
+
+\begin{document}
+  \maketitle
+\section*{Problem 1:}
+
+\noindent \textbf{Consider the following time series data:}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{@{}ccccccc@{}} 
+\toprule 
+Week & 1 & 2 & 3 & 4 & 5 & 6 \\ 
+\midrule
+Value & 18 & 13 & 16 & 11 & 17 & 14 \\
+\bottomrule
+\end{tabular}
+\caption{Weekly data values}
+\label{tab:weekly_values}
+\end{table}
+
+\noindent Using the naïve method, where the forecast for the next week is assumed to be the value of the most recent week, calculate the accuracy of the forecast.
+
+\subsection*{a. Mean Absolute Error (MAE)}
+
+\noindent We compute the Mean Absolute Error using the formula:
+\[ MAE = \dfrac{\displaystyle \sum_{t = k + 1}^{n} |e_t|}{n-k} \]
+where \( e_t = y_t - \hat{y_t} \) and \( \hat{y_t} = y_{t-1} \) using the naïve forecasting method.
+\bigbreak \noindent
+For example:
+\[ \hat{y_2} = y_1 = 18 \]
+\bigbreak \noindent
+Calculating the errors:
+\[ \begin{aligned}
+e_2 &= |13 - 18| = 5, \\
+e_3 &= |16 - 13| = 3, \\
+e_4 &= |11 - 16| = 5, \\
+e_5 &= |17 - 11| = 6, \\
+e_6 &= |14 - 17| = 3.
+\end{aligned} \]
+\bigbreak \noindent
+Summing the absolute errors:
+\[ \sum_{t = 2}^{6} = 5 + 3 + 5 + 6 + 3 = 22 \]
+\bigbreak \noindent
+Given \( n = 6 \) (number of data points) and \( k = 1 \) (offset for the first prediction), the calculation of MAE is:
+\[ MAE = \dfrac{22}{5} = 4.4 \]
+\subsection*{b. Mean Squared Error (MSE)}
+We compute the Mean Squared Error using the formula:
+\[ MAE = \dfrac{\displaystyle \sum_{t = k + 1}^{n} e_t^2}{n-k} \]
+\bigbreak \noindent
+Calculating the errors:
+\[ \begin{aligned}
+e_2 &= (13 - 18)^2 = 25, \\
+e_3 &= (16 - 13)^2 = 9, \\
+e_4 &= (11 - 16)^2 = 25, \\
+e_5 &= (17 - 11)^2 = 36, \\
+e_6 &= (14 - 17)^2 = 9.
+\end{aligned} \]
+\bigbreak \noindent
+Summing the squared errors:
+$$\displaystyle\sum_{t = 2}^{6} = 25 + 9+25+36+9 = 104$$
+\bigbreak \noindent
+Given \( n = 6 \) (number of data points) and \( k = 1 \) (offset for the first prediction), the calculation of MAE is:
+$$ MSE = \dfrac{104}{5} = 20.8$$
+\subsection*{c. Mean Absolute Percentage Error}
+We compute the Mean Absolute Percentage Error (MAPE) using the formula:
+$$
+\text { MAPE }=\dfrac{\displaystyle\sum_{t=k+1}^n\left|\left(\frac{e_t}{y_t}\right) 100\right|}{n-k}
+$$
+where \( e_t = y_t - \hat{y_t} \) and \( \hat{y_t} = y_{t-1} \), as in the naïve forecasting method.
+
+\noindent Calculating the percentage errors for each prediction:
+\[ \begin{aligned}
+e_2 &= |13 - 18| = 5, \quad \%E_2 = \left| \left(\frac{5}{13}\right) \times 100 \right| \approx 38.46\%, \\
+e_3 &= |16 - 13| = 3, \quad \%E_3 = \left| \left(\frac{3}{16}\right) \times 100 \right| \approx 18.75\%, \\
+e_4 &= |11 - 16| = 5, \quad \%E_4 = \left| \left(\frac{5}{11}\right) \times 100 \right| \approx 45.45\%, \\
+e_5 &= |17 - 11| = 6, \quad \%E_5 = \left| \left(\frac{6}{17}\right) \times 100 \right| \approx 35.29\%, \\
+e_6 &= |14 - 17| = 3, \quad \%E_6 = \left| \left(\frac{3}{14}\right) \times 100 \right| \approx 21.43\%.
+\end{aligned} \]
+
+\noindent Summing these percentage errors and calculating the MAPE:
+\[ \sum_{t = 2}^{6} \text{Percentage Errors} = 38.46 + 18.75 + 45.45 + 35.29 + 21.43 = 159.38\% \]
+\[ \text{MAPE} = \dfrac{159.38}{5} = 31.88\% \]
+
+\noindent This result indicates that, on average, the naïve method forecast deviates from the actual values by approximately 31.88\%.
+\subsection*{d. Determine the forcast for week 7}
+Using the naive method, we know that the forcast for the following week is the actual value for the previous week. That is,
+$$ \hat{y_t} = y_{t-1}$$
+So,
+$$ \hat{y_7} = 14$$
+Thus, the forcast for week 7 is 14.
+\newpage
+\section{Problem 2.}
+
+\textbf{The following table presents the observed data across six consecutive weeks:}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{@{}cS[table-format=2.0]@{}} 
+\toprule 
+{Week} & {Value} \\ 
+\midrule
+1 & 18 \\
+2 & 13 \\
+3 & 16 \\
+4 & 11 \\
+5 & 17 \\
+6 & 14 \\
+\bottomrule
+\end{tabular}
+\caption{Observed weekly values}
+\label{tab:observed_data}
+\end{table}
+\noindent \textbf{The table below compares two forecasting methods: the naïve method, which uses the most recent observation as the forecast, and the method of averaging all historical data.}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{@{}lS[table-format=2.2]S[table-format=2.2]@{}} 
+\toprule
+{Measure} & {\textbf{Naïve Method}} & {\textbf{Average Method}} \\
+\midrule
+Mean Absolute Error (MAE) & 4.40 & 2.73 \\
+Mean Squared Error (MSE) & 20.80 & 10.86 \\
+Mean Absolute Percentage Error (MAPE) & 31.88 & 21.17 \\
+\bottomrule
+\end{tabular}
+\caption{Comparison of forecast accuracy measures}
+\label{tab:forecast_comparison}
+\end{table}
+\noindent \textbf{Q: Which method appears to provide the more accurate forecasts for the historical data?}
+\bigbreak \noindent
+The average of all the historical data appears to provide more accurage forecasts for the historical data. This is because The MAE, MSE, and MAPE using the average of all historical data are all less than the MAE, MSE, and MAPE using the naive method.
+\section{Problem 3.}
+\textbf{Refer to the gasoline sales time series data in the given table.}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{cc}
+\toprule
+Week & Value \\
+\midrule
+1 & 17 \\
+2 & 21 \\
+3 & 19 \\
+4 & 23 \\
+5 & 18 \\
+6 & 16 \\
+7 & 20 \\
+8 & 18 \\
+9 & 22 \\
+10 & 20 \\
+11 & 15 \\
+12 & 22 \\
+\bottomrule
+\end{tabular}
+\end{table}
+\subsection*{a. Compute four-week and five-week moving averages for the time series.}
+To solve this problem, we simply use excel to calculate the moving averages, using the values 4 and 5 as the intervals.
+\newpage
+\subsection*{b. Compute the MSE for the four-week and five-week moving average forecasts.}
+To compute the MSE for the four-week and five-week moving averages, we use the formula:
+$$ \dfrac{\displaystyle\sum_{i}^{n}(y_i - \hat{y_i})^2}{n - (k - 1)}$$
+Where $k$ is the first entry with a calculated moving average.
+\bigbreak \noindent
+
+
+
+
+\end{document}
