@@ -1,0 +1,13 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{c+c1}{// always AF\PYGZus{}INET}
+\PYG{n}{sin\PYGZus{}family}\PYG{+w}{    }\PYG{c+cm}{/* address family */}
+
+\PYG{c+c1}{// htons(4444) ensures network order}
+\PYG{n}{sin\PYGZus{}port}\PYG{+w}{  }\PYG{c+cm}{/* port number: 2 bytes */}
+
+\PYG{n}{sin\PYGZus{}addr}\PYG{+w}{    }\PYG{c+cm}{/* Internet address: 4 bytes */}
+
+\PYG{c+c1}{// 2 ways to construct sin\PYGZus{}addr:}
+\PYG{n}{s\PYGZus{}addr}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{INADDR\PYGZus{}ANY}\PYG{+w}{ }\PYG{c+cm}{/* Anything */}
+\PYG{n}{s\PYGZus{}addr}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{inet\PYGZus{}addr}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}127.0.0.1\PYGZdq{}}\PYG{p}{)}
+\end{Verbatim}

@@ -1,0 +1,8 @@
+  unsigned factTR(unsigned int n, unsigned int a) {
+    if (n <= 1)
+      return a;
+    return factTR(n - 1, n * a);
+  }
+
+  // Wrapper over factTR
+  unsigned int fact(unsigned int n) { return facttr(n,1); }

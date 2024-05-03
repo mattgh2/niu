@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{n}{iterative\PYGZus{}postorder}\PYG{p}{()}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{n}{node}\PYG{o}{\PYGZlt{}}\PYG{n}{T}\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{p}\PYG{p}{;}\PYG{+w}{ }\PYG{c+c1}{// Pointer to a tree node}
+\PYG{+w}{  }\PYG{n}{node}\PYG{o}{\PYGZlt{}}\PYG{n}{T}\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{o}{*}\PYG{n}{last\PYGZus{}visited}\PYG{p}{;}\PYG{+w}{ }\PYG{c+c1}{// Pointer to the left tree node visited}
+\PYG{+w}{  }\PYG{n}{stack}\PYG{o}{\PYGZlt{}}\PYG{n}{node}\PYG{o}{\PYGZlt{}}\PYG{n}{T}\PYG{o}{\PYGZgt{}*\PYGZgt{}}\PYG{+w}{ }\PYG{n}{s}\PYG{p}{;}\PYG{+w}{ }\PYG{c+c1}{// a stack of pointer to tree nodes}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

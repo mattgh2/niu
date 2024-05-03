@@ -4,7 +4,6 @@
 #include <sys/types.h>
 #include <iostream>
 #include <cstring>
-#include <cstdio>
 int main(int argc, char **argv){
 
   int output_file_descriptor, count;
@@ -35,8 +34,8 @@ int main(int argc, char **argv){
   close(output_file_descriptor);
 
   // declares vars used by stat lib
-  int stat_return_status;
   struct stat buf;
+  int stat_return_status;
 
   // call stat function to populate our buffer
   stat_return_status = stat(out_file, &buf);

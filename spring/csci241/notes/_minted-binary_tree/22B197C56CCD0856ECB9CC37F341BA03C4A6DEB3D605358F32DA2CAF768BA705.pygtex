@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+  void inorder(node\PYGZlt{}t\PYGZgt{} *p) \PYG{n+nb}{\PYGZob{}}
+    if (p != nullptr) \PYG{n+nb}{\PYGZob{}}
+      inorder(p\PYGZhy{}\PYGZgt{}left)
+      // Visit the node
+      // std::cout \PYGZlt{}\PYGZlt{} p \PYGZlt{}\PYGZlt{} endl;
+      inorder(p\PYGZhy{}\PYGZgt{}right)
+    \PYG{n+nb}{\PYGZcb{}}
+\PYG{n+nb}{\PYGZcb{}}
+\end{Verbatim}

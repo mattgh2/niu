@@ -1,0 +1,157 @@
+\documentclass{report}
+
+\input{~/latex/template/preamble.tex}
+\input{~/latex/template/macros.tex}
+
+\title{\Huge{CSCI 241 - Notes\\ Recursion}}
+\author{\huge{Matt Warner}}
+\date{\huge{}}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{}
+\lhead{\leftmark}
+\cfoot{\thepage}
+% \usepackage[default]{sourcecodepro} \usepackage[T1]{fontenc}
+
+\pgfpagesdeclarelayout{boxed}
+{
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=1,%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {
+    border code=\pgfsetlinewidth{1.5pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.95\pgfphysicalwidth,%
+    resized height=.95\pgfphysicalheight,%
+    center=\pgfpoint{.5\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+}
+
+\pgfpagesuselayout{boxed}
+
+\begin{document}
+  \maketitle
+\section{Overview}
+Recursion is a general programming technique used to solve problems with a ``divide and conquer'' strategy
+\bigbreak \noindent
+\nt{
+  most computer programming langauges support recursion by allowing a function or member function to call itself within the program text.
+}
+\bigbreak \noindent
+\textbf{Example of recursion}
+\begin{cppcode}
+int factorial(int n)
+{
+  if (n == 1)
+  {
+  return 1 ;
+  }
+  else
+  {
+  return n * factorial(n-1);
+  }
+}
+\end{cppcode}
+\bigbreak \noindent
+A recursive function call will always by conditional. There must tbe at least one base case for which the function produces a result trivially without a recursive call. For example:
+\begin{cppcode}
+int factorial(int n){
+  if (n == 1 ){   // Base case - no recursion
+    return 1;
+  }
+  else
+  {
+    return n * factorial(n-1);
+  }
+}
+\end{cppcode}
+\bigbreak \noindent
+A function with no base cases leads to ``infinite recursion'' (similar to an infinite loop)
+\bigbreak \noindent
+In addition to the base cases, a recursive function will have one or more recursive cases. The job of a recursive case can be seen as breaking down complex inputs into simpler ones.
+\bigbreak \noindent
+In a properly designed recursive function, with each recursive call, the input problem must be simplified in such a way that eventually the base case must be reached. For example:
+\begin{cppcode}
+  int factorial(int n) {
+    if (n == 1) {
+      return 1;
+    }
+    else
+      return n * factorial(n - 1); // n - 1 gets us closer to 1
+  }
+\end{cppcode}
+\newpage
+\noindent Recursion requires automatic storage - each new call to the function creates its own copies of the local variables and function parameters on the program stack.
+\bigbreak \noindent
+Recursion is never a required programming technique. Recursion can always be replaced by either
+\begin{enumerate}
+  \item A loop 
+  \item A loop and a stack (that takes the place of the program call stack used by recursion)
+\end{enumerate}
+In the first case, a non-recursive algorithm will usually be superior, if only in terms of memory usage. But in the second case, we might choose a recursive algorith if it is shorter or eaiser to code (which is often true).
+\section{Recursive Trees}
+A \textit{recursion tree} is useful for visualizing what happens when a recurrence is iterated. It diagrams the tree of recursive calls and the amount of work done at each call.
+\bigbreak \noindent
+For instance, consider the following recursive function:
+\begin{cppcode}
+  int fib(int n) {
+    if (n < 2)
+      return n;
+    return fib(n - 1) + fib(n - 2);
+  }
+\end{cppcode}
+\bigbreak \noindent 
+Here is an example recursive tree for \textbf{fib(4)}, note the repeated computations:
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{ ~/Documents/figures/fib.jpg}
+\end{figure}
+\section{Tail Recursion}
+\textit{Tail recursion} is defined as a recursive function in which the recursive call is the last statement that is executed by the function. So basically, nothing is left to execute after the recursive call.
+\bigbreak \noindent
+\begin{cppcode}
+  void print(int n) {
+
+    if (n < 0) {
+      return;
+    }
+    // The last executed statement is recursive call
+    print(n - 1);
+}
+\end{cppcode}
+\subsection{Need for Tail Recursion}
+The tail recursive functions are considered better than non-tail recursive functions as tail-recursion can be optimized by the compiler.
+\bigbreak \noindent
+Compilers usually execute recursive procedures by using a \textit{stack}. This stack consits of all the pertinent information, including the parameter values for each recursive call.
+\bigbreak \noindent
+When a procedure is called, its information is \textit{pushed} onto a stack, and when the function terminates the information is \textit{popped} out of the stack. Thus for the non-tail recursive functions, the \textit{stack depth} (maximum amount of stack space used at any time during compilation) is more.
+\subsubsection*{Can a non-tail-recursive function be written as tail-recursive to optimize it?}
+Consider the following function to calculate the factorial of n.
+\begin{cppcode}
+  unsigned int fac(usigned int n) {
+    if (n <= 0)
+      return 1;
+    return n * fac(n - 1);
+  }
+\end{cppcode}
+\noindent Although this looks like tail-recursion, if we take a closer look we can see that the value returned by \textbf{fac(n - 1)} is used in \textbf{fac(n)}. So the call to \textbf{fac(n-1)} is not the last thing done by \textbf{fac(n)}.
+The above function can be written as a tail-recursive function. The idea is to use one more argument and accumulate the factorial value in the second argument. When n reaches 0, return the accumulated value.
+\begin{cppcode}
+  unsigned factTR(unsigned int n, unsigned int a) {
+    if (n <= 1)
+      return a;
+    return factTR(n - 1, n * a);
+  }
+
+  // Wrapper over factTR
+  unsigned int fact(unsigned int n) { return facttr(n,1); }
+\end{cppcode}
+
+
+
+\end{document}

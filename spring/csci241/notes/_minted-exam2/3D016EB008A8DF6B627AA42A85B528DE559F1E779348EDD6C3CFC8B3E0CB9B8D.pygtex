@@ -1,0 +1,27 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{c+cp}{\PYGZsh{}ifndef HEADER\PYGZus{}H}
+\PYG{c+cp}{\PYGZsh{}define HEADER\PYGZus{}H}
+
+\PYG{k}{class}\PYG{+w}{ }\PYG{n+nc}{Entity}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+
+\PYG{+w}{  }\PYG{c+c1}{// Data member declarations}
+\PYG{+w}{  }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{x}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{y}\PYG{p}{;}
+
+\PYG{+w}{  }\PYG{c+c1}{// friend function declaration}
+\PYG{+w}{  }\PYG{k}{friend}\PYG{+w}{ }\PYG{n}{std}\PYG{o}{::}\PYG{n}{ostream}\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{k}{operator}\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{p}{(}\PYG{n}{std}\PYG{o}{::}\PYG{n}{ostream}\PYG{o}{\PYGZam{}}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{const}\PYG{+w}{ }\PYG{n}{Entity}\PYG{o}{\PYGZam{}}\PYG{p}{);}
+
+\PYG{+w}{  }\PYG{c+c1}{// Constructors}
+\PYG{+w}{  }\PYG{n}{Entity}\PYG{p}{();}
+
+\PYG{+w}{  }\PYG{n}{Entity}\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{x}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{y}\PYG{p}{)}
+\PYG{+w}{  }\PYG{n}{Entity}\PYG{p}{(}\PYG{k}{const}\PYG{+w}{ }\PYG{n}{Entity}\PYG{o}{\PYGZam{}}\PYG{p}{);}\PYG{+w}{ }\PYG{c+c1}{// copy constructor (used with pointers)}
+
+\PYG{+w}{  }\PYG{c+c1}{// Member functions}
+\PYG{+w}{  }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{push}\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{value}\PYG{p}{);}
+\PYG{+w}{  }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{pop}\PYG{p}{();}
+
+\PYG{+w}{  }\PYG{c+c1}{// Accessor and mutator functions (get and set)}
+\PYG{+w}{  }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{set\PYGZus{}x}\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{x}\PYG{p}{);}
+\PYG{+w}{  }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{get\PYGZus{}x}\PYG{p}{()}\PYG{+w}{ }\PYG{k}{const}\PYG{p}{;}
+\PYG{p}{\PYGZcb{};}
+\end{Verbatim}

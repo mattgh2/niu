@@ -1,0 +1,252 @@
+\documentclass{report}
+
+\input{~/latex/template/preamble.tex}
+\input{~/latex/template/macros.tex}
+
+\title{\Huge{UDP Lecture Notes}}
+\author{\huge{Matt Warner}}
+\date{\huge{}}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{}
+\lhead{\leftmark}
+\cfoot{\thepage}
+% \usepackage[default]{sourcecodepro} \usepackage[T1]{fontenc}
+
+\pgfpagesdeclarelayout{boxed}
+{
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=1,%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {
+    border code=\pgfsetlinewidth{1.5pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.95\pgfphysicalwidth,%
+    resized height=.95\pgfphysicalheight,%
+    center=\pgfpoint{.5\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+}
+
+\pgfpagesuselayout{boxed}
+
+\begin{document}
+  \maketitle
+\section{Overview}
+\begin{itemize}
+  \item Transport Layer OSI model
+  \item User datagram protocol (UDP)
+  \item UDP progamming
+  \item Example UDP client/server programs
+\end{itemize}
+\section{Review: Network Layer}
+The network layer, also called the Internet Protocol (IP) layer, provides host to host transmission service, where hosts are not necessarily adjacent.
+\bigbreak \noindent
+The IP layer provides services:
+\begin{itemize}
+  \item \textit{Addressing}, were hosts have global addresses: IPv4, IPv6
+  \item \textit{Routing} and \textit{forwarding}, which involves finding a path from host to host.
+\end{itemize}
+\section{Transport Layer}
+The internet has two main protocols in the transport layer, a connectionless protocol and a connection-oriented one. These protocols complement each other.
+\bigbreak \noindent
+The connectionless protocol is UDP. It does almost nothing beyond sending packets between applications, letting applications build their own protocols on top as needed.
+\bigbreak \noindent
+The connection-oriented one is TCP. It does almost everything. It makes connections and adds reliability with retransmissions, along with flow control and congestion control, all on behalf of the applications that use it.
+\section{UDP}
+The internet protocol suite supports a connectionless transport protocol called \textbf{UDP (User Datagram Protocol)}. UDP provides a way for applications to send encapsulated IP datagrams without having to establish a connection.
+\bigbreak \noindent
+UDP transmits \textbf{segments} consisting of an 8-byte header followed by the payload. The header is shown in Fig. 6-27. The two \textbf{ports} serve to identify the endpoints within the source and destination machines. When a UDP packet arrives, its payload is handed to the process attached to the destination port. This attachment occurs when the BIND primative or something similar is used.
+\bigbreak \noindent
+Think of ports as mailboxes that applications can rent to receive packets. We will have more to say about them when we describe TCP, which also uses ports. In fact, the main value of UDP over just using raw IP is the addition of the source and destination ports. Without the port fields, the transport layer would not know what to do with each incoming packet. With them, it delivers the embedded segment to the correct application.
+\bigbreak \noindent
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{ ~/Documents/figures/udpheader.png }
+\end{figure}
+\newpage
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{  ~/Documents/figures/udpPacket.png}
+\caption*{\small{\textbf{\textit{Figure 6-28.}} UDP Packet}}
+\end{figure}
+\noindent Here are some things to consider with UDP:
+\begin{itemize}
+  \item Data may or may not be delivered.
+  \item Data may change
+  \item Data may not be in order
+  \item UDP uses checksums to discover if the data has been corrupted, but will not do anything about it.
+  \item Transmits information in one direction from source to destination without verifying the readiness or state of the receiver.
+\end{itemize}
+\section{UDP programming}
+The endpoint on a host in programmingc an be refered to as a \texit{socket}.
+\bigbreak \noindent
+The \textit{Socket} is the end-point of the communications link. It has a clear identification. That is: \vspace{2mm}
+
+\noindent IP address + port number
+\bigbreak \noindent
+The socket can receive data, and it can send data. The typical logic is that we have two programs. One is the server, and the other is the client. The server waits to receive a datagram from any client. The client puts on its address the IP \& Port it should go to. The server receives it, processes it, then responds to the client with a datagram.
+\section{Socket system calls}
+\begin{center}
+\begin{tabular}{|>{\ttfamily}l|l|}
+\hline
+\textbf{System call} & \textbf{Meaning} \\
+\hline
+socket & Create a new communication endpoint \\
+\hline
+bind & Attach a local address to a socket \\
+\hline
+recvfrom & Receive(read) some data over the connection \\
+\hline
+sendto & Send(write) some data over the connection \\
+\hline
+close & Release the connection \\
+\hline
+\end{tabular}
+\end{center}
+\section{UDP communications pattern}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{ ~/Documents/figures/communications.png }
+\end{figure}
+\section{System call: socket}
+
+\subsubsection*{SYNOPSIS}
+\begin{minted}{c++}
+#include <sys/types.h>
+#include <sys/socket.h>
+
+int socket(int domain, int type, int protocol);
+\end{minted}
+\textbf{socket()} creates an endpoint for communication and returns a descriptor.
+\begin{itemize}
+\item \textbf{domain} is set to \textbf{AF\_INET}
+\item \textbf{type} is set to \textbf{SOCK\_DGRAM} for datagrams
+\item \textbf{protocol} is set to 0, i.e. default UDP
+\item Returns socket descriptor
+  \begin{itemize}[label=$\circ$]
+    \item used in \textbf{bind}, \textbf{sendto}, \textbf{recvfrom}, \textbf{close}.
+  \end{itemize}
+\end{itemize}
+\section{system call: bind}
+\subsubsection*{Synopsis}
+\begin{minted}{c++}
+#include <sys/types.h>
+#include <sys/socket.h>
+
+int bind(int sockfd, const struct sockaddr *addr, socklen_t addrlen);
+\end{minted}
+\begin{itemize}
+\item Assigns address to socket: IP number and port
+\item \textbf{struct sockaddr} holds address information
+  \begin{itemize}[label=$\circ$]
+    \item will accept \textbf{struct sockaddr\_in} pointer
+  \end{itemize}
+\item \textbf{addrlen} specifies length of \textbf{addr} structure
+\item returns 0 on success, -1 otherwise
+\end{itemize}
+\section{structure sockaddr: 16bytes}
+\begin{cppcode}
+  struct sockaddr {
+    short sa_family   /* address family */
+    char sa_data[14];   /* address data */
+  };
+  struct sockaddr_in {
+    short sin_family;    /* address family */
+    unsigned short sin_port;    /* port number: 2 bytes */
+    struct in_addr sin_addr     /* IP address: 4 bytes */
+    char sin_zero[8]; /* pad to size of struct sockaddr */
+  };
+\end{cppcode}
+\section{structure sockaddr\_in: members}
+\begin{minted}{c++}
+// always AF_INET
+sin_family    /* address family */
+
+// htons(4444) ensures network order
+sin_port  /* port number: 2 bytes */
+
+sin_addr    /* Internet address: 4 bytes */
+
+// 2 ways to construct sin_addr:
+s_addr = INADDR_ANY /* Anything */
+s_addr = inet_addr("127.0.0.1")
+\end{minted}
+\section{Helper Functions: Byte Order Conversion}
+\begin{itemize}
+  \item \textbf{htonl} (host to network long)
+    \begin{itemize}
+      \item[$\circ$] \textbf{Purpose:} Converts a 32-bit long integer from the host's byte order to network byte order.
+      \item[$\circ$] \textbf{Details:} On little-endian systems, this function will reverse the byte order. On big-endian systems, it typically does nothing.
+    \end{itemize}
+  \item \textbf{htons} (host to network short)
+    \begin{itemize}
+      \item[$\circ$] \textbf{Purpose:} Converts a 16-bit short integer from the host's byte order to network byte order.
+      \item[$\circ$] \textbf{Details:} Adjusts the byte order of short integers for consistent data transmission across different systems.
+    \end{itemize}
+  \item \textbf{ntohl} (network to host long)
+    \begin{itemize}
+      \item[$\circ$] \textbf{Purpose:} Converts a 32-bit long integer from network byte order to the host's byte order.
+      \item[$\circ$] \textbf{Details:} Reverses the byte order of long integers received from the network to match the host system's byte order.
+    \end{itemize}
+  \item \textbf{ntohs} (network to host short)
+    \begin{itemize}
+      \item[$\circ$] \textbf{Purpose:} Converts a 16-bit short integer from network byte order to the host's byte order.
+      \item[$\circ$] \textbf{Details:} Reverses the byte order of 16-bit short integers received over a network to match the host system's byte order.
+    \end{itemize}
+\end{itemize}
+\section{Helper Functions: Address Manipulation}
+\begin{itemize}
+  \item in\_addr\_t inet\_addr(const char *cp)
+\end{itemize}
+\section{System call: recvfrom}
+\begin{minted}{c++}
+ssize_t recvfrom(int s, void *buf, size_t len, int flags, struct sockaddr *from, socklen_t *fromlen)
+\end{minted}
+Once you have a socket up and connected, you can read incoming data from the remote side using \textbf{recvfrom()} (for UDP \textbf{SOCK\_DGRAM} sockets).
+\bigbreak \noindent
+This function takes the socket descriptor, \textbf{s}, a pointer to the buffer \textbf{buf}, the size (in bytes) of the buffer, \textbf{len}, and a set of \textbf{flags} that control how the function works.  \vspace{2mm}
+
+\noindent Additionally, the function takes a \textbf{struct sockaddr*}, that will tell you where the data came from, and will fill in \textbf{fromlen} with the size of \textbf{struct sockaddr}.
+\section{System call: sendto}
+\begin{minted}{c++}
+ssize_t sendto(int sockfd, const void *buf, size_t len, int flags, const struct sockaddr *desk_addr, socklen_t addrlen)
+\end{minted}
+\begin{itemize}
+  \item sends datagram \textbf{buf} of size \textbf{len} to socket \textbf{sockfd}
+    \begin{itemize}[label=$\circ$]
+    will wait if there is no ready receiver
+    \item flags specifies wait behavior, e.g.: 0 for default
+    \end{itemize}
+  \item \textbf{dest\_addr} holds address information of receiver
+   \begin{itemize}[label=$\circ$]
+     \item \textbf{struct sockaddr defines address structure}
+   \item \textbf{addrlen} specifies length of \textbf{dest\_addr} structure
+   \end{itemize} 
+ \item returns the number of bytes send, i.e. size of datagram
+\end{itemize}
+\section{System Call: close}
+\begin{minted}{c++}
+int close(int fd)
+\end{minted}
+\begin{itemize}
+  \item closes socket specified by socket descriptor, \textbf{fd}
+\end{itemize}
+\section{Example: UDP Programming}
+\begin{itemize}
+  \item simple server: echo
+\begin{itemize}[label=$\circ$]
+  \item receives datagrams, sends them back to sender
+\end{itemize}
+\item simple client
+  \begin{itemize}[label=$\circ$]
+    \item sends datagram to server, receives responce
+  \end{itemize}
+\end{itemize}
+\newpage
+
+\end{document}

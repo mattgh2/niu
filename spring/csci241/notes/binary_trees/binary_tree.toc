@@ -1,0 +1,22 @@
+\contentsline {section}{\numberline {1}Why trees?}{3}{section.0.1}%
+\contentsline {section}{\numberline {2}Unbalanced Binary Trees}{4}{section.0.2}%
+\contentsline {section}{\numberline {3}Where are Binary Trees used?}{4}{section.0.3}%
+\contentsline {section}{\numberline {4}Terminology of Binary Trees}{5}{section.0.4}%
+\contentsline {section}{\numberline {5}Types of Binary tree}{5}{section.0.5}%
+\contentsline {subsubsection}{\numberline {5.0.1}Complete binary tree}{5}{subsubsection.0.5.0.1}%
+\contentsline {subsubsection}{\numberline {5.0.2}Full / Strict binary tree}{5}{subsubsection.0.5.0.2}%
+\contentsline {subsubsection}{\numberline {5.0.3}Segment tree}{6}{subsubsection.0.5.0.3}%
+\contentsline {subsubsection}{\numberline {5.0.4}Height balanced Binary Tree}{6}{subsubsection.0.5.0.4}%
+\contentsline {subsubsection}{\numberline {5.0.5}Skewed Binary Tree}{6}{subsubsection.0.5.0.5}%
+\contentsline {subsubsection}{\numberline {5.0.6}Perfect Tree}{7}{subsubsection.0.5.0.6}%
+\contentsline {section}{\numberline {6}Binary Tree properties}{8}{section.0.6}%
+\contentsline {section}{\numberline {7}Implementation}{8}{section.0.7}%
+\contentsline {section}{\numberline {8}Linked representation}{8}{section.0.8}%
+\contentsline {subsection}{\numberline {8.1}Node Structure}{8}{subsection.0.8.1}%
+\contentsline {subsection}{\numberline {8.2}Computing the Size of a Tree}{9}{subsection.0.8.2}%
+\contentsline {subsection}{\numberline {8.3}Binary Tree Traversal}{10}{subsection.0.8.3}%
+\contentsline {subsubsection}{\numberline {8.3.1}Preorder Traversal}{10}{subsubsection.0.8.3.1}%
+\contentsline {subsubsection}{\numberline {8.3.2}Inorder Traversal}{11}{subsubsection.0.8.3.2}%
+\contentsline {subsubsection}{\numberline {8.3.3}Postorder Traversal}{12}{subsubsection.0.8.3.3}%
+\contentsline {subsubsection}{\numberline {8.3.4}Level Order Traversal (BFS)}{14}{subsubsection.0.8.3.4}%
+\contentsline {section}{\numberline {9}Binary Search Trees}{15}{section.0.9}%

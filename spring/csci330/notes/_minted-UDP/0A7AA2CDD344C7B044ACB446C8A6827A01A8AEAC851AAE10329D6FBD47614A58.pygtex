@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{k}{struct}\PYG{+w}{ }\PYG{n+nc}{sockaddr}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{k+kt}{short}\PYG{+w}{ }\PYG{n}{sa\PYGZus{}family}\PYG{+w}{   }\PYG{c+cm}{/* address family */}
+\PYG{+w}{  }\PYG{k+kt}{char}\PYG{+w}{ }\PYG{n}{sa\PYGZus{}data}\PYG{p}{[}\PYG{l+m+mi}{14}\PYG{p}{];}\PYG{+w}{   }\PYG{c+cm}{/* address data */}
+\PYG{p}{\PYGZcb{};}
+\PYG{k}{struct}\PYG{+w}{ }\PYG{n+nc}{sockaddr\PYGZus{}in}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{k+kt}{short}\PYG{+w}{ }\PYG{n}{sin\PYGZus{}family}\PYG{p}{;}\PYG{+w}{    }\PYG{c+cm}{/* address family */}
+\PYG{+w}{  }\PYG{k+kt}{unsigned}\PYG{+w}{ }\PYG{k+kt}{short}\PYG{+w}{ }\PYG{n}{sin\PYGZus{}port}\PYG{p}{;}\PYG{+w}{    }\PYG{c+cm}{/* port number: 2 bytes */}
+\PYG{+w}{  }\PYG{k}{struct}\PYG{+w}{ }\PYG{n+nc}{in\PYGZus{}addr}\PYG{+w}{ }\PYG{n}{sin\PYGZus{}addr}\PYG{+w}{     }\PYG{c+cm}{/* IP address: 4 bytes */}
+\PYG{+w}{  }\PYG{k+kt}{char}\PYG{+w}{ }\PYG{n}{sin\PYGZus{}zero}\PYG{p}{[}\PYG{l+m+mi}{8}\PYG{p}{];}\PYG{+w}{ }\PYG{c+cm}{/* pad to size of struct sockaddr */}
+\PYG{p}{\PYGZcb{};}
+\end{Verbatim}

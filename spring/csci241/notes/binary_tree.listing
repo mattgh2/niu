@@ -1,5 +1,0 @@
-struct node {
-  int value;
-  node_ptr left;
-  node_ptr right;
-};

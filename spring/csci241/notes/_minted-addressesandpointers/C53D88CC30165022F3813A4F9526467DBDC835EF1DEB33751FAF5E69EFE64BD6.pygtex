@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{k+kt}{float}\PYG{o}{*}\PYG{+w}{ }\PYG{n}{floatPtr}\PYG{p}{;}\PYG{+w}{    }\PYG{c+c1}{// floatPtr is a pointer to a float.}
+
+\PYG{k+kt}{char}\PYG{o}{*}\PYG{+w}{ }\PYG{n}{first}\PYG{p}{;}\PYG{+w}{         }\PYG{c+c1}{// first is a pointer to a char.}
+
+\PYG{n}{Date}\PYG{o}{*}\PYG{+w}{ }\PYG{n}{dataPtr}\PYG{p}{;}\PYG{+w}{      }\PYG{c+c1}{// dataPtr is a pointer to a Date object.}
+
+\PYG{k+kt}{double}\PYG{o}{*}\PYG{+w}{ }\PYG{n}{x}\PYG{p}{,}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{y}\PYG{p}{;}\PYG{+w}{     }\PYG{c+c1}{// x and y are both pointers to double.}
+\end{Verbatim}
