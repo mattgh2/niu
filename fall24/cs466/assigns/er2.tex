@@ -1,0 +1,163 @@
+\documentclass{report}
+
+\input{~/latex/template/preamble.tex}
+\input{~/latex/template/macros.tex}
+
+\title{\Huge{}}
+\author{\huge{Matt Warner}}
+\date{\huge{}}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{}
+\lhead{\leftmark}
+\cfoot{\thepage}
+% \usepackage[default]{sourcecodepro} \usepackage[T1]{fontenc}
+
+\pgfpagesdeclarelayout{boxed}
+{
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=1,%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {
+    border code=\pgfsetlinewidth{1.5pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.95\pgfphysicalwidth,%
+    resized height=.95\pgfphysicalheight,%
+    center=\pgfpoint{.5\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+}
+
+\pgfpagesuselayout{boxed}
+
+\begin{document}
+    \maketitle
+\begin{figure}[ht]
+\centering
+\includegraphics[width=1\textwidth]{ /home/matt/tmp/er2_test3.png }
+\end{figure}
+\newpage
+\section{Entities \& Atributes}
+\begin{itemize}
+    \item \textbf{User}
+        \begin{itemize}[label=$\circ$]
+            \item \texttt{ID} \textit{\textbf{(Identifier)}}. \ - \ Unique identification number used a surrogate key to identify a user.
+            \item \texttt{PhoneNumber}  \ - \ The users phone number.
+            \item \texttt{Name} \ - \ The users legal name.
+            \item \texttt{Age} \ - \ The users age.
+            \item \texttt{DateOfBirth} \ - \ The users DOB.
+            \item \texttt{City} \ - \ Location of the user.
+        \end{itemize}
+    \item \texttt{Weight} (Weak Entitiy)
+        \begin{itemize}[label=$\circ$]
+            \item \texttt{ScaleWeight} \ - \ Weight of the user.
+        \end{itemize}
+    \item \texttt{Account}
+        \begin{itemize}[label=$\circ$]
+            \item \texttt{Email} \textit{\textbf{(Identifier)}}. The users email address. Serves as a natural key to identify accounts.
+            \item \texttt{Username} \ - \ Identity of the user. 
+            \item \texttt{CreationDate} \ - \  The date in which the account was created.
+        \end{itemize}
+    \item \texttt{Meal}
+        \begin{itemize}[label=$\circ$]
+            \item MealID \textit{\textbf{(identifier)}} \ - \ surrogate key used to identify a meal.
+            \item \texttt{CalorieCount} \ - \ Amount of calories present in a meal.
+        \end{itemize}
+    \item\texttt{Food}
+        \begin{itemize}[label=$\circ$]
+            \item \texttt{FoodID} \textit{\textbf{Identifier}} \ - \ Surrogate key used to identify a food item.
+            \item \texttt{Name} \ - \ The name of the food.
+        \end{itemize}
+    \item \texttt{Drink}
+        \begin{itemize}[label=$\circ$]
+            \item \texttt{DrinkID} \textit{\textbf{(Identifier)}} \ - \ Surrogate key used to identify a drink item.
+            \item \texttt{Name} \ - \ The name of the drink.
+        \end{itemize}
+            \item \texttt{ServingSize} \textit{\textbf{(Weak entitiy)}} \ - \ Serving size depends on the existence of \texttt{Food} or \texttt{Drink}.
+                \begin{itemize}[label=$\circ$]
+            \item \texttt{FoodName} \ - \ The name of the food (or drink).
+            \item \texttt{CaloriesPerServing} \ - \ The amount of calories present. This data is tracked in order to...
+                \end{itemize}
+        \begin{itemize}[label=$\circ$]
+        \end{itemize}
+    \item \texttt{Unit}
+        \begin{itemize}[label=$\circ$]
+            \item \texttt{UnitType} \textit{\textbf{(Identifier)}} \ - \ Natural key that is the type of unit (since unit names are unique).
+        \end{itemize}
+    \item\texttt{MacroNutrient}
+        \begin{itemize}[label=$\circ$]
+            \item \texttt{Name} \textit{\textbf{(identifier)}} \ - \ The name of the macronutirent. Since all names are unique, this works as a natural key to identify a macronutriant.
+        \end{itemize}
+    \item\texttt{MicroNutrient}
+        \begin{itemize}[label=$\circ$]
+            \item \texttt{Name} \textit{\textbf{(identifier)}} \ - \ The name of the micronutrient. Since all names are unique, this works as a natural key to identify a micronutrient.
+        \end{itemize}
+    \item \texttt{Workout}
+        \begin{itemize}[label=$\circ$]
+    \item \texttt{WorkoutID} \textit{\textbf{(identifier)}}\ - \. Unique ID given to a workout to identify it.
+        \end{itemize}
+    \item \texttt{WorkoutType}
+        \begin{itemize}[label=$\circ$]
+            \item \texttt{TypeNo} \textit{\textbf{(identifier)}} \ - \ Surrogate key used to  indentify a \texttt{WorkoutType}.
+            \item \texttt{Type} \ - \ Specific type of workout that describes \texttt{WorkoutType}. 
+            \item  \texttt{Duration} \ - \ Amount of time taken to complete the workout.
+            \item \texttt{Intensity} \ - \ The level of intensity for the type of workout.
+        \end{itemize}
+    \item \texttt{}
+\end{itemize}
+        \section{Relationships \& Cardinality}
+        \begin{itemize}
+            \item \textit{\textbf{performs}} (binary)
+            \begin{itemize}
+            \item \texttt{User} \textit{\textbf{performs}} \texttt{Workout}
+            \end{itemize}
+            \textbf{one-to-one} \ - \ If we know the \texttt{User}, and we know the \texttt{Date}, it must belong to a single instance of a \texttt{workout} . Additionally, if we know the \texttt{Workout} and the \texttt{date}, then there can only be \textit{\textbf{one}} \texttt{user} associated with that workout at that specific date.
+        \item \textit{\textbf{owns}} (binary)
+            \begin{itemize}[label=$\circ$]
+            \item \texttt{User} \textit{\textbf{owns}} \texttt{Account}
+        \end{itemize}
+        \textbf{one-to-one} \ - \ Only one \texttt{account} can be owned by a \texttt{User}. And only one \texttt{User} can \textit{\textbf{own}} a given account \texttt{Account}.
+        \item \textit{\textbf{Updates}} (binary)
+            \begin{itemize}[label=$\circ$]
+                \texttt{User}  \textit{\textbf{updates}} \texttt{Weight}
+            \end{itemize}
+            \textbf{one-to-one} \ - \ A user can update one instance of his/her weight at a specific \texttt{Time}.
+        \item \textit{\textbf{Tracks}} (ternary)
+            \begin{itemize}[label=$\circ$]
+                \item  \texttt{Account} \textit{\textbf{tracks}} \texttt{Meal} (\textbf{one-to-many}) \ - \ An \texttt{Account} can track many meals. But a meal can be tracked by one \texttt{Account}
+                \item \texttt{Account} \textit{\textbf{tracks}} \texttt{Workout}. \textbf(one-to-many) Same logic applied here. 
+            \end{itemize}
+        \item \textit{\textbf{includes}} (ternary)
+            \begin{itemize}[label=$\circ$]
+                \item \texttt{Meal} \textit{\textbf{includes}} \texttt{Food}
+                \item \texttt{Meal} \textit{\textbf{includes}} \texttt{Drink}
+            \end{itemize}
+        \item \textit{\textbf{Trains}} (binary)
+            \begin{itemize}[label=$\circ$] 
+                \item \texttt{Workout}  \textit{\textbf{Trains}} \texttt{WorkoutType}
+            \end{itemize}
+        \item \textit{\textbf{contains}} (ternary)
+            \begin{itemize}[label=$\circ$]
+                \item        \texttt{ServingSize} \textit{\textbf{contains}} \texttt{Macronutrient}
+                \item            \texttt{ServingSize} \textit{\textbf{contains}} \texttt{micronutrient}
+            \end{itemize}
+        \item \textit{\textbf{has}} (ternary)
+            \begin{itemize}[label=$\circ$]
+                \item \texttt{Food} \textit{\textbf{has}} \texttt{ServingSize}
+                \item \texttt{Drink} \textit{\textbf{has}} \texttt{ServingSize}
+            \end{itemize}
+        \item \textit{\textbf{eats}} (binary)
+            \begin{itemize}[label=$\circ$]
+                \item \texttt{User} \textit{\textbf{eats}} \texttt{Meal}
+            \end{itemize}
+        \item \textit{\textbf{Measures in}} (binary)
+            \begin{itemize}[label=$\circ$]
+                \item \texttt{ServingSize} \textit{\textbf{Measures in}} \texttt{Unit}
+            \end{itemize}
+        \end{itemize}
+
+\end{document}
