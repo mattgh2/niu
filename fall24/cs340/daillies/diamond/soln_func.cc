@@ -1,9 +1,12 @@
 #include <vector>
+#include <cstddef>
+
 
 typedef std::vector<std::vector<int>> twod_int_vector;
 
 std::vector<int> diamondsequence(twod_int_vector &m) {
-    auto [N, M] = std::make_pair(m.size(), m[0].size());
+
+    std::size_t N = m.size(), M = m[0].size();
 
     if (N % 2 == 0 || N != M) { return {}; }
 
@@ -13,7 +16,7 @@ std::vector<int> diamondsequence(twod_int_vector &m) {
 
     bool hit_the_edge = false;  
 
-    auto update_positions = [&m, &hit_the_edge](const size_t &row, auto&& it1, auto&& it2) -> std::pair<ptrdiff_t,ptrdiff_t> {
+    auto update_positions = [&m, &hit_the_edge](const std::size_t &row, auto&& it1, auto&& it2) -> std::pair<ptrdiff_t,ptrdiff_t> {
         if (it2 == (m[row].end() - 1)) {hit_the_edge = true; } 
         if (hit_the_edge) { 
             ++it1; --it2; 
@@ -25,7 +28,7 @@ std::vector<int> diamondsequence(twod_int_vector &m) {
     auto left_traversal = (m[0].cbegin() + N / 2);
     auto right_traversal = left_traversal;
 
-    for (size_t row = 0; row < N; ++row) {
+    for (std::size_t row = 0; row < N; ++row) {
 
             *(front_inserter++) = *right_traversal;
 
