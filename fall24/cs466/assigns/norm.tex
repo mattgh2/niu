@@ -1,0 +1,397 @@
+
+% --- LaTeX Homework Template - S. Venkatraman ---
+
+% --- Set document class and font size ---
+
+\documentclass[letterpaper, 11pt]{article}
+
+% --- Package imports ---
+
+\usepackage[]{mdframed}
+
+\usepackage{
+  booktabs, amsmath, amsthm, amssymb, mathtools,	  % Math typesetting
+  graphicx, wrapfig, subfig, float,                  % Figures and graphics formatting
+  listings, color,  pythonhighlight,     % Code formatting
+  fancyhdr, sectsty, hyperref, enumerate, enumitem } % Headers/footers, section fonts, links, lists
+
+% --- Page layout settings ---
+
+% Set page margins
+\usepackage[left=1in, right=1in, bottom=1in, top=1.1in, headsep=0.2in]{geometry}
+
+% Anchor footnotes to the bottom of the page
+\usepackage[bottom]{footmisc}
+
+% Set line spacing
+\renewcommand{\baselinestretch}{1.2}
+
+% Set spacing between paragraphs
+\setlength{\parskip}{1.5mm}
+
+% Allow multi-line equations to break onto the next page
+\allowdisplaybreaks
+
+% Enumerated lists: make numbers flush left, with parentheses around them
+\setlist[enumerate]{wide=0pt, leftmargin=21pt, labelwidth=0pt, align=left}
+\setenumerate[1]{label={(\arabic*)}}
+
+% --- Page formatting settings ---
+
+% Set link colors for labeled items (blue) and citations (red)
+\hypersetup{colorlinks=true, linkcolor=blue, citecolor=red}
+
+% Make reference section title font smaller
+\renewcommand{\refname}{\large\bf{References}}
+
+% --- Settings for printing computer code ---
+
+% Define colors for green text (comments), grey text (line numbers),
+% and green frame around code
+\definecolor{greenText}{rgb}{0.5, 0.7, 0.5}
+\definecolor{greyText}{rgb}{0.5, 0.5, 0.5}
+\definecolor{codeFrame}{rgb}{0.5, 0.7, 0.5}
+
+% Define code settings
+\lstdefinestyle{code} {
+  frame=single, rulecolor=\color{codeFrame},            % Include a green frame around the code
+  numbers=left,                                         % Include line numbers
+  numbersep=8pt,                                        % Add space between line numbers and frame
+  numberstyle=\tiny\color{greyText},                    % Line number font size (tiny) and color (grey)
+  commentstyle=\color{greenText},                       % Put comments in green text
+  basicstyle=\linespread{1.1}\ttfamily\footnotesize,    % Set code line spacing
+  keywordstyle=\ttfamily\footnotesize,                  % No special formatting for keywords
+  showstringspaces=false,                               % No marks for spaces
+  xleftmargin=1.95em,                                   % Align code frame with main text
+  framexleftmargin=1.6em,                               % Extend frame left margin to include line numbers
+  breaklines=true,                                      % Wrap long lines of code
+  postbreak=\mbox{\textcolor{greenText}{$\hookrightarrow$}\space} % Mark wrapped lines with an arrow
+}
+
+% Set all code listings to be styled with the above settings
+\lstset{style=code}
+
+% --- Math/Statistics commands ---
+
+% Add a reference number to a single line of a multi-line equation
+% Usage: "\numberthis\label{labelNameHere}" in an align or gather environment
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+
+% Shortcut for bold text in math mode, e.g. $\b{X}$
+\let\b\mathbf
+
+% Shortcut for bold Greek letters, e.g. $\bg{\beta}$
+\let\bg\boldsymbol
+
+% Shortcut for calligraphic script, e.g. %\mc{M}$
+\let\mc\mathcal
+
+% \mathscr{(letter here)} is sometimes used to denote vector spaces
+\usepackage[mathscr]{euscript}
+
+% Convergence: right arrow with optional text on top
+% E.g. $\converge[w]$ for weak convergence
+\newcommand{\converge}[1][]{\xrightarrow{#1}}
+
+% Normal distribution: arguments are the mean and variance
+% E.g. $\normal{\mu}{\sigma}$
+\newcommand{\normal}[2]{\mathcal{N}\left(#1,#2\right)}
+
+% Uniform distribution: arguments are the left and right endpoints
+% E.g. $\unif{0}{1}$
+\newcommand{\unif}[2]{\text{Uniform}(#1,#2)}
+
+% Independent and identically distributed random variables
+% E.g. $ X_1,...,X_n \iid \normal{0}{1}$
+\newcommand{\iid}{\stackrel{\smash{\text{iid}}}{\sim}}
+
+% Equality: equals sign with optional text on top
+% E.g. $X \equals[d] Y$ for equality in distribution
+\newcommand{\equals}[1][]{\stackrel{\smash{#1}}{=}}
+
+% Math mode symbols for common sets and spaces. Example usage: $\R$
+\newcommand{\R}{\mathbb{R}}   % Real numbers
+\newcommand{\C}{\mathbb{C}}   % Complex numbers
+\newcommand{\Q}{\mathbb{Q}}   % Rational numbers
+\newcommand{\Z}{\mathbb{Z}}   % Integers
+\newcommand{\N}{\mathbb{N}}   % Natural numbers
+\newcommand{\F}{\mathcal{F}}  % Calligraphic F for a sigma algebra
+\newcommand{\El}{\mathcal{L}} % Calligraphic L, e.g. for L^p spaces
+
+% Math mode symbols for probability
+\newcommand{\pr}{\mathbb{P}}    % Probability measure
+\newcommand{\E}{\mathbb{E}}     % Expectation, e.g. $\E(X)$
+\newcommand{\var}{\text{Var}}   % Variance, e.g. $\var(X)$
+\newcommand{\cov}{\text{Cov}}   % Covariance, e.g. $\cov(X,Y)$
+\newcommand{\corr}{\text{Corr}} % Correlation, e.g. $\corr(X,Y)$
+\newcommand{\B}{\mathcal{B}}    % Borel sigma-algebra
+
+% Other miscellaneous symbols
+\newcommand{\tth}{\text{th}}	% Non-italicized 'th', e.g. $n^\tth$
+\newcommand{\Oh}{\mathcal{O}}	% Big-O notation, e.g. $\O(n)$
+\newcommand{\1}{\mathds{1}}	% Indicator function, e.g. $\1_A$
+
+% Additional commands for math mode
+\DeclareMathOperator*{\argmax}{argmax}    % Argmax, e.g. $\argmax_{x\in[0,1]} f(x)$
+\DeclareMathOperator*{\argmin}{argmin}    % Argmin, e.g. $\argmin_{x\in[0,1]} f(x)$
+\DeclareMathOperator*{\spann}{Span}       % Span, e.g. $\spann\{X_1,...,X_n\}$
+\DeclareMathOperator*{\bias}{Bias}        % Bias, e.g. $\bias(\hat\theta)$
+\DeclareMathOperator*{\ran}{ran}          % Range of an operator, e.g. $\ran(T) 
+\DeclareMathOperator*{\dv}{d\!}           % Non-italicized 'with respect to', e.g. $\int f(x) \dv x$
+\DeclareMathOperator*{\diag}{diag}        % Diagonal of a matrix, e.g. $\diag(M)$
+\DeclareMathOperator*{\trace}{trace}      % Trace of a matrix, e.g. $\trace(M)$
+
+% Numbered theorem, lemma, etc. settings - e.g., a definition, lemma, and theorem appearing in that 
+% order in Section 2 will be numbered Definition 2.1, Lemma 2.2, Theorem 2.3. 
+% Example usage: \begin{theorem}[Name of theorem] Theorem statement \end{theorem}
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+
+% Un-numbered theorem, lemma, etc. settings
+% Example usage: \begin{lemma*}[Name of lemma] Lemma statement \end{lemma*}
+\newtheorem*{theorem*}{Theorem}
+\newtheorem*{proposition*}{Proposition}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem*{corollary*}{Corollary}
+\newtheorem*{definition*}{Definition}
+\newtheorem*{example*}{Example}
+\newtheorem*{remark*}{Remark}
+\newtheorem*{claim}{Claim}
+
+% --- Left/right header text (to appear on every page) ---
+
+% Include a line underneath the header, no footer line
+\pagestyle{fancy}
+\renewcommand{\footrulewidth}{0pt}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% Left header text: course name/assignment number
+\lhead{CSCI 466 (Databases) -- Assignment 3 - Normalization}
+
+% Right header text: your name
+\rhead{Matt Warner}
+
+% --- Document starts here ---
+
+\usepackage{pifont}
+
+\begin{document}
+\begin{mdframed}
+  
+\subsection*{Question 1}
+  
+R(A, B, C, D, E, F, G, H) \\
+\textit{\textbf{Functional Dependencies:}}
+\begin{itemize}
+    \item[\ding{228}] A $\rightarrow$ D, E
+    \item[\ding{228}] C $\rightarrow$ G
+    \item[\ding{228}] A, C $\rightarrow$ H, F
+\end{itemize}
+\end{mdframed}
+\underline{\texttt{Part 1:}} is this relation in $_1NF$? \\
+Yes, This relation is in $_1NF$. There are no repeating groups here.
+\bigbreak \noindent
+\underline{\texttt{Part 2:}} is this relation in $_2NF$? \\
+Since we have yet to establish a primary key, we can't determine if our relation is in $_2NF$. Our only real candidate key here is \{\underline{A}, \underline{C}, \underline{B}\}. So we make that our primary key.
+\bigbreak \noindent
+Now that we have our primary key, we can clearly see that we our relation is not in $_2NF$ since two subsets of our primary key (\underline{A} and \underline{C}) are  determinates of non-prime attributes. \vspace{2mm} \\
+$A \rightarrow D, \ E$ (violates $_2NF$). \\
+$C  \rightarrow G$ (violates $_2NF$).
+\bigbreak \noindent
+By performing decomposition, we can move to $_2NF$. We need to perform decomposition on all functional dependencies that violate $_2NF$. There are three cases that violates $_2NF$, so after decomposition we will be left with four relations instead of one. 
+\bigbreak \noindent
+\textbf{Schema in $_2NF$:}
+ \begin{itemize}
+     \item[\ding{221}] R$_1$(\underline{A}, \underline{B}, \underline{C},)
+     \item[\ding{221}] R$_2$(\underline{A}, D, E)
+     \item[\ding{221}] R$_3$(\underline{C}, G)
+     \item[\ding{221}] R$_4$(\underline{A}, \underline{C},H,F)
+
+ \end{itemize}
+
+\bigbreak \noindent
+\underline{\texttt{Part 3:}} is this relation in $_3NF$? \\
+Yes, we are already in $_3NF$
+\begin{mdframed}
+  
+\subsection*{Question 2}
+Property(id, county, lotNum, lotArea, price, taxRate, (dataPaid, amount)) \vspace{1.5mm} \\
+\textit{\textbf{Functional Dependencies:}}
+\begin{itemize}
+    \item[\ding{228}]  id $\rightarrow$ county, lotNum, lotArea, price, taxRate
+    \item[\ding{228}] lotArea $\rightarrow$ price
+    \item[\ding{228}] county $\rightarrow$ taxRate
+    \item[\ding{228}] id, dataPaid $\rightarrow$ amount
+\end{itemize}
+\end{mdframed}
+\underline{\texttt{Part 1:}} is this relation in $_1NF$? \\
+No, there are repeating groups here, so we are not in $_1NF$. To fix this,
+we need to select a primary key that makes every value atomic.
+\bigbreak \noindent
+Making the primary key \texttt{\{\underline{id}, \underline{dataPaid}\}} brings us to $_1NF$. Our new schema and table now look like this. \\
+\textit{\textbf{Property}}(\underline{id}, county, lotNum, lotArea, price, taxRate, \underline{dataPaid}, amount).
+    \begin{figure}[H]
+    \centering
+     % \setlength{\tabcolsep}{30}
+    \begin{tabular}{l l l l l l l l}
+        \hline
+        \underline{id}& county& lotNum& lotArea& price& taxRate& \underline{datePaid}& amount. \\
+        \hline
+        001& Will & 59 & G5 & \$3500 &1\%& 02-05-2012& \$1200 \\
+        001& Will & 59 & G5 & \$3500 &1\%& 02-20-2012& \$2300 \\
+        \hline
+    \end{tabular}
+    \end{figure}
+\bigbreak \noindent
+\underline{\texttt{Part 2:}} is this relation in $_2NF$? \\
+No, this relation is not in $_2NF$. The current state of our relation does not have full dependency. Looking at our functional dependencies, we see that a subset of our primary key is the determinent of some non-prime attributes. This violates the rules of $_2NF$. \vspace{2mm}\\
+id $\rightarrow$ county, lotNum, lotArea, price, taxRate. (violates $_2NF$).
+\bigbreak \noindent
+To fix this, we should use decomposition, which splits our relation into two tables: \\
+\textit{\textbf{Property}}(\underline{id}, county, lotNum, lotArea, price, taxRate)
+    \begin{figure}[H]
+    \centering
+     % \setlength{\tabcolsep}{30}
+    \begin{tabular}{l l l l l l}
+   \hline 
+        \underline{id}& county& lotNum& lotArea& price& taxRate \\
+        \hline
+    \end{tabular}
+    \end{figure}
+    \noindent \textit{\textbf{Payments}}(\underline{id}, datePaid, amount)
+        \begin{figure}[H]
+        \centering
+         \setlength{\tabcolsep}{45}
+        \begin{tabular}{l l l}
+            \hline
+            \underline{id} & \underline{datePaid}&amount \\
+        \hline
+        \end{tabular}
+        \end{figure}
+
+
+        \newpage \noindent
+\underline{\texttt{Part 3:}} is this relation in $_3NF$? \\
+No, We are not in $_3NF$ because there are some transitive dependencies in our list of functional dependencies. county functionally determining taxRate, and lotArea functionally determining price are both transitive dependencies, which violates $_3NF$. \vspace{1mm} \\
+lotArea $\rightarrow$ price (violates $_3NF$) \\
+county $\rightarrow$ taxRate (violates $_3NF$)
+\bigbreak \noindent
+To fix this, we need to perform decomposition on all cases that violate $_3NF$. That leaves us with: \vspace{1mm}\\
+\textit{\textbf{Property}}(\underline{id}, lotNum). \\
+\noindent \textit{\textbf{Payments} }(\underline{id}, \underline{datePaid}, amount) \\
+\textit{\textbf{LandInfo}}(\underline{lotArea}, price) \\ 
+\textit{\textbf{TaxInfo}}(\underline{county}, taxRate)
+\subsection*{Question 3}
+\begin{mdframed}
+Pharmacy(patient\_id, patient\_name, address, (Rx\_num, trademark\_name, generic\_name, (filldate, num\_refills\_left), num\_refills)) \vspace{1.5mm}\\
+\textit{\textbf{Functional Dependencies:}}
+\begin{itemize}
+    \item[\ding{228}] patient\_id $\rightarrow$ patient\_name, address
+    \item[\ding{228}] patient\_id, Rx\_num $\rightarrow$ trademark\_name, generic\_name
+        \item[\ding{228}] Rx\_num $\rightarrow$ num\_refills
+        \item[\ding{228}] Rx\_num, filldate $\rightarrow$ num\_refills\_left
+\end{itemize}
+\end{mdframed}
+\underline{\texttt{Part 1:}} is this relation in $_1NF$? \\
+No, This relation is not in $_1NF$. There are many repeating groups here, so not all values are atomic. We can move to $_1NF$ by selecting a primary key that makes all values atomic.
+\bigbreak \noindent
+The only real candidate key here is \{patient\_id, Rx\_num, filldate\}. Since it is the only candidate, we will make it the primary key. 
+\bigbreak \noindent
+\textit{Our new schema is:} \vspace{2mm}\\
+Pharmacy(\underline{patient\_id}, patient\_name, address, \underline{Rx\_num}, trademark\_name, generic\_name, \underline{filldate}, num\_refills\_left, num\_refills)
+\bigbreak \noindent
+\underline{\texttt{Part 2:}} is this relation in $_2NF$? \\
+This relation is not in $_2NF$ since we have subsets of the primary key that are able to functionally determine non-prime attributes.  \vspace{2mm} \\
+patient\_id $\rightarrow$ patient\_name, address (violates $_2NF$) \\ 
+patient\_id, Rx\_num $\rightarrow$ trademark\_name, generic\_name (violates $_2NF$) \\
+Rx\_num, $\rightarrow$ num\_refills (violates $_2NF$) \\
+Rx\_num, filldate $\rightarrow$ num\_refills\_left (violates $_2NF$)
+\bigbreak \noindent
+After decomposition, we have:
+\bigbreak \noindent
+\textbf{Schema in $_2NF$:} 
+\begin{itemize}
+    \item[\ding{221}] \textit{\textbf{Pharmacy}}(\underline{patient\_id}, \underline{Rx\_num}, \underline{fill\_date})
+    \item[\ding{221}] \textit{\textbf{Patient}}(\underline{patient\_id}, patient\_name, address)
+    \item[\ding{221}]  \textit{\textbf{Prescriptions}}(\underline{patient\_id}, \underline{Rx\_num}, trademark\_name, generic\_name)
+    \item[\ding{221}] \textit{\textbf{TotalRefills}}(\underline{Rx\_num}, num\_refills)
+    \item[\ding{221}] \textit{\textbf{RemainingRefills}}(\underline{Rx\_num}, \underline{filldate}, num\_refills\_left)
+\end{itemize}
+\bigbreak \noindent
+\underline{\texttt{Part 3:}} is this relation in $_3NF$? \\
+Yes, we are already in $_3NF$.
+\subsection*{Question 4}
+\begin{mdframed}
+Company(EmpID, EmpName, EmpAddr, (ProjID, ProjName, MgrID, MgrName, HoursWorked)) \vspace{1.5mm} \\
+\textit{\textbf{Functional Dependencies:}} 
+\begin{itemize}
+    \item[\ding{228}] EmpID $\rightarrow$ EmpName, EmpAddr
+    \item[\ding{228}] ProjID $\rightarrow$ ProjName, MgrID, MgrName
+        \item[\ding{228}]  EmpID, ProjID $\rightarrow$ HoursWorked
+        \item[\ding{228}] MgrID $\rightarrow$ MgrName
+\end{itemize}
+\end{mdframed}
+\underline{\texttt{Part 1:}} is this relation in $_1NF$? \\
+This relation is not in $_1NF$ since there are repeating groups present. We need a primary key that is able to functionally determine all other attributes. The primary key we should go with in this case is: \{EmpID, ProjID\}. \vspace{2mm}\\
+This primary key gives us the schema: \\
+Company(\underline{EmpID}, EmpName, EmpAddr, \underline{ProjID}, ProjName, MgrID, MgrName, HoursWorked)
+\bigbreak \noindent
+\underline{\texttt{Part 2:}} is this relation in $_2NF$? \\
+This relation is not in $_2NF$ since some subsets of the primary key can functionally determine non-prime attributes. \vspace{2mm} \\
+EmpID $\rightarrow$ EmpName, EmpAddr (violates $_2NF$) \\
+ProjID $\rightarrow$ ProjName, MgrID, MgrName (violates $_2NF$) \vspace{2mm}\\
+We can fix this by performing decomposition on every case that violates $_2NF$. This leaves us with the following schema:
+\begin{itemize}
+    \item[\ding{228}] \textit{\textbf{Company}}(\underline{EmpID}, \underline{ProjID},HoursWorked)
+    \item[\ding{228}] \textit{\textbf{Employee}}(\texttt{\underline{EmpID}}, EmpName, EmpAddr)
+    \item[\ding{228}] \textit{\textbf{Project}}(\underline{\texttt{ProjID}}, ProjName, MgrID, MgrName)
+\end{itemize}
+
+
+\bigbreak \noindent
+\underline{\texttt{Part 3:}} is this relation in $_3NF$? \\
+No, This relation is not in $_3NF$ since we have a non-prime attribue (\texttt{MgrID}), that can functionally determine another non-prime attribute (MgrName). To move into $_3NF$, we need to perform more decomposition. We need to remove \texttt{MgrID} and \texttt{MgrName} from the \textbf{Project} relation, and move it into a new relation. That leaves us with:
+\begin{itemize}
+    \item[\ding{228}] \textit{\textbf{Company}}(\underline{EmpID}, \underline{ProjID},HoursWorked)
+    \item[\ding{228}] \textit{\textbf{Employees}}(\texttt{\underline{EmpID}}, EmpName, EmpAddr)
+    \item[\ding{228}] \textit{\textbf{Projects}}(\underline{\texttt{ProjID}}, ProjName)
+    \item[\ding{228}] \textit{\textbf{Managers}}(\underline{MgrID}, MgrName)
+\end{itemize}
+
+\subsection*{Question 5}
+\begin{mdframed}
+StockExchange(Company, Symbol, HQ, Date, ClosePrice) \vspace{2mm} \\
+\textit{\textbf{Functional Dependencies:}}
+\begin{itemize}
+    \item[\ding{228}] Symbol, Date $\rightarrow$ Company, HQ, ClosePrice
+    \item[\ding{228}] Symbol $\rightarrow$ Company, HQ
+    \item[\ding{228}] Symbol $\rightarrow$ HQ
+\end{itemize}
+\end{mdframed}
+\underline{\texttt{Part 1:}} is this relation in $_1NF$? \\
+There are no repeating groups present, so this relation is in $_1NF$.
+\bigbreak \noindent
+However, to move on any further, we need a primary key so we should establish one. Our only candidate key here is \{Symbol, Date\}. We will make this our primary key. Our new schema is: \vspace{2mm} \\
+StockExchange(Company, \underline{Symbol}, HQ, \underline{Date}, closePrice)
+\bigbreak \noindent
+\underline{\texttt{Part 2:}} is this relation in $_2NF$? \\
+This relation is not in $_2NF$ since a subset of the primary key is a determinent of non-key attributes.
+
+\noindent Symbol $\rightarrow$ Company, HQ (violates $_2NF$) \\
+\noindent Symbol $\rightarrow$ HQ (violates $_2NF$)
+\bigbreak \noindent
+After performing the decomposition steps for every violation of $_2NF$ (two in this case), we are left with three relations: \vspace{2mm} \\
+StockExchange(\underline{Symbol}, \underline{Date}, closePrice) \\
+StockCompany(\underline{Symbol}, Company, HQ) \\
+StockLocation(\underline{Symbol}, HQ)
+
+\bigbreak \noindent
+\underline{\texttt{Part 3:}} is this relation in $_3NF$? \\
+Yes, this relation is in $_3NF$
+\end{document}

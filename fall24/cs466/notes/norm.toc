@@ -1,0 +1,15 @@
+\contentsline {section}{\numberline {1}Anomolies}{3}{section.0.1}%
+\contentsline {section}{\numberline {2}Decomposition}{5}{section.0.2}%
+\contentsline {section}{\numberline {3}Keys}{5}{section.0.3}%
+\contentsline {section}{\numberline {4}Domain}{6}{section.0.4}%
+\contentsline {section}{\numberline {5}Order Independence}{6}{section.0.5}%
+\contentsline {section}{\numberline {6}Constraints}{6}{section.0.6}%
+\contentsline {subsection}{\numberline {6.1}Entity contegrity constraint}{6}{subsection.0.6.1}%
+\contentsline {subsection}{\numberline {6.2}Referential Integrity Constraint}{7}{subsection.0.6.2}%
+\contentsline {section}{\numberline {7}Functional Dependencies}{7}{section.0.7}%
+\contentsline {subsection}{\numberline {7.1}Armstrong's Axioms}{8}{subsection.0.7.1}%
+\contentsline {subsection}{\numberline {7.2}Revisiting Keys}{9}{subsection.0.7.2}%
+\contentsline {subsection}{\numberline {7.3}How to determine the functional dependencies}{9}{subsection.0.7.3}%
+\contentsline {section}{\numberline {8}Normalization}{10}{section.0.8}%
+\contentsline {subsection}{\numberline {8.1}First Normal Form $_1NF$}{10}{subsection.0.8.1}%
+\contentsline {subsection}{\numberline {8.2}Second Normal Form $_2NF$}{11}{subsection.0.8.2}%
