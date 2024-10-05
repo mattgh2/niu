@@ -2,8 +2,6 @@
 #ifndef NIU_CSCI_340_GRIDS_IMPL_H
 #define NIU_CSCI_340_GRIDS_IMPL_H
 
-#error "This line is here to print a warning and fail compilation until you remove it."
-
 // include the declarations needed for this
 #include <iostream>
 #include <fstream>
@@ -17,12 +15,15 @@
 
 template <typename T, typename RA_CONTAINER>
 bool grid_row_major<T,RA_CONTAINER>::boundscheckxy(int x, int y) const {
-  // XXX You are responsible for implementing this function.
+  if ((x < 0 || x > _width) || (y > 0 || y > _height)) {
+    return false;
+  }
+  return true;
 }
 
 template <typename T, typename RA_CONTAINER>
 bool grid_row_major<T,RA_CONTAINER>::boundscheckrc(int row, int col) const {
-  // XXX You are responsible for implementing this function.
+
 }
 
 template <typename T, typename RA_CONTAINER>
@@ -169,7 +170,7 @@ const auto & col_iterator<ITERATOR>::operator * () const {
 }
 
 template <typename ITERATOR>
-bool col_iterator <ITERATOR>::operator == (const col_iterator <ITERATOR> &other) const {
+bool col_iterator <ITERATOR>::operator == (const col_iterator <ITERATOR> &other) {
 }
 
 #endif
