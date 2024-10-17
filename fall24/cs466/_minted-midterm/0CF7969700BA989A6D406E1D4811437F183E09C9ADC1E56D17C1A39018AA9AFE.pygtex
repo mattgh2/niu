@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{k}{UPDATE}\PYG{+w}{ }\PYG{n}{STUDENT}
+\PYG{k}{SET}\PYG{+w}{ }\PYG{n}{GPA}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{4}\PYG{p}{.}\PYG{l+m+mi}{000}
+\PYG{k}{WHERE}\PYG{+w}{ }\PYG{n}{SSN}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}9999999\PYGZsq{}}\PYG{p}{;}
+\end{Verbatim}

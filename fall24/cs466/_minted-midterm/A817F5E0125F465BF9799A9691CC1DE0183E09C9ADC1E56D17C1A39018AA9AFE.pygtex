@@ -1,0 +1,19 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{k}{SELECT}\PYG{+w}{ }\PYG{p}{[}\PYG{k}{DISTINCT}\PYG{o}{|}\PYG{k}{ALL}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{n}{column\PYGZus{}list}\PYG{o}{\PYGZgt{}}
+\PYG{k}{FROM}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{n}{table\PYGZus{}list}\PYG{o}{\PYGZgt{}}
+\PYG{p}{[}\PYG{k}{WHERE}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{n}{where\PYGZus{}expr}\PYG{o}{\PYGZgt{}}\PYG{p}{]}
+\PYG{p}{[}\PYG{k}{GROUP}\PYG{+w}{ }\PYG{k}{BY}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{n}{group\PYGZus{}key}\PYG{o}{\PYGZgt{}}\PYG{p}{]}
+\PYG{p}{[}\PYG{k}{HAVING}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{n}{having\PYGZus{}expr}\PYG{p}{]}
+\PYG{p}{[}\PYG{k}{ORDER}\PYG{+w}{ }\PYG{k}{BY}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{n}{sortcols}\PYG{o}{\PYGZgt{}}\PYG{p}{]}\PYG{+w}{ }\PYG{p}{;}
+
+\PYG{k}{SELECT}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{n}{anyexpression}\PYG{o}{\PYGZgt{}}
+\PYG{+w}{    }\PYG{err}{\PYGZbs{}}\PYG{k}{begin}\PYG{err}{\PYGZob{}}\PYG{n}{figure}\PYG{err}{\PYGZcb{}}\PYG{p}{[}\PYG{n}{ht}\PYG{p}{]}
+\PYG{+w}{    }\PYG{err}{\PYGZbs{}}\PYG{n}{centering}
+\PYG{+w}{     }\PYG{o}{\PYGZpc{}}\PYG{+w}{ }\PYG{err}{\PYGZbs{}}\PYG{n}{setlength}\PYG{err}{\PYGZob{}\PYGZbs{}}\PYG{n}{tabcolsep}\PYG{err}{\PYGZcb{}\PYGZob{}}\PYG{l+m+mi}{30}\PYG{err}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{err}{\PYGZbs{}}\PYG{k}{begin}\PYG{err}{\PYGZob{}}\PYG{n}{tabular}\PYG{err}{\PYGZcb{}\PYGZob{}}\PYG{n}{ll}\PYG{err}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{err}{\PYGZbs{}}\PYG{n}{toprule}
+\PYG{+w}{    }\PYG{n}{Placeholder}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{n}{Filled}\PYG{+w}{ }\PYG{k}{with}\PYG{+w}{ }\PYG{err}{\PYGZbs{}\PYGZbs{}}
+
+\PYG{+w}{    }\PYG{err}{\PYGZbs{}}\PYG{k}{end}\PYG{err}{\PYGZob{}}\PYG{n}{tabular}\PYG{err}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{err}{\PYGZbs{}}\PYG{k}{end}\PYG{err}{\PYGZob{}}\PYG{n}{figure}\PYG{err}{\PYGZcb{}}
+\end{Verbatim}

@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{c+c1}{\PYGZhy{}\PYGZhy{} No WHERE clauses, affects the whole table.}
+\PYG{k}{UPDATE}\PYG{+w}{ }\PYG{n}{Person}
+\PYG{+w}{    }\PYG{k}{SET}\PYG{+w}{ }\PYG{n}{FNAME}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}Spartacus\PYGZsq{}}\PYG{p}{,}
+\PYG{+w}{    }\PYG{n}{LNAME}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{} \PYGZsq{}}\PYG{p}{,}
+\PYG{+w}{    }\PYG{n}{PHONE}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{} \PYGZsq{}}\PYG{p}{,}
+\end{Verbatim}

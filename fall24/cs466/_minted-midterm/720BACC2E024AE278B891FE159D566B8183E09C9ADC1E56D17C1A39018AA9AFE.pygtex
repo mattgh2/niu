@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{k}{DROP}\PYG{+w}{ }\PYG{k}{TABLE}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{k}{table}\PYG{o}{\PYGZgt{}}\PYG{p}{;}
+\PYG{n}{Note}\PYG{+w}{ }\PYG{n}{that}\PYG{+w}{ }\PYG{n}{you}\PYG{+w}{ }\PYG{n}{cant}\PYG{+w}{ }\PYG{k}{drop}\PYG{+w}{ }\PYG{n}{a}\PYG{+w}{ }\PYG{k}{table}\PYG{+w}{ }\PYG{k}{if}\PYG{+w}{ }\PYG{n}{its}\PYG{+w}{ }\PYG{k}{primary}\PYG{+w}{ }\PYG{k}{key}\PYG{+w}{ }\PYG{k}{is}\PYG{+w}{ }\PYG{n}{used}\PYG{+w}{ }\PYG{k}{as}\PYG{+w}{ }\PYG{n}{a}\PYG{+w}{ }\PYG{k}{foreign}\PYG{+w}{ }\PYG{k}{key}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{n}{another}\PYG{+w}{ }\PYG{k}{table}\PYG{p}{.}
+\end{Verbatim}
