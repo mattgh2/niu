@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{c+cp}{\PYGZlt{}?php}
+    \PYG{k}{echo} \PYG{l+s+s2}{\PYGZdq{}This printed inside the php block}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}
+\PYG{c+cp}{?\PYGZgt{}}
+
+\end{Verbatim}

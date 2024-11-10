@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{x}{while (condition) \PYGZob{}}
+\PYG{x}{    echo \PYGZdq{}Stuff\PYGZdq{};}
+\PYG{x}{\PYGZcb{}}
+
+\PYG{x}{for (\PYGZdl{}i = 0; \PYGZdl{}i \PYGZlt{} 10; ++\PYGZdl{}i) \PYGZob{}}
+\PYG{x}{    ...}
+\PYG{x}{\PYGZcb{}}
+\end{Verbatim}

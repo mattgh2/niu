@@ -1,0 +1,124 @@
+\documentclass{report}
+
+\input{~/latex/template/preamble.tex}
+\input{~/latex/template/macros.tex}
+
+\title{\Huge{HTML lecture 10-28}}
+\author{\huge{Matt Warner}}
+\date{\huge{}}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{}
+\lhead{\leftmark}
+\cfoot{\thepage}
+% \usepackage[default]{sourcecodepro} \usepackage[T1]{fontenc}
+
+\pgfpagesdeclarelayout{boxed}
+{
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=1,%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {
+    border code=\pgfsetlinewidth{1.5pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.95\pgfphysicalwidth,%
+    resized height=.95\pgfphysicalheight,%
+    center=\pgfpoint{.5\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+}
+
+\pgfpagesuselayout{boxed}
+
+\begin{document}
+    \maketitle
+\section{HTML text wrapping}
+\section{Forms}
+\section{selection}
+\begin{minted}[linenos=false]{html}
+<select name="sel" size="5" multiple>
+<option value="IL">Illinois</option>
+<option>Californa</option>
+<option></option>
+<option>D</option>
+<option>E</option>
+
+</select>
+\end{minted}
+\chapter{PHP}
+Inside a .php file, a php code block looks like:
+\begin{minted}[linenos=false]{php}
+<?php
+
+?>
+\end{minted}
+To output something inside the code block:
+\begin{minted}[linenos=false]{php}
+<?php
+    echo "This printed inside the php block\n";
+?>
+
+\end{minted}
+This is a function call to print, echo is just a key word:
+\begin{minted}[linenos=false]{}
+<?php
+    print("Hello");
+?>
+
+\end{minted}
+php has variables:
+\begin{minted}[linenos=false]{php}
+<?php
+    $x = "blah";
+    $x = 1;
+    $x = 1.04;
+
+    $x = $x * 3.13;
+
+    echo "gettype(x) = " . gettype(x) # string concat (done with a .);
+
+    echo "<b> \$x = $x";
+?>
+
+\end{minted}
+Search display php errors
+\bigbreak \noindent
+IF statements:
+\begin{minted}[linenos=false]{php}
+    if ($x = "hello") {
+        echo "Yes. hello";
+    }
+    else {
+        echo "Hello";
+    }
+\end{minted}
+switch block:
+\begin{minted}[linenos=false]{php}
+    switch (gettype($x)) {
+        case: "double"
+            echo "GET REAL!"
+            breka;
+        case: ...
+    }
+\end{minted}
+loops...
+\begin{minted}[linenos=false]{php}
+while (condition) {
+    echo "Stuff";
+}
+
+for ($i = 0; $i < 10; ++$i) {
+    ...
+}
+\end{minted}
+arrays ...
+\begin{minted}[linenos=false]{php}
+$x = array(1,2,3,4)
+
+\end{minted}
+
+\end{document}

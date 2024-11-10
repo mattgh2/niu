@@ -1,0 +1,14 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{c+cp}{\PYGZlt{}?php}
+    \PYG{n+nv}{\PYGZdl{}x} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}blah\PYGZdq{}}\PYG{p}{;}
+    \PYG{n+nv}{\PYGZdl{}x} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;}
+    \PYG{n+nv}{\PYGZdl{}x} \PYG{o}{=} \PYG{l+m+mf}{1.04}\PYG{p}{;}
+
+    \PYG{n+nv}{\PYGZdl{}x} \PYG{o}{=} \PYG{n+nv}{\PYGZdl{}x} \PYG{o}{*} \PYG{l+m+mf}{3.13}\PYG{p}{;}
+
+    \PYG{k}{echo} \PYG{l+s+s2}{\PYGZdq{}gettype(x) = \PYGZdq{}} \PYG{o}{.} \PYG{n+nb}{gettype}\PYG{p}{(}\PYG{n+nx}{x}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} string concat (done with a .);}
+
+    \PYG{k}{echo} \PYG{l+s+s2}{\PYGZdq{}\PYGZlt{}b\PYGZgt{} }\PYG{l+s+se}{\PYGZbs{}\PYGZdl{}}\PYG{l+s+s2}{x = }\PYG{l+s+si}{\PYGZdl{}x}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}
+\PYG{c+cp}{?\PYGZgt{}}
+
+\end{Verbatim}

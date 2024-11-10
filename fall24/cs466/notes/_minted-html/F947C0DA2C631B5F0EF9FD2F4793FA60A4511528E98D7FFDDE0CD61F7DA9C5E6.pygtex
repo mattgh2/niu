@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{x}{switch (gettype(\PYGZdl{}x)) \PYGZob{}}
+\PYG{x}{    case: \PYGZdq{}double\PYGZdq{}}
+\PYG{x}{        echo \PYGZdq{}GET REAL!\PYGZdq{}}
+\PYG{x}{        breka;}
+\PYG{x}{    case: ...}
+\PYG{x}{\PYGZcb{}}
+\end{Verbatim}

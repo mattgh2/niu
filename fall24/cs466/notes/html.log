@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023 Gentoo Linux) (preloaded format=pdflatex 2024.8.2)  7 NOV 2024 15:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023 Gentoo Linux) (preloaded format=pdflatex 2024.8.2)  28 OCT 2024 14:49
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**binary_tree.tex
-(./binary_tree.tex
+**html.tex
+(./html.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
 (/usr/share/texmf-dist/tex/latex/base/report.cls
@@ -120,10 +120,10 @@ Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )) (/usr/share/texmf-dist/tex/generic/iftex/ifluatex.sty
 Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
 )
-runsystem(uname -s > "binary_tree.w18")...executed.
+runsystem(uname -s > "html.w18")...executed.
 
- (./binary_tree.w18)
-runsystem(rm -- "binary_tree.w18")...executed.
+ (./html.w18)
+runsystem(rm -- "html.w18")...executed.
 
 ) (/usr/share/texmf-dist/tex/generic/xstring/xstring.sty (/usr/share/texmf-dist/tex/generic/xstring/xstring.tex
 \xs_counta=\count290
@@ -153,7 +153,7 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@every@listing=\toks21
 \c@listing=\count295
 )
-runsystem(mkdir -p _minted-binary_tree)...executed.
+runsystem(mkdir -p _minted-html)...executed.
 
  (/usr/share/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
 Package: tcolorbox 2024/01/10 version 6.2.0 text color boxes
@@ -1430,15 +1430,15 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 \c@question=\count529
 ) (/home/matt/latex/template/macros.tex)
 \pgfpages@box@1=\box166
-runsystem(command -v pygmentize && touch binary_tree.aex)...executed.
+runsystem(command -v pygmentize && touch html.aex)...executed.
 
-runsystem(rm binary_tree.aex)...executed.
+runsystem(rm html.aex)...executed.
 
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 37.
  (/usr/share/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) (./binary_tree.aux)
-\openout1 = `binary_tree.aux'.
+) (./html.aux)
+\openout1 = `html.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
 LaTeX Font Info:    ... okay on input line 37.
@@ -1533,7 +1533,7 @@ Package: pdflscape-nometadata 2022-10-28 v0.13 Display of landscape pages in PDF
 Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
-)) (|'inkscape' -V )
+))
 Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 39.
@@ -1561,363 +1561,104 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 39.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (./binary_tree.toc
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 1.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 1.
-
-Overfull \hbox (8.33327pt too wide) detected at line 6
-\OT1/lmr/m/n/10 5.0.1. 
- []
-
-
-Overfull \hbox (8.33327pt too wide) detected at line 7
-\OT1/lmr/m/n/10 5.0.2. 
- []
-
-
-Overfull \hbox (8.33327pt too wide) detected at line 8
-\OT1/lmr/m/n/10 5.0.3. 
- []
-
-
-Overfull \hbox (8.33327pt too wide) detected at line 9
-\OT1/lmr/m/n/10 5.0.4. 
- []
-
-
-Overfull \hbox (8.33327pt too wide) detected at line 10
-\OT1/lmr/m/n/10 5.0.5. 
- []
-
-
-Overfull \hbox (8.33327pt too wide) detected at line 11
-\OT1/lmr/m/n/10 5.0.6. 
- []
-
-
-Overfull \hbox (8.33327pt too wide) detected at line 18
-\OT1/lmr/m/n/10 8.3.1. 
- []
-
-
-Overfull \hbox (8.33327pt too wide) detected at line 19
-\OT1/lmr/m/n/10 8.3.2. 
- []
-
-
-Overfull \hbox (8.33327pt too wide) detected at line 20
-\OT1/lmr/m/n/10 8.3.3. 
- []
-
-
-Overfull \hbox (8.33327pt too wide) detected at line 21
-\OT1/lmr/m/n/10 8.3.4. 
- []
-
 )
-\tf@toc=\write7
-\openout7 = `binary_tree.toc'.
+\openout3 = `html.pyg'.
 
- [1
+ (./_minted-html/default.pygstyle) (./_minted-html/80C8BDDA76EA38A313EFA2226B94F18506D7FE88123F57D3BCDDA5084433B6C6.pygtex
+LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 1.
+ (/usr/share/texmf-dist/tex/latex/lm/ot1lmtt.fd
+File: ot1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `OT1/lmtt/bx/n' in size <10> not available
+(Font)              Font shape `OT1/lmtt/b/n' tried instead on input line 2.
+) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}]
+Chapter 1.
+\openout3 = `html.pyg'.
 
-LaTeX Warning: File ` ~/Documents/figures/binarytree.png ' not found on input line 59.
+(./_minted-html/320918455BC00B2A361C49E66FA66410A4511528E98D7FFDDE0CD61F7DA9C5E6.pygtex)
+\openout3 = `html.pyg'.
+
+ (./_minted-html/F7AE6B96D6C5FCF9A7689C3E5FCFA8C3A4511528E98D7FFDDE0CD61F7DA9C5E6.pygtex)
+\openout3 = `html.pyg'.
+
+runsystem(command -v python3 && touch html.aex)...executed.
+
+runsystem(rm html.aex)...executed.
+
+runsystem(python3 -c "import sys; import os; import textwrap; from io import open; fname = os.path.expanduser(os.path.expandvars(\"html.pyg\")); f = open(fname, \"r\", encoding=\"UTF8\") if os.path.isfile(fname) else None; t = f.readlines() if f is not None else None; t_opt = t if t is not None else []; f.close() if f is not None else None; tmpfname = os.path.expanduser(os.path.expandvars(\"html.pyg\")); f = open(tmpfname, \"w\", encoding=\"UTF8\") if t is not None else None; fvstartnum = 0; fvstopnum = -1; s = max(0, fvstartnum-1); e = max(s, fvstopnum) if fvstopnum > 0 else len(t_opt); [f.write(textwrap.dedent(\"\".join(x))) for x in (t_opt[0:s], t_opt[s:e], t_opt[e:]) if x and t is not None]; f.close() if t is not None else os.remove(tmpfname);")...executed.
+
+runsystem(pygmentize -l '' -f latex -P commandprefix=PYG -F tokenmerge -P stripnl='False' -P mathescape='True' -o _minted-html/E19A1BE98ED6F5E2E949D0B94F4C7ADD4E648B26B522B16BBEF7FCDEFC5E1A5E.pygtex html.pyg)...executed.
 
 
-./binary_tree.tex:59: Package pdftex.def Error: File `~/Documents/figures/binarytree.png' not found: using draft setting.
 
-See the pdftex.def package documentation for explanation.
+./html.tex:72: Package minted Error: Missing Pygments output; \inputminted was
+probably given a file that does not exist--otherwise, you may need 
+the outputdir package option, or may be using an incompatible build tool,
+or may be using frozencache with a missing file.
+
+See the minted package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.59 ...dth]{ ~/Documents/figures/binarytree.png }
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+l.72 \end{minted}
+                 
+This could be caused by using -output-directory or -aux-directory 
+without setting minted's outputdir, or by using a build tool that 
+changes paths in ways minted cannot detect, 
+or using frozencache with a missing file.
 
-LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 59.
-(/usr/share/texmf-dist/tex/latex/lm/ot1lmtt.fd
-File: ot1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [2
+\openout3 = `html.pyg'.
+
+(./_minted-html/527B66F375A95508500394DE62C57FA7A4511528E98D7FFDDE0CD61F7DA9C5E6.pygtex)
+\openout3 = `html.pyg'.
+
+ (./_minted-html/83AE9424D62DBD72EE25E73FFF26246CA4511528E98D7FFDDE0CD61F7DA9C5E6.pygtex)
+\openout3 = `html.pyg'.
+
+ (./_minted-html/F947C0DA2C631B5F0EF9FD2F4793FA60A4511528E98D7FFDDE0CD61F7DA9C5E6.pygtex)
+\openout3 = `html.pyg'.
+
+ (./_minted-html/54E9C1F639BE5E5B7D942EB3F7311CFBA4511528E98D7FFDDE0CD61F7DA9C5E6.pygtex [2
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
-l.65 \bigbreak
-               \noindent]
+l.1 ...code`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+                                                  {/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.enc}])
+\openout3 = `html.pyg'.
 
-LaTeX Warning: File ` ~/Documents/figures/unbalanced.png ' not found on input line 83.
+runsystem(python3 -c "import sys; import os; import textwrap; from io import open; fname = os.path.expanduser(os.path.expandvars(\"html.pyg\")); f = open(fname, \"r\", encoding=\"UTF8\") if os.path.isfile(fname) else None; t = f.readlines() if f is not None else None; t_opt = t if t is not None else []; f.close() if f is not None else None; tmpfname = os.path.expanduser(os.path.expandvars(\"html.pyg\")); f = open(tmpfname, \"w\", encoding=\"UTF8\") if t is not None else None; fvstartnum = 0; fvstopnum = -1; s = max(0, fvstartnum-1); e = max(s, fvstopnum) if fvstopnum > 0 else len(t_opt); [f.write(textwrap.dedent(\"\".join(x))) for x in (t_opt[0:s], t_opt[s:e], t_opt[e:]) if x and t is not None]; f.close() if t is not None else os.remove(tmpfname);")...executed.
 
+runsystem(pygmentize -l 'php' -f latex -P commandprefix=PYG -F tokenmerge -P stripnl='False' -P mathescape='True' -o _minted-html/AB175F8DFA2145231B3BE61DF4A2E49DA4511528E98D7FFDDE0CD61F7DA9C5E6.pygtex html.pyg)...executed.
 
-./binary_tree.tex:83: Package pdftex.def Error: File `~/Documents/figures/unbalanced.png' not found: using draft setting.
+ (./_minted-html/AB175F8DFA2145231B3BE61DF4A2E49DA4511528E98D7FFDDE0CD61F7DA9C5E6.pygtex)
+runsystem(rm _minted-html/87542D4C39EFA7A644DF7476663DFF51A4511528E98D7FFDDE0CD61F7DA9C5E6.pygtex)...executed.
 
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.83 ...dth]{ ~/Documents/figures/unbalanced.png }
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+ [3
 
-[3
-
-{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.enc}]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 91.
- (/usr/share/texmf-dist/tex/latex/lm/ts1lmr.fd
-File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [4]
-
-LaTeX Warning: File ` ~/Documents/figures/complete-binary-tree-2719456170.jpg ' not found on input line 123.
-
-
-./binary_tree.tex:123: Package pdftex.def Error: File `~/Documents/figures/complete-binary-tree-2719456170.jpg' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.123 ...res/complete-binary-tree-2719456170.jpg }
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: File ` ~/Documents/figures/Binary-Tree-in-Data-Structure-2-354246584.png ' not found on input line 130.
-
-
-./binary_tree.tex:130: Package pdftex.def Error: File `~/Documents/figures/Binary-Tree-in-Data-Structure-2-354246584.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.130 ...-Tree-in-Data-Structure-2-354246584.png }
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[5{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
-
-LaTeX Warning: File ` ~/Documents/figures/segment_tree.png ' not found on input line 137.
-
-
-./binary_tree.tex:137: Package pdftex.def Error: File `~/Documents/figures/segment_tree.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.137 ...]{ ~/Documents/figures/segment_tree.png }
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: File ` ~/Documents/figures/heightbalanced.png ' not found on input line 146.
-
-
-./binary_tree.tex:146: Package pdftex.def Error: File `~/Documents/figures/heightbalanced.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.146 ... ~/Documents/figures/heightbalanced.png }
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: File ` ~/Documents/figures/skewed-trees-1024x421.png ' not found on input line 153.
-
-
-./binary_tree.tex:153: Package pdftex.def Error: File `~/Documents/figures/skewed-trees-1024x421.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.153 ...ments/figures/skewed-trees-1024x421.png }
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[6]
-
-LaTeX Warning: File ` ~/Documents/figures/img2.png ' not found on input line 160.
-
-
-./binary_tree.tex:160: Package pdftex.def Error: File `~/Documents/figures/img2.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.160 ...extwidth]{ ~/Documents/figures/img2.png }
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[7]
-\g__tcobox_out_iow=\write8
-\openout8 = `binary_tree.listing'.
-
- (./_minted-binary_tree/xcode.pygstyle) (./_minted-binary_tree/98ADED04625E36B6473232E46A19FF753FFF0E8DC56FA585592487313C313FD3.pygtex) [8]
-\openout8 = `binary_tree.listing'.
-
- (./_minted-binary_tree/F11989528F91D970D6748CC164C341C13FFF0E8DC56FA585592487313C313FD3.pygtex)
-\openout8 = `binary_tree.listing'.
-
- (./_minted-binary_tree/5006A001B09C96F4726B44C7F571BFD23FFF0E8DC56FA585592487313C313FD3.pygtex) [9{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
-
-LaTeX Warning: File ` ~/Documents/figures/preorder.png ' not found on input line 308.
-
-
-./binary_tree.tex:308: Package pdftex.def Error: File `~/Documents/figures/preorder.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.308 ...idth]{ ~/Documents/figures/preorder.png }
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[10]
-\openout8 = `binary_tree.listing'.
-
- (./_minted-binary_tree/EBF7C2D75514B981C77BFF96D734039D3FFF0E8DC56FA585592487313C313FD3.pygtex) [11]
-\openout8 = `binary_tree.listing'.
-
- (./_minted-binary_tree/D25981586E551CE736CA672222EA194B3FFF0E8DC56FA585592487313C313FD3.pygtex
-LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 17.
- (/usr/share/texmf-dist/tex/latex/lm/ts1lmtt.fd
-File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-))
-
-LaTeX Warning: File ` ~/Documents/figures/inorder.png ' not found on input line 372.
-
-
-./binary_tree.tex:372: Package pdftex.def Error: File `~/Documents/figures/inorder.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.372 ...width]{ ~/Documents/figures/inorder.png }
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[12]
-\openout8 = `binary_tree.listing'.
-
- (./_minted-binary_tree/22B197C56CCD0856ECB9CC37F341BA033FFF0E8DC56FA585592487313C313FD3.pygtex)
-\openout8 = `binary_tree.listing'.
-
- (./_minted-binary_tree/21508CAFDC1BB4EBB9273DDE8A21D2DF3FFF0E8DC56FA585592487313C313FD3.pygtex
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 24.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 24.
-) [13]
-
-LaTeX Warning: File ` ~/Documents/figures/postorder.png ' not found on input line 423.
-
-
-./binary_tree.tex:423: Package pdftex.def Error: File `~/Documents/figures/postorder.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.423 ...dth]{ ~/Documents/figures/postorder.png }
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[14]
-\openout8 = `binary_tree.listing'.
-
- (./_minted-binary_tree/874A9F056BC50D357FBD401D3FA400213FFF0E8DC56FA585592487313C313FD3.pygtex)
-\openout8 = `binary_tree.listing'.
-
- (./_minted-binary_tree/789C10CC4A3A85B20DBC8491D58831B13FFF0E8DC56FA585592487313C313FD3.pygtex) [15]
-
-LaTeX Warning: File ` ~/Documents/figures/bfs.png ' not found on input line 479.
-
-
-./binary_tree.tex:479: Package pdftex.def Error: File `~/Documents/figures/bfs.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.479 ...textwidth]{ ~/Documents/figures/bfs.png }
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-\openout8 = `binary_tree.listing'.
-
-(./_minted-binary_tree/7ECFCE78FAA8A183FC7E2FF489F109FC3FFF0E8DC56FA585592487313C313FD3.pygtex) [16]
-\openout8 = `binary_tree.listing'.
-
- (./_minted-binary_tree/F796823B371AFAA8157C4C92787DDD943FFF0E8DC56FA585592487313C313FD3.pygtex) [17] [18]
-
-LaTeX Warning: File `~/Documents/figures/tree3.png' not found on input line 581.
-
-
-./binary_tree.tex:581: Package pdftex.def Error: File `~/Documents/figures/tree3.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.581 ...textwidth]{~/Documents/figures/tree3.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: File `~/Documents/figures/tree6.png' not found on input line 591.
-
-
-./binary_tree.tex:591: Package pdftex.def Error: File `~/Documents/figures/tree6.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.591 ...textwidth]{~/Documents/figures/tree6.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[19] [20] [21] (./binary_tree.aux)
+] [4] (./html.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
+runsystem(rm html.pyg)...executed.
+
  ) 
 Here is how much of TeX's memory you used:
- 52815 strings out of 476182
- 1231986 string characters out of 5796233
- 1949975 words of memory out of 5000000
- 73787 multiletter control sequences out of 15000+600000
- 620064 words of font info for 87 fonts, out of 8000000 for 9000
+ 51866 strings out of 476182
+ 1199858 string characters out of 5796233
+ 1935975 words of memory out of 5000000
+ 72954 multiletter control sequences out of 15000+600000
+ 591962 words of font info for 62 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 106i,12n,110p,770b,1738s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on binary_tree.pdf (21 pages, 311713 bytes).
+ 106i,11n,110p,763b,710s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
+Output written on html.pdf (4 pages, 158227 bytes).
 PDF statistics:
- 400 PDF objects out of 1000 (max. 8388607)
- 311 compressed objects within 4 object streams
- 79 named destinations out of 1000 (max. 500000)
- 369 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 114 PDF objects out of 1000 (max. 8388607)
+ 71 compressed objects within 1 object stream
+ 8 named destinations out of 1000 (max. 500000)
+ 189 words of extra memory for PDF output out of 10000 (max. 10000000)
 

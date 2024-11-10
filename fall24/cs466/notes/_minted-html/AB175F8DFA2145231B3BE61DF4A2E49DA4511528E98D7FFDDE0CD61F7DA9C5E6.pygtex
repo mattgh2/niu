@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{x}{\PYGZdl{}x = array(1,2,3,4)}
+
+
+\end{Verbatim}

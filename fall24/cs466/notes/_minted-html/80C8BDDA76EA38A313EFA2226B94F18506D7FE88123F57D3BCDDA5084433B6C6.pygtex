@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{select} \PYG{n+na}{name}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}sel\PYGZdq{}} \PYG{n+na}{size}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}5\PYGZdq{}} \PYG{n+na}{multiple}\PYG{p}{\PYGZgt{}}
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{option} \PYG{n+na}{value}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}IL\PYGZdq{}}\PYG{p}{\PYGZgt{}}Illinois\PYG{p}{\PYGZlt{}/}\PYG{n+nt}{option}\PYG{p}{\PYGZgt{}}
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{option}\PYG{p}{\PYGZgt{}}Californa\PYG{p}{\PYGZlt{}/}\PYG{n+nt}{option}\PYG{p}{\PYGZgt{}}
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{option}\PYG{p}{\PYGZgt{}\PYGZlt{}/}\PYG{n+nt}{option}\PYG{p}{\PYGZgt{}}
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{option}\PYG{p}{\PYGZgt{}}D\PYG{p}{\PYGZlt{}/}\PYG{n+nt}{option}\PYG{p}{\PYGZgt{}}
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{option}\PYG{p}{\PYGZgt{}}E\PYG{p}{\PYGZlt{}/}\PYG{n+nt}{option}\PYG{p}{\PYGZgt{}}
+
+\PYG{p}{\PYGZlt{}/}\PYG{n+nt}{select}\PYG{p}{\PYGZgt{}}
+\end{Verbatim}

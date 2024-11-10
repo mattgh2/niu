@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{x}{if (\PYGZdl{}x = \PYGZdq{}hello\PYGZdq{}) \PYGZob{}}
+\PYG{x}{    echo \PYGZdq{}Yes. hello\PYGZdq{};}
+\PYG{x}{\PYGZcb{}}
+\PYG{x}{else \PYGZob{}}
+\PYG{x}{    echo \PYGZdq{}Hello\PYGZdq{};}
+\PYG{x}{\PYGZcb{}}
+\end{Verbatim}
