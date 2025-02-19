@@ -1,0 +1,80 @@
+\documentclass{report}
+
+\input{~/latex/template/preamble.tex}
+\input{~/latex/template/macros.tex}
+
+\title{\Huge\textbf{Group Project Individual Survey}}
+
+\author{
+    \Large Matt Warner
+}
+
+\date{\huge{}}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{}
+\lhead{\leftmark}
+\cfoot{\thepage}
+% \usepackage[default]{sourcecodepro} \usepackage[T1]{fontenc}
+
+\pgfpagesdeclarelayout{boxed}
+{
+  \edef\pgfpageoptionborder{0pt}
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=1,%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {
+    border code=\pgfsetlinewidth{1.5pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.95\pgfphysicalwidth,%
+    resized height=.95\pgfphysicalheight,%
+    center=\pgfpoint{.5\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+}
+
+\pgfpagesuselayout{boxed}
+
+\begin{document}
+    \maketitle
+\section{Contributions to the project}
+\begin{itemize}
+    \item CSS
+    \item Contributed to many of the user interface features.
+    \item Added the queue sort + user interface table sort functionality.
+    \item Helped with the ERD and relational schema design.
+\end{itemize}
+\section{Things I learned from the project}
+\begin{itemize}
+    \item how to create and structure dynamic web pages.
+    \item Learned about php syntax and some php built in functions.
+    \item Learned how to use php sessions to save user input across multiple refreshes.
+    \item Also learned a lot of CSS.
+\end{itemize}
+\section{Tools used for collaboration}
+\begin{itemize}
+\item Discord
+\item Google drive
+\end{itemize}
+\section{Team rating}
+\begin{enumerate}
+    \item Sang Pham \ - \ 10/10
+        \begin{itemize}[label=$\circ$]
+            \item Main contributor of the DJ interface, also put a lot of work into the user interface and er diagram.
+        \end{itemize}
+    \item  James Bolla \ - \ 10/10 
+        \begin{itemize}[label=$\circ$]
+        \item Contributed to the conceptual modeling along with functionality for the user interface. Also contributed to the DDL and DML scripts.
+        \end{itemize}
+    \item Emanuel Slaughter \ - \ 10/10 
+        \begin{itemize}[label=$\circ$]
+            \item Contributed to the php code for the user interface and helped design the ER diagram and relational schema.
+        \end{itemize}
+    \item Ty Danan  \ - \ 10/10
+        \begin{itemize}[label=$\circ$]
+        \item Contributed to the ER diagram and helped write the DDL and DML scripts, also helped with the user interface.
+        \end{itemize}
+\end{enumerate}
+\end{document}
+

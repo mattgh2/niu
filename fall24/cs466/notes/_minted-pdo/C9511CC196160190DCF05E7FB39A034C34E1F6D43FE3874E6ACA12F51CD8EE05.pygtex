@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{o}{//}\PYG{+w}{ }\PYG{n}{Safe}\PYG{p}{.}\PYG{+w}{ }\PYG{n}{Would}\PYG{+w}{ }\PYG{k}{not}\PYG{+w}{ }\PYG{k}{delete}\PYG{+w}{ }\PYG{n}{the}\PYG{+w}{ }\PYG{k}{table}\PYG{p}{.}
+\PYG{k}{SELECT}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{k}{FROM}\PYG{+w}{ }\PYG{n}{books}\PYG{+w}{ }\PYG{k}{WHERE}\PYG{+w}{ }\PYG{n}{id}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}1; DROP TABLE books;\PYGZsq{}}
+\end{Verbatim}

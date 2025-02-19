@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{x}{// Get the ID from the frontend}
+\PYG{x}{\PYGZdl{}id = \PYGZdl{}\PYGZus{}POST[\PYGZsq{}id\PYGZsq{}];}
+
+\PYG{x}{// Like this?}
+\PYG{x}{\PYGZdl{}books\PYGZus{}query = \PYGZdl{}db\PYGZhy{}\PYGZgt{}query(\PYGZdq{}SELECT * FROM books WHERE id = \PYGZdl{}id\PYGZdq{});}
+\end{Verbatim}

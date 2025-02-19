@@ -1,0 +1,24 @@
+1*** ASSIST 4.0/A2-05/15/82  470/V7A/0:OS/VS2  INS=SDFP7/X=BGHO, CHECK/TRC/=1180, OPTS=CDKMPR FROM PENN ST*NIU COMPSCI*LT
+0
+0                                                                                                               PAGE    1
+0  LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT
+                                       1 *
+ 000000                                2 ADD2     CSECT
+ 000000                                3          USING ADD2,15
+ 000000 5810 F010            00010     4          L     1,16(,15)          LOAD THE FIRST NUMBER INTO R1
+ 000004 5820 F014            00014     5          L     2,20(,15)          LOAD THE FIRST NUMBER INTO R1
+ 000008 0000                           6          AR    2,20(,15)          LOAD THE SECOND NUMBER INTO R2
+ ----->AS109 EXPRESSION TOO LARGE        ------------------$----------------------------------------------------- <-ERROR
+ 00000A 5010 F018            00018     7          ST    1,24(,15)
+                                       8 *
+ 00000E 07FE                           9          BCR   B'1111',14         EXIT FROM PROGRAM
+                                      10 *
+                                      11          LTORG
+ 000010 00000004                      12          DC    F'4'
+ 000014 00000006                      13          DC    F'6'
+ 000018                               14          DS    F
+                                      15          END ADD2
+0***     1 STATEMENTS FLAGGED -  NO   WARNINGS,     1 ERRORS
+0***** NUMBER OF ERRORS EXCEEDS LIMIT OF  NO   ERRORS - PROGRAM EXECUTION DELETED *****
+0*** DYNAMIC CORE AREA USED:  LOW:     632 HIGH:     344 LEAVING:  492592 FREE BYTES. AVERAGE:       61 BYTES/STMT ***
+0*** ASSEMBLY TIME =    0.000 SECS,    16000 STATEMENTS/SEC ***

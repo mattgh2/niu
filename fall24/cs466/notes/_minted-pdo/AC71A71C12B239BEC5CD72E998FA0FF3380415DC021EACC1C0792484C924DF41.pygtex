@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{x}{\PYGZdl{}id = \PYGZus{}POST[\PYGZsq{}id\PYGZsq{}];}
+\PYG{x}{\PYGZdl{}books\PYGZus{}query = \PYGZdl{}db\PYGZhy{}\PYGZgt{}prepare(\PYGZsq{}SELECT * FROM books WHERE id = :id\PYGZsq{});}
+\end{Verbatim}

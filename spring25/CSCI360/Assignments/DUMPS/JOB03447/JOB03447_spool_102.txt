@@ -1,0 +1,29 @@
+1*** ASSIST 4.0/A2-05/15/82  470/V7A/0:OS/VS2  INS=SDFP7/X=BGHO, CHECK/TRC/=1180, OPTS=CDKMPR FROM PENN ST*NIU COMPSCI*LT
+0
+0                                                                                                               PAGE    1
+0  LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT
+                                       1 *
+ 000000                                2 DUMP1    CSECT
+ 000000                                3          USING DUMP1,15
+ 000000 5810 F018            00018     4          L     1,ONE
+ 000004 5820 F01C            0001C     5          L     2,TWO
+ 000008 1A12                           6          AR    1,2
+ 00000A 5010 F020            00020     7          ST    1,THREE
+ 00000E E060 F020 0004 00020           8          XDUMP THREE,4
+ 000014 07FE                           9          BCR   B'1111',14
+                                      10 *
+ 000018 00000040                      11 ONE      DC    F'64'
+ 00001C 00000020                      12 TWO      DC    F'32'
+ 000020 40404040                      13 THREE    DC    CL4' '
+                                      14          END DUMP1
+0***  NO   STATEMENTS FLAGGED -  NO   WARNINGS,  NO   ERRORS
+0*** DYNAMIC CORE AREA USED:  LOW:     468 HIGH:     376 LEAVING:  492724 FREE BYTES. AVERAGE:       56 BYTES/STMT ***
+0*** ASSEMBLY TIME =    0.000 SECS,    15000 STATEMENTS/SEC ***
+0*** PROGRAM EXECUTION BEGINNING - ANY OUTPUT BEFORE EXECUTION TIME MESSAGE IS PRODUCED BY USER PROGRAM ***
+0BEGIN XSNAP - CALL     1 AT E0000014 USER STORAGE
+0                             CORE ADDRESSES SPECIFIED-     000020 TO 000024
+ 000020   00000060 F5F5F5F5 F5F5F5F5 00000000    F5F5F5F5 F5F5F5F5 F5F5F5F5 F5F5F5F5   *....55555555....5555555555555555*
+0
+0*** EXECUTION TIME =    0.000 SECS.         6 INSTRUCTIONS EXECUTED -     6000 INSTRUCTIONS/SEC ***
+0*** FIRST CARD NOT READ: NO CARDS READ:FILE UNOPENED
+0*** AM004 - NORMAL USER TERMINATION BY RETURN ***

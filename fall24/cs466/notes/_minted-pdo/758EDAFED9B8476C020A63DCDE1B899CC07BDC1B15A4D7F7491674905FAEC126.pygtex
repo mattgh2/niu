@@ -1,0 +1,13 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+Fetch with no args
+
+array(16) \PYGZob{} [\PYGZdq{}BookID\PYGZdq{}]=\PYGZgt{} int(1) [0]=\PYGZgt{} int(1) [\PYGZdq{}Title\PYGZdq{}]=\PYGZgt{} string(4) \PYGZdq{}1984\PYGZdq{} [1]=\PYGZgt{} string(4) \PYGZdq{}1984\PYGZdq{} [\PYGZdq{}AuthorID\PYGZdq{}]=\PYGZgt{} int(1) [2]=\PYGZgt{} int(1) [\PYGZdq{}PublisherID\PYGZdq{}]=\PYGZgt{} int(1) [3]=\PYGZgt{} int(1) [\PYGZdq{}GenreID\PYGZdq{}]=\PYGZgt{} int(2) [4]=\PYGZgt{} int(2) [\PYGZdq{}PublishDate\PYGZdq{}]=\PYGZgt{} string(10) \PYGZdq{}1949\PYGZhy{}06\PYGZhy{}08\PYGZdq{} [5]=\PYGZgt{} string(10) \PYGZdq{}1949\PYGZhy{}06\PYGZhy{}08\PYGZdq{} [\PYGZdq{}Pages\PYGZdq{}]=\PYGZgt{} int(328) [6]=\PYGZgt{} int(328) [\PYGZdq{}Price\PYGZdq{}]=\PYGZgt{} string(5) \PYGZdq{}15.99\PYGZdq{} [7]=\PYGZgt{} string(5) \PYGZdq{}15.99\PYGZdq{} \PYGZcb{}
+
+Fetch with PDO::FETCH\PYGZus{}NUM
+
+array(8) \PYGZob{} [0]=\PYGZgt{} int(2) [1]=\PYGZgt{} string(21) \PYGZdq{}To Kill a Mockingbird\PYGZdq{} [2]=\PYGZgt{} int(2) [3]=\PYGZgt{} int(2) [4]=\PYGZgt{} int(1) [5]=\PYGZgt{} string(10) \PYGZdq{}1960\PYGZhy{}07\PYGZhy{}11\PYGZdq{} [6]=\PYGZgt{} int(281) [7]=\PYGZgt{} string(5) \PYGZdq{}14.99\PYGZdq{} \PYGZcb{}
+
+Fetch with PDO::FETCH\PYGZus{}ASSOC
+
+array(8) \PYGZob{} [\PYGZdq{}BookID\PYGZdq{}]=\PYGZgt{} int(3) [\PYGZdq{}Title\PYGZdq{}]=\PYGZgt{} string(39) \PYGZdq{}Harry Potter and the Philosophers Stone\PYGZdq{} [\PYGZdq{}AuthorID\PYGZdq{}]=\PYGZgt{} int(3) [\PYGZdq{}PublisherID\PYGZdq{}]=\PYGZgt{} int(1) [\PYGZdq{}GenreID\PYGZdq{}]=\PYGZgt{} int(3) [\PYGZdq{}PublishDate\PYGZdq{}]=\PYGZgt{} string(10) \PYGZdq{}1997\PYGZhy{}06\PYGZhy{}26\PYGZdq{} [\PYGZdq{}Pages\PYGZdq{}]=\PYGZgt{} int(223) [\PYGZdq{}Price\PYGZdq{}]=\PYGZgt{} string(5) \PYGZdq{}12.99\PYGZdq{} \PYGZcb{}
+\end{Verbatim}

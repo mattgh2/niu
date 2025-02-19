@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1726721390.0234 "er2.tex" "er2.pdf" "er2" 1726721391.68134 2
+["pdflatex"] 1733446724.4274 "er2.tex" "er2.pdf" "er2" 1733446726.0964 2
   "/home/matt/latex/template/macros.tex" 1718857932.15378 3389 93000260d2aea292d29c76d4ace77a29 ""
-  "/home/matt/latex/template/preamble.tex" 1726278981.30775 24539 3b2ca990e7a93f32c9ebe8ee00f0fafd ""
+  "/home/matt/latex/template/preamble.tex" 1732652772.27496 24222 ccf9e755fcc39e7449ac8d794643480f ""
   "/home/matt/tmp/er2_test3.png" 1726721380.01042 187428 41c4804f2b800d31dbf2aca1752b772c ""
   "/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc" 1202520719 2840 216e6e45ad352e2456e1149f28885bee ""
   "/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc" 1202520719 2327 9d6df24f9c4f7368395224341a95523a ""
@@ -121,6 +121,7 @@
   "/usr/share/texmf-dist/tex/latex/caption/caption3.sty" 1696191071 72619 ee90b6612147680fd73c3b1406a74245 ""
   "/usr/share/texmf-dist/tex/latex/caption/ltcaption.sty" 1645391520 7418 021d7c4eb11bde94592761855a3d046e ""
   "/usr/share/texmf-dist/tex/latex/caption/subcaption.sty" 1690576852 12494 0c0cdb824278a4d51cefeb2e79901315 ""
+  "/usr/share/texmf-dist/tex/latex/colortbl/colortbl.sty" 1659300143 12441 3b2a708337608012a865c7d9b7f05d28 ""
   "/usr/share/texmf-dist/tex/latex/comment/comment.sty" 1472166125 10197 204f75d5d8d88aa345a8c402e879e63b ""
   "/usr/share/texmf-dist/tex/latex/enumitem/enumitem.sty" 1561238569 51697 f8f08183cd2080d9d18a41432d651dfb ""
   "/usr/share/texmf-dist/tex/latex/environ/environ.sty" 1399239813 4378 f429f0da968c278653359293040a8f52 ""
@@ -218,6 +219,7 @@
   "/usr/share/texmf-dist/tex/latex/tikzfill/tikzfill.image.sty" 1691524336 1120 ba535da48caa03bf1fd3f03ea87779f8 ""
   "/usr/share/texmf-dist/tex/latex/tikzfill/tikzlibraryfill.image.code.tex" 1691524336 10931 717eb52299f416934beb8b2b7cd8cee6 ""
   "/usr/share/texmf-dist/tex/latex/tikzsymbols/tikzsymbols.sty" 1639516976 132239 eb912f9962d808256603d31d845cbf37 ""
+  "/usr/share/texmf-dist/tex/latex/titlesec/titlesec.sty" 1698436711 48766 0b93839be28e9744a24c45075c75b2e2 ""
   "/usr/share/texmf-dist/tex/latex/tocloft/tocloft.sty" 1578692495 36103 3e78d14f0f4b1a30560fea5e04de805d ""
   "/usr/share/texmf-dist/tex/latex/tools/array.sty" 1698869629 12667 e4b5eb11e4b7239e6c8a52bbe074a6c6 ""
   "/usr/share/texmf-dist/tex/latex/tools/calc.sty" 1698869629 10214 547fd4d29642cb7c80bf54b49d447f01 ""
@@ -238,7 +240,7 @@
   "/usr/share/texmf-dist/tex/latex/xifthen/xifthen.sty" 1448319911 5689 1bfa68243e89a54479e7d0580773c57e ""
   "/usr/share/texmf-dist/tex/latex/zref/zref-abspage.sty" 1694723124 2269 4fe6fb3396214c91f164d45faf9bec45 ""
   "/usr/share/texmf-dist/tex/latex/zref/zref-base.sty" 1694723124 20785 f7d1133a287929598a897c93f8f4c44b ""
-  "/usr/share/texmf-dist/web2c/texmf.cnf" 1722824699.94197 39447 2134d78a2da0cee52270db0ec417a200 ""
+  "/usr/share/texmf-dist/web2c/texmf.cnf" 1732341934.91211 39447 2134d78a2da0cee52270db0ec417a200 ""
   "/usr/share/texmf-site/tex/generic/pgf/basiclayer/pgfcore.code.tex" 1718857696.29217 1016 1c2b89187d12a2768764b83b4945667c ""
   "/usr/share/texmf-site/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex" 1718857696.29217 43820 1fef971b75380574ab35a0d37fd92608 ""
   "/usr/share/texmf-site/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex" 1718857696.29217 19324 f4e4c6403dd0f1605fd20ed22fa79dea ""
@@ -327,8 +329,8 @@
   "/usr/share/texmf-site/tex/latex/pgf/utilities/pgfpages.sty" 1718857696.64884 36299 1cc9347091c2fb861270e66da42a0a3e ""
   "/usr/share/texmf-site/tex/latex/pgf/utilities/pgfrcs.sty" 1718857696.64884 325 f9f16d12354225b7dd52a3321f085955 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1718861849.79132 327964 66947494ae0b30df692aba42aa1c43ce ""
-  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1722594070 6800543 04786f478c26be5d325aef43d4cc9791 ""
-  "er2.aux" 1726721391.54719 1326 0b8b9a3ecf631e5d98ca32b3c9d0d982 "pdflatex"
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1732342051 6800598 dbfcaf3152af71dd0ed6d3ee34c60212 ""
+  "er2.aux" 1733446725.95823 1326 0b8b9a3ecf631e5d98ca32b3c9d0d982 "pdflatex"
   "er2.tex" 1726721389.68384 8026 d5915cede633465c7a7831e99672e4b8 ""
   (generated)
   "er2.aux"

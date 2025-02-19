@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{x}{\PYGZdl{}username = \PYGZdq{}matt\PYGZdq{};}
+\PYG{x}{\PYGZdl{}password = \PYGZdq{}pass\PYGZdq{};}
+\end{Verbatim}

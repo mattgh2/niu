@@ -1,0 +1,211 @@
+\documentclass{report}
+
+\input{~/latex/template/preamble.tex}
+\input{~/latex/template/macros.tex}
+
+\title{\Huge{Final Exam Review}}
+\author{\huge{Matt Warner}}
+\date{\huge{}}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{}
+\lhead{\leftmark}
+\cfoot{\thepage}
+% \usepackage[default]{sourcecodepro} \usepackage[T1]{fontenc}
+
+\pgfpagesdeclarelayout{boxed}
+{
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=1,%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {
+    border code=\pgfsetlinewidth{1.5pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.95\pgfphysicalwidth,%
+    resized height=.95\pgfphysicalheight,%
+    center=\pgfpoint{.5\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+}
+
+\pgfpagesuselayout{boxed}
+
+\begin{document}
+    \maketitle
+\section{Chapter 17}
+\subsection{Data vs information vs knowledge}
+\begin{itemize}
+    \item \textbf{Data}: Raw facts and figures
+    \item \textbf{Information}: Data presented in a context so that it can answer a question or support decision-making.
+\item \textbf{Knowledge} insight derived from experience and expertise (based on data and information).
+\end{itemize}
+\subsection{4 V's of Big data}
+\begin{itemize}
+    \item Volumn: The extremely large amount of data that needs to be stored.
+    \item Velocity: The speed and continuous nature of data acquistion.
+    \item Variety: The many different forms of data being acquired and stored.
+    \item veracity: The uncertainty of the quality and accuracy of data.
+\end{itemize}
+\subsection{Understanding OLTP Vs OLAP}
+\begin{itemize}
+    \item \textbf{Online Transactional processing}:
+        \begin{itemize}[label=$\circ$]
+        
+            \item Designed for managing and processing day-to-day operational transactions in real-time.
+            \item Support frequent and concurrent insert, update and delete operations, ensuring data consistency and integrity.
+            \item Example: Recording customer orders, updating inventory levels, processing online payments.
+        \end{itemize}
+        \item \textbf{Online Analytical Processing}
+            \begin{itemize}[label=$\circ$]
+                \item Designed for complex querying and reporting
+                \item involve aggregations, calculations, and comparisons of large datasets
+                \item Example: Generating sales reports, analyzing market trends, performing financial forecasting
+            \end{itemize}
+\end{itemize}
+\section{Chapter 18}
+\subsection{Steps in creating LLM}
+\begin{enumerate}
+    \item Data collection: LLMS are trained on massive amounts of text data (books, websites, articles). This data helps the model learn about language, grammer, and facts.
+    \item Training:
+        \begin{itemize}[label=$\circ$]
+            \item A neural network is used to process the text.
+            \item The model predicts what comes next in a sentence, improving with each guess.
+            \item This process happens over many rounds to reduce errors.
+        \end{itemize}
+    \item Fine-tuning
+        \begin{itemize}[label=$\circ$]
+            \item The model is adjusted using specifc tasks or topics (eg. conversation, coding).
+            \item This makes the model more accurate for particular use cases.
+        \end{itemize}
+\end{enumerate}
+\subsection{Supervised vs self-learing}
+\begin{itemize}
+    \item supervised learning: A type of machine learning where algorithms are trained by providing explicit examples of results sought, like recognizing products that are defective versus error-free, or stock prices.
+    \item Self-supervised learning: machine learning where data is not explicitly labeled and doesn't have a predetermined result.
+\end{itemize}
+\subsection{Risk and benefits of AI}
+
+\section{Chapter 19}
+\subsection{Zero vs first vs second vs third party data}
+\begin{itemize}
+    \item \textbf{zero-party data}: data that the customer explicitly shares with a firm
+        \begin{itemize}[label=$\circ$]
+        example: data gathered when a customer signs up for an account.
+        \end{itemize}
+    \item \textbf{first-party data}: Collected by a firm through interaction, rather than data that is explictitly provided by the consumer. 
+        \begin{itemize}[label=$\circ$]
+            \item profiling data gleaned by a news site as a customer browses articles.
+        \end{itemize}
+    \item \textbf{second-party data}: data that is collected by onefirm and shared with a partner organization.
+        \begin{itemize}[label=$\circ$]
+            \item example: if you use a branded credit card, like the Chase United Airlines Visa.
+        \end{itemize}
+    \item \textbf{third-part data}: Collected by a company that has not had the customer explicitly entered a relationship with.
+\end{itemize}
+\subsection{Cookies}
+A line of uniquely identifiying text stored by a web browser. A cookie can only be retrieved by the web server that assigned the cookie.
+\subsubsection*{How they work:}
+\begin{itemize}
+    \item first visit to a website will give you a cookie
+    \item As you browse, the cookie can be matched to surfing patterns.;
+    \item Cookie is stored on your computer or mobile device, but the website operator will create a database that matches that cookie to any other activity they choose to track.
+\end{itemize}
+\bigbreak \noindent
+Once a firm can track you  with cookies, it can use its cookies in multiple ways:
+\begin{itemize}
+    \item Advertising
+    \item Storing persistent shopping carts that hold value even if you haven't checked out
+    \item Holding user IDS
+\end{itemize}
+While most browsers have the option to completely prevent all cookies, users might be reluctant to opt out of cookie-requiring benefits like automatic log-in and persitent shopping carts.
+\subsection{Geotargeting}
+Identifying a users physical location (sometimes called a geolocation) for the purpose of delivering tailored ads or other content.
+\subsection{GDPR}
+General
+Data Protection Regulation. 
+
+\section{Ethics in data}
+\subsection{5 areas we discussed in class}
+\begin{itemize}
+    \item Ownership: Individuals have ownership over their personal data, meaning it can oly be collected or used with their explicit consent.
+    \item Transparency: organizations must clearly communicate how they collect, store, and use data. Users should understand what they are consenting to: organizations must clearly communicate how they collect, store, and use data. Users should understand what they are consenting to.
+    \item Privacy: Even with consent, the privacy of an individual must be protected, meaning that personally identifiable information (PII) should not be publically available or vulnerable to unauthorized acessing to.
+    \item Intention: Data should only be collected with a clear, positive purpose, and it should be directly relevant to the task at hand. Data collection with malicious or unnecessary intent is unethical.
+    \item Outcomes: even if data is collected with good intentions, the result of its analysis must be scrutinized to prevent unitentional harm, especially if they lead to biased or dsicriminatory outcomes.
+\end{itemize}
+\section{Cloud}
+\subsection{IaaS Vs PaaS vs SaaS - What is the difference and why would you use one over the other}
+\begin{itemize}
+    \item Infrastructure as a Service: Provides virtualized computing resources over the internet, such as servers, storage, and networking. It offers the foundational infrastructure, and users are repsonsible for managing the operating systems, applications, and data.
+    \item Platform as a service: Provides a flatform that allows developers to build, deploy and manage applications without worrying about the underlying infrastructure. The cloud provider manages the infrastructure, including servers, storage, and networking, while users focus on application development.
+        \begin{itemize}[label=$\circ$]
+            \item Provides development tools, middleware, database management, and OS.
+            \item Users focus on writing and managing the code and database.
+            \item The provider handles the hardware, software updates, and patching.
+            \item examples: snowflake, databricks.
+        \end{itemize}
+
+    \item Software as a service: delivers fully managed software applications over the internet, users access the software through a web browser, while the cloud provider handles everything from infrastructure to application management and updates.
+        \begin{itemize}[label=$\circ$]
+            \item End users interact with the software, with no need to manage infrasctucture or platforms
+                \tiem the provider is responsible to maintaining the application, ensuring security and handling updates
+            \item Acess to the software is usually subscription-based.
+            \item exmaples: google workspace, microsoft 365.
+        \end{itemize}
+\end{itemize}
+\subsection{Advantages of the cloud}
+
+\begin{itemize}
+    \item Cost -- pay as you go model, no need for physical storage, reduced energy costs, Reduced in house staff, built in redundancy
+    \item Speed to market  -- Self Service provisioning, global reach, managed services (including databases)
+    \item Scale -- easily scale resources up or down based on demand
+    \item Productivity -- 
+    \item Performance
+    \item Security
+    \item Reliability
+    \item Data Sharing
+
+\end{itemize}
+
+\subsection{Disadvantages}
+
+\section{Security}
+\subsection{MFA}
+\subsection{Deepfake}
+\subsection{Phishing}
+\subsection{Dumpster Diving}
+\subsection{Ransomware}
+\subsection{Pass keys}
+\subsection{Areas of weakness in org}
+\section{project management}
+\subsection{Waterfall vs scrum}
+\subsubsection{Characteristics}
+\subsubsection{Main roles}
+\subsubsection{Process}
+
+
+a
+b
+b
+a
+e
+b
+b
+a
+a
+b
+b
+b
+c
+b
+a
+a
+a
+b
+a
+
+\end{document}

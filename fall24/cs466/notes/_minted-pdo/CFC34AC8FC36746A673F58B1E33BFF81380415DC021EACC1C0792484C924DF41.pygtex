@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{x}{\PYGZdl{}book\PYGZus{}query\PYGZhy{}\PYGZgt{}execute([\PYGZsq{}id\PYGZsq{}=\PYGZgt{}\PYGZdl{}id]);}
+\end{Verbatim}

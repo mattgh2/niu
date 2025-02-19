@@ -1,0 +1,118 @@
+
+                   J E S 2  J O B  L O G  --  S Y S T E M  8 5 6 1  --  N O D E  S V S C J E S 2        
+
+ 
+10.23.21 JOB07530 ---- WEDNESDAY, 12 FEB 2025 ----
+10.23.21 JOB07530  IRR010I  USERID KC03AED  IS ASSIGNED TO THIS JOB.
+10.23.21 JOB07530  ICH70001I KC03AED  LAST ACCESS AT 10:23:13 ON WEDNESDAY, FEBRUARY 12, 2025
+10.23.21 JOB07530  $HASP373 KC03AEDA STARTED - INIT 1    - CLASS A        - SYS 8561
+10.23.21 JOB07530  -                                      -----TIMINGS (MINS.)------                          -----PAGING COUNTS----
+10.23.21 JOB07530  -STEPNAME PROCSTEP    RC   EXCP   CONN       TCB       SRB  CLOCK          SERV  WORKLOAD  PAGE  SWAP   VIO SWAPS
+10.23.21 JOB07530  -JSTEP01              00     24      2       .00       .00     .0             5  BATCH        0     0     0     0
+10.23.21 JOB07530  -KC03AEDA ENDED.  NAME-M. WARNER            TOTAL TCB CPU TIME=      .00 TOTAL ELAPSED TIME=    .0
+10.23.21 JOB07530  $HASP395 KC03AEDA ENDED - RC=0000
+
+------ JES2 JOB STATISTICS ------
+
+
+  12 FEB 2025 JOB EXECUTION DATE
+
+
+           36 CARDS READ
+
+
+           92 SYSOUT PRINT RECORDS
+
+
+            0 SYSOUT PUNCH RECORDS
+
+
+           10 SYSOUT SPOOL KBYTES
+
+
+         0.00 MINUTES EXECUTION TIME
+       1 //KC03AEDA JOB ,'M. WARNER',MSGCLASS=H                                  JOB07530
+       2 //JSTEP01  EXEC PGM=ASSIST                                                      
+       3 //STEPLIB  DD DSN=KC00NIU.ASSIST.LOADLIB,DISP=SHR                               
+       4 //SYSPRINT DD SYSOUT=*                                                          
+       5 //SYSIN    DD *                                                                 
+ICH70001I KC03AED  LAST ACCESS AT 10:23:13 ON WEDNESDAY, FEBRUARY 12, 2025
+IEFA111I KC03AEDA IS USING THE FOLLOWING JOB RELATED SETTINGS:
+         SWA=ABOVE,TIOT SIZE=32K,DSENQSHR=DISALLOW,GDGBIAS=JOB
+IEF236I ALLOC. FOR KC03AEDA JSTEP01
+IGD103I SMS ALLOCATED TO DDNAME STEPLIB
+IEF237I JES2 ALLOCATED TO SYSPRINT
+IEF237I JES2 ALLOCATED TO SYSIN
+IEF142I KC03AEDA JSTEP01 - STEP WAS EXECUTED - COND CODE 0000
+IGD104I KC00NIU.ASSIST.LOADLIB                       RETAINED,  DDNAME=STEPLIB 
+IEF285I   KC03AED.KC03AEDA.JOB07530.D0000102.?         SYSOUT        
+IEF285I   KC03AED.KC03AEDA.JOB07530.D0000101.?         SYSIN         
+IEF373I STEP/JSTEP01 /START 2025043.1023
+IEF032I STEP/JSTEP01 /STOP  2025043.1023 
+        CPU:     0 HR  00 MIN  00.00 SEC    SRB:     0 HR  00 MIN  00.00 SEC    
+        VIRT:   584K  SYS:   380K  EXT:        0K  SYS:    11188K
+        ATB- REAL:                  1268K  SLOTS:                     0K
+             VIRT- ALLOC:      16M SHRD:       0M
+IEF375I  JOB/KC03AEDA/START 2025043.1023
+IEF033I  JOB/KC03AEDA/STOP  2025043.1023 
+        CPU:     0 HR  00 MIN  00.00 SEC    SRB:     0 HR  00 MIN  00.00 SEC    
+
+*** ASSIST 4.0/A2-05/15/82  470/V7A/0:OS/VS2  INS=SDFP7/X=BGHO, CHECK/TRC/=1180, OPTS=CDKMPR FROM PENN ST*NIU COMPSCI*LT            
+
+                                                                                                                                    
+
+                                                                                                               PAGE    1            
+
+  LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT                                                                          
+                                      1 *****************************************************************                           
+                                      2 *                                                               *                           
+                                      3 *  CSCI 360-1             ASSIGNMENT 3        SPRING 2025       *                           
+                                      4 *                                                               *                           
+                                      5 *    PROGRAMMER NAME: Matthew Warner                            *                           
+                                      6 *           DATE DUE: Febuary 12, 2025                          *                           
+                                      7 *                                                               *                           
+                                      8 *  MAIN PROGRAM NAME: ASSIGN3C                                  *                           
+                                      9 *                                                               *                           
+                                     10 *           FUNCTION: Subtracts two numbers                     *                           
+                                     11 *                                                               *                           
+                                     12 *                                                               *                           
+                                     13 *                                                               *                           
+                                     14 *****************************************************************                           
+                                     15 *                                                                                           
+000000                               16 ASSIGN3C CSECT                                                                              
+000000                               17          USING ASSIGN3C,15                                                                  
+000000 5820 F018            00018    18          L     2,24(,15)                                                                    
+000004 5830 F01C            0001C    19          L     3,28(,15)                                                                    
+000008 1B23                          20          SR    2,3                                                                          
+00000A 5020 F020            00020    21          ST    2,32(,15)                                                                    
+00000E E060 F020 0004 00020          22          XDUMP ANSWER,4                                                                     
+000014 07FE                          23          BCR   B'1111',14                                                                   
+                                     24 *                                                                                           
+                                     25          LTORG                                                                              
+000018 0000000C                      26 NUM1     DC    F'12'                                                                        
+00001C 00000007                      27 NUM2     DC    F'7'                                                                         
+000020                               28 ANSWER   DS    F                                                                            
+                                     29 *                                                                                           
+                                     30          END ASSIGN3C                                                                       
+
+***  NO   STATEMENTS FLAGGED -  NO   WARNINGS,  NO   ERRORS                                                                         
+
+*** DYNAMIC CORE AREA USED:  LOW:     524 HIGH:     400 LEAVING:  492644 FREE BYTES. AVERAGE:       29 BYTES/STMT ***               
+
+*** ASSEMBLY TIME =    0.000 SECS,    31000 STATEMENTS/SEC ***                                                                      
+
+*** PROGRAM EXECUTION BEGINNING - ANY OUTPUT BEFORE EXECUTION TIME MESSAGE IS PRODUCED BY USER PROGRAM ***                          
+
+BEGIN XSNAP - CALL     1 AT E0000014 USER STORAGE                                                                                   
+
+                             CORE ADDRESSES SPECIFIED-     000020 TO 000024                                                         
+000020   00000005 F5F5F5F5 F5F5F5F5 00000000    F5F5F5F5 F5F5F5F5 F5F5F5F5 F5F5F5F5   *....55555555....5555555555555555*            
+
+                                                                                                                                    
+
+*** EXECUTION TIME =    0.000 SECS.         6 INSTRUCTIONS EXECUTED -     6000 INSTRUCTIONS/SEC ***                                 
+
+*** FIRST CARD NOT READ: NO CARDS READ:FILE UNOPENED                                                                                
+
+*** AM004 - NORMAL USER TERMINATION BY RETURN ***                                                                                   
+

@@ -1,0 +1,44 @@
+1*** ASSIST 4.0/A2-05/15/82  470/V7A/0:OS/VS2  INS=SDFP7/X=BGHO, CHECK/TRC/=1180, OPTS=CDKMPR FROM PENN ST*NIU COMPSCI*LT
+0
+0                                                                                                               PAGE    1
+0  LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT
+                                       1 *****************************************************************
+                                       2 *                                                               *
+                                       3 *  CSCI 360-1             ASSIGNMENT 3        SPRING 2025       *
+                                       4 *                                                               *
+                                       5 *    PROGRAMMER NAME: Matthew Warner                            *
+                                       6 *           DATE DUE: Febuary 12, 2025                          *
+                                       7 *                                                               *
+                                       8 *  MAIN PROGRAM NAME: ASSIGN3B                                  *
+                                       9 *                                                               *
+                                      10 *           FUNCTION: Subtracts two numbers                     *
+                                      11 *                                                               *
+                                      12 *                                                               *
+                                      13 *****************************************************************
+                                      14 *
+ 000000                               15 ASSIGN3B CSECT
+ 000000                               16          USING ASSIGN3B,15
+ 000000 5820 F018            00018    17          L     2,NUM1
+ 000004 5830 F01C            0001C    18          L     3,NUM2
+ 000008 1B23                          19          SR    2,3
+ 00000A 5020 F020            00020    20          ST    2,ANSWER
+ 00000E E060 F020 0004 00020          21          XDUMP ANSWER,4
+ 000014 07FE                          22          BCR   B'1111',14
+                                      23 *
+                                      24          LTORG
+ 000018 0000000C                      25 NUM1     DC    F'12'
+ 00001C 00000007                      26 NUM2     DC    F'7'
+ 000020                               27 ANSWER   DS    F
+                                      28 *
+                                      29          END ASSIGN3B
+0***  NO   STATEMENTS FLAGGED -  NO   WARNINGS,  NO   ERRORS
+0*** DYNAMIC CORE AREA USED:  LOW:     516 HIGH:     400 LEAVING:  492652 FREE BYTES. AVERAGE:       30 BYTES/STMT ***
+0*** ASSEMBLY TIME =    0.000 SECS,    30000 STATEMENTS/SEC ***
+0*** PROGRAM EXECUTION BEGINNING - ANY OUTPUT BEFORE EXECUTION TIME MESSAGE IS PRODUCED BY USER PROGRAM ***
+0BEGIN XSNAP - CALL     1 AT E0000014 USER STORAGE
+0                             CORE ADDRESSES SPECIFIED-     000020 TO 000024
+ 000020   00000005 F5F5F5F5 F5F5F5F5 00000000    F5F5F5F5 F5F5F5F5 F5F5F5F5 F5F5F5F5   *....55555555....5555555555555555*
+0
+0*** EXECUTION TIME =    0.000 SECS.         6 INSTRUCTIONS EXECUTED -     6000 INSTRUCTIONS/SEC ***
+0*** FIRST CARD NOT READ: NO CARDS READ:FILE UNOPENED
+0*** AM004 - NORMAL USER TERMINATION BY RETURN ***

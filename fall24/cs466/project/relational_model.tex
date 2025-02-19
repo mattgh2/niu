@@ -1,0 +1,142 @@
+\documentclass{report}
+
+\input{~/latex/template/preamble.tex}
+\input{~/latex/template/macros.tex}
+
+\title{\Huge\textbf{Karaoke Management System Group Project}\\[1em] 
+\Huge Relational Schema}
+
+\author{
+    \Large Matt Warner \and
+    \Large Sang Pham \and
+    \Large James Bolla \and
+    \Large Emanuel Slaughter \and
+    \Large Ty Danan
+}
+
+\date{\huge{}}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{}
+\lhead{\leftmark}
+\cfoot{\thepage}
+% \usepackage[default]{sourcecodepro} \usepackage[T1]{fontenc}
+
+\pgfpagesdeclarelayout{boxed}
+{
+  \edef\pgfpageoptionborder{0pt}
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=1,%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {
+    border code=\pgfsetlinewidth{1.5pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.95\pgfphysicalwidth,%
+    resized height=.95\pgfphysicalheight,%
+    center=\pgfpoint{.5\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+}
+
+\pgfpagesuselayout{boxed}
+
+\begin{document}
+\maketitle
+\section{\texttt{USER}}
+-- Entity
+\subsubsection*{Relation schema:}
+\text{ \textit{\textbf{USER}}(\underline{USERID}, FNAME, LNAME)}
+\bigbreak \noindent
+\textbf{Primary keys:}
+\begin{itemize}
+    \item \texttt{USERID} is the primary key.
+\end{itemize}
+\bigbreak \noindent
+\textbf{Foreign keys:}
+\begin{itemize}
+    \item None.
+\end{itemize}
+\hline
+\section{\texttt{SONG}}
+-- Entity
+\subsubsection*{Relation schema:}
+\text{ \textit{\textbf{SONG}}(\underline{SONGID}, TITLE, ARTISTNAME)}
+\bigbreak \noindent
+\textbf{Primary keys:}
+\begin{itemize}
+    \item \texttt{SONGID} is the primary key.
+\end{itemize}
+\bigbreak \noindent
+\textbf{Foreign keys:}
+\begin{itemize}
+    \item None.
+\end{itemize}
+\hline
+\section{\texttt{CONTRIBUTOR}}
+-- Entity
+\subsubsection*{Relation schema:}
+\text{ \textit{\textbf{CONTRIBUTOR}}(\underline{CONTRIBUTORID}, CNAME)}
+\bigbreak \noindent
+\textbf{Primary keys:}
+\begin{itemize}
+    \item \texttt{CONTRIBUTORID} is the primary key.
+\end{itemize}
+\bigbreak \noindent
+\textbf{Foreign keys:}
+\begin{itemize}
+    \item None.
+\end{itemize}
+\hline
+\section{\texttt{CONTRIBUTE}}
+Many-to-Many Relationship between the \texttt{SONG} and \texttt{CONTRIBUTOR} entities.
+\subsubsection*{Relation schema:}
+\text{ \textit{\textbf{CONTRIBUTE}}(\underline{SONGID}, \underline{CONTRIBUTORID}, CONTRIBUTIONTYPE)}
+\bigbreak \noindent
+\textbf{Primary keys:}
+\begin{itemize}
+    \item \texttt{SONGID}
+    \item \texttt{CONTRIBUTORID}
+\end{itemize}
+\bigbreak \noindent
+\textbf{Foreign keys:}
+\begin{itemize}
+    \item \texttt{SONGID} \ - \ home relation: \texttt{SONG}
+    \item \texttt{CONTRIBUTORID} \ - \ home relation: \texttt{CONTRIBUTOR}
+\end{itemize}
+\hline
+\section{\texttt{KARAOKEFILE}}
+-- Entitiy
+\subsubsection*{Relation schema:}
+\text{ \textit{\textbf{KARAOKEFILE}}(\underline{FILEID}, SONGID, VERSION)}
+-- Entity
+\bigbreak \noindent
+\textbf{Primary keys:}
+\begin{itemize}
+    \item \texttt{FILEID} is the primary key.
+\end{itemize}
+\bigbreak \noindent
+\textbf{Foreign keys:}
+\begin{itemize}
+    \item \texttt{SONGID} \ - \ home relation: \texttt{SONG}
+\end{itemize}
+\hline
+\section{\texttt{PICK}}
+Many-to-Many Relationship between the \texttt{USER} and \texttt{SONG} entities.
+\subsubsection*{Relation schema:}
+\text{ \textit{\textbf{PICK}}(\underline{USERID}, \underline{SONGID}, QUEUETYPE, PAID, TIME, FILEID)}
+\bigbreak \noindent
+\textbf{Primary keys:}
+\begin{itemize}
+    \item \texttt{USERID}
+    \item \texttt{SONGID}
+\end{itemize}
+\bigbreak \noindent
+\textbf{Foreign keys:}
+\begin{itemize}
+    \item \texttt{USERID} \ - \ home relation: \texttt{USER}
+    \item \texttt{SONGID} \ - \ home relation: \texttt{SONG}
+    \item \texttt{FILEID} \ - \ home relation: \texttt{KARAOKEFILE}
+\end{itemize}
+
+\end{document}

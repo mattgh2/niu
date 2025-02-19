@@ -1,0 +1,202 @@
+\documentclass{report}
+
+\input{~/latex/template/preamble.tex}
+\input{~/latex/template/macros.tex}
+
+\title{\Huge{Intermediate PHP}}
+\author{\huge{Matt Warner}}
+\date{\huge{}}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{}
+\lhead{\leftmark}
+\cfoot{\thepage}
+% \usepackage[default]{sourcecodepro}\usepackage[T1]{fontenc}
+\definecolor{headercolor}{HTML}{cfcfcf} % Light pink for the header
+\definecolor{rowcolor}{HTML}{ffffff}    % Lavender blush for rows
+
+\pgfpagesdeclarelayout{boxed}
+{
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=1,%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {
+    border code=\pgfsetlinewidth{1.5pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.95\pgfphysicalwidth,%
+    resized height=.95\pgfphysicalheight,%
+    center=\pgfpoint{.5\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+}
+
+\pgfpagesuselayout{boxed}
+
+\begin{document}
+    \maketitle
+\section{Connecting to a Database}
+PHP can act as a \textbf{client} and can make a connection to a database \textbf{server}. Once we make the connection we can send queries to it.
+\bigbreak \noindent
+To connect to a server, a client needs to know where it is. We provide this information in the form of a \textit{\textbf{dns}} (data source name). 
+\bigbreak \noindent
+The \textit{\textbf{dsn}} holds our database type, hostname, and database name. The \textit{\textbf{hostname}} contains the location of the database. If the DBMS is running on the same host (computer) as PHP, we use \texttt{localhost}. If it's running on a remote server, we use its \textit{ip address} or \textit{domain name}.  
+\nt{Any examples provided in here will be using PostgreSQL as the database type. For the hostname, we will be using \texttt{localhost}.}
+\bigbreak \noindent
+Setting up the connection to the database is mostly just a bunch of boilerplate. To create the DSN, we first provide the \textbf{prefix}, where we specify which database system to use. For PostgreSQL, that is \texttt{pgsql}. For MariaDB, it would be mysql. Then we add a colon, followed by a key/value pair containing the hostname and database name, sperated by a semi-colon. The DSN uses a precise format, so it's important not to include spaces or extra characters.
+\begin{minted}[linenos=true]{php}
+$dsn = "pgsql:host=$hostname;dbname=$dbname";
+\end{minted}
+We'll also need to store the \texttt{username} and \texttt{password of an account with the correct permissions for the database}.
+\begin{minted}[linenos=true]{php}
+$username = "matt";
+$password = "pass";
+\end{minted}
+We'll start the connection by creating a database object from the PDO class and instantiating it using keyword \texttt{new}. The PDO constructor takes the \texttt{\$dsn}, \texttt{\$username} and \texttt{\$password} variables as its args in that order. If the connection is successful, the database object will be assigned to \texttt{\$db}.
+\begin{minted}[linenos=true]{php}
+$db = new PDO($dsn, $username, $password);
+\end{minted}
+To end the connection to the database, we set the \texttt{db} object to null.
+\begin{minted}[linenos=true]{php}
+$db = null;
+\end{minted}
+Putting it all together, we have:
+\begin{minted}[linenos=false]{php}
+$hostname = "localhost";
+$dbname = "testdb";
+$username = "matt";
+$password = "pass";
+
+$dsn = "pgsql:host=$hostname;dbname=$dbname";
+
+$db = new PDO($dsn, $username, $password);
+\end{minted}
+\newpage
+\section{Creating Queries}
+Now that we've created a database object, \texttt{\$db}, we can call its methods to fetch data from the database.
+\bigbreak \noindent
+Lets take a look at an example database. It contains a \texttt{books} table with a list of books with their \texttt{id}, \texttt{title}, \texttt{author}, and published \texttt{year}.
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.5} % Adjust row height
+\setlength{\tabcolsep}{12pt} % Adjust column spacing
+\begin{tabular}{|>{\centering\arraybackslash}m{1cm}|m{5cm}|m{4.5cm}|>{\centering\arraybackslash}m{1.5cm}|}
+\hline
+\rowcolor{headercolor} 
+\textbf{id} & \textbf{Title} & \textbf{Author} & \textbf{Year} \\ \hline
+\rowcolor{rowcolor}
+1 & Don Quixote & Miguel de Cervantes & 1605 \\ \hline
+2 & Robinson Crusoe & Daniel Defoe & 1719 \\ \hline
+\rowcolor{rowcolor}
+3 & Pride and Prejudice & Jane Austen & 1813 \\ \hline
+4 & Emma & Jane Austen & 1816 \\ \hline
+\rowcolor{rowcolor}
+5 & A Tale of Two Cities & Charles Dickens & 1859 \\ \hline
+\end{tabular}
+\caption{A table of classic literature.}
+\end{table}\noindent
+We'll begin with a query to fetch book titles. We'll use the \texttt{query()} method on the \texttt{\$db} object and execute the query. We can do this by referencing the \texttt{\$db} object with the array object operator (--\textgreater) before calling the \texttt{query()} method.
+\begin{minted}[linenos=true]{php}
+$bookquery = $db->query('SELECT title FROM books');
+\end{minted}
+The sytax in parenthesis is just a regular SQL query  that is understood by the database.
+\bigbreak \noindent
+Let's fetch the result of the query and assign it to the \texttt{\$book variable}. We do this by calling the \texttt{fetch()} method on \texttt{\$bookquery}.
+\begin{minted}[linenos=true]{php}
+$book = $bookquery->fetch();
+\end{minted}
+Although our \texttt{SELECT} statement above queries the database for \textit{all} book titles, the \texttt{fetch()} method returns only \textit{one} result. To return a list of \textit{all} book titles, we can use the \texttt{fetchAll()} method instead:
+\begin{minted}[linenos=false]{php}
+$books = $bookQuery->fetchAll();
+\end{minted}
+If we were to print all the element in the \texttt{\$books} array, every element would appear twice. This is how  the fetch \texttt{fetch()} method behaves by default. It stores both \textbf{numeric}, and \textbf{associative} indicies, leading to every element in the row appearing twice in the array.
+\bigbreak \noindent
+When using \texttt{fetch()}, we can supply whats called a \textit{\textbf{fetch mode}}. We can supply either \texttt{PDO::FETCH\_NUM} or \texttt{PDO\_FETCH\_ASSOC} as arguments. As their names suggest, PDO::FETCH\_NUM will supply numeric indices, and PDO::FETCH\_ASSOC will supply associative indices.
+\begin{minted}[linenos=false]{php}
+// No args.
+$book = $book_query->fetch();
+print_r("Fetch with no args<br><br>");
+var_dump($book);
+
+// Numeric.
+print_r("<br><br>Fetch with PDO::FETCH_NUM<br><br>");
+$book = $book_query->fetch(PDO::FETCH_NUM);
+var_dump($book);
+
+// Associative.
+print_r("<br><br>Fetch with PDO::FETCH_ASSOC<br><br>");
+$book = $book_query->fetch(PDO::FETCH_ASSOC);
+var_dump($book);
+\end{minted}
+\subsubsection*{Output:}
+\begin{minted}[linenos=false]{text}
+Fetch with no args
+
+array(16) { ["BookID"]=> int(1) [0]=> int(1) ["Title"]=> string(4) "1984" [1]=> string(4) "1984" ["AuthorID"]=> int(1) [2]=> int(1) ["PublisherID"]=> int(1) [3]=> int(1) ["GenreID"]=> int(2) [4]=> int(2) ["PublishDate"]=> string(10) "1949-06-08" [5]=> string(10) "1949-06-08" ["Pages"]=> int(328) [6]=> int(328) ["Price"]=> string(5) "15.99" [7]=> string(5) "15.99" }
+
+Fetch with PDO::FETCH_NUM
+
+array(8) { [0]=> int(2) [1]=> string(21) "To Kill a Mockingbird" [2]=> int(2) [3]=> int(2) [4]=> int(1) [5]=> string(10) "1960-07-11" [6]=> int(281) [7]=> string(5) "14.99" }
+
+Fetch with PDO::FETCH_ASSOC
+
+array(8) { ["BookID"]=> int(3) ["Title"]=> string(39) "Harry Potter and the Philosophers Stone" ["AuthorID"]=> int(3) ["PublisherID"]=> int(1) ["GenreID"]=> int(3) ["PublishDate"]=> string(10) "1997-06-26" ["Pages"]=> int(223) ["Price"]=> string(5) "12.99" } 
+\end{minted}
+\bigbreak \noindent
+\texttt{fetch()} will only ever return one row, if we wanted a list of \textit{all} rows, we can use the \texttt{fetchAll()} method instead.
+\begin{minted}[linenos=false]{php}
+$books = $book_query->fetchAll(PDO::FETCH_ASSOC);
+\end{minted}
+The line above will create \texttt{\$books} as a two dimensional array, where each inner array will cotains the items from each row of the query. If we wanted to print out all the contents of the first row, we could write:
+\begin{minted}[linenos=true]{php}
+foreach($books[0] as $i) {
+    echo $i . " ";
+}
+
+\end{minted}
+\section{SQL Injection}
+Say we wanted to write a query that lets a user get a book's details by providing its ID.
+\begin{minted}[linenos=false]{php}
+// Get the ID from the frontend
+$id = $_POST['id'];
+
+// Like this?
+$books_query = $db->query("SELECT * FROM books WHERE id = $id");
+\end{minted}
+But what if instead of entering a number, a malicious user enters \texttt{1 or 1 = 1}?
+\bigbreak \noindent
+Then the database will run the query:
+\begin{minted}[linenos=false]{sql}
+SELECT * FROM books WHERE id = 1 or 1 = 1;
+\end{minted}
+Since $1=1$ is always true, the database will return \textit{every} row from the books table. While returning all books might not be a problem, an attacker can use the same technique to return a list of users, passwords, and other confidential information.
+\bigbreak \noindent
+We can prevent SQL injection by telling the database which values should be treated \textit{only} as data. We do this with the \textit{\textbf{prepare}} statement.
+\bigbreak \noindent
+A \textit{\textbf{prepare}} statement is a pre-defined template containing SQL and optionally \textbf{placeholders}. We use placeholders to tell the database where to place the data we will provide when executing the statement.
+\begin{minted}[linenos=false]{php}
+$id = _POST['id'];
+$books_query = $db->prepare('SELECT * FROM books WHERE id = :id');
+\end{minted}
+The next step is to run the \texttt{execute()} method, and pass in an array with a key-value pair which maps our placeholders to variables.
+\begin{minted}[linenos=false]{php}
+$book_query->execute(['id'=>$id]);
+\end{minted}
+Now, we can fetch the result:
+\begin{minted}[linenos=false]{php}
+$book = book_query->fetch(PDO::FETCH_ASSOC);
+\end{minted}
+With this approach, the SQL and the data are sent  to the database \textbf{seperatly}. The database first parses and compiles the SQL query into an execution plan. The database then binds the user-provided value \texttt{\$id} as a parameter to the already compiled query. At this stage, the database treats \texttt{\$id} as data, not as SQL code. Thus, the select statement might look something like this instead:
+\begin{minted}[linenos=false]{sql}
+// Safe. Would not delete the table.
+SELECT * FROM books WHERE id = '1; DROP TABLE books;'
+\end{minted}
+As an added layer of protection, we can sanitize \texttt{\$id} by using \texttt{filter\_input()} to ensure we're only passing in numbers.
+\begin{minted}[linenos=false]{php}
+$id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT);
+
+\end{minted}
+\end{document}

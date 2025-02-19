@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{x}{\PYGZdl{}dsn = \PYGZdq{}pgsql:host=\PYGZdl{}hostname;dbname=\PYGZdl{}dbname\PYGZdq{};}
+\end{Verbatim}

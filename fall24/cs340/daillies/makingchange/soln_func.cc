@@ -10,6 +10,7 @@ auto _r(int c, int a[], int start, std::vector<int> cur, int N) -> std::set<std:
     std::set<std::vector<int>, size_comp> s;
     if (c == 0) { s.insert(cur); return s; }
     if (c < 0) { return {}; }
+
     for (int i = start; i < N; ++i) {
         cur.push_back(a[i]);
         auto below = _r(c - a[i], a, i, cur, N);

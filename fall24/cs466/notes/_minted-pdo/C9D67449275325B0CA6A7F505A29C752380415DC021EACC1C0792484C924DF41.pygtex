@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{x}{\PYGZdl{}hostname = \PYGZdq{}localhost\PYGZdq{};}
+\PYG{x}{\PYGZdl{}dbname = \PYGZdq{}testdb\PYGZdq{};}
+\PYG{x}{\PYGZdl{}username = \PYGZdq{}matt\PYGZdq{};}
+\PYG{x}{\PYGZdl{}password = \PYGZdq{}pass\PYGZdq{};}
+
+\PYG{x}{\PYGZdl{}dsn = \PYGZdq{}pgsql:host=\PYGZdl{}hostname;dbname=\PYGZdl{}dbname\PYGZdq{};}
+
+\PYG{x}{\PYGZdl{}db = new PDO(\PYGZdl{}dsn, \PYGZdl{}username, \PYGZdl{}password);}
+\end{Verbatim}

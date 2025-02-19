@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{x}{foreach(\PYGZdl{}books[0] as \PYGZdl{}i) \PYGZob{}}
+\PYG{x}{    echo \PYGZdl{}i . \PYGZdq{} \PYGZdq{};}
+\PYG{x}{\PYGZcb{}}
+
+\end{Verbatim}

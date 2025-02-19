@@ -1,0 +1,34 @@
+//KC03AEDA JOB ,'M. WARNER',MSGCLASS=H
+//JSTEP01  EXEC PGM=ASSIST
+//STEPLIB  DD DSN=KC00NIU.ASSIST.LOADLIB,DISP=SHR
+//SYSPRINT DD SYSOUT=*
+//SYSIN    DD *
+***************************************************************** 
+*                                                               * 
+*  CSCI 360-1             ASSIGNMENT 3        SPRING 2025       * 
+*                                                               * 
+*    PROGRAMMER NAME: Matthew Warner                            * 
+*           DATE DUE: Febuary 12, 2025                          * 
+*                                                               * 
+*  MAIN PROGRAM NAME: ASSIGN3A                                  *
+*                                                               *
+*           FUNCTION: Subtracts two numbers                     *
+*                                                               *
+*                                                               *
+*                                                               * 
+*****************************************************************
+* 
+ASSIGN3A CSECT
+         USING ASSIGN3A,15 
+         L     2,NUM1
+         L     3,NUM2
+         SR    2,3
+         XDUMP ,
+         BCR   B'1111',14
+*
+         LTORG
+NUM1     DC    F'12'
+NUM2     DC    F'7'
+*
+         END ASSIGN3A
+

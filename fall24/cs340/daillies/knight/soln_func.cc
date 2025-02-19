@@ -36,7 +36,7 @@ auto captured(int knight_r, int knight_c, int pawn_r, int pawn_c) -> int {
     }
     return -1;
 }
-()
+
 
 auto in_bounds(const std::pair<int,int> &move,  node &current_node) -> bool {
     return ( current_node.first.first + move.first <= 7 && current_node.first.first + move.first >= 0)

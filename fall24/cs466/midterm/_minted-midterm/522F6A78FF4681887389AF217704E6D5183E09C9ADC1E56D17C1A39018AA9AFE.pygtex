@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{k}{DELETE}\PYG{+w}{ }\PYG{k}{FROM}\PYG{+w}{ }\PYG{n}{Person}
+\PYG{k}{WHERE}\PYG{+w}{ }\PYG{n}{SSN}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}123456789\PYGZsq{}}\PYG{p}{;}
+\end{Verbatim}

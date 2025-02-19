@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{k}{ALTER}\PYG{+w}{ }\PYG{k}{TABLE}\PYG{+w}{ }\PYG{n}{Person}\PYG{+w}{ }\PYG{k}{DROP}\PYG{+w}{ }\PYG{n}{Birthday}\PYG{p}{;}
+\end{Verbatim}

@@ -1,0 +1,16 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{x}{// No args.}
+\PYG{x}{\PYGZdl{}book = \PYGZdl{}book\PYGZus{}query\PYGZhy{}\PYGZgt{}fetch();}
+\PYG{x}{print\PYGZus{}r(\PYGZdq{}Fetch with no args\PYGZlt{}br\PYGZgt{}\PYGZlt{}br\PYGZgt{}\PYGZdq{});}
+\PYG{x}{var\PYGZus{}dump(\PYGZdl{}book);}
+
+\PYG{x}{// Numeric.}
+\PYG{x}{print\PYGZus{}r(\PYGZdq{}\PYGZlt{}br\PYGZgt{}\PYGZlt{}br\PYGZgt{}Fetch with PDO::FETCH\PYGZus{}NUM\PYGZlt{}br\PYGZgt{}\PYGZlt{}br\PYGZgt{}\PYGZdq{});}
+\PYG{x}{\PYGZdl{}book = \PYGZdl{}book\PYGZus{}query\PYGZhy{}\PYGZgt{}fetch(PDO::FETCH\PYGZus{}NUM);}
+\PYG{x}{var\PYGZus{}dump(\PYGZdl{}book);}
+
+\PYG{x}{// Associative.}
+\PYG{x}{print\PYGZus{}r(\PYGZdq{}\PYGZlt{}br\PYGZgt{}\PYGZlt{}br\PYGZgt{}Fetch with PDO::FETCH\PYGZus{}ASSOC\PYGZlt{}br\PYGZgt{}\PYGZlt{}br\PYGZgt{}\PYGZdq{});}
+\PYG{x}{\PYGZdl{}book = \PYGZdl{}book\PYGZus{}query\PYGZhy{}\PYGZgt{}fetch(PDO::FETCH\PYGZus{}ASSOC);}
+\PYG{x}{var\PYGZus{}dump(\PYGZdl{}book);}
+\end{Verbatim}

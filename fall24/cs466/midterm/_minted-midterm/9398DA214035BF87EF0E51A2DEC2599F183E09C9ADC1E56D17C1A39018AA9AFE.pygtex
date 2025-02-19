@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{k}{INSERT}\PYG{+w}{ }\PYG{k}{INTO}\PYG{+w}{ }\PYG{n}{Person}
+\PYG{+w}{    }\PYG{k}{VALUES}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}123456789\PYGZsq{}}\PYG{p}{,}
+\PYG{+w}{            }\PYG{l+s+s1}{\PYGZsq{}Inigo\PYGZsq{}}\PYG{p}{,}
+\PYG{+w}{            }\PYG{l+s+s1}{\PYGZsq{}Montoya\PYGZsq{}}\PYG{p}{,}
+\PYG{+w}{            }\PYG{l+s+s1}{\PYGZsq{}55555555\PYGZsq{}}\PYG{p}{);}
+
+\PYG{c+c1}{\PYGZhy{}\PYGZhy{} Method 2}
+\PYG{k}{INSERT}\PYG{+w}{ }\PYG{k}{INTO}\PYG{+w}{ }\PYG{n}{Person}
+\PYG{+w}{    }\PYG{p}{(}\PYG{n}{LNAME}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{FNAME}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{SSN}\PYG{p}{)}
+\PYG{+w}{    }\PYG{k}{VALUES}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Buttercup\PYGZsq{}}\PYG{p}{,}
+\PYG{+w}{           }\PYG{l+s+s1}{\PYGZsq{}Princess\PYGZsq{}}\PYG{p}{,}
+\PYG{+w}{           }\PYG{l+s+s1}{\PYGZsq{}987654321\PYGZsq{}}\PYG{p}{);}
+\PYG{+w}{    }\PYG{p}{)}
+\end{Verbatim}
