@@ -1,0 +1,44 @@
+@startuml
+left to right direction
+
+actor "customer" as customer
+actor "Warehouse worker" as warehouse_worker
+actor "Receiving Employee" as receiving_employee
+actor "Administrator" as admin
+
+actor "Credit card Processing system" as credit_card_processing_system
+actor "product info DB" as product_info_db
+
+rectangle {
+usecase u1 as "make a purchase"
+usecase u2 as "browse catalog"
+usecase u4 as "print packing list"
+usecase u5 as "set shipping status"
+usecase u6 as "update inventory"
+usecase u7 as "manage shipping"
+usecase u8 as "view orders"
+}
+customer--u1
+customer--u2
+warehouse_worker--u4
+warehouse_worker--u5
+receiving_employee--u6
+admin--u7
+admin--u8
+
+u1--product_info_db
+u1---credit_card_processing_system
+u2---product_info_db
+u4--product_info_db
+u5--product_info_db
+u6--product_info_db
+u7--product_info_db
+@pause
+// Process payment shouldn't be a seperate usecase since it is part of making a purchase (pointed out by ege)
+// Inventory db cant be in the use case model since it is a internal system.
+
+@unpause
+
+@enduml
+
+

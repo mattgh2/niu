@@ -1,0 +1,47 @@
+12345    WOLFGANG AMADEUS MOZART                15              80            1675             268               67             1340
+
+23456    RICHARD STRAUSS                        19              80            1530             244               61             1225
+
+22132    AMY BEACH                              10              80             969             155               38              776
+
+65465    DAME ETHEL SMYTHE                      22              80            2645             423              105             2117
+
+44560    PETER ILYICH TCHAIKOVSKY               23              28             680             108               27              545
+
+99870    ANTON BRUCKNER                         22              80            1739             278               69             1392
+
+13345    LUDWIG VAN BEETHOVEN                   15              80            1675             268               67             1340
+
+24456    JOHANNES BRAHMS                        19              80            1530             244               61             1225
+
+22532    BELA BARTOK                            10              80             969             155               38              776
+
+11465    MAX REGER                              22              80            2645             423              105             2117
+
+13360    SAMUEL BARBER                          23              28             680             108               27              545
+
+99873    GIUSEPPE VERDI                         22              80            1739             278               69             1392
+
+12342    JOHANN SEBASTIAN BACH                  15              80            1675             268               67             1340
+
+23452    JOSEPH HAYDN                           19              80            1530             244               61             1225
+
+22131    GEORG FRIEDRICH HANDEL                 10              80             969             155               38              776
+
+65411    EDWARD ELGAR                           22              80            2645             423              105             2117
+
+44378    NIKOLAI RIMSKY-KORSAKOV                23              28             680             108               27              545
+
+99855    CLAUDE DEBUSSY                         22              80            1739             278               69             1392
+
+13346    ANTONIN DVORAK                         15              80            1675             268               67             1340
+
+24457    THOMAS TALLIS                          19              80            1530             244               61             1225
+
+22538    RALPH VAUGHAN WILLIAMS                 10              80             969             155               38              776
+
+11477    RICHARD WAGNER                         22              80            2645             423              105             2117
+
+17777    FREDERIC CHOPIN                        23              28             680             108               27              545
+
+99211    JOAN TOWER                             22              80            1739             278               69             1392

@@ -1,0 +1,61 @@
+ANTONIN DVORAK               413346      $15.80       25.50             $402.90                                                     
+
+THOMAS TALLIS                254457      $19.80       60.01           $1,188.20                                                     
+
+AMY BEACH                    221432      $10.80       31.20             $336.96                                                     
+
+DAME ETHEL SMYTHE            565465      $22.80       15.90             $362.52                                                     
+
+PYOTR ILYICH TCHAIKOVSKY     464560      $23.28       34.07             $793.15                                                     
+
+ANTON BRUCKNER               799870      $22.80       21.00             $478.80                                                     
+
+LUDWIG VAN BEETHOVEN         813345      $15.80       25.50             $402.90                                                     
+
+JOHANNES BRAHMS              244456      $19.80       80.01           $1,584.20                                                     
+
+BELA BARTOK                  122532      $10.80       31.20             $336.96                                                     
+
+MAX REGER                    211465      $22.80       15.90             $362.52                                                     
+
+SAMUEL BARBER                313360      $23.28       34.07             $793.15                                                     
+
+GIUSEPPE VERDI               499873      $22.80       21.00             $478.80                                                     
+
+FRANZ LISZT                  244456      $19.80       80.01           $1,584.20                                                     
+
+BOHUSLAV MARTINU             122532      $10.80       31.20             $336.96                                                     
+
+LEOS JANACEK                 211465      $22.80       15.90             $362.52                                                     
+
+GEORGE GERSHWIN              313360      $23.28       34.07             $793.15                                                     
+
+GIACOMO PUCCINI              499873      $22.80       21.00             $478.80                                                     
+
+JOHANN SEBASTIAN BACH        512342      $15.80       25.50             $402.90                                                     
+
+JOSEPH HAYDN                 623452      $19.80       20.01             $396.20                                                     
+
+GEORG FRIEDRICH HANDEL       722131      $10.80       31.20             $336.96                                                     
+
+NIKOLAI RIMSKY-KORSAKOV      844378      $23.28       34.07             $793.15                                                     
+
+EDWARD ELGAR                 965411      $22.80       15.90             $362.52                                                     
+
+WILLIAM WALTON               799870      $22.80       21.00             $478.80                                                     
+
+ERNO VON DOHNANYI            813345      $15.80       25.50             $402.90                                                     
+
+RALPH VAUGHAN WILLIAMS       227538      $18.80       31.20             $586.56                                                     
+
+RICHARD WAGNER               114277      $22.80       15.90             $362.52                                                     
+
+CLAUDE DEBUSSY               599851      $21.75       41.05             $892.84                                                     
+
+FREDERIC CHOPIN              177717      $23.28       34.07             $793.15                                                     
+
+JOAN TOWER                   199211      $22.80       21.00             $478.80                                                     
+
+WOLFGANG AMADEUS MOZART      122345      $15.80       25.50             $402.90                                                     
+
+RICHARD STRAUSS              233456      $19.80       70.10           $1,387.98                                                   

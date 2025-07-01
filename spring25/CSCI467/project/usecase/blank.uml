@@ -1,0 +1,41 @@
+@startuml
+left to right direction
+usecase UC3 as "You can use several lines
+to define your usecase
+You can also use seperators
+--
+Several seperators are possible
+==
+And you can add titles:
+..Conclusion..
+This allows large descriptions."
+
+usecase UC1 as "Another usecase..."
+
+:Alice: --> UC3
+:Alice: --> UC1
+
+
+actor Bob as b
+package Professional {
+    actor Chef as chef
+    actor "Food Critic" as critic
+}
+
+
+rectangle Resturant {
+    usecase "Eat Food" as ef
+    usecase "Pay for Food" as pff
+    usecase "Pay for Drink" as pfd
+    usecase "Review" as rev
+}
+
+b --> ef
+b --> pff
+b --> pfd
+critic --> rev
+
+
+
+
+@enduml

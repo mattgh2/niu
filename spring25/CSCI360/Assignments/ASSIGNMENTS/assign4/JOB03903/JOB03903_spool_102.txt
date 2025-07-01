@@ -1,0 +1,31 @@
+1*** ASSIST 4.0/A2-05/15/82  470/V7A/0:OS/VS2  INS=SDFP7/X=BGHO, CHECK/TRC/=1180, OPTS=CDKMPR FROM PENN ST*NIU COMPSCI*LT
+0
+0                                                                                                               PAGE    1
+0  LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT
+                                       1 *
+ 000000                                2 DUMPPGM  CSECT
+ 000000                                3          USING DUMPPGM,15     ESTABLISH A BASE REGISTER
+ 000000 5810 F018            00018     4          L     1,ONE          LOAD THE FIRST NUMBER INTO R1
+ 000004 5820 F01C            0001C     5          L     2,TWO          LOAD THE SECOND INTO R2
+ 000008 1A12                           6          AR    1,2            ADD THE TWO NUMBERS
+ 00000A 5010 F021            00021     7          ST    1,THREE        STORE THE RESULT
+ ----->AS000 W-ALIGNMENT ERROR-IMPROPER BOUNDARY--------------$-------------------------------------------------- <-ERROR
+ 00000E E060 F021 0004 00021           8          XDUMP THREE,4        DUMP THE RESULT
+ 000014 07FE                           9          BCR   B'1111',14     RETURN TO CALLER
+                                      10 *
+                                      11
+ ----->AS118 INVALID OP-CODE             ---------$-------------------------------------------------------------- <-ERROR
+                                      12 *     NO LTORG NECESSARY
+                                      13
+ ----->AS118 INVALID OP-CODE             ---------$-------------------------------------------------------------- <-ERROR
+                                      14 *
+ 000018 00000040                      15 ONE      DC    F'64'          FIRST NUMBER
+ 00001C 00000020                      16 TWO      DC    F'32'          SECOND NUMBER
+ 000020 F0                            17 EOFFLAG  DC    C'0'           A FLAG SAVE AREA
+ 000021                               18 THREE    DS    CL4' '         SUM OF THE TWO NUMBERS
+                                      19 *
+                                      20          END   DUMPPGM
+0***     3 STATEMENTS FLAGGED -     1 WARNINGS,     2 ERRORS
+0***** NUMBER OF ERRORS EXCEEDS LIMIT OF  NO   ERRORS - PROGRAM EXECUTION DELETED *****
+0*** DYNAMIC CORE AREA USED:  LOW:     932 HIGH:     396 LEAVING:  492240 FREE BYTES. AVERAGE:       63 BYTES/STMT ***
+0*** ASSEMBLY TIME =    0.000 SECS,    21000 STATEMENTS/SEC ***

@@ -20,11 +20,8 @@
 * 
 ASSIGN3A CSECT
          USING ASSIGN3A,15 
-         L     2,NUM1
-         L     3,NUM2
-         SR    2,3
-         XDUMP ,
-         BCR   B'1111',14
+         LA     3,=F'-5'
+         
 *
          LTORG
 NUM1     DC    F'12'

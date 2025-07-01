@@ -1,0 +1,19 @@
+        1 //KC03AEDA JOB ,'M. Warner',MSGCLASS=H                                  JOB06656
+          //*
+        2 //JSTEP01  EXEC PGM=ASSIST
+          //*
+        3 //STEPLIB  DD DSN=KC00NIU.ASSIST.LOADLIB,DISP=SHR
+          //*
+        4 //SYSIN    DD *
+          //*
+          //* THE FOLLOWING IS THE INPUT DATA SET
+          //*
+        5 //FT05F001 DD DSN=KC02322.CSCI360.DATAFA24(DATA5),DISP=SHR
+          //*
+          //* THE FOLLOWING IS THE OUTPUT DATA SET
+          //*
+        6 //FT06F001 DD SYSOUT=*
+          //*
+        7 //SYSPRINT DD SYSOUT=*
+          //*
+        8 //

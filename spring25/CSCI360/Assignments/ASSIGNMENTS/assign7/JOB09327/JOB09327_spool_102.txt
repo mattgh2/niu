@@ -1,0 +1,119 @@
+1*** ASSIST 4.0/A2-05/15/82  470/V7A/0:OS/VS2  INS=SDFP7/X=BGHO, CHECK/TRC/=1180, OPTS=CDKMPR FROM PENN ST*NIU COMPSCI*LT
+0
+0                                                                                                               PAGE    1
+0  LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT
+                                       1 *****************************************************************
+                                       2 *                                                               *
+                                       3 *  CSCI 360-1             ASSIGNMENT 7        SPRING 2025       *
+                                       4 *                                                               *
+                                       5 *    PROGRAMMER NAME: Matthew Warner                            *
+                                       6 *           DATE DUE: APRIL 1, 2025                             *
+                                       7 *                                                               *
+                                       8 *  MAIN PROGRAM NAME: PAYROLL                                   *
+                                       9 *                                                               *
+                                      10 *           FUNCTION: The function of this program is to        *
+                                      11 *                                                               *
+                                      12 *                                                               *
+                                      13 *****************************************************************
+                                      14 *
+ 000000                               15 PAYROLL  CSECT
+                                      16 *
+                                      17 *  STANDARD ENTRY LINKAGE WITH R12 AS BASE REGISTER
+                                      18 *
+ 000000 90EC D00C            0000C    19          STM   14,12,12(13)  SAVE REGS IN CALLER'S SAVE AREA
+ 000004 18CF                          20          LR    12,15         COPY CSECT ADDR INTO R12
+ 000000                               21          USING PAYROLL,12    ESTABLISH R12 AS THE BASE REG
+ 000006 41E0 C0E0            000E0    22          LA    14,SAVEAREA   R14 POINTS TO THIS CSECT'S SAVE AREA
+ 00000A 50E0 D008            00008    23          ST    14,8(,13)     STORE ADDR OF THIS CSECT'S SAVE AREA
+ 00000E 50D0 E004            00004    24          ST    13,4(,14)     STORE ADDR OF CALLER'S SAVE AREA
+ 000012 18DE                          25          LR    13,14         POINT R13 AT THIS CSECT'S SAVE AREA
+                                      26 *
+                                      27 *
+ 000014 E000 C1AE 0050 001AE          28          XREAD RECORD,80       PRIMARY READ INTO RECORD
+                                      29 *
+ 00001A 4740 C07A            0007A    30 LOOP     BC    B'0100',ENDLOOP EXEC LOOP IF SUCCESSFUL READ
+                                      31 *
+ 00001E 9240 C129      00129          32          MVI   DETAIL+1,C' '   COPY WHITESPACE INTO FIRST BYTE OF PRINTLN
+                                                        DETAIL+2(131),DETAIL+1  COPY WHTESPCE INTO REMAINING BYTES
+
+ ----->AS103 CONTINUATION CARD COLS. 1-15 NONBLANK------$-------------------------------------------------------- <-ERROR
+ 000022 D218 C129 C1AE 00129 001AE    33          MVC   OEMPNME(25),IEMPNME    MOVE EMPLOYEE NAME INTO PRINT LINE
+                                                        OEMPID(6),IEMPID       MOVE EMPLOYEE ID INTO PRINT LINE
+ ----->AS103 CONTINUATION CARD COLS. 1-15 NONBLANK------$-------------------------------------------------------- <-ERROR
+                                      34 *
+ 000028 F224 C1FE C1CD 001FE 001CD    35          PACK  PHRPAY(3),IHRPAY(5)    GET PACKED DECMIAL FORM OF HR PAY
+ 00002E 4110 C153            00153    36          LA    1,OHRPAY+3             ENSURE R1 HOLDS A BYTE FOR '$'
+ 000032 D206 C150 C09E 00150 0009E    37          MVC   OHRPAY(7),=X'402021204B2020'  MOVE EDIT PATTERN INTO OHRPAY
+                                                        OHRPAY(7),PHRPAY    PUTS EBCDIC HRPAY INTO PRINT LINE
+ ----->AS103 CONTINUATION CARD COLS. 1-15 NONBLANK------$-------------------------------------------------------- <-ERROR
+ 000038 0610                          38          BCTR  1,0    DECREMENT R1 BY 1
+ 00003A 925B 1000      00000          39          MVI   0(1),C'$'   PLACE DOLLAR SIGN
+                                      40 *
+ 00003E F224 C201 C1D2 00201 001D2    41          PACK  PHOUR(3),IHOURS(5)    GET PACKED DECIMAL FORM OF HOURS
+ 000044 D206 C15B C09E 0015B 0009E    42          MVC   OHOURS(7),=X'402021204B2020' MOVE EDIT PATTERN INTO PRNTLN
+                                                        OHOURS(7),PHOUR    PUT EBCDIC HOURS INTO PRINT LINE
+ ----->AS103 CONTINUATION CARD COLS. 1-15 NONBLANK------$-------------------------------------------------------- <-ERROR
+                                      43 *
+1                                                                                                               PAGE    2
+0  LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT
+ 00004A F852 C204 C1FE 00204 001FE    44          ZAP   PGRPAY(6),PHRPAY(3)    PREPARES FOR MULTIPLICATION
+ 000050 FC52 C204 C201 00204 00201    45          MP    PGRPAY(6),PHOUR    MULTIPLY PACKED HRPAY BY PACKED HOURS
+ 000056 F055 C204 003E 00204 0003E    46          SRP   PGRPAY(6),64-2,5   SHIFT 2 TO THE RIGHT AND ROUND
+ 00005C 4110 C16C            0016C    47          LA    1,OGRPAY+8         ENSURE R1 HOLDS SLOT FOR '$'
+ 000060 D20E C164 C090 00164 00090    48          MVC   OGRPAY(15),=X'402020202020206B2021204B2020'  EDIT PATTERN
+                                                        OGRPAY(15),PGRPAY    PUT PACKED GROSS PAY INTO PRINT LINE
+                                                        1,0     DECREMENT R1 BY 1
+ ----->AS103 CONTINUATION CARD COLS. 1-15 NONBLANK------$-------------------------------------------------------- <-ERROR
+ 000066 925B 1000      00000          49          MVI   0(1),C'$' PLACE DOLLAR SIGN
+                                      50 *
+ 00006A E020 C128 0085 00128          51          XPRNT DETAIL,133    PRINT DETAIL LINE FOR EMPLOYEE
+ 000070 E000 C1AE 0050 001AE          52          XREAD RECORD,80     SECONDARY READ INTO RECORD
+ 000076 47F0 C01A            0001A    53          BC    B'1111',LOOP  BRANCH BACK TO THE TOP OF LOOP
+                                      54 *
+ 00007A                               55 ENDLOOP  DS    0H
+                                      56 *  STANDARD EXIT LINKAGE WITH RC OF 0
+                                      57 *
+ 00007A 1BFF                          58          SR    15,15         R15 = RETURN CODE OF 0
+ 00007C 58D0 D004            00004    59          L     13,4(,13)     POINTS R13 TO CALLER'S SAVE AREA
+ 000080 58E0 D00C            0000C    60          L     14,12(,13)    RESTORE REGISTER 14
+ 000084 980C D014            00014    61          LM    0,12,20(13)   RESTORE R0 THRU R12
+                                      62 *
+ 000088 07FE                          63          BR    14            RETURN TO CALLER
+                                      64 *
+                                      65          LTORG
+ 000090 402020202020206B              66                =X'402020202020206B2021204B2020'
+ 00009E 402021204B2020                67                =X'402021204B2020'
+                                      68 *
+ 0000C0                               69          ORG   PAYROLL+((*-PAYROLL+31)/32)*32
+ 0000C0 5C40D7D9D6C7D9C1              70          DC    C'* PROGRAM STORAGE FOR PAYROLL **'
+                                      71 *
+ 0000E0                               72 SAVEAREA DS    18F    REGISTER SAVE AREA
+                                      73 *
+ 000128 F0                            74 DETAIL   DC    C'0'   CARRIAGE CONTROL CHARACTER
+ 000129                               75 OEMPNME  DS    CL25
+ 000142 40404040                      76          DC    4C' '
+ 000146                               77 OEMPID   DS    CL6
+ 00014C 40404040                      78          DC    4C' '
+ 000150                               79 OHRPAY   DS    CL7
+ 000157 40404040                      80          DC    4C' '
+ 00015B                               81 OHOURS   DS    CL5
+ 000160 40404040                      82          DC    4C' '
+ 000164                               83 OGRPAY   DS    CL15
+ 000173 4040404040404040              84          DC    58C' '
+                                      85 *
+ 0001AE                               86 RECORD   DS    0H     INPUT RECORD STORAGE
+ 0001AE                               87 IEMPNME  DS    CL25
+ 0001C7                               88 IEMPID   DS    CL6
+ 0001CD                               89 IHRPAY   DS    ZL5
+ 0001D2                               90 IHOURS   DS    ZL5
+ 0001D7 4040404040404040              91          DC    39C' '
+                                      92 *
+ 0001FE 00000C                        93 PHRPAY   DC    PL3'0'
+ 000201 00000C                        94 PHOUR    DC    PL3'0'
+ 000204 00000000000C                  95 PGRPAY   DC    PL6'0'
+                                      96 *
+                                      97          END PAYROLL
+0***     5 STATEMENTS FLAGGED -  NO   WARNINGS,     5 ERRORS
+1***** NUMBER OF ERRORS EXCEEDS LIMIT OF  NO   ERRORS - PROGRAM EXECUTION DELETED *****
+0*** DYNAMIC CORE AREA USED:  LOW:    4616 HIGH:     764 LEAVING:  488188 FREE BYTES. AVERAGE:       54 BYTES/STMT ***
+0*** ASSEMBLY TIME =    0.000 SECS,    98000 STATEMENTS/SEC ***

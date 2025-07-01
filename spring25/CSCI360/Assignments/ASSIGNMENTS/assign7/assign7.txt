@@ -1,0 +1,258 @@
+
+                   J E S 2  J O B  L O G  --  S Y S T E M  8 5 6 1  --  N O D E  S V S C J E S 2        
+
+ 
+18.44.12 JOB01090 ---- TUESDAY,   01 APR 2025 ----
+18.44.12 JOB01090  IRR010I  USERID KC03AED  IS ASSIGNED TO THIS JOB.
+18.44.12 JOB01090  ICH70001I KC03AED  LAST ACCESS AT 18:41:43 ON TUESDAY, APRIL 1, 2025
+18.44.12 JOB01090  $HASP373 KC03AEDA STARTED - INIT 1    - CLASS A        - SYS 8561
+18.44.12 JOB01090  -                                      -----TIMINGS (MINS.)------                          -----PAGING COUNTS----
+18.44.12 JOB01090  -STEPNAME PROCSTEP    RC   EXCP   CONN       TCB       SRB  CLOCK          SERV  WORKLOAD  PAGE  SWAP   VIO SWAPS
+18.44.12 JOB01090  -JSTEP01              00     43      3       .00       .00     .0             8  BATCH        0     0     0     0
+18.44.12 JOB01090  -KC03AEDA ENDED.  NAME-M. WARNER            TOTAL TCB CPU TIME=      .00 TOTAL ELAPSED TIME=    .0
+18.44.12 JOB01090  $HASP395 KC03AEDA ENDED - RC=0000
+
+------ JES2 JOB STATISTICS ------
+
+
+  01 APR 2025 JOB EXECUTION DATE
+
+
+          113 CARDS READ
+
+
+          203 SYSOUT PRINT RECORDS
+
+
+            0 SYSOUT PUNCH RECORDS
+
+
+           19 SYSOUT SPOOL KBYTES
+
+
+         0.00 MINUTES EXECUTION TIME
+       1 //KC03AEDA JOB ,'M. WARNER',MSGCLASS=H                                  JOB01090
+       2 //JSTEP01  EXEC PGM=ASSIST                                                      
+       3 //STEPLIB  DD DSN=KC00NIU.ASSIST.LOADLIB,DISP=SHR                               
+       4 //SYSPRINT DD SYSOUT=*                                                          
+       5 //SYSIN    DD *                                                                 
+         //*                                                                             
+       6 //FT05F001 DD DSN=KC02322.CSCI360.DATASP25(DATA7),DISP=SHR                      
+         //*                                                                             
+       7 //FT06F001 DD SYSOUT=*                                                          
+       8 //                                                                              
+ICH70001I KC03AED  LAST ACCESS AT 18:41:43 ON TUESDAY, APRIL 1, 2025
+IEFA111I KC03AEDA IS USING THE FOLLOWING JOB RELATED SETTINGS:
+         SWA=ABOVE,TIOT SIZE=32K,DSENQSHR=DISALLOW,GDGBIAS=JOB
+IEF236I ALLOC. FOR KC03AEDA JSTEP01
+IGD103I SMS ALLOCATED TO DDNAME STEPLIB
+IEF237I JES2 ALLOCATED TO SYSPRINT
+IEF237I JES2 ALLOCATED TO SYSIN
+IGD103I SMS ALLOCATED TO DDNAME FT05F001
+IEF237I JES2 ALLOCATED TO FT06F001
+IEF142I KC03AEDA JSTEP01 - STEP WAS EXECUTED - COND CODE 0000
+IGD104I KC00NIU.ASSIST.LOADLIB                       RETAINED,  DDNAME=STEPLIB 
+IEF285I   KC03AED.KC03AEDA.JOB01090.D0000102.?         SYSOUT        
+IEF285I   KC03AED.KC03AEDA.JOB01090.D0000101.?         SYSIN         
+IGD104I KC02322.CSCI360.DATASP25                     RETAINED,  DDNAME=FT05F001
+IEF285I   KC03AED.KC03AEDA.JOB01090.D0000103.?         SYSOUT        
+IEF373I STEP/JSTEP01 /START 2025091.1844
+IEF032I STEP/JSTEP01 /STOP  2025091.1844 
+        CPU:     0 HR  00 MIN  00.00 SEC    SRB:     0 HR  00 MIN  00.00 SEC    
+        VIRT:   584K  SYS:   268K  EXT:        8K  SYS:    11256K
+        ATB- REAL:                  1268K  SLOTS:                     0K
+             VIRT- ALLOC:      16M SHRD:       0M
+IEF375I  JOB/KC03AEDA/START 2025091.1844
+IEF033I  JOB/KC03AEDA/STOP  2025091.1844 
+        CPU:     0 HR  00 MIN  00.00 SEC    SRB:     0 HR  00 MIN  00.00 SEC    
+
+*** ASSIST 4.0/A2-05/15/82  470/V7A/0:OS/VS2  INS=SDFP7/X=BGHO, CHECK/TRC/=1180, OPTS=CDKMPR FROM PENN ST*NIU COMPSCI*LT            
+
+                                                                                                                                    
+
+                                                                                                               PAGE    1            
+
+  LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT                                                                          
+                                      1 *****************************************************************                           
+                                      2 *                                                               *                           
+                                      3 *  CSCI 360-1             ASSIGNMENT 7        SPRING 2025       *                           
+                                      4 *                                                               *                           
+                                      5 *    PROGRAMMER NAME: Matthew Warner                            *                           
+                                      6 *           DATE DUE: APRIL 1, 2025                             *                           
+                                      7 *                                                               *                           
+                                      8 *  MAIN PROGRAM NAME: PAYROLL                                   *                           
+                                      9 *                                                               *                           
+                                     10 *           FUNCTION: The function of this program is to        *                           
+                                     11 *                                                               *                           
+                                     12 *                                                               *                           
+                                     13 *****************************************************************                           
+                                     14 *                                                                                           
+000000                               15 PAYROLL  CSECT                                                                              
+                                     16 *                                                                                           
+                                     17 *  STANDARD ENTRY LINKAGE WITH R12 AS BASE REGISTER                                         
+                                     18 *                                                                                           
+000000 90EC D00C            0000C    19          STM   14,12,12(13)  SAVE REGS IN CALLER'S SAVE AREA                                
+000004 18CF                          20          LR    12,15         COPY CSECT ADDR INTO R12                                       
+000000                               21          USING PAYROLL,12    ESTABLISH R12 AS THE BASE REG                                  
+000006 41E0 C100            00100    22          LA    14,SAVEAREA   R14 POINTS TO THIS CSECT'S SAVE AREA                           
+00000A 50E0 D008            00008    23          ST    14,8(,13)     STORE ADDR OF THIS CSECT'S SAVE AREA                           
+00000E 50D0 E004            00004    24          ST    13,4(,14)     STORE ADDR OF CALLER'S SAVE AREA                               
+000012 18DE                          25          LR    13,14         POINT R13 AT THIS CSECT'S SAVE AREA                            
+                                     26 *                                                                                           
+                                     27 *                                                                                           
+000014 E000 C1CE 0050 001CE          28          XREAD RECORD,80       PRIMARY READ INTO RECORD                                     
+                                     29 *                                                                                           
+00001A 4740 C09A            0009A    30 LOOP     BC    B'0100',ENDLOOP EXEC LOOP IF SUCCESSFUL READ                                 
+                                     31 *                                                                                           
+00001E 9240 C149      00149          32          MVI   DETAIL+1,C' '   COPY WHITESPACE INTO 1ST BYTE OF PRINTLN                     
+000022 D282 C14A C149 0014A 00149    33          MVC   DETAIL+2(131),DETAIL+1  COPY WHTESPCE TO REMAINING BYTES                     
+                                     34 *                                                                                           
+000028 D218 C149 C1CE 00149 001CE    35          MVC   OEMPNME(25),IEMPNME    MOVE EMPLOYEE NAME INTO PRNT LINE                     
+00002E D205 C166 C1E7 00166 001E7    36          MVC   OEMPID(6),IEMPID       MOVE EMPLOYEE ID INTO PRINT LINE                      
+                                     37 *                                                                                           
+000034 F224 C21E C1ED 0021E 001ED    38          PACK  PHRPAY(3),IHRPAY(5)    GET PACKED DECMIAL FORM OF HR PAY                     
+00003A 4110 C173            00173    39          LA    1,OHRPAY+3             ENSURE R1 HOLDS A BYTE FOR '$'                        
+00003E D206 C170 C0BE 00170 000BE    40          MVC   OHRPAY(7),=X'402021204B2020' MOVE EDIT PATTERN TO OHRPAY                     
+000044 DF06 C170 C21E 00170 0021E    41          EDMK  OHRPAY(7),PHRPAY    PUTS EBCDIC HRPAY INTO PRINT LINE                        
+00004A 0610                          42          BCTR  1,0    DECREMENT R1 BY 1                                                     
+00004C 925B 1000      00000          43          MVI   0(1),C'$'   PLACE DOLLAR SIGN                                                
+                                     44 *                                                                                           
+000050 F224 C221 C1F2 00221 001F2    45          PACK  PHOUR(3),IHOURS(5)    GET PACKED DECIMAL FORM OF HOURS                       
+000056 D206 C17B C0BE 0017B 000BE    46          MVC   OHOURS(7),=X'402021204B2020' MOVE EDIT PATTERN TO PRNTLN                     
+00005C DE06 C17B C221 0017B 00221    47          ED    OHOURS(7),PHOUR    PUT EBCDIC HOURS INTO PRINT LINE                          
+                                     48 *                                                                                           
+000062 F852 C224 C21E 00224 0021E    49          ZAP   PGRPAY(6),PHRPAY(3)    PREPARES FOR MULTIPLICATION                           
+000068 FC52 C224 C221 00224 00221    50          MP    PGRPAY(6),PHOUR(3) MULTIPLY PACKED HRPAY BY PACKED HOURS                     
+00006E F055 C224 003E 00224 0003E    51          SRP   PGRPAY(6),64-2,5   SHIFT 2 TO THE RIGHT AND ROUND                            
+000074 4110 C18C            0018C    52          LA    1,OGRPAY+8         ENSURE R1 HOLDS SLOT FOR '$'                              
+
+                                                                                                               PAGE    2            
+
+  LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT                                                                          
+000078 D20E C184 C0B0 00184 000B0    53          MVC   OGRPAY(15),=X'402020202020206B2021204B2020' EDIT PATTERN                     
+00007E DF0E C184 C224 00184 00224    54          EDMK  OGRPAY(15),PGRPAY    PUT PACKED GROSS PAY TO PRINT LINE                      
+000084 0610                          55          BCTR  1,0     DECREMENT R1 BY 1                                                    
+000086 925B 1000      00000          56          MVI   0(1),C'$' PLACE DOLLAR SIGN                                                  
+                                     57 *                                                                                           
+00008A E020 C148 0085 00148          58          XPRNT DETAIL,133    PRINT DETAIL LINE FOR EMPLOYEE                                 
+000090 E000 C1CE 0050 001CE          59          XREAD RECORD,80     SECONDARY READ INTO RECORD                                     
+000096 47F0 C01A            0001A    60          BC    B'1111',LOOP  BRANCH BACK TO THE TOP OF LOOP                                 
+                                     61 *                                                                                           
+00009A                               62 ENDLOOP  DS    0H                                                                           
+                                     63 *  STANDARD EXIT LINKAGE WITH RC OF 0                                                       
+                                     64 *                                                                                           
+00009A 1BFF                          65          SR    15,15         R15 = RETURN CODE OF 0                                         
+00009C 58D0 D004            00004    66          L     13,4(,13)     POINTS R13 TO CALLER'S SAVE AREA                               
+0000A0 58E0 D00C            0000C    67          L     14,12(,13)    RESTORE REGISTER 14                                            
+0000A4 980C D014            00014    68          LM    0,12,20(13)   RESTORE R0 THRU R12                                            
+                                     69 *                                                                                           
+0000A8 07FE                          70          BR    14            RETURN TO CALLER                                               
+                                     71 *                                                                                           
+                                     72          LTORG                                                                              
+0000B0 402020202020206B              73                =X'402020202020206B2021204B2020'                                             
+0000BE 402021204B2020                74                =X'402021204B2020'                                                           
+                                     75 *                                                                                           
+0000E0                               76          ORG   PAYROLL+((*-PAYROLL+31)/32)*32                                               
+0000E0 5C40D7D9D6C7D9C1              77          DC    C'* PROGRAM STORAGE FOR PAYROLL **'                                          
+                                     78 *                                                                                           
+000100                               79 SAVEAREA DS    18F    REGISTER SAVE AREA                                                    
+                                     80 *                                                                                           
+000148 F0                            81 DETAIL   DC    C'0'   CARRIAGE CONTROL CHARACTER                                            
+000149                               82 OEMPNME  DS    CL25                                                                         
+000162 40404040                      83          DC    4C' '                                                                        
+000166                               84 OEMPID   DS    CL6                                                                          
+00016C 40404040                      85          DC    4C' '                                                                        
+000170                               86 OHRPAY   DS    CL7                                                                          
+000177 40404040                      87          DC    4C' '                                                                        
+00017B                               88 OHOURS   DS    CL5                                                                          
+000180 40404040                      89          DC    4C' '                                                                        
+000184                               90 OGRPAY   DS    CL15                                                                         
+000193 4040404040404040              91          DC    58C' '                                                                       
+                                     92 *                                                                                           
+0001CE                               93 RECORD   DS    0H     INPUT RECORD STORAGE                                                  
+0001CE                               94 IEMPNME  DS    CL25                                                                         
+0001E7                               95 IEMPID   DS    CL6                                                                          
+0001ED                               96 IHRPAY   DS    ZL5                                                                          
+0001F2                               97 IHOURS   DS    ZL5                                                                          
+0001F7 4040404040404040              98          DC    39C' '                                                                       
+                                     99 *                                                                                           
+00021E 00000C                       100 PHRPAY   DC    PL3'0'                                                                       
+000221 00000C                       101 PHOUR    DC    PL3'0'                                                                       
+000224 00000000000C                 102 PGRPAY   DC    PL6'0'                                                                       
+                                    103 *                                                                                           
+                                    104          END PAYROLL                                                                        
+
+***  NO   STATEMENTS FLAGGED -  NO   WARNINGS,  NO   ERRORS                                                                         
+
+*** DYNAMIC CORE AREA USED:  LOW:    4576 HIGH:     764 LEAVING:  488228 FREE BYTES. AVERAGE:       50 BYTES/STMT ***               
+
+*** ASSEMBLY TIME =    0.000 SECS,   105000 STATEMENTS/SEC ***                                                                      
+
+*** PROGRAM EXECUTION BEGINNING - ANY OUTPUT BEFORE EXECUTION TIME MESSAGE IS PRODUCED BY USER PROGRAM ***                          
+
+ANTONIN DVORAK               413346     $15.80      25.50         $402.90                                                           
+
+THOMAS TALLIS                254457     $19.80      60.01       $1,188.20                                                           
+
+AMY BEACH                    221432     $10.80      31.20         $336.96                                                           
+
+DAME ETHEL SMYTHE            565465     $22.80      15.90         $362.52                                                           
+
+PYOTR ILYICH TCHAIKOVSKY     464560     $23.28      34.07         $793.15                                                           
+
+ANTON BRUCKNER               799870     $22.80      21.00         $478.80                                                           
+
+LUDWIG VAN BEETHOVEN         813345     $15.80      25.50         $402.90                                                           
+
+JOHANNES BRAHMS              244456     $19.80      80.01       $1,584.20                                                           
+
+BELA BARTOK                  122532     $10.80      31.20         $336.96                                                           
+
+MAX REGER                    211465     $22.80      15.90         $362.52                                                           
+
+SAMUEL BARBER                313360     $23.28      34.07         $793.15                                                           
+
+GIUSEPPE VERDI               499873     $22.80      21.00         $478.80                                                           
+
+FRANZ LISZT                  244456     $19.80      80.01       $1,584.20                                                           
+
+BOHUSLAV MARTINU             122532     $10.80      31.20         $336.96                                                           
+
+LEOS JANACEK                 211465     $22.80      15.90         $362.52                                                           
+
+GEORGE GERSHWIN              313360     $23.28      34.07         $793.15                                                           
+
+GIACOMO PUCCINI              499873     $22.80      21.00         $478.80                                                           
+
+JOHANN SEBASTIAN BACH        512342     $15.80      25.50         $402.90                                                           
+
+JOSEPH HAYDN                 623452     $19.80      20.01         $396.20                                                           
+
+GEORG FRIEDRICH HANDEL       722131     $10.80      31.20         $336.96                                                           
+
+NIKOLAI RIMSKY-KORSAKOV      844378     $23.28      34.07         $793.15                                                           
+
+EDWARD ELGAR                 965411     $22.80      15.90         $362.52                                                           
+
+WILLIAM WALTON               799870     $22.80      21.00         $478.80                                                           
+
+ERNO VON DOHNANYI            813345     $15.80      25.50         $402.90                                                           
+
+RALPH VAUGHAN WILLIAMS       227538     $18.80      31.20         $586.56                                                           
+
+RICHARD WAGNER               114277     $22.80      15.90         $362.52                                                           
+
+CLAUDE DEBUSSY               599851     $21.75      41.05         $892.84                                                           
+
+FREDERIC CHOPIN              177717     $23.28      34.07         $793.15                                                           
+
+JOAN TOWER                   199211     $22.80      21.00         $478.80                                                           
+
+WOLFGANG AMADEUS MOZART      122345     $15.80      25.50         $402.90                                                           
+
+RICHARD STRAUSS              233456     $19.80      70.10       $1,387.98                                                           
+
+*** EXECUTION TIME =    0.000 SECS.       788 INSTRUCTIONS EXECUTED -   788000 INSTRUCTIONS/SEC ***                                 
+
+*** AM004 - NORMAL USER TERMINATION BY RETURN ***                                                                                   
+

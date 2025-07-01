@@ -1,0 +1,296 @@
+                                                   CHICAGO SOFTWARE COMPANY, INC.                                         PAGE:    1
+                                                      EMPLOYEE PAYROLL REPORT                                                       
+
+EMPLOYEE   EMPLOYEE                     HOURLY     HOURS            EMPLOYEE    EMPLOYEE FEDERAL    EMPLOYEE STATE          EMPLOYEE
+ID         NAME                            PAY    WORKED           GROSS PAY         WITHHOLDING       WITHHOLDING           NET PAY
+---------  -------------------------   -------   -------     ---------------    ----------------    --------------   ---------------
+
+52-345245  JOAN TOWER                   $15.25     80.50           $1,722.75             $133.51            $55.99         $1,533.25
+
+03-456322  WOLFGANG AMADEUS MOZART      $19.00     80.75           $1,547.69             $119.95            $50.30         $1,377.44
+
+34-032233  RICHARD STRAUSS              $10.29     80.00           $1,045.97              $81.06            $33.99           $930.92
+
+16-465120  AMY BEACH                    $22.00     77.00           $2,579.16             $199.88            $83.82         $2,295.46
+
+76-560023  ETHEL SMYTH                  $23.75     28.25             $710.64              $55.07            $23.10           $632.47
+
+23-870322  PETER ILYICH TCHAIKOVSKY     $22.95     80.50           $1,826.23             $141.53            $59.35         $1,625.35
+
+04-966277  ANTON BRUCKNER               $23.20     78.67           $2,044.58             $158.45            $66.45         $1,819.68
+
+02-345245  FLORENCE PRICE               $15.25     80.50           $1,802.75             $139.71            $58.59         $1,604.45
+
+13-456322  CLAUDE DEBUSSY               $19.00     80.77           $1,546.85             $119.88            $50.27         $1,376.70
+
+34-032233  JUDITH WEIR                  $10.29     80.00           $1,045.97              $81.06            $33.99           $930.92
+
+16-465120  LUDWIG VAN BEETHOVEN         $22.00     80.00           $2,645.16             $205.00            $85.97         $2,354.19
+
+06-560023  JOHANN SEBASTIAN BACH        $23.75     28.25             $707.64              $54.84            $23.00           $629.80
+
+23-870322  AARON COPLAND                $22.95     80.50           $1,826.23             $141.53            $59.35         $1,625.35
+
+94-966277  CHARLES IVES                 $20.20     78.67           $1,798.57             $139.39            $58.45         $1,600.73
+
+02-345245  SHULAMIT RAN                 $15.25     80.50           $1,702.75             $131.96            $55.34         $1,515.45
+
+13-456322  ARTHUR HONEGGER              $19.00     80.75           $1,547.69             $119.95            $50.30         $1,377.44
+
+34-032233  NADIA BOULANGER              $10.29     80.00           $1,046.97              $81.14            $34.03           $931.80
+
+16-465120  MAX REGER                    $22.00     80.00           $2,645.16             $205.00            $85.97         $2,354.19
+
+76-560023  FRANZ SCHMIDT                $23.75     28.25             $707.64              $54.84            $23.00           $629.80
+
+                                                   CHICAGO SOFTWARE COMPANY, INC.                                         PAGE:    2
+                                                      EMPLOYEE PAYROLL REPORT                                                       
+
+EMPLOYEE   EMPLOYEE                     HOURLY     HOURS            EMPLOYEE    EMPLOYEE FEDERAL    EMPLOYEE STATE          EMPLOYEE
+ID         NAME                            PAY    WORKED           GROSS PAY         WITHHOLDING       WITHHOLDING           NET PAY
+---------  -------------------------   -------   -------     ---------------    ----------------    --------------   ---------------
+
+03-870322  WILLIAM SCHUMAN              $22.95     80.50           $1,826.23             $141.53            $59.35         $1,625.35
+
+98-996277  FELIX MENDELSSOHN            $20.20     78.67           $1,798.57             $139.39            $58.45         $1,600.73
+
+52-377245  FRANZ SCHUBERT               $15.25     80.50           $1,702.75             $131.96            $55.34         $1,515.45
+
+03-566322  ROBERT SCHUMANN              $19.00     80.75           $1,547.69             $119.95            $50.30         $1,377.44
+
+04-032233  DMITRI SCHOSTAKOWITSCH      $330.29     80.00          $26,645.97           $2,065.06           $865.99        $23,714.92
+
+15-645120  JOHANNES BRAHMS              $22.00     80.00           $2,645.16             $205.00            $85.97         $2,354.19
+
+76-560023  MODEST MUSSORGSKY            $23.75     28.25             $707.64              $54.84            $23.00           $629.80
+
+23-320322  JOSEPH HAYDN                 $22.95     80.50           $1,826.23             $141.53            $59.35         $1,625.35
+
+94-966327  ANTON WEBERN                 $20.20     78.67           $1,798.57             $139.39            $58.45         $1,600.73
+
+02-545245  CLAUDIO MONTEVERDI           $33.33     80.20           $3,148.19             $243.98           $102.32         $2,801.89
+
+03-456322  JEAN SIBELIUS                $19.00     80.75           $1,547.69             $119.95            $50.30         $1,377.44
+
+34-457233  ARNOLD SCHOENBERG            $10.29     80.00           $1,025.97              $79.51            $33.34           $913.12
+
+16-565120  MICHAEL TIPPETT              $22.00     80.00           $2,645.16             $205.00            $85.97         $2,354.19
+
+70-056523  RICHARD WAGNER               $23.75     28.25             $707.64              $54.84            $23.00           $629.80
+
+23-878794  FREDERIC CHOPIN              $22.95     79.50           $2,256.28             $174.86            $73.33         $2,008.09
+
+94-966277  MICHAEL HAYDN                $20.20     78.67           $1,798.57             $139.39            $58.45         $1,600.73
+
+02-345245  BENJAMIN BRITTEN             $15.25     80.50           $1,702.75             $131.96            $55.34         $1,515.45
+
+13-456322  ANTONIO VIVALDI              $19.00     80.75           $1,547.69             $119.95            $50.30         $1,377.44
+
+34-324867  JOHANN STRAUSS II           $810.29     80.00          $65,045.97           $5,041.06         $2,113.99        $57,890.92
+
+                                                   CHICAGO SOFTWARE COMPANY, INC.                                         PAGE:    3
+                                                      EMPLOYEE PAYROLL REPORT                                                       
+
+EMPLOYEE   EMPLOYEE                     HOURLY     HOURS            EMPLOYEE    EMPLOYEE FEDERAL    EMPLOYEE STATE          EMPLOYEE
+ID         NAME                            PAY    WORKED           GROSS PAY         WITHHOLDING       WITHHOLDING           NET PAY
+---------  -------------------------   -------   -------     ---------------    ----------------    --------------   ---------------
+
+06-465178  ANTONIN DVORAK               $22.00     80.00           $2,645.16             $205.00            $85.97         $2,354.19
+
+09-978023  ALBAN BERG                   $23.75     28.25             $707.64              $54.84            $23.00           $629.80
+
+03-870322  FRANZ LISZT                  $22.95     80.50           $1,826.23             $141.53            $59.35         $1,625.35
+
+94-678677  EDWARD ELGAR                 $20.20     78.67           $1,798.57             $139.39            $58.45         $1,600.73
+
+52-386785  DAVID DIAMOND                $15.25     80.50           $1,702.75             $131.96            $55.34         $1,515.45
+
+14-342322  FANNY MENDELSSOHN            $19.00     80.75           $1,547.69             $119.95            $50.30         $1,377.44
+
+04-037673  GIUSEPPE VERDI               $10.29     80.00           $1,045.97              $81.06            $33.99           $930.92
+
+16-465120  MAX BRUCH                    $22.00     80.00           $2,645.16             $205.00            $85.97         $2,354.19
+
+06-534545  HILDEGARD VON BINGEN        $723.75     28.25          $20,482.64           $1,587.40           $665.69        $18,229.55
+
+23-845342  DIETRICH BUXTEHUDE           $22.95     80.50           $1,826.23             $141.53            $59.35         $1,625.35
+
+34-466277  RALPH VAUGHAN WILLIAMS       $20.20     78.67           $1,798.57             $139.39            $58.45         $1,600.73
+
+52-347867  FRANZ ABT                    $15.25     77.53           $1,140.45              $88.38            $37.06         $1,015.01
+
+03-787632  FRANCESCA CACCINI            $19.00     80.75           $1,547.69             $119.95            $50.30         $1,377.44
+
+34-032233  ENGELBERT HUMPERDINCK        $10.29     80.00           $1,045.97              $81.06            $33.99           $930.92
+
+16-465120  BORIS BLACHER                $22.00     80.00           $2,645.16             $205.00            $85.97         $2,354.19
+
+76-560023  PAUL HINDEMITH               $23.75     28.25             $707.64              $54.84            $23.00           $629.80
+
+23-870322  BARBARA STROZZI              $22.95     80.50           $1,826.23             $141.53            $59.35         $1,625.35
+
+04-966277  KURT WEILL                   $20.20     78.67           $1,798.57             $139.39            $58.45         $1,600.73
+
+52-345245  CLARA SCHUMANN               $15.25     80.50           $1,702.75             $131.96            $55.34         $1,515.45
+
+                                                   CHICAGO SOFTWARE COMPANY, INC.                                         PAGE:    4
+                                                      EMPLOYEE PAYROLL REPORT                                                       
+
+EMPLOYEE   EMPLOYEE                     HOURLY     HOURS            EMPLOYEE    EMPLOYEE FEDERAL    EMPLOYEE STATE          EMPLOYEE
+ID         NAME                            PAY    WORKED           GROSS PAY         WITHHOLDING       WITHHOLDING           NET PAY
+---------  -------------------------   -------   -------     ---------------    ----------------    --------------   ---------------
+
+13-456322  JOHANN ANTON ANDRE           $19.00     80.75           $1,547.69             $119.95            $50.30         $1,377.44
+
+34-032233  CHRISTOPH WILLIBALD GLUCK    $10.29     80.00           $1,045.97              $81.06            $33.99           $930.92
+
+16-465120  AUGUST BUNGERT               $22.00     80.00           $2,645.16             $205.00            $85.97         $2,354.19
+
+06-560023  REINER BREDEMEYER            $23.75     28.25             $707.64              $54.84            $23.00           $629.80
+
+03-870322  LOUISE FARENC                $22.95     80.50           $1,893.73             $146.76            $61.55         $1,685.42
+
+04-966277  HANS PFITZNER                $20.20     78.67           $1,798.57             $139.39            $58.45         $1,600.73
+
+02-345245  GIOVANNI HENRICO ALBINONI    $15.25     80.50           $1,779.05             $137.88            $57.82         $1,583.35
+
+13-967978  MICHAEL VON BIEL             $19.00     80.75           $1,543.15             $119.59            $50.15         $1,373.41
+
+36-765233  JOHANN LUDWIG BACH           $10.29     80.00           $1,445.75             $112.05            $46.99         $1,286.71
+
+15-656760  TERESA CARRENO               $22.00     80.56           $1,916.48             $148.53            $62.29         $1,705.66
+
+76-560023  WOLDEMAR BARGIEL             $23.75     28.25             $707.64              $54.84            $23.00           $629.80
+
+23-870322  ANDRZEJ PANUFNIK             $22.95     80.50           $1,826.23             $141.53            $59.35         $1,625.35
+
+94-966277  EDVARD GRIEG                 $20.20     78.67           $1,798.57             $139.39            $58.45         $1,600.73
+
+08-765245  WALTER BRAUNFELS             $15.25     80.50           $1,702.75             $131.96            $55.34         $1,515.45
+
+13-976322  ISABELLA LEONARDA            $19.00     80.75           $1,547.69             $119.95            $50.30         $1,377.44
+
+34-035653  CAMILLE SAINT-SAENS          $10.29     80.00           $1,665.97             $129.11            $54.14         $1,482.72
+
+16-487620  GEORGES BIZET                $22.00     80.00           $2,645.16             $205.00            $85.97         $2,354.19
+
+79-679023  HECTOR BERLIOZ               $23.75     28.25           $1,307.34             $101.32            $42.49         $1,163.53
+
+07-860322  GABRIEL FAURE                $22.95     80.50           $2,489.91             $192.97            $80.92         $2,216.02
+
+                                                   CHICAGO SOFTWARE COMPANY, INC.                                         PAGE:    5
+                                                      EMPLOYEE PAYROLL REPORT                                                       
+
+EMPLOYEE   EMPLOYEE                     HOURLY     HOURS            EMPLOYEE    EMPLOYEE FEDERAL    EMPLOYEE STATE          EMPLOYEE
+ID         NAME                            PAY    WORKED           GROSS PAY         WITHHOLDING       WITHHOLDING           NET PAY
+---------  -------------------------   -------   -------     ---------------    ----------------    --------------   ---------------
+
+94-452245  MAURICE RAVEL                $20.20     78.67           $1,798.57             $139.39            $58.45         $1,600.73
+
+52-345245  CHARLES GOUNOD               $15.25     80.50           $1,701.29             $131.85            $55.29         $1,514.15
+
+03-786322  ROXANNA PANUFNIK             $19.00     80.74           $1,293.00             $100.21            $42.02         $1,150.77
+
+04-032233  GIACOMO MEYERBEER            $10.29     80.00           $1,045.97              $81.06            $33.99           $930.92
+
+16-465120  ERIK SATIE                  $122.00     80.00          $10,645.16             $825.00           $345.97         $9,474.19
+
+76-455023  KARLHEINZ STOCKHAUSEN        $23.75     28.25           $1,071.14              $83.01            $34.81           $953.32
+
+03-870345  FRANCIS POULENC             $345.95     78.65          $26,590.92           $2,060.80           $864.20        $23,665.92
+
+94-966277  JEAN-PHILIPPE RAMEAU         $20.20     75.67           $1,737.97             $134.69            $56.48         $1,546.80
+
+52-345245  CECILE CHAMINADE             $15.25     80.50           $1,702.75             $131.96            $55.34         $1,515.45
+
+13-456322  CESAR FRANCK                 $19.00     80.75           $1,547.69             $119.95            $50.30         $1,377.44
+
+34-032233  HANS ZIMMER                  $10.29     80.00           $1,045.97              $81.06            $33.99           $930.92
+
+16-465120  PIERRE BOULEZ                $27.52      4.00             $995.24              $77.13            $32.35           $885.76
+
+06-560763  OLIVIER MESSIAEN             $23.02     75.25           $1,768.96             $137.09            $57.49         $1,574.38
+
+23-870322  DARIUS MILHAUD               $22.95     80.50           $1,826.23             $141.53            $59.35         $1,625.35
+
+04-966277  REBECCA CLARKE               $20.20     78.67           $1,798.57             $139.39            $58.45         $1,600.73
+
+02-324545  PETER CORNELIUS              $15.25     80.50           $1,702.75             $131.96            $55.34         $1,515.45
+
+13-456322  HANS WERNER HENZE            $19.00     80.75           $1,547.69             $119.95            $50.30         $1,377.44
+
+41-155233  GEORG BOHM                   $10.29     80.00           $1,045.97              $81.06            $33.99           $930.92
+
+01-165310  GERMAINE TAILLEFERRE         $22.00     80.00           $2,645.16             $205.00            $85.97         $2,354.19
+
+                                                   CHICAGO SOFTWARE COMPANY, INC.                                         PAGE:    6
+                                                      EMPLOYEE PAYROLL REPORT                                                       
+
+EMPLOYEE   EMPLOYEE                     HOURLY     HOURS            EMPLOYEE    EMPLOYEE FEDERAL    EMPLOYEE STATE          EMPLOYEE
+ID         NAME                            PAY    WORKED           GROSS PAY         WITHHOLDING       WITHHOLDING           NET PAY
+---------  -------------------------   -------   -------     ---------------    ----------------    --------------   ---------------
+
+76-145023  WILHELM FURTWANGLER          $23.75     28.25             $707.64              $54.84            $23.00           $629.80
+
+23-814122  HANNS EISLER                 $22.95     80.50           $1,826.23             $141.53            $59.35         $1,625.35
+
+04-954534  GEORG FRIEDRICH HANDEL       $20.20     78.67           $1,798.57             $139.39            $58.45         $1,600.73
+
+02-334245  CARL PHILIPP EMANUEL BACH    $15.25     80.50           $1,702.75             $131.96            $55.34         $1,515.45
+
+13-456322  LILI BOULANGER               $19.00     22.75             $445.69              $34.54            $14.48           $396.67
+
+34-032233  JOHANN PACHELBEL             $10.29     80.00           $1,045.97              $81.06            $33.99           $930.92
+
+06-465120  CARL ORFF                    $22.00     80.00           $2,645.16             $205.00            $85.97         $2,354.19
+
+06-560023  FRANZ DANZI                  $23.75     28.25             $707.64              $54.84            $23.00           $629.80
+
+03-134142  JOCELYN POOK                 $22.95     80.50           $1,826.23             $141.53            $59.35         $1,625.35
+
+04-966277  WILHELM BERGER               $20.20     78.67           $1,798.57             $139.39            $58.45         $1,600.73
+
+01-413245  JACQUES OFFENBACH            $15.25     80.50           $1,702.75             $131.96            $55.34         $1,515.45
+
+13-456322  PHAMIE GOW                   $19.00     80.75           $1,547.69             $119.95            $50.30         $1,377.44
+
+34-032233  WILHELM FRIEDEMANN BACH      $10.29     80.00           $1,045.97              $81.06            $33.99           $930.92
+
+16-465120  HEINRICH SCHUTZ              $22.00     80.00           $2,645.16             $205.00            $85.97         $2,354.19
+
+06-560023  GEORG PHILIPP TELEMANN       $23.75     28.25             $707.64              $54.84            $23.00           $629.80
+
+03-870322  HANS-JURGEN VON BOSE         $22.95     80.50           $1,826.23             $141.53            $59.35         $1,625.35
+
+94-966277  ANNE DUDLEY                  $20.20     78.67           $1,798.57             $139.39            $58.45         $1,600.73
+
+52-345245  PAUL DESSAU                  $15.25     80.50           $1,702.75             $131.96            $55.34         $1,515.45
+
+03-456322  FRIEDRICH BAUMFELDER         $19.00     80.75           $1,547.69             $119.95            $50.30         $1,377.44
+
+                                                   CHICAGO SOFTWARE COMPANY, INC.                                         PAGE:    7
+                                                      EMPLOYEE PAYROLL REPORT                                                       
+
+EMPLOYEE   EMPLOYEE                     HOURLY     HOURS            EMPLOYEE    EMPLOYEE FEDERAL    EMPLOYEE STATE          EMPLOYEE
+ID         NAME                            PAY    WORKED           GROSS PAY         WITHHOLDING       WITHHOLDING           NET PAY
+---------  -------------------------   -------   -------     ---------------    ----------------    --------------   ---------------
+
+34-032233  JOHANN CHRISTIAN BACH        $10.29     40.00             $634.37              $49.16            $20.62           $564.59
+
+16-465120  RACHEL PORTMAN               $22.00     52.00           $2,029.16             $157.26            $65.95         $1,805.95
+
+76-560023  DEBBIE WISEMAN               $23.75     28.25             $707.64              $54.84            $23.00           $629.80
+
+                                                   CHICAGO SOFTWARE COMPANY, INC.                                         PAGE:    8
+                                                      EMPLOYEE PAYROLL REPORT                                                       
+                                                              TOTALS                                                                
+
+      NUMBER OF EMPLOYEES:             117                                                                                          
+
+          TOTAL GROSS PAY:        $330,791.71                    AVERAGE GROSS PAY:       $2,827.28                                 
+
+TOTAL FEDERAL WITHHOLDING:         $25,636.25          AVERAGE FEDERAL WITHHOLDING:         $219.11                                 
+
+  TOTAL STATE WITHHOLDING:         $10,750.66            AVERAGE STATE WITHHOLDING:          $91.89                                 
+
+            TOTAL NET PAY:        $294,404.80                      AVERAGE NET PAY:       $2,516.28                                 

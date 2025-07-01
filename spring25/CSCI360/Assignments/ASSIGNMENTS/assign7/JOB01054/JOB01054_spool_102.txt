@@ -1,0 +1,115 @@
+1*** ASSIST 4.0/A2-05/15/82  470/V7A/0:OS/VS2  INS=SDFP7/X=BGHO, CHECK/TRC/=1180, OPTS=CDKMPR FROM PENN ST*NIU COMPSCI*LT
+0
+0                                                                                                               PAGE    1
+0  LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT
+                                       1 *****************************************************************
+                                       2 *                                                               *
+                                       3 *  CSCI 360-1             ASSIGNMENT 7        SPRING 2025       *
+                                       4 *                                                               *
+                                       5 *    PROGRAMMER NAME: Matthew Warner                            *
+                                       6 *           DATE DUE: APRIL 1, 2025                             *
+                                       7 *                                                               *
+                                       8 *  MAIN PROGRAM NAME: PAYROLL                                   *
+                                       9 *                                                               *
+                                      10 *           FUNCTION: The function of this program is to        *
+                                      11 *                                                               *
+                                      12 *                                                               *
+                                      13 *****************************************************************
+                                      14 *
+ 000000                               15 PAYROLL  CSECT
+                                      16 *
+                                      17 *  STANDARD ENTRY LINKAGE WITH R12 AS BASE REGISTER
+                                      18 *
+ 000000 90EC D00C            0000C    19          STM   14,12,12(13)  SAVE REGS IN CALLER'S SAVE AREA
+ 000004 18CF                          20          LR    12,15         COPY CSECT ADDR INTO R12
+ 000000                               21          USING PAYROLL,12    ESTABLISH R12 AS THE BASE REG
+ 000006 41E0 C0E0            000E0    22          LA    14,SAVEAREA   R14 POINTS TO THIS CSECT'S SAVE AREA
+ 00000A 50E0 D008            00008    23          ST    14,8(,13)     STORE ADDR OF THIS CSECT'S SAVE AREA
+ 00000E 50D0 E004            00004    24          ST    13,4(,14)     STORE ADDR OF CALLER'S SAVE AREA
+ 000012 18DE                          25          LR    13,14         POINT R13 AT THIS CSECT'S SAVE AREA
+                                      26 *
+                                      27 *
+ 000014 E000 C1AE 0050 001AE          28          XREAD RECORD,80       PRIMARY READ INTO RECORD
+                                      29 *
+ 00001A 4740 C094            00094    30 LOOP     BC    B'0100',ENDLOOP EXEC LOOP IF SUCCESSFUL READ
+                                      31 *
+ 00001E 9240 C129      00129          32          MVI   DETAIL+1,C' '   COPY WHITESPACE INTO 1ST BYTE OF PRINTLN
+ 000022 D282 C12A C129 0012A 00129    33          MVC   DETAIL+2(131),DETAIL+1  COPY WHTESPCE TO REMAINING BYTES
+                                      34 *
+ 000028 D218 C129 C1AE 00129 001AE    35          MVC   OEMPNME(25),IEMPNME    MOVE EMPLOYEE NAME INTO PRNT LINE
+ 00002E D205 C146 C1C7 00146 001C7    36          MVC   OEMPID(6),IEMPID       MOVE EMPLOYEE ID INTO PRINT LINE
+                                      37 *
+ 000034 F224 C1FE C1CD 001FE 001CD    38          PACK  PHRPAY(3),IHRPAY(5)    GET PACKED DECMIAL FORM OF HR PAY
+ 00003A 4110 C153            00153    39          LA    1,OHRPAY+3             ENSURE R1 HOLDS A BYTE FOR '$'
+ 00003E D206 C150 C0B6 00150 000B6    40          MVC   OHRPAY(7),=X'402021204B2020' MOVE EDIT PATTERN TO OHRPAY
+ 000044 DF06 C150 C1FE 00150 001FE    41          EDMK  OHRPAY(7),PHRPAY    PUTS EBCDIC HRPAY INTO PRINT LINE
+ 00004A 0610                          42          BCTR  1,0    DECREMENT R1 BY 1
+ 00004C 925B 1000      00000          43          MVI   0(1),C'$'   PLACE DOLLAR SIGN
+                                      44 *
+ 000050 F224 C201 C1D2 00201 001D2    45          PACK  PHOUR(3),IHOURS(5)    GET PACKED DECIMAL FORM OF HOURS
+ 000056 D206 C15B C0B6 0015B 000B6    46          MVC   OHOURS(7),=X'402021204B2020' MOVE EDIT PATTERN TO PRNTLN
+ 00005C DE06 C15B C201 0015B 00201    47          ED    OHOURS(7),PHOUR    PUT EBCDIC HOURS INTO PRINT LINE
+                                      48 *
+ 000062 F852 C204 C1FE 00204 001FE    49          ZAP   PGRPAY(6),PHRPAY(3)    PREPARES FOR MULTIPLICATION
+ 000068 FC52 C204 C201 00204 00201    50          MP    PGRPAY(6),PHOUR(3)    MULTIPLY PACKED HRPAY BY PACKED HOURS
+                                                        PGRPAY(6),64-2,5   SHIFT 2 TO THE RIGHT AND ROUND
+ ----->AS103 CONTINUATION CARD COLS. 1-15 NONBLANK------$-------------------------------------------------------- <-ERROR
+1                                                                                                               PAGE    2
+0  LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT
+ 00006E 4110 C16C            0016C    51          LA    1,OGRPAY+8         ENSURE R1 HOLDS SLOT FOR '$'
+ 000072 D20E C164 C0A8 00164 000A8    52          MVC   OGRPAY(15),=X'402020202020206B2021204B2020' EDIT PATTERN
+ 000078 DF0E C164 C204 00164 00204    53          EDMK  OGRPAY(15),PGRPAY    PUT PACKED GROSS PAY TO PRINT LINE
+ 00007E 0610                          54          BCTR  1,0     DECREMENT R1 BY 1
+ 000080 925B 1000      00000          55          MVI   0(1),C'$' PLACE DOLLAR SIGN
+                                      56 *
+ 000084 E020 C128 0085 00128          57          XPRNT DETAIL,133    PRINT DETAIL LINE FOR EMPLOYEE
+ 00008A E000 C1AE 0050 001AE          58          XREAD RECORD,80     SECONDARY READ INTO RECORD
+ 000090 47F0 C01A            0001A    59          BC    B'1111',LOOP  BRANCH BACK TO THE TOP OF LOOP
+                                      60 *
+ 000094                               61 ENDLOOP  DS    0H
+                                      62 *  STANDARD EXIT LINKAGE WITH RC OF 0
+                                      63 *
+ 000094 1BFF                          64          SR    15,15         R15 = RETURN CODE OF 0
+ 000096 58D0 D004            00004    65          L     13,4(,13)     POINTS R13 TO CALLER'S SAVE AREA
+ 00009A 58E0 D00C            0000C    66          L     14,12(,13)    RESTORE REGISTER 14
+ 00009E 980C D014            00014    67          LM    0,12,20(13)   RESTORE R0 THRU R12
+                                      68 *
+ 0000A2 07FE                          69          BR    14            RETURN TO CALLER
+                                      70 *
+                                      71          LTORG
+ 0000A8 402020202020206B              72                =X'402020202020206B2021204B2020'
+ 0000B6 402021204B2020                73                =X'402021204B2020'
+                                      74 *
+ 0000C0                               75          ORG   PAYROLL+((*-PAYROLL+31)/32)*32
+ 0000C0 5C40D7D9D6C7D9C1              76          DC    C'* PROGRAM STORAGE FOR PAYROLL **'
+                                      77 *
+ 0000E0                               78 SAVEAREA DS    18F    REGISTER SAVE AREA
+                                      79 *
+ 000128 F0                            80 DETAIL   DC    C'0'   CARRIAGE CONTROL CHARACTER
+ 000129                               81 OEMPNME  DS    CL25
+ 000142 40404040                      82          DC    4C' '
+ 000146                               83 OEMPID   DS    CL6
+ 00014C 40404040                      84          DC    4C' '
+ 000150                               85 OHRPAY   DS    CL7
+ 000157 40404040                      86          DC    4C' '
+ 00015B                               87 OHOURS   DS    CL5
+ 000160 40404040                      88          DC    4C' '
+ 000164                               89 OGRPAY   DS    CL15
+ 000173 4040404040404040              90          DC    58C' '
+                                      91 *
+ 0001AE                               92 RECORD   DS    0H     INPUT RECORD STORAGE
+ 0001AE                               93 IEMPNME  DS    CL25
+ 0001C7                               94 IEMPID   DS    CL6
+ 0001CD                               95 IHRPAY   DS    ZL5
+ 0001D2                               96 IHOURS   DS    ZL5
+ 0001D7 4040404040404040              97          DC    39C' '
+                                      98 *
+ 0001FE 00000C                        99 PHRPAY   DC    PL3'0'
+ 000201 00000C                       100 PHOUR    DC    PL3'0'
+ 000204 00000000000C                 101 PGRPAY   DC    PL6'0'
+                                     102 *
+                                     103          END PAYROLL
+0***     1 STATEMENTS FLAGGED -  NO   WARNINGS,     1 ERRORS
+0***** NUMBER OF ERRORS EXCEEDS LIMIT OF  NO   ERRORS - PROGRAM EXECUTION DELETED *****
+0*** DYNAMIC CORE AREA USED:  LOW:    4576 HIGH:     764 LEAVING:  488228 FREE BYTES. AVERAGE:       51 BYTES/STMT ***
+1*** ASSEMBLY TIME =    0.000 SECS,   104000 STATEMENTS/SEC ***

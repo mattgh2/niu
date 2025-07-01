@@ -1,0 +1,539 @@
+1*** ASSIST 4.0/A2-05/15/82  470/V7A/0:OS/VS2  INS=SDFP7/X=BGHO, CHECK/TRC/=1180, OPTS=CDKMPR FROM PENN ST*NIU COMPSCI*LT
+0
+0                                                                                                               PAGE    1
+0  LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT
+                                       1 *****************************************************************
+                                       2 *                                                               *
+                                       3 *  CSCI 360-1             ASSIGNMENT 8        SPRING 2025       *
+                                       4 *                                                               *
+                                       5 *    PROGRAMMER NAME: Matthew Warner                            *
+                                       6 *           DATE DUE: APRIL 12, 2025                            *
+                                       7 *                                                               *
+                                       8 *  MAIN PROGRAM NAME: PAYROLL                                   *
+                                       9 *                                                               *
+                                      10 *           FUNCTION: The function of this program is to        *
+                                      11 *                      produce a payroll report for a company   *
+                                      12 *                                                               *
+                                      13 *                                                               *
+                                      14 *****************************************************************
+                                      15 *
+ 000000                               16 $TEMPENT DSECT
+ 000000                               17 $TEMPID  DS    PL5
+ 000005                               18 $TEMPNME DS    CL25
+ 00001E                               19 $THRPAY  DS    PL3
+ 000021                               20 $THOURS  DS    PL3
+ 000024                               21 $TDEDUCT DS    PL3
+ 000027                               22 $TBONUS  DS    PL3
+                                      23 *
+ 000000                               24 PAYROLL  CSECT
+                                      25 *
+                                      26 *  STANDARD ENTRY LINKAGE WITH R12 AS BASE REGISTER
+                                      27 *
+ 000000 90EC D00C            0000C    28          STM   14,12,12(13)  SAVE REGS IN CALLER'S SAVE AREA
+ 000004 18CF                          29          LR    12,15         COPY CSECT ADDR INTO R12
+ 000000                               30          USING PAYROLL,12    ESTABLISH R12 AS THE BASE REG
+ 000006 41E0 C400            00400    31          LA    14,SAVEAREA   R14 POINTS TO THIS CSECT'S SAVE AREA
+ 00000A 50E0 D008            00008    32          ST    14,8(,13)     STORE ADDR OF THIS CSECT'S SAVE AREA
+ 00000E 50D0 E004            00004    33          ST    13,4(,14)     STORE ADDR OF CALLER'S SAVE AREA
+ 000012 18DE                          34          LR    13,14         POINT R13 AT THIS CSECT'S SAVE AREA
+                                      35 *
+                                      36 * ESTABLISHING A SECOND BASE REG
+                                      37 *
+ 000014 41B0 CFFF            00FFF    38          LA 11,4095(,12)
+ 000018 41B0 B001            00001    39          LA 11,1(,11)
+ 001000                               40          USING PAYROLL+4096,11
+                                      41 *
+ 00001C 1B33                          42          SR    3,3   ZERO OUT R3 TO STORE ELEMENT COUNT
+ 00001E 1B44                          43          SR    4,4   ZERO OUT R4 TO COMPARE AGAINST R3
+                                      44 *
+ 000020 E000 C498 0050 00498          45          XREAD IWTHPCT,80    READ WITHHOLDING PERCENTAGES
+ 000026 4740 C372            00372    46          BC    B'0100',ENDTOTAL  BRANCH TO END IF EMPTY
+                                      47 *
+ 00002A F235 C4E8 C498 004E8 00498    48          PACK  PFWHPCT(4),IFPCT(6) PACK ZONED FED PERCENTAGE
+ 000030 F235 C4EC C49E 004EC 0049E    49          PACK  PSWHPCT(4),ISPCT(6) PACK ZONED STATE PERCENTAGE
+                                      50 *
+ 000036 0000 0000            00000    51          LA    2,EMPTBL    LOAD ADDRESS OF EMPTBL INTO R8
+ ----->AS130 UNDEFINED SYMBOL            ----------------------$------------------------------------------------- <-ERROR
+1                                                                                                               PAGE    2
+0  LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT
+ 000000                               52          USING $TEMPENT,2  ESTABLISH ADDRESSABILITY ON R8
+                                      53 *
+ 00003A E000 C448 0050 00448          54          XREAD RECORD,80  PRIMARY READ INTO RECORD
+ 000040 0000 0000            00000    55 TBLBUILD BC    B'0100',ENDBUILD
+ ----->AS130 UNDEFINED SYMBOL            ------------------------------$----------------------------------------- <-ERROR
+                                      56 *
+ 000044 F247 2000 C448 00000 00448    57          PACK  $TEMPID(5),IEMPID(8)   PACK ZONED EMPID
+ 00004A F224 201E C450 0001E 00450    58          PACK  $THRPAY(3),IHRPAY(5) PACK HRPAY
+ 000050 F224 2021 C455 00021 00455    59          PACK  $THOURS(3),IHOURS(5)  PACK HOURS
+ 000056 F224 2027 C45F 00027 0045F    60          PACK  $TBONUS(3),IBONUS(5)   PACK BONUS AMOUNT
+ 00005C F224 2024 C45A 00024 0045A    61          PACK  $TDEDUCT(3),IDEDUCT(5) PACK DEDUCTION AMOUNT
+ 000062 D218 2005 C464 00005 00464    62          MVC   $TEMPNME(25),IEMPNME  MOVE EMPLOYEE NAME TO TABLE ENTRY
+                                      63 *
+ 000068 4130 3001            00001    64          LA    3,1(,3)  INCREMENT ELEMENT COUNTER
+ 00006C 4120 202A            0002A    65          LA    2,42(,2) POINT TO NEXT POSITION IN TABLE
+ 000070 FA20 C4F0 C3BC 004F0 003BC    66          AP    PEMPCTR(3),=PL1'1'  ADD ONE TO EMPLOYEE COUNTER
+                                      67 *
+ 000076 E000 C448 0050 00448          68          XREAD RECORD,80  SECONDARY READ INTO RECORD
+ 00007C 0000 0000            00000    69          BC    B'1111'TBLBUILD UNCONDITIONAL BRANCH BACK TO TOP
+ ----->AS135 SYNTAX                      ------------------------------$----------------------------------------- <-ERROR
+                                      70 *
+                                      71 *
+ 000080 0000 0000            00000    72          LA    2,EMPTBL  POINT R2 BACK TO FIRST BYTE OF TABLE
+ ----->AS130 UNDEFINED SYMBOL            ----------------------$------------------------------------------------- <-ERROR
+ 000084 1934                          73          CR    3,4       CHECK IF ELEMENT COUNT IS ZERO
+                                      74 *
+ 000086 4780 C1EC            001EC    75 PROCREC  BC    B'1000',ENDPROC   BRANCH PAST IF RECORD IS EMPTY
+                                      76 *
+ 00008A 9240 C880      00880          77          MVI   EMPDTL+1,C' '      CLEAR 1ST BYTE OF PRINT LINE
+ 00008E D282 C881 C880 00881 00880    78          MVC   EMPDTL+2(131),EMPDTL+1  CLEAR OUT REMANING BYTES
+                                      79 *
+ 000094 D209 CBA4 C38C 00BA4 0038C    80          MVC   IDPTRN(10),=X'21202060202020202020' CREATE EDIT PATTERN
+ 00009A DE09 CBA4 2000 00BA4 00000    81          ED    IDPTRN(10),$TEMPID    PUT PACKED EMP ID INTO OUTPUT
+ 0000A0 D208 C880 CBA5 00880 00BA5    82          MVC   OEMPID(9),IDPTRN+1   GETS RID OF THE LEADING ZERO
+                                      83 *
+ 0000A6 D218 C88B 2005 0088B 00005    84          MVC   OEMPNME(25),$TEMPNME  MOVE EMPLOYEE NAME TO DETAIL LINE
+                                      85 *
+ 0000AC 4110 C8AA            008AA    86          LA    1,OHRPAY+3          ENSURES PLACEMENT OF DOLLAR SIGN
+ 0000B0 D207 C8A7 C3BD 008A7 003BD    87          MVC   OHRPAY(8),=X'402021204B2020' ADD EDIT PATTERN
+ 0000B6 DF07 C8A7 201E 008A7 0001E    88          EDMK  OHRPAY(8),$THRPAY  MOVE PACKED FIED INTO PRINTLINE
+ 0000BC 0610                          89          BCTR  1,0        DECREMENT R1 BY 1
+ 0000BE 925B 1000      00000          90          MVI   0(1),C'$'  PLACE DOLLAR SIGN
+                                      91 *
+ 0000C2 D206 C8B1 C3BD 008B1 003BD    92          MVC   OHOURS(7),=X'402021204B2020' CREATE EDIT PATTERN
+ 0000C8 DE06 C8B1 2021 008B1 00021    93          ED    OHOURS(7),$THOURS  MOVE INTO DETAIL LINE
+                                      94 *
+ 0000CE F852 C506 2021 00506 00021    95          ZAP   PGRPAY(6),$THOURS(3)   PLACE PHOURS IN PGRPAY
+ 0000D4 FC52 C506 201E 00506 0001E    96          MP    PGRPAY(6),$THRPAY(3)   MP GROSS PAY BY HOURLY PAY
+ 0000DA F055 C506 003E 00506 0003E    97          SRP   PGRPAY(6),64-2,5      SHIFT 2 TO THE RIGHT & ROUND
+ 0000E0 FB52 C506 2024 00506 00024    98          SP    PGRPAY(6),$TDEDUCT(3)  SUBTRACT DEDUCTION FROM GROSS PAY
+ 0000E6 FA52 C506 2027 00506 00027    99          AP    PGRPAY(6),$TBONUS(3)   ADD BONUS AMOUNT TO GROSS PAY
+ 0000EC 4110 C8C8            008C8   100          LA    1,OGRPAY+10           ENSURE PLACEMENT OF '$'
+ 0000F0 D20E C8BE C396 008BE 00396   101          MVC   OGRPAY(15),=X'402020202020206B2021204B2020'
+ 0000F6 DF0E C8BE C506 008BE 00506   102          EDMK  OGRPAY(15),PGRPAY  MOVE PACKED GROSS PAY TO DETAIL LINE
+ 0000FC 0610                         103          BCTR  1,0     DECREMENT R1 BY 1
+ 0000FE 925B 1000      00000         104          MVI   0(1),C'$'  PLACE DOLLAR SIGN
+ 000102 FA65 C528 C506 00528 00506   105          AP    PTGRPAY(7),PGRPAY(6)  ADD GROSS PAY TO TOTAL
+1                                                                                                               PAGE    3
+0  LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT
+                                     106 *
+ 000108 F895 C51E C506 0051E 00506   107          ZAP   PCALC(10),PGRPAY(6)   PUT GROSS PAY INTO LARGER FIELD
+ 00010E FC93 C51E C4E8 0051E 004E8   108          MP    PCALC(10),PFWHPCT(4)  MULTIPLY GROSS PAY BY FED WTH
+ 000114 F095 C51E 003B 0051E 0003B   109          SRP   PCALC(10),64-5,5      SHIFT RIGHT FOR 2 DECIMAL PLACES
+ 00011A F859 C50C C51E 0050C 0051E   110          ZAP   PFEDWITH(6),PCALC(10) MOVE PCALC INTO PFEDWITH FIELD
+ 000120 4110 C8DC            008DC   111          LA    1,OFWTH+10            ENSURE PLACEMENT OF DOLLAR SIGN
+ 000124 D20E C8D2 C396 008D2 00396   112          MVC   OFWTH(15),=X'402020202020206B2021204B2020'
+ 00012A DF0E C8D2 C50C 008D2 0050C   113          EDMK  OFWTH(15),PFEDWITH    MOVE PACKED FED WTHHOLDING TO DTL
+ 000130 0610                         114          BCTR  1,0    DECREMENT R1 BY 1
+ 000132 925B 1000      00000         115          MVI   0(1),C'$' PLACE DOLLAR SIGN
+ 000136 FA65 C52F C50C 0052F 0050C   116          AP    PTFWITH(7),PFEDWITH(6)  ADD FED WITHHOLDING TO TOTAL
+                                     117 *
+ 00013C F895 C51E C506 0051E 00506   118          ZAP   PCALC(10),PGRPAY(6)  MOVE PGRPAY INTO LARGER FIELD
+ 000142 FC93 C51E C4EC 0051E 004EC   119          MP    PCALC(10),PSWHPCT(4) MULTIPLY GROSS PAY BY STATE WTH
+ 000148 F095 C51E 003B 0051E 0003B   120          SRP   PCALC(10),64-5,5     SHIFT RIGHT FOR 2 DECIMAL PLACES
+ 00014E F859 C512 C51E 00512 0051E   121          ZAP   PSTWITH(6),PCALC(10) MOVE PCALC INTO PSTWITH FIELD
+ 000154 4110 C8ED            008ED   122          LA    1,OSWTH+10           ENSURE PLACEMENT OF DOLLAR SIGN
+ 000158 D20E C8E3 C396 008E3 00396   123          MVC   OSWTH(15),=X'402020202020206B2021204B2020'
+ 00015E DF0E C8E3 C512 008E3 00512   124          EDMK  OSWTH(15),PSTWITH   MOVE PACKED STATE WTHHOLDING TO DTL
+ 000164 0610                         125          BCTR  1,0   DECREMENT R1 BY 1
+ 000166 925B 1000      00000         126          MVI   0(1),C'$' PLACE DOLLAR SIGN
+ 00016A FA65 C536 C512 00536 00512   127          AP    PTSWITH(7),PSTWITH(6)  ADD STATE WITHHOLDING TO TOTAL
+                                     128 *
+ 000170 F855 C518 C506 00518 00506   129          ZAP   PNETPAY(6),PGRPAY(6)  INITIALIZE NET PAY AS GROSS PAY
+ 000176 FB55 C518 C50C 00518 0050C   130          SP    PNETPAY(6),PFEDWITH(6) SUBTRACT FED WTH FROM NET PAY
+ 00017C FB55 C518 C512 00518 00512   131          SP    PNETPAY(6),PSTWITH(6)  SUBTRACT STATE WTH FROM NET PAY
+ 000182 4110 C900            00900   132          LA    1,ONETPAY+10   ENSURE DOLLAR SIGN PLACEMENT
+ 000186 D20E C8F6 C396 008F6 00396   133          MVC   ONETPAY(15),=X'402020202020206B2021204B2020'
+ 00018C DF0E C8F6 C518 008F6 00518   134          EDMK  ONETPAY(15),PNETPAY  MOVE NET PAY INTO DETAIL
+ 000192 0610                         135          BCTR  1,0  DECREMENT R1 BY 1
+ 000194 925B 1000      00000         136          MVI   0(1),C'$' PLACE DOLLAR SIGN
+ 000198 FA65 C53D C518 0053D 00518   137          AP    PTNETPAY(7),PNETPAY(6)  ADD NET PAY TO TOTAL
+                                     138 *
+ 00019E 5920 CBA0            00BA0   139          C     2,MAXLINES    CHECK IF WE HAVE REACHED 19 LINES
+ 0001A2 4740 C1D8            001D8   140          BC    B'0100',NOHDR BRANCH PAST HEADERS IF LESS THAN 19
+                                     141 *
+ 0001A6 FA10 C4F3 C3BC 004F3 003BC   142          AP    PPAGECTR(2),=PL1'1'     ADD ONE TO PAGE COUNTER
+ 0001AC D203 C5E1 C388 005E1 00388   143          MVC   OPAGECTR(4),=X'40202120' CREATE EDIT PATTERN
+ 0001B2 DE03 C5E1 C4F3 005E1 004F3   144          ED    OPAGECTR(4),PPAGECTR    PUT PPAGECTR IN OUTPUT FIELD
+ 0001B8 1B22                         145          SR    2,2                     ZERO OUT LINE COUNTER
+                                     146 *
+ 0001BA E020 C560 0085 00560         147          XPRNT COMPNAME,133    PRINT COMPANY NAME
+ 0001C0 E020 C5E5 0085 005E5         148          XPRNT SUBHDR,133      PRINT SUBHEADER
+ 0001C6 E020 C66A 0085 0066A         149          XPRNT COLHDR1,133     PRINT COLHEADER 1
+ 0001CC E020 C6EF 0085 006EF         150          XPRNT COLHDR2,133     PRINT COLHEADER 2
+ 0001D2 E020 C774 0085 00774         151          XPRNT COLHDR3,133     PRINT COLHEADER 3
+                                     152 *
+                                     153 *
+ 0001D8                              154 NOHDR    DS    0H
+ 0001D8 E020 C87F 0085 0087F         155          XPRNT EMPDTL,133   PRINT EMPLOYEE DETAIL LINE
+                                     156 *
+ 0001DE 4120 2001            00001   157          LA    2,1(,2)             ADD ONE TO LINE COUNTER
+                                     158 *
+ 0001E2 4120 202A            0002A   159          LA    2,42(,2)  MOVE TO NEXT ELEMENT IN TABLE
+ 0001E6 0630                         160          BCTR  3,0       DECREMENT ELEMENT COUNTER
+ 0001E8 47F0 C086            00086   161          BC    B'1111',PROCREC     BRANCH BACK TO TOP OF LOOP
+                                     162 *
+1                                                                                                               PAGE    4
+0  LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT
+ 0001EC                              163 ENDPROC  DS    0H
+                                     164 *
+ 0001EC F920 C4F0 C3C4 004F0 003C4   165 TOTALS   CP    PEMPCTR,=PL1'0'    CHECK IF EMPLOYEE COUNTER IS ZERO
+ 0001F2 4780 C372            00372   166          BC    B'1000',ENDTOTAL   BRANCH OVER TOTALS IF ZERO
+                                     167 *
+ 0001F6 FA10 C4F3 C3BC 004F3 003BC   168          AP    PPAGECTR(2),=PL1'1'     ADD ONE TO PAGE COUNTER
+ 0001FC D203 C5E1 C388 005E1 00388   169          MVC   OPAGECTR(4),=X'40202120' CREATE EDIT PATTERN
+ 000202 DE03 C5E1 C4F3 005E1 004F3   170          ED    OPAGECTR(4),PPAGECTR    PUT PPAGECTR IN OUTPUT FIELD
+                                     171 *
+ 000208 D205 C92A C3A4 0092A 003A4   172          MVC   OEMPCTR(6),=X'402020202120' EMP COUNTER EDIT PATTERN
+ 00020E DE05 C92A C4F0 0092A 004F0   173          ED    OEMPCTR(6),PEMPCTR   MOVE EMP COUNTER INTO PRINT LINE
+                                     174 *
+                                     175 * PUT TOTAL GROSS PAY INTO PRINT LINE
+                                     176 *
+ 000214 4110 C9B1            009B1   177          LA    1,OTGRPAY+11  ENSURE TOTAL GRPAY HAS DOLLAR SIGN IF 0
+ 000218 D212 C9A6 C3AA 009A6 003AA   178          MVC   OTGRPAY(19),=X'4020206B2020206B2020206B2021204B2020'
+ 00021E DF12 C9A6 C528 009A6 00528   179          EDMK  OTGRPAY(19),PTGRPAY   MOVE PACKED TOTAL GRPAY INTO PL
+ 000224 0610                         180          BCTR  1,0   DECREMENT R1 BY 1
+ 000226 925B 1000      00000         181          MVI   0(1),C'$' PLACE DOLLAR SIGN
+                                     182 *
+                                     183 * CALCULATE AVERAGE GROSS PAY AMOUNT
+                                     184 *
+ 00022A F020 C4F0 0002 004F0 00002   185          SRP   PEMPCTR(3),2,0  GIVE PEMPTR 2 IMPLICIT DECMIAL PLACES
+ 000230 F896 C51E C528 0051E 00528   186          ZAP   PCALC(10),PTGRPAY(7) MOVE GROSS PAY INTO LARGER FIELD
+ 000236 F090 C51E 0003 0051E 00003   187          SRP   PCALC(10),3,0   ADD THREE FAKE DECIMAL PLACES
+ 00023C FD92 C51E C4F0 0051E 004F0   188          DP    PCALC(10),PEMPCTR(3)  DIVIDE TOTAL GROSS BY EMP COUNT
+ 000242 F065 C51E 003F 0051E 0003F   189          SRP   PCALC(7),64-1,5     ROUND TO TWO DECIMAL PLACES
+ 000248 F866 C544 C51E 00544 0051E   190          ZAP   PAVGROSS(7),PCALC(7) MOVE PCALC INTO PAVGROSS
+                                     191 *
+                                     192 * MOVE AVERAGE GROSS PAY INTO PRINT LINE
+                                     193 *
+ 00024E 4110 C9EA            009EA   194          LA    1,OAVGROSS+11  ENSURE R1 HOLDS SLOT OF '$' IF ZERO
+ 000252 D20F C9DF C3C5 009DF 003C5   195          MVC   OAVGROSS(16),=X'402020206B2020206B2021204B2020'
+ 000258 DF0F C9DF C545 009DF 00545   196          EDMK  OAVGROSS(16),PAVGROSS+1  MOVE AVG GROSS INTO PRINT LN
+ 00025E 0610                         197          BCTR  1,0   DECREMENT R1 BY 1
+ 000260 925B 1000      00000         198          MVI   0(1),C'$' PLACE DOLLAR SIGN
+                                     199 *
+                                     200 * MOVE TOTAL FED WITHHOLDING INTO PRINT LINE
+                                     201 *
+ 000264 4110 CA36            00A36   202          LA    1,OTFWITH+11 ENSURE TOTAL FED WITH HAS DOLLAR SIGN IF 0
+ 000268 D212 CA2B C3AA 00A2B 003AA   203          MVC   OTFWITH(19),=X'4020206B2020206B2020206B2021204B2020'
+ 00026E DF12 CA2B C52F 00A2B 0052F   204          EDMK  OTFWITH(19),PTFWITH   MOVE PACKED TOTAL GRPAY INTO PL
+ 000274 0610                         205          BCTR  1,0   DECREMENT R1 BY 1
+ 000276 925B 1000      00000         206          MVI   0(1),C'$' PLACE DOLLAR SIGN
+                                     207 *
+                                     208 * CALCULATE AVERAGE FED WITHHOLDING
+                                     209 *
+ 00027A F896 C51E C52F 0051E 0052F   210          ZAP   PCALC(10),PTFWITH(7)  ZAP TOTAL FED WTH INTO PCALC
+ 000280 F090 C51E 0003 0051E 00003   211          SRP   PCALC(10),3,0         ADD THREE FAKE DECIMAL PLACES
+ 000286 FD92 C51E C4F0 0051E 004F0   212          DP    PCALC(10),PEMPCTR(3)  DIVIDE TOTAL FED BY EMP COUNT
+ 00028C F065 C51E 003F 0051E 0003F   213          SRP   PCALC(7),64-1,5       ROUND TO TWO DECIMAL PLACES
+ 000292 F866 C54B C51E 0054B 0051E   214          ZAP   PAVGFWTH(7),PCALC(7)  MOVE PCALC INTO PAVGFWTH
+                                     215 *
+                                     216 * MOVE AVERAGE FED WITHHOLDING AMOUNT INTO PRINT LINE
+                                     217 *
+ 000298 4110 CA6F            00A6F   218          LA    1,OAVGFWTH+11  ENSURE R1 HOLDS SLOT OF '$' IF ZERO
+ 00029C D20F CA64 C3C5 00A64 003C5   219          MVC   OAVGFWTH(16),=X'402020206B2020206B2021204B2020'
+1                                                                                                               PAGE    5
+0  LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT
+ 0002A2 DF0F CA64 C54C 00A64 0054C   220          EDMK  OAVGFWTH(16),PAVGFWTH+1  MOVE AVG FED INTO PRINT LN
+ 0002A8 0610                         221          BCTR  1,0   DECREMENT R1 BY 1
+ 0002AA 925B 1000      00000         222          MVI   0(1),C'$' PLACE DOLLAR SIGN
+                                     223 *
+                                     224 * MOVE TOTAL STATE WITHHOLDING AMOUNT TO PRINT LINE
+                                     225 *
+ 0002AE 4110 CABB            00ABB   226          LA    1,OTSWITH+11 ENSURE R1 HOLDS SLOT OF '$' IF 0
+ 0002B2 D212 CAB0 C3AA 00AB0 003AA   227          MVC   OTSWITH(19),=X'4020206B2020206B2020206B2021204B2020'
+ 0002B8 DF12 CAB0 C536 00AB0 00536   228          EDMK  OTSWITH(19),PTSWITH  MOVE PTSWITH INTO PRINT LINE
+ 0002BE 0610                         229          BCTR  1,0   DECREMENT R1 BY 1
+ 0002C0 925B 1000      00000         230          MVI   0(1),C'$' PLACE DOLLAR SIGN
+                                     231 *
+                                     232 * CALCULATE AVERAGE STATE WITHHOLDING AMOUNT
+                                     233 *
+ 0002C4 F896 C51E C536 0051E 00536   234          ZAP   PCALC(10),PTSWITH(7)  ZAP TOTAL STATE WTH INTO PCALC
+ 0002CA F090 C51E 0003 0051E 00003   235          SRP   PCALC(10),3,0         ADD THREE FAKE DECIMAL PLACES
+ 0002D0 FD92 C51E C4F0 0051E 004F0   236          DP    PCALC(10),PEMPCTR(3)  DIVIDE TOTAL STATE BY EMP COUNT
+ 0002D6 F065 C51E 003F 0051E 0003F   237          SRP   PCALC(7),64-1,5       ROUND TO TWO DECIMAL PLACES
+ 0002DC F866 C552 C51E 00552 0051E   238          ZAP   PAVGSWTH(7),PCALC(7)  MOVE PCALC INTO PAVGSWTH
+                                     239 *
+                                     240 * MOVE AVERAGE STATE WITH INTO PRINT LINE
+                                     241 *
+ 0002E2 4110 CAF4            00AF4   242          LA    1,OAVGSWTH+11  ENSURE R1 HOLDS SLOT OF '$' IF ZERO
+ 0002E6 D20F CAE9 C3C5 00AE9 003C5   243          MVC   OAVGSWTH(16),=X'402020206B2020206B2021204B2020'
+ 0002EC DF0F CAE9 C553 00AE9 00553   244          EDMK  OAVGSWTH(16),PAVGSWTH+1  MOVE AVG STATE INTO PRINT LN
+ 0002F2 0610                         245          BCTR  1,0   DECREMENT R1 BY 1
+ 0002F4 925B 1000      00000         246          MVI   0(1),C'$' PLACE DOLLAR SIGN
+                                     247 *
+                                     248 * MOVE TOTAL NET PAY AMOUNT TO PRINT LINE
+                                     249 *
+ 0002F8 4110 CB40            00B40   250          LA    1,OTNETPAY+11 ENSURE R1 HOLDS SLOT OF '$' IF 0
+ 0002FC D212 CB35 C3AA 00B35 003AA   251          MVC   OTNETPAY(19),=X'4020206B2020206B2020206B2021204B2020'
+ 000302 DF12 CB35 C53D 00B35 0053D   252          EDMK  OTNETPAY(19),PTNETPAY  MOVE PTNETPAY INTO PL
+ 000308 0610                         253          BCTR  1,0   DECREMENT R1 BY 1
+ 00030A 925B 1000      00000         254          MVI   0(1),C'$' PLACE DOLLAR SIGN
+                                     255 *
+                                     256 * CALCULATE AVERAGE NET PAY AMOUNT
+                                     257 *
+ 00030E F896 C51E C53D 0051E 0053D   258          ZAP   PCALC(10),PTNETPAY(7)  ZAP TOTAL NETPAY INTO PCALC
+ 000314 F090 C51E 0003 0051E 00003   259          SRP   PCALC(10),3,0         ADD THREE FAKE DECIMAL PLACES
+ 00031A FD92 C51E C4F0 0051E 004F0   260          DP    PCALC(10),PEMPCTR(3)  DIVIDE TOTAL NET PAY BY EMP COUNT
+ 000320 F065 C51E 003F 0051E 0003F   261          SRP   PCALC(7),64-1,5       ROUND TO TWO DECIMAL PLACES
+ 000326 F866 C559 C51E 00559 0051E   262          ZAP   PAVGNET(7),PCALC(7)  MOVE PCALC INTO PAVGNET
+                                     263 *
+                                     264 * MOVE AVERAGE NET PAY INTO PRINT LINE
+                                     265 *
+ 00032C 4110 CB79            00B79   266          LA    1,OAVGNET+11  ENSURE R1 HOLDS SLOT OF '$' IF ZERO
+ 000330 D20F CB6E C3C5 00B6E 003C5   267          MVC   OAVGNET(16),=X'402020206B2020206B2021204B2020'
+ 000336 DF0F CB6E C55A 00B6E 0055A   268          EDMK  OAVGNET(16),PAVGNET+1  MOVE AVG NET INTO PRINT LN
+ 00033C 0610                         269          BCTR  1,0   DECREMENT R1 BY 1
+ 00033E 925B 1000      00000         270          MVI   0(1),C'$' PLACE DOLLAR SIGN
+                                     271 *
+                                     272 * PRINT TOTALS SECTION
+                                     273 *
+ 000342 E020 C560 0085 00560         274          XPRNT COMPNAME,133  PRINT COMPANY NAME HEADER
+ 000348 E020 C5E5 0085 005E5         275          XPRNT SUBHDR,133    PRINT SUBHEADER
+ 00034E E020 C7F9 0085 007F9         276          XPRNT HTOTALS,133   PRINT SUBHEADER
+1                                                                                                               PAGE    6
+0  LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT
+                                     277 *
+ 000354 E020 C905 0085 00905         278          XPRNT EMPCOUNT,133  PRINT EMPLOYEE COUNT
+ 00035A E020 C98A 0085 0098A         279          XPRNT TGRPAY,133    PRINT TOTAL GROSS PAY
+ 000360 E020 CA0F 0085 00A0F         280          XPRNT TFEDDTL,133   PRINT TOTAL FEDERAL WITHHOLDING
+ 000366 E020 CA94 0085 00A94         281          XPRNT TSTDTL,133    PRINT TOTAL FEDERAL WITHHOLDING
+ 00036C E020 CB19 0085 00B19         282          XPRNT TNETDTL,133   PRINT TOTAL NET PAY
+                                     283 *
+                                     284 *
+ 000372                              285 ENDTOTAL DS    0H
+                                     286 *
+                                     287 *  STANDARD EXIT LINKAGE WITH RC OF 0
+                                     288 *
+ 000372 1BFF                         289          SR    15,15         R15 = RETURN CODE OF 0
+ 000374 58D0 D004            00004   290          L     13,4(,13)     POINTS R13 TO CALLER'S SAVE AREA
+ 000378 58E0 D00C            0000C   291          L     14,12(,13)    RESTORE REGISTER 14
+ 00037C 980C D014            00014   292          LM    0,12,20(13)   RESTORE R0 THRU R12
+                                     293 *
+ 000380 07FE                         294          BR    14            RETURN TO CALLER
+                                     295 *
+                                     296          LTORG
+ 000388 40202120                     297                =X'40202120'
+ 00038C 2120206020202020             298                =X'21202060202020202020'
+ 000396 402020202020206B             299                =X'402020202020206B2021204B2020'
+ 0003A4 402020202120                 300                =X'402020202120'
+ 0003AA 4020206B2020206B             301                =X'4020206B2020206B2020206B2021204B2020'
+ 0003BC 1C                           302                =PL1'1'
+ 0003BD 402021204B2020               303                =X'402021204B2020'
+ 0003C4 0C                           304                =PL1'0'
+ 0003C5 402020206B202020             305                =X'402020206B2020206B2021204B2020'
+                                     306 *
+ 0003E0                              307          ORG   PAYROLL+((*-PAYROLL+31)/32)*32
+ 0003E0 5C40D7D9D6C7D9C1             308          DC    C'* PROGRAM STORAGE FOR PAYROLL **'
+                                     309 *
+ 000400                              310 SAVEAREA DS    18F    REGISTER SAVE AREA
+                                     311 *
+                                     312 * TABLE STORAGE
+                                     313 EMPTBL  120CL42
+ ----->AS118 INVALID OP-CODE             --------$--------------------------------------------------------------- <-ERROR
+                                     314 *
+                                     315 *
+                                     316 * INPUT RECORD VARIABLES
+                                     317 *
+ 000448                              318 RECORD   DS    0H
+ 000448                              319 IEMPID   DS    ZL8
+ 000450                              320 IHRPAY   DS    ZL5
+ 000455                              321 IHOURS   DS    ZL5
+ 00045A                              322 IDEDUCT  DS    ZL5
+ 00045F                              323 IBONUS   DS    ZL5
+ 000464                              324 IEMPNME  DS    CL25
+ 00047D                              325          DS    CL27
+                                     326 *
+ 000498                              327 IWTHPCT  DS    0H
+ 000498                              328 IFPCT    DS    ZL6
+ 00049E                              329 ISPCT    DS    ZL6
+ 0004A4 4040404040404040             330          DC    68C' '
+                                     331 * PACKED DECIMAL VARIABLES
+                                     332 *
+1                                                                                                               PAGE    7
+0  LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT
+ 0004E8 0000000C                     333 PFWHPCT  DC    PL4'0' PACKED FEDERAL WITHHOLDING PERCENTAGE
+ 0004EC 0000000C                     334 PSWHPCT  DC    PL4'0' PACKED STATE WITHHOLDING PERCENTAGE
+                                     335 *
+ 0004F0 00000C                       336 PEMPCTR  DC PL3'0' PACKED EMPLOYEE COUNTER (MAX 999)
+ 0004F3 000C                         337 PPAGECTR DC PL2'0' PACKED PAGE COUNTER (MAX 999)
+                                     338 *
+ 0004F5 000000000C                   339 PEMPID   DC    PL5'0' PACKED EMPLOYEE ID
+ 0004FA 00000C                       340 PHRPAY   DC    PL3'0' PACKED EMPLOYEE HOURLY PAY RATE
+ 0004FD 00000C                       341 PHOURS   DC    PL3'0' PACKED EMPLOYEE HOURS WORKED
+ 000500 00000C                       342 PDEDUCT  DC    PL3'0' PACKED EMPLOYEE DEDUCTION
+ 000503 00000C                       343 PBONUS   DC    PL3'0' PACKED EMPLOYEE BONUS
+ 000506 00000000000C                 344 PGRPAY   DC    PL6'0' PACKED CALCULATED EMPLOYEE GROSS PAY
+ 00050C 00000000000C                 345 PFEDWITH DC    PL6'0' PACKED CALCULATED FEDERAL WITHHOLDING
+ 000512 00000000000C                 346 PSTWITH  DC    PL6'0' PACKED CALCULATED STATE WITHHOLDING
+ 000518 00000000000C                 347 PNETPAY  DC    PL6'0' PACKED CALCULATED EMPLOYEE NET PAY
+                                     348 *
+ 00051E 0000000000000000             349 PCALC    DC    PL10'0' USED TO CALCULATE WITHHOLDING AND AVGS
+                                     350 *
+ 000528 0000000000000C               351 PTGRPAY  DC    PL7'0' PACKED TOTAL GROSS EMPLOYEE PAY
+ 00052F 0000000000000C               352 PTFWITH  DC    PL7'0' PACKED TOTAL FEDERAL WITHHOLDING
+ 000536 0000000000000C               353 PTSWITH  DC    PL7'0' PACKED TOTAL STATE WITHHOLDING
+ 00053D 0000000000000C               354 PTNETPAY DC    PL7'0' PACKED TOTAL NET EMPLOYEE PAY
+                                     355 *
+ 000544 0000000000000C               356 PAVGROSS DC    PL7'0' PACKED AVERAGE GROSS PAY
+ 00054B 0000000000000C               357 PAVGFWTH DC    PL7'0' PACKED AVERAGE FEDERAL WITHHOLDING
+ 000552 0000000000000C               358 PAVGSWTH DC    PL7'0' PACKED AVERAGE STATE WITHHOLDING
+ 000559 0000000000000C               359 PAVGNET  DC    PL7'0' PACKED AVERAGE NETP PAY
+                                     360 *
+                                     361 *
+                                     362 * PAGE HEADER LINE ONE (Company Name)
+                                     363 *
+ 000560 F1                           364 COMPNAME DC    C'1'
+ 000561 4040404040404040             365          DC    51C' '
+ 000594 C3C8C9C3C1C7D640             366          DC    CL30'CHICAGO SOFTWARE COMPANY, INC.'
+ 0005B2 4040404040404040             367          DC    41C' '
+ 0005DB D7C1C7C57A                   368          DC    CL5'PAGE:'
+ 0005E0 40                           369          DC    1C' '
+ 0005E1                              370 OPAGECTR DS    CL4
+                                     371 *
+                                     372 * PAGE HEADER LINE TWO (Subheader)
+                                     373 *
+ 0005E5 40                           374 SUBHDR   DC    C' '
+ 0005E6 4040404040404040             375          DC    54C' '
+ 00061C C5D4D7D3D6E8C5C5             376          DC    CL23'EMPLOYEE PAYROLL REPORT'
+ 000633 4040404040404040             377          DC    55C' '
+                                     378 *
+                                     379 * COLUMN HEADERS
+                                     380 *
+                                     381 *
+ 00066A F0                           382 COLHDR1  DC    C'0'
+ 00066B C5D4D7D3D6E8C5C5             383          DC    CL8'EMPLOYEE'
+ 000673 404040                       384          DC    3C' '
+ 000676 C5D4D7D3D6E8C5C5             385          DC    CL8'EMPLOYEE'
+ 00067E 4040404040404040             386          DC    21C' '
+ 000693 C8D6E4D9D3E8                 387          DC    CL6'HOURLY'
+ 000699 4040404040                   388          DC    5C' '
+ 00069E C8D6E4D9E2                   389          DC    CL5'HOURS'
+1                                                                                                               PAGE    8
+0  LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT
+ 0006A3 4040404040404040             390          DC    12C' '
+ 0006AF C5D4D7D3D6E8C5C5             391          DC    CL8'EMPLOYEE'
+ 0006B7 40404040                     392          DC    4C' '
+ 0006BB C5D4D7D3D6E8C5C5             393          DC    CL16'EMPLOYEE FEDERAL'
+ 0006CB 40404040                     394          DC    4C' '
+ 0006CF C5D4D7D3D6E8C5C5             395          DC    CL14'EMPLOYEE STATE'
+ 0006DD 4040404040404040             396          DC    10C' '
+ 0006E7 C5D4D7D3D6E8C5C5             397          DC    CL8'EMPLOYEE'
+ 0006EF 40                           398 COLHDR2  DC    C' '
+ 0006F0 C9C4                         399          DC    CL2'ID'
+ 0006F2 4040404040404040             400          DC    9C' '
+ 0006FB D5C1D4C5                     401          DC    CL4'NAME'
+ 0006FF 4040404040404040             402          DC    28C' '
+ 00071B D7C1E8                       403          DC    CL3'PAY'
+ 00071E 40404040                     404          DC    4C' '
+ 000722 E6D6D9D2C5C4                 405          DC    CL6'WORKED'
+ 000728 4040404040404040             406          DC    11C' '
+ 000733 C7D9D6E2E240D7C1             407          DC    CL9'GROSS PAY'
+ 00073C 4040404040404040             408          DC    9C' '
+ 000745 E6C9E3C8C8D6D3C4             409          DC    CL11'WITHHOLDING'
+ 000750 40404040404040               410          DC    7C' '
+ 000757 E6C9E3C8C8D6D3C4             411          DC    CL11'WITHHOLDING'
+ 000762 4040404040404040             412          DC    11C' '
+ 00076D D5C5E340D7C1E8               413          DC    CL7'NET PAY'
+ 000774 40                           414 COLHDR3  DC    C' '
+ 000775 6060606060606060             415          DC    9C'-'
+ 00077E 4040                         416          DC    2C' '
+ 000780 6060606060606060             417          DC    25C'-'
+ 000799 404040                       418          DC    3C' '
+ 00079C 60606060606060               419          DC    7C'-'
+ 0007A3 404040                       420          DC    3C' '
+ 0007A6 60606060606060               421          DC    7C'-'
+ 0007AD 4040404040                   422          DC    5C' '
+ 0007B2 6060606060606060             423          DC    15C'-'
+ 0007C1 40404040                     424          DC    4C' '
+ 0007C5 6060606060606060             425          DC    16C'-'
+ 0007D5 40404040                     426          DC    4C' '
+ 0007D9 6060606060606060             427          DC    14C'-'
+ 0007E7 404040                       428          DC    3C' '
+ 0007EA 6060606060606060             429          DC    15C'-'
+ 0007F9 40                           430 HTOTALS  DC    C' '
+ 0007FA 4040404040404040             431          DC    62C' '
+ 000838 E3D6E3C1D3E240               432          DC    CL7'TOTALS '
+ 00083F 4040404040404040             433          DC    64C' '
+                                     434 *
+                                     435 * EMPLOYEE DETAIL LINE
+                                     436 *
+ 00087F F0                           437 EMPDTL   DC    C'0'
+ 000880                              438 OEMPID   DS    CL9
+ 000889 4040                         439          DC    2C' '
+ 00088B                              440 OEMPNME  DS    CL25
+ 0008A4 404040                       441          DC    3C' '
+ 0008A7                              442 OHRPAY   DS    CL8
+ 0008AF 4040                         443          DC    2C' '
+ 0008B1                              444 OHOURS   DS    CL7
+ 0008B8 404040404040                 445          DC    6C' '
+ 0008BE                              446 OGRPAY   DS    CL15
+1                                                                                                               PAGE    9
+0  LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT
+ 0008CD 4040404040                   447          DC    5C' '
+ 0008D2                              448 OFWTH    DS    CL15
+ 0008E1 4040                         449          DC    2C' '
+ 0008E3                              450 OSWTH    DS    CL15
+ 0008F2 40404040                     451          DC    4C' '
+ 0008F6                              452 ONETPAY  DS    CL15
+                                     453 *
+                                     454 *
+                                     455 * TOTALS PRINT LINES
+                                     456 *
+                                     457 *
+                                     458 * -- EMPLOYEE COUNT PRINT LINE --
+ 000905 F0                           459 EMPCOUNT DC    C'0'
+ 000906 404040404040                 460          DC    6C' '
+ 00090C D5E4D4C2C5D940D6             461          DC    CL20'NUMBER OF EMPLOYEES: '
+ 000920 4040404040404040             462          DC    10C' '
+ 00092A                              463 OEMPCTR  DS    CL6
+ 000930 4040404040404040             464          DC    90C' '
+                                     465 * -- TOTAL & AVERAGE GROSS PAY PRINT LINE --
+ 00098A F0                           466 TGRPAY   DC   C'0'
+ 00098B 4040404040404040             467          DC   10C' '
+ 000995 E3D6E3C1D340C7D9             468          DC   CL16'TOTAL GROSS PAY:'
+ 0009A5 40                           469          DC   1C' '
+ 0009A6                              470 OTGRPAY  DS   CL19
+ 0009B9 4040404040404040             471          DC   19C' '
+ 0009CC C1E5C5D9C1C7C540             472          DC   CL18'AVERAGE GROSS PAY:'
+ 0009DE 40                           473          DC   C' '
+ 0009DF                              474 OAVGROSS DS   CL16
+ 0009EF 4040404040404040             475          DC   32C' '
+                                     476 * -- TOTAL & AVERAGE FEDERAL WITHHOLDING PRINT LINE --
+ 000A0F F0                           477 TFEDDTL  DC   C'0'
+ 000A10 E3D6E3C1D340C6C5             478          DC   CL26'TOTAL FEDERAL WITHHOLDING:'
+ 000A2A 40                           479          DC   1C' '
+ 000A2B 4040404040404040             480 OTFWITH  DC   CL19' '
+ 000A3E 4040404040404040             481          DC   10C' '
+ 000A48 C1E5C5D9C1C7C540             482          DC   CL28'AVERAGE FEDERAL WITHHOLDING:'
+ 000A64 4040404040404040             483 OAVGFWTH DC   CL16' '
+ 000A74 4040404040404040             484          DC   32C' '
+                                     485 * -- TOTAL & AVERAGE STATE WITHHOLDING PRINT LINE --
+ 000A94 F0                           486 TSTDTL   DC   C'0'
+ 000A95 4040                         487          DC   2C' '
+ 000A97 E3D6E3C1D340E2E3             488          DC   CL24'TOTAL STATE WITHHOLDING:'
+ 000AAF 40                           489          DC   1C' '
+ 000AB0 4040404040404040             490 OTSWITH  DC   CL19' '
+ 000AC3 4040404040404040             491          DC   12C' '
+ 000ACF C1E5C5D9C1C7C540             492          DC   CL26'AVERAGE STATE WITHHOLDING:'
+ 000AE9 4040404040404040             493 OAVGSWTH DC   CL16' '
+ 000AF9 4040404040404040             494          DC   32C' '
+                                     495 * -- TOTAL & AVERAGE NET PAY PRINT LINE --
+ 000B19 F0                           496 TNETDTL  DC   C'0'
+ 000B1A 4040404040404040             497          DC   12C' '
+ 000B26 E3D6E3C1D340D5C5             498          DC   CL14'TOTAL NET PAY:'
+ 000B34 40                           499          DC   1C' '
+ 000B35                              500 OTNETPAY DS   CL19
+ 000B48 4040404040404040             501          DC   22C' '
+ 000B5E C1E5C5D9C1C7C540             502          DC   CL16'AVERAGE NET PAY:'
+ 000B6E 4040404040404040             503 OAVGNET  DC   CL16' '
+1                                                                                                               PAGE   10
+0  LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT
+ 000B7E 4040404040404040             504          DC   32C' '
+                                     505 *
+ 000BA0 00000013                     506 MAXLINES DC    F'19'
+ 000BA4                              507 IDPTRN   DS    CL10
+                                     508          END PAYROLL
+0***     5 STATEMENTS FLAGGED -  NO   WARNINGS,     5 ERRORS
+0***** NUMBER OF ERRORS EXCEEDS LIMIT OF  NO   ERRORS - PROGRAM EXECUTION DELETED *****
+0*** DYNAMIC CORE AREA USED:  LOW:   25024 HIGH:    2260 LEAVING:  466284 FREE BYTES. AVERAGE:       53 BYTES/STMT ***
+0*** ASSEMBLY TIME =    0.001 SECS,   509000 STATEMENTS/SEC ***

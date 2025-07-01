@@ -1,0 +1,10 @@
+        1 //KC03AEDA JOB ,'M. WARNER',MSGCLASS=H                                  JOB09359
+        2 //JSTEP01  EXEC PGM=ASSIST
+        3 //STEPLIB  DD DSN=KC00NIU.ASSIST.LOADLIB,DISP=SHR
+        4 //SYSPRINT DD SYSOUT=*
+        5 //SYSIN    DD *
+          //*
+        6 //FT05F001 DD DSN=KC02322.CSCI360.DATASP25(DATA7),DISP=SHR
+          //*
+        7 //FT06F001 DD SYSOUT=*
+        8 //

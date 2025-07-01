@@ -186,7 +186,6 @@ echo "
                             <input type='hidden' name='user_id' value='{$row['USERID']}'>
                             <input type='hidden' name='song_id' value='{$row['SONGID']}'>
                             <button type='submit'>Remove</button>
-
                         </form>
                     </td>
                   </tr>";

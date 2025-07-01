@@ -1,0 +1,59 @@
+1*** ASSIST 4.0/A2-05/15/82  470/V7A/0:OS/VS2  INS=SDFP7/X=BGHO, CHECK/TRC/=1180, OPTS=CDKMPR FROM PENN ST*NIU COMPSCI*LT
+0
+0                                                                                                               PAGE    1
+0  LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT
+                                       1 *
+                                       2 *****************************************************************
+                                       3 *                                                               *
+                                       4 *  CSCI 360-1             ASSIGNMENT 6               SPRING 2025*
+                                       5 *                                                               *
+                                       6 *  PROGRAMMER NAME: Matt Warner                                 *
+                                       7 *        DUE DATE: March 22, 2025                               *
+                                       8 *                                                               *
+                                       9 *  NO FURTHER DOCUMENTATION IS NECESSARY                        *
+                                      10 *                                                               *
+                                      11 *****************************************************************
+                                      12 *
+ 000000                               13 DISASM   CSECT
+ 000000                               14          USING DISASM,15   ESTABLISH ADDRESSABILITY ON REG 15
+                                      15 *
+ 000000 4140 0017            00017    16          LA    4,23        LOAD VALUE 17 INTO R4.
+ 000004 5850 F03C            0003C    17          L     5,60(,15)   LOAD VALUE AT ADDRESS 0x00003C INTO R5.
+ 000008 1824                          18          LR    2,4         LOAD R4 INTO R2.
+ 00000A 1A25                          19          AR    2,5         ADD R5 TO R2.
+ 00000C 5020 F040            00040    20          ST    2,64(,15)   STORE CONTENTS OF R2 INTO ADDRESS 0x000040.
+ 000010 1875                          21          LR    7,5         LOAD R5 INTO R7.
+ 000012 1864                          22          LR    6,4         LOAD R4 INTO R6
+ 000014 1C66                          23          MR    6,6         MULTIPLY R6 BY R7, PROD STORED IN R7.
+ 000016 5070 F044            00044    24          ST    7,68(,15)   STORE R7 IN ADDRESS 0x000044.
+ 00001A 1894                          25          LR    9,4         LOAD R4 INTO R9.
+ 00001C 5C40 F050            00050    26          M     4,80(,15)   MULTIPLY R5 BY VALUE AT ADDRESS 0x000050.
+ 000020 1D49                          27          DR    4,9         DIVIDE R5 BY R9.
+ 000022 5040 F048            00048    28          ST    4,72(,15)   STORE R4 IN ADDRESS 0x000048.
+ 000026 5050 F04C            0004C    29          ST    5,76(,15)   STORE R5 IN ADDRESS 0x00004C.
+ 00002A E060 F000 0054 00000          30          XDUMP DISASM,84   MEMORY DUMP.
+ 000030 07FE                          31          BCR   B'1111',14  UNCONDITION RETURN TO CALLER.
+                                      32 *
+                                      33          LTORG             LITERAL ORGANIZATION
+ 000038                               34          DS    CL4
+ 00003C 00000065                      35          DC    F'101'
+ 000040                               36          DS    F
+ 000044                               37          DS    F
+ 000048                               38          DS    F
+ 00004C                               39          DS    F
+ 000050 00000001                      40          DC    F'1'
+                                      41 *
+                                      42          END   DISASM
+0***  NO   STATEMENTS FLAGGED -  NO   WARNINGS,  NO   ERRORS
+0*** DYNAMIC CORE AREA USED:  LOW:    1600 HIGH:     348 LEAVING:  491620 FREE BYTES. AVERAGE:       45 BYTES/STMT ***
+0*** ASSEMBLY TIME =    0.000 SECS,    43000 STATEMENTS/SEC ***
+0*** PROGRAM EXECUTION BEGINNING - ANY OUTPUT BEFORE EXECUTION TIME MESSAGE IS PRODUCED BY USER PROGRAM ***
+0BEGIN XSNAP - CALL     1 AT E0000030 USER STORAGE
+0                             CORE ADDRESSES SPECIFIED-     000000 TO 000054
+ 000000   41400017 5850F03C 18241A25 5020F040    18751864 1C665070 F0441894 5C40F050   *. ....0.......0 ........0.... 0.*
+ 000020   1D495040 F0485050 F04CE060 F0000054    07FEF5F5 F5F5F5F5 F5F5F5F5 00000065   *... 0...0...0.....5555555555....*
+1000040   0000007C 00000913 00000009 00000004    00000001 F5F5F5F5 F5F5F5F5 00000000   *....................55555555....*
+0
+0*** EXECUTION TIME =    0.000 SECS.        16 INSTRUCTIONS EXECUTED -    16000 INSTRUCTIONS/SEC ***
+0*** FIRST CARD NOT READ: NO CARDS READ:FILE UNOPENED
+0*** AM004 - NORMAL USER TERMINATION BY RETURN ***
